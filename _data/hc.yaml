@@ -1,0 +1,261 @@
+title: "HockeyComputindo"
+description: "Premium themes for docs, SaaS and blogs. Astro, Starlight, Docusaurus, Hugo, Jekyll - built for 90+ Lighthouse and search."
+image: "/favicon.png"
+logo: "/favicon.png"
+thumb: "https://www.hockeycomputindo.com/favicon.png"
+cover: "creative_by_dre_oh_github_v5jpw0.png"
+url: "https://www.hockeycomputindo.com"
+author: "HockeyComputindo"
+navbar: 
+  logo: "H"
+  title: "HC"
+  button: 
+    text: "Axcora"
+    url: "https://axcora.com"
+  template: 
+    text: Template
+    url: /template/
+    button: Download
+  themes: 
+    text: Themes
+    url: /themes/
+    button: Download
+  list:
+    - name: "Themes"
+      url: "/themes/"
+      no: "design"
+    - name: "Free"
+      url: "/free/"
+      no: "free"
+    - name: "Premium"
+      url: "/premium/"
+      no: "pro"
+    - name: "Templates"
+      url: "/template/"
+      no: "Layout"
+    - name: "Services"
+      url: "/services/"
+      no: "Skill"
+
+hero: 
+  title: "Free"
+  title2: "Premium Themes"
+  description: "Documentation, SaaS and blog themes - Astro, Starlight, Docusaurus, Hugo, Jekyll."
+  text: "Multi-stack collection for docs, SaaS and blogs. Astro, Starlight, Docusaurus, Hugo, Jekyll, Bludit, Pico - each theme built for 90+ Lighthouse, native SEO, pure HTML/CSS/JS, no subscription. One purchase, lifetime ownership."
+  list: 
+    - title: "Curated"
+      info: "SELECTION"
+      text: "Not 1000 themes. Only the best."
+    - title: "Pure Code"
+      info: "NO BLOAT"
+      text: "HTML, CSS, JS. One file each."
+    - title: "Lifetime"
+      info: "OWNERSHIP"
+      text: "One time. Forever yours."
+
+themes: 
+  title: "Selected Themes"
+  description: "A focused collection, not a marketplace."
+  search: "Search collection..."
+  button: 
+    text: "View Collection"
+    url: "/themes/"
+
+services:
+  title: "Custom Web Architecture"
+  description: "Headless Commerce, Booking OS, SSG & Vision AI - Custom built for your business"
+  info: "Commerce, Booking, SSG, AI - Built to own, not rented."
+  list: 
+    - title: ".NET Static Generator - Own 100%"
+      info: "01 - .NET SSG"
+      description: "Static generator built with .NET. Clean build process, single binary, full source ownership. Suitable for teams working in .NET ecosystem."
+      button: 
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/build-your-blazing-fast-dotnet-website-with-dax"
+    - title: "Vision AI and Finance Automation"
+      info: "02 - SAEDI VISION"
+      description: "Self-hosted vision AI for document and finance workflows. Runs on your server with audit trail, no external cloud dependency."
+      button: 
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/design-modern-documentation-website-astro-js-stalight"
+    - title: "Python SSG - Python Native"
+      info: "03 - PYCORA SSG"
+      description: "Static generator using Python. Familiar tooling for Python teams, straightforward pipeline, static output."
+      button: 
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/create-custom-python-script"
+    - title: "Headless Commerce OS"
+      info: "04 - COMMERCE OS"
+      description: "POS and online store in one flow. Handles stock sync between offline and online, designed to prevent overselling."
+      button: 
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/design-your-website-with-progresive-web-application"
+    - title: "Headless Booking System"
+      info: "05 - BOOKING OS"
+      description: "Booking system with separated payment flow. You control the data and process, no marketplace commission structure."
+      button: 
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/build-booking-system-for-your-website"
+    - title: "Next.js and Gatsby Setup"
+      info: "06 - HEADLESS"
+      description: "Headless setup using Next.js and Gatsby. Configured for 90+ Lighthouse, edge deployment ready, source included."
+      button: 
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/designyourmodernwebsiteusingnextjs"
+    - title: "Flat-File CMS Setup"
+      info: "07 - FLAT-FILE"
+      description: "Setup using Bludit, Pico, and custom database options. Lightweight approach without WordPress plugin maintenance."
+      button: 
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/designyourmodernwebsiteusingbludit"
+    - title: "Jekyll Astro 11ty Migration"
+      info: "08 - JAMSTACK MIGRATION"
+      description: "Migration from WordPress to JAMstack. Static hosting, 90+ performance baseline, content remains in your repository."
+      button: 
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/designyourmodernwebsiteusingjekyll"
+    - title: "Premium Web Presence"
+      info: "09 - PREMIUM SEO"
+      description: "Website built with SEO structure in mind. Clean markup, fast loading, one-time build with documentation for future updates."
+      button: 
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/design-your-premium-presence-website"
+    - title: "Headless CMS Bridge"
+      info: "10 - CMS BRIDGE"
+      description: "Integration for Decap, Sveltia, and Tina CMS. Visual editing for content team while keeping Git as content source."
+      button: 
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/setup-headless-cms-for-your-jamstack-website"
+    - title: "Documentation OS"
+      info: "11 - DOCS OS"
+      description: "Documentation site using Docusaurus, Starlight, and Nextra. Structured for technical docs, search, and long-term maintenance."
+      button: 
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/design-modern-documentation-website-astro-js-stalight"
+footer:
+  section1: 
+    title: "STOP RENTING."
+    description: "Own Your Site."
+    text: "Most theme shops charge monthly to rent speed and SEO. We provide ownership - one time, yours forever."
+    list: 
+      - info: "Search-ready from day one. Semantic HTML, canonical tags, Open Graph, Twitter Card, JSON-LD, sitemap - included as standard structure."
+      - info: "Clean codebase - HTML, CSS, JS. One CSS file, one JS file. No heavy dependencies."
+      - info: "Performance focused - 90+ Lighthouse baseline, small payload, system fonts, WebP and optimized images where applicable."
+      - info: "Content ownership - your repository, your content. Markdown and YAML frontmatter, no database lock-in."
+      - info: "Easy deployment - works with Vercel, Cloudflare Pages, Netlify, or any static host. Deploy guide included."
+      - info: "Documentation included - setup, customization, and hosting guide. No extra course needed to launch."
+      - info: "Instant delivery. No physical store, no chat sales. Choose, download, launch."
+      - info: "Lifetime use. One purchase for ongoing use. Support available via Fiverr escrow if needed, not forced."
+    button: 
+      text: "Browse Themes"
+      url: "/themes/"
+    button2: 
+      text: "Services"
+      url: "/services/"
+  section2: 
+    mono: "Trusted Theme Shop - High-Conversion SEO Article - Fully Online"
+    title: "Ownership, not rental."
+    description: "Why founders choose a one-time theme over monthly builders"
+    text: 
+      - info: "Monthly builders charge recurring fees for speed and hosting you don't fully control."
+      - info: "Updates can break customizations. Plugins add weight over time."
+      - info: "With recurring payments, you build equity in their platform, not your own codebase and content structure."
+      - info: "Our themes are built for founders who need a stable base to rank and maintain. Pure HTML, CSS, JS - no database, no complex build step required to run."
+      - info: "Performance budget kept small by design. Online delivery, documentation included, launch in hours not weeks."
+    get_title: "What you get - deliverables:"
+    get_list: 
+      - text: "Full source included - theme files, docs, deployment guide, no lock-in, delivery via Gumroad."
+      - text: "SEO structure included - meta tags, Open Graph, Twitter Card, schema, canonical, sitemap, robots, heading hierarchy."
+      - text: "Optimized assets - WebP images, system fonts, lite YouTube embed option where applicable."
+      - text: "Documentation for setup and updates - clear guide for hosting on any static host."
+    info_label: "Launch path:"
+    info: "Path: Choose theme - instant delivery - launch with docs - maintain long-term. Custom support available via Fiverr if needed."
+    badge: 
+      - button: "SEO Ready"
+      - button: "Lighthouse 90+"
+      - button: "One-Time"
+      - button: "Multi Stack"
+  copyrigths: "2026 HockeyComputindo - Multi Stack Themes"
+  copyrigths2: "Trusted - Fast - One-Time - Global Delivery"
+
+stacks:
+  - name: All Themes
+    url: /themes/
+  - name: Jamstack
+    url: /themes/jamstack/
+  - name: Jekyll
+    url: /themes/jekyll/
+  - name: Eleventy
+    url: /themes/eleventy/
+  - name: 11ty
+    url: /themes/11ty/
+  - name: Astro
+    url: /themes/astro/
+  - name: Gatsby
+    url: /themes/gatsby/
+  - name: Next.js
+    url: /themes/next/
+  - name: Docusaurus
+    url: /themes/docusaurus/
+  - name: Angular
+    url: /themes/angular/
+  - name: React
+    url: /themes/react/
+  - name: Blazor
+    url: /themes/blazor/
+  - name: Dotnet
+    url: /themes/dotnet/
+  - name: Lua
+    url: /themes/lua/
+  - name: Remix
+    url: /themes/remix/
+  - name: Svelte
+    url: /themes/svelte/
+  - name: Bludit
+    url: /themes/bludit/
+  - name: Pico
+    url: /themes/pico/
+  - name: Django
+    url: /themes/django/
+  - name: Flask
+    url: /themes/flask/
+  - name: Python
+    url: /themes/python/
+  - name: Laravel
+    url: /themes/laravel/
+  - name: Symfony
+    url: /themes/symfony/
+  - name: PHP
+    url: /themes/php/
+  - name: WordPress
+    url: /themes/wordpress/
+  - name: Blogger
+    url: /themes/blogger/
+  - name: Blogspot
+    url: /themes/blogspot/
+  - name: Android
+    url: /themes/android/
+  - name: Flutter
+    url: /themes/flutter/
+  - name: Ionic
+    url: /themes/ionic/
+  - name: React Native
+    url: /themes/react-native/
+  - name: CloudCannon
+    url: /themes/cloudcannon/
+  - name: Riot.js
+    url: /themes/riot/
+  - name: Ruby
+    url: /themes/ruby/
+  - name: Golang
+    url: /themes/golang/
+  - name: Pelican
+    url: /themes/pelican/
+  - name: Vite
+    url: /themes/vite/
+  - name: Alpine.js
+    url: /themes/alpine/
+  - name: Decap CMS
+    url: /themes/decap/
+  - name: Tina CMS
+    url: /themes/tina/

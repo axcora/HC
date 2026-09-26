@@ -1,0 +1,16 @@
+---
+layout: base.cax
+---
+<div class="overlay" id="overlay"></div>
+<header class="header"><a href="/" class="logo"><span class="logo-mark">{{ hc.navbar.logo }}</span><span>{{ hc.navbar.title }}</span></a><nav class="nav">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }}</a>{% endfor %}</nav><a href="{{ hc.navbar.button.url }}" class="btn btn-accent" target="_blank">{{ hc.navbar.button.text }}</a><button class="hamburger" id="hamburger"><span></span></button></header>
+<nav class="mobile-nav" id="mobileNav"><div class="mobile-nav-links">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }} <em> {{item.no}} </em></a>{% endfor %}<a href="{{ hc.navbar.button.url }}" target="_blank">{{ hc.navbar.button.text }} <em>0{{ hc.navbar.list | length + 1 }}</em></a></div><div class="mobile-foot"><span>© 2026 {{ hc.navbar.title }}</span><span>Premium Themes That Convert</span></div></nav>
+<section class="section">
+<div class="head"><h1 class="huge display">{{ title }}<br><em>{{ description }} drops</em></h1></div>
+<div class="grid-themes">
+{% for post in collections.themes | by:filter.value %}
+<a href="{{ post.url }}" class="card">
+<h3 class="name display">{{ post.title }}<br><span>{{ post.description }}</span></h3>
+<div class="thumb"><img src="https://res.cloudinary.com/hockeycorp/image/upload/w_500/q_auto:low/f_avif/v1699871939/website%20design/{{post.image or hc.cover}}" alt="{{ post.title }}" loading="lazy" style="width:100%;height:220px;object-fit:cover;"></div>
+</a>
+{% endfor %}
+</div>

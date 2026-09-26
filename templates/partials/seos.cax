@@ -1,0 +1,50 @@
+ <title>{{ title or hc.title }}</title>
+    <meta name="title" content="{{ title or hc.title }}">
+    <meta name="description" content="{{ description or hc.description }}">
+    <meta name="author" content="{{ author or hc.author }}">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="{{ hc.url }}{{ hc.logo }}">
+    <link rel="apple-touch-icon" href="{{ hc.url }}{{ hc.logo }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ hc.url }}{{ url }}">
+    <meta property="og:title" content="{{ title or hc.title }}">
+    <meta property="og:description" content="{{ description or hc.description }}">
+    <meta property="og:image" content="{{ hc.url }}{{ hc.image }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ hc.url }}{{ url }}">
+    <meta name="twitter:title" content="{{ title or hc.title }}">
+    <meta name="twitter:description" content="{{ description or hc.description }}">
+    <meta name="twitter:image" content="{{ hc.url }}{{ hc.image }}">
+<link rel="canonical" href="{{ hc.url }}{{ url }}">
+{% if pagination.prev_url %}<link rel="prev" href="{{ hc.url }}{{ pagination.prev_url }}">{% endif %}
+{% if pagination.next_url %}<link rel="next" href="{{ hc.url }}{{ pagination.next_url }}">{% endif %}
+<meta name="generator" content="CAX SSG - Static Site Generator in C">
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "url": "{{ hc.url }}{{ url }}",
+        "name": "{{ title or hc.title }}",
+        "description": "{{ description or hc.description }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ hc.author }}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ hc.author }}",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{{ hc.url }}{{ hc.logo }}"
+            }
+        },
+        "image": {
+            "@type": "ImageObject",
+            "url": "{{ hc.url }}{{ hc.image }}"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ hc.url }}{{ url }}"
+        }
+    }
+    </script>

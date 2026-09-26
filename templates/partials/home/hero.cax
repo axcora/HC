@@ -1,0 +1,12 @@
+<section class="hero">
+  <h1 class="hero-title display">{{ hc.hero.title }}<br>{{ hc.hero.title2 }}</h1>
+  <h2><em>{{ hc.hero.description }}</em></h2>
+  <div class="hero-grid">
+    <p class="hero-desc">{{ hc.hero.text }}</p>
+    <div class="stats">
+      {% for stat in hc.hero.list %}
+      <div class="stat"><span class="mono">{{ stat.info }}</span><b>{{ stat.title }}</b><span class="mono">{{ stat.text }}</span></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

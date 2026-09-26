@@ -1,0 +1,37 @@
+<section class="section">
+  <div class="sell">
+    <div>
+      <h2 class="huge display">{{ hc.footer.section1.title }}<br><em>{{ hc.footer.section1.description }}</em></h2>
+      <p class="lead serif mt-16">{{ hc.footer.section1.text }}</p>
+      <div class="mt-24">
+        {% for item in hc.footer.section1.list %}
+        <div class="check"><i>✓</i><span>{{ item.info }}</span></div>
+        {% endfor %}
+      </div>
+      <div class="mt-24">
+        <a href="{{ hc.footer.section1.button.url }}" class="btn">{{ hc.footer.section1.button.text }} -></a>
+        <a href="{{ hc.footer.section1.button2.url }}" class="btn btn-paper">{{ hc.footer.section1.button2.text }} -></a>
+      </div>
+    </div>
+    <div class="detail-left">
+      <p class="mono">{{ hc.footer.section2.mono }}</p>
+      <h3 class="display mt-12">{{ hc.footer.section2.title }}</h3>
+      <p class="mt-12">{{ hc.footer.section2.description }}</p>
+      {% for para in hc.footer.section2.text %}
+      <p class="mt-12">{{ para.info }}</p>
+      {% endfor %}
+      <h4 class="mt-16">{{ hc.footer.section2.get_title }}</h4>
+      <ul class="mt-8">
+        {% for get in hc.footer.section2.get_list %}
+        <li>{{ get.text }}</li>
+        {% endfor %}
+      </ul>
+      <p class="mt-12"><strong>{{ hc.footer.section2.info_label }}</strong> {{ hc.footer.section2.info }}</p>
+      <div class="badge-row mt-16">
+        {% for badge in hc.footer.section2.badge %}
+        <span class="tag">{{ badge.button }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

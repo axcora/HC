@@ -1,0 +1,24 @@
+﻿---
+title: Minimals Nikola Python JAMSTACK themes free download
+description: Features
+image: https://wsrv.nl/?url=https%3A%2F%2Fpublic-files.gumroad.com%2F334u7jqof4l49b47u06lcmix7vo5&w=1200&output=webp&q=85&af=
+image_raw: https://public-files.gumroad.com/334u7jqof4l49b47u06lcmix7vo5
+download: https://creativitaz.gumroad.com/l/minimals-nikola
+price: Free
+price_cents: 0
+sales: 4
+tags:
+ - themes
+ - template
+ - python
+ - web design
+ - website
+ - web development
+ - jamstack
+layout: template-detil.cax
+date: 2026-09-25
+updated: 
+---
+
+<p>Let develop your website and blog project with python jamtsack tech - Nikola Static Site Generator</p><p>MInimals is a clean and minimalist design for python SSG nikola project.</p><p>Make easy for you built complete set site with minimals.</p><div class=tiptap__raw><div><div style=left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;><iframe src=//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fyoutu.be%2FLM6GRXAUhiU&amp;key=31708e31359468f73bc5b03e9dcab7da style=top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0; allowfullscreen= scrolling=no allow=accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;></iframe></div></div></div><p><br></p><p>Download Now and Run your site blast fast with minimals nikola </p><p><br></p>
+

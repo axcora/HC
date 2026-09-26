@@ -1,0 +1,10 @@
+---
+layout: base.cax
+---
+<div class="overlay" id="overlay"></div>
+{% include home/header.cax %}
+{% include home/nav.cax %}
+{% include home/hero.cax %}
+{% include home/themes.cax %}
+{% include home/services.cax %}
+{% include home/footer.cax %}

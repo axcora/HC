@@ -1,0 +1,10 @@
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <div class="mobile-nav-links">
+    <a href="/">Home <em>01</em></a>
+    {% for item in hc.navbar.list %}
+    <a href="{{ item.url }}">{{ item.name }} <em>{{ item.name }}</em></a>
+    {% endfor %}
+    <a href="{{ hc.navbar.button.url }}" target="_blank">{{ hc.navbar.button.text }} <em>Gumroad</em></a>
+  </div>
+  <div class="mobile-foot"><span>{{ hc.copyrigths }}</span><span>Premium - Fast - Own 100%</span></div>
+</nav>

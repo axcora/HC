@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="eRpkEiy_Cc4mURA9jLzEUYlbxyRRcucHIenwcOZ0jc8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% if seo %}
+{{ seo_tags }}
+{% else %}
+{% include seos.cax %}
+{% endif %}
+{% include styles.cax %}
+</head>
+<body>
+{{ content }}
+<footer class="footer"><span>© <span id="year"></span> {{ hc.footer.copyrigths }}</span><span>{{ hc.footer.copyrigths2 }}</span></footer>
+{% include app.cax %}
+</body>
+</html>

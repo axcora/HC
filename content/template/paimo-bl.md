@@ -1,0 +1,24 @@
+﻿---
+title: Simple clean website themes PAIMO
+description: Features
+image: https://wsrv.nl/?url=https%3A%2F%2Fpublic-files.gumroad.com%2F7t96jw5dtxk9dawuqg7ui0p1shgb&w=1200&output=webp&q=85&af=
+image_raw: https://public-files.gumroad.com/7t96jw5dtxk9dawuqg7ui0p1shgb
+download: https://creativitaz.gumroad.com/l/paimo-bl
+price: Free
+price_cents: 0
+sales: 2
+tags:
+ - themes
+ - template
+ - website
+ - web design
+ - website template
+ - website design
+ - web development
+layout: template-detil.cax
+date: 2026-09-25
+updated: 
+---
+
+<p>Paimo is a simple and clean website template themes.</p><div class=tiptap__raw><div><div style=left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;><iframe src=//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DtTFQmT1QCLk&amp;key=31708e31359468f73bc5b03e9dcab7da style=top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0; allowfullscreen= scrolling=no allow=accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;></iframe></div></div></div><p><br></p><p>Develope with bludit flatfile cms, make easy for update website and content on backend admin panel.</p><p>No Database , make your website super fast !!</p><p>Just download source code and upload on your project, then run installation, and your website is live !!</p><p>Get Start with paimo project now</p><p><br></p>
+

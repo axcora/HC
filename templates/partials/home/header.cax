@@ -1,0 +1,10 @@
+<header class="header">
+  <a href="/" class="logo"><span class="logo-mark">{{ hc.navbar.logo }}</span><span>{{ hc.navbar.title }}</span></a>
+  <nav class="nav">
+    {% for item in hc.navbar.list %}
+    <a href="{{ item.url }}">{{ item.name }}</a>
+    {% endfor %}
+  </nav>
+  <a href="{{ hc.navbar.button.url }}" class="btn btn-accent" target="_blank">{{ hc.navbar.button.text }}</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span></button>
+</header>

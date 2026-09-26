@@ -1,0 +1,26 @@
+---
+layout: base.cax
+---
+<div class="overlay" id="overlay"></div>
+<header class="header"><a href="/" class="logo"><span class="logo-mark">{{ hc.navbar.logo }}</span><span>{{ hc.navbar.title }}</span></a><nav class="nav">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }}</a>{% endfor %}</nav><a href="{{ hc.navbar.button.url }}" class="btn btn-accent" target="_blank">{{ hc.navbar.button.text }}</a><button class="hamburger" id="hamburger"><span></span></button></header>
+<nav class="mobile-nav" id="mobileNav"><div class="mobile-nav-links">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }} <em> {{item.no}} </em></a>{% endfor %}<a href="{{ hc.navbar.button.url }}" target="_blank">{{ hc.navbar.button.text }} <em>{{ hc.navbar.list | length + 1 }}</em></a></div><div class="mobile-foot"><span>© 2026 {{ hc.navbar.title }}</span><span>Premium Themes That Convert</span></div></nav>
+
+<section class="section">
+<div class="head"><h1 class="huge display">#{{ tag_name }}<br><em>Filter Tag</em></h1><input id="q" class="input" placeholder="FILTER: ASTRO, COMMERCE..." aria-label="Filter"></div>
+<div class="grid-themes">
+{% for post in posts %}
+<a href="{{ post.url }}" class="tag">
+<h3 class="name display">{{ post.title }}<br/><span>{{ post.description }}</span></h3>
+</a>
+{% endfor %}
+</div>
+</section>
+
+<script>
+document.getElementById('q').addEventListener('input', function(e){
+ var q = e.target.value.toLowerCase();
+ document.querySelectorAll('.grid-themes .tag').forEach(function(c){ c.style.display = c.innerText.toLowerCase().includes(q) ? '' : 'none'; });
+});
+var ham=document.getElementById('hamburger'); var nav=document.getElementById('mobileNav'); var over=document.getElementById('overlay');
+if(ham){ham.addEventListener('click',()=>{nav.classList.toggle('active'); over.classList.toggle('active')})}
+</script>
