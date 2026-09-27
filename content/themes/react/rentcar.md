@@ -1,5 +1,5 @@
 ---
-
+layout: themes-detil.cax
 title: React Web Themes Rent Car
 description: React Car is a modern book website for your rent car and limousine services, integration with headless decap cms to make easier for you update your website quickly.
 image: react/reactcar_nxidee.webp
