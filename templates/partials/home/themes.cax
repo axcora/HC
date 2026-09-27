@@ -15,7 +15,8 @@
     {% for theme in featured_themes | limit(12) %}
       <a href="{{ theme.url }}" class="card">
         <h3 class="name display">{{ theme.title }}<br><span>{{ theme.description }}</span></h3>
-        <div class="thumb"><div class="thumb-inner"><img src="https://res.cloudinary.com/hockeycorp/image/upload/w_500/q_auto:low/f_avif/v1699871939/website%20design/{{ theme.image or hc.cover }}" loading="lazy" width="100%" height="100%"/></div></div>        <!--<div class="meta-tags">
+        <div class="thumb"><div class="thumb-inner"><img src="https://res.cloudinary.com/hockeycorp/image/upload/w_500/q_auto:low/f_avif/v1699871939/website%20design/{{ theme.image or hc.cover }}" alt="{{ theme.title }}" loading="lazy" width="100%" height="100%"/></div></div>
+        <!--<div class="meta-tags">
           {% for tag in theme.tags | limit(2) %}
             <span class="tag">{{ tag }}</span>
           {% endfor %}

@@ -12,7 +12,9 @@
 {% include styles.cax %}
 </head>
 <body>
+<main>
 {{ content }}
+</main>
 <footer class="footer"><span>© <span id="year"></span> {{ hc.footer.copyrigths }}</span><span>{{ hc.footer.copyrigths2 }}</span></footer>
 {% include app.cax %}
 </body>

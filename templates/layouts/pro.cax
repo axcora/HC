@@ -10,7 +10,7 @@ layout: base.cax
 {% for post in collections.themes | by:premiumthemes %}
 <a href="{{ post.url }}" class="card">
 <h3 class="name display">{{ post.title }}<br><span>{{ post.description }}</span></h3>
-<div class="thumb"><img src="https://res.cloudinary.com/hockeycorp/image/upload/w_500/q_auto:low/f_avif/v1699871939/website%20design/{{post.image or hc.cover}}" alt="{{ post.title }}" loading="lazy" style="width:100%;height:220px;object-fit:cover;"></div>
+<div class="thumb"><img src="https://res.cloudinary.com/hockeycorp/image/upload/w_500/q_auto:low/f_avif/v1699871939/website%20design/{{post.image or hc.cover}}" alt="{{ post.title }}" loading="lazy" class="coveris"></div>
 </a>
 {% endfor %}
 </div>

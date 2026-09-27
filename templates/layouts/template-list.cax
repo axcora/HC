@@ -10,7 +10,7 @@ layout: base.cax
 {% for post in pagination.items %}
 <a href="{{ post.url }}" class="card">
 <h3 class="name display">{{ post.title }}<br><span>{{ post.description }}</span></h3>
-<div class="thumb"><img src="{{ post.image or hc.thumb }}" alt="{{ post.title }}" loading="lazy" style="width:100%;height:220px;object-fit:cover"></div>
+<div class="thumb"><img src="{{ post.image or hc.thumb }}" alt="{{ post.title }}" loading="lazy" class="coveris"></div>
 <div class="meta-tags">{% for tag in post.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</div>
 <div class="price-row"><span class="mono">From</span><b>${{ post.price }}</b></div>
 </a>
