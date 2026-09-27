@@ -12,7 +12,19 @@
 </div>
   </div>
   <div class="grid-themes">
-    {% for theme in featured_themes | limit(12) %}
+  <a href="{{ hc.widget.url }}" class="card" target="_blank" rel="noopener">
+  <h2 class="name display">{{ hc.widget.title }}<br><span>{{ hc.widget.text }}</span></h2>
+  <div class="thumb">
+    <img src="https://res.cloudinary.com/hockeycorp/image/upload/w_334/q_auto:low/f_avif/v1699871939/website%20design/{{ hc.cover }}" alt="{{ hc.widget.title }}" class="coveris" width="334" height="251" decoding="async" loading="eager" fetchpriority="high">
+  </div>
+  <div class="meta-tags">
+    <span class="tag">{{ hc.widget.tag1 }}</span>
+    <span class="tag">{{ hc.widget.tag2 }}</span>
+    <span class="tag">{{ hc.widget.tag3 }}</span>
+  </div>
+  <div class="price-row"><span class="mono">{{ hc.widget.label }}</span><b>{{ hc.widget.price }}</b></div>
+</a>
+    {% for theme in featured_themes | limit(11) %}
       <a href="{{ theme.url }}" class="card">
         <h3 class="name display">{{ theme.title }}<br><span>{{ theme.description }}</span></h3>
         <div class="thumb"><div class="thumb-inner"><img src="https://res.cloudinary.com/hockeycorp/image/upload/w_334/q_auto:low/f_avif/v1699871939/website%20design/{{ theme.image or hc.cover }}" alt="{{ theme.title }}" loading="lazy" 

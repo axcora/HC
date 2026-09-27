@@ -2,11 +2,25 @@
 layout: base.cax
 ---
 <div class="overlay" id="overlay"></div>
-<header class="header"><a href="/" class="logo"><span class="logo-mark">{{ hc.navbar.logo }}</span><span>{{ hc.navbar.title }}</span></a><nav class="nav">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }}</a>{% endfor %}</nav><a href="{{ hc.navbar.button.url }}" class="btn btn-accent" target="_blank">{{ hc.navbar.button.text }}</a><button class="hamburger" id="hamburger"><span></span></button></header>
+<header class="header"><a href="/" class="logo"><span class="logo-mark">{{ hc.navbar.logo }}</span><span>{{ hc.navbar.title }}</span></a><nav class="nav">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }}</a>{% endfor %}</nav><a href="{{ hc.navbar.button.url }}" class="btn btn-accent" target="_blank">{{ hc.navbar.button.text }}</a><button class="hamburger" id="hamburger"  aria-label="Open menu"><span></span></button></header>
 <nav class="mobile-nav" id="mobileNav"><div class="mobile-nav-links">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }} <em> {{item.no}} </em></a>{% endfor %}<a href="{{ hc.navbar.button.url }}" target="_blank">{{ hc.navbar.button.text }} <em>{{ hc.navbar.list | length + 1 }}</em></a></div><div class="mobile-foot"><span>© 2026 {{ hc.navbar.title }}</span><span>Premium Themes That Convert</span></div></nav>
 <section class="section">
-<div class="head"><h1 class="huge display">{{ title }}<br><em>{{ description }} drops</em></h1></div>
+<div class="head"><h1 class="huge display">{{ title }}<br><em>{{ description }} drops</em></h1>
+<input id="q" class="input" placeholder="FILTER: ASTRO, COMMERCE..." aria-label="Filter">
+</div>
 <div class="grid-themes">
+<a href="{{ hc.widget.url }}" class="card" target="_blank" rel="noopener">
+  <h2 class="name display">{{ hc.widget.title }}<br><span>{{ hc.widget.text }}</span></h2>
+  <div class="thumb">
+    <img src="https://res.cloudinary.com/hockeycorp/image/upload/w_334/q_auto:low/f_avif/v1699871939/website%20design/{{ hc.cover }}" alt="{{ hc.widget.title }}" class="coveris" width="334" height="251" decoding="async" loading="eager" fetchpriority="high">
+  </div>
+  <div class="meta-tags">
+    <span class="tag">{{ hc.widget.tag1 }}</span>
+    <span class="tag">{{ hc.widget.tag2 }}</span>
+    <span class="tag">{{ hc.widget.tag3 }}</span>
+  </div>
+  <div class="price-row"><span class="mono">{{ hc.widget.label }}</span><b>{{ hc.widget.price }}</b></div>
+</a>
 {% for post in collections.themes | by:premiumthemes %}
 <a href="{{ post.url }}" class="card">
 <h3 class="name display">{{ post.title }}<br><span>{{ post.description }}</span></h3>
@@ -15,3 +29,42 @@ layout: base.cax
 {% endfor %}
 </div>
 </section>
+<script>
+(function () {
+  var input = document.getElementById('q');
+  var grid  = document.querySelector('.grid-themes');
+  if (!input || !grid) return;
+
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
+  var data = cards.map(function (card) {
+    return {
+      el: card,
+      text: (card.textContent || '').toLowerCase()
+    };
+  });
+
+  function filter() {
+    var q = input.value.trim().toLowerCase();
+    var shown = 0;
+
+    data.forEach(function (item) {
+      var match = !q || item.text.indexOf(q) !== -1;
+      item.el.style.display = match ? '' : 'none';
+      if (match) shown++;
+    });
+    var empty = document.getElementById('empty-state');
+    if (empty) empty.style.display = shown === 0 ? 'block' : 'none';
+  }
+  var t;
+  input.addEventListener('input', function () {
+    clearTimeout(t);
+    t = setTimeout(filter, 120);
+  });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      input.value = '';
+      filter();
+    }
+  });
+})();
+</script>

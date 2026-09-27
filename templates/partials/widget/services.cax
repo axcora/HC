@@ -7,7 +7,7 @@
     {% for svc in hc.services.list | limit(3) %}
     <a class="svc" href="{{ svc.button.url }}" target="_blank">
       <small>{{ svc.info }}</small>
-      <h4>{{ svc.title }}</h4>
+      <h3>{{ svc.title }}</h3>
       <p>{{ svc.description }}</p>
       <span class="btn btn-paper">{{ svc.button.text }} -></span>
     </a>

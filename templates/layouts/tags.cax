@@ -4,11 +4,23 @@ title: All Tags Collections
 description: Explore All Tags
 ---
 <div class="overlay" id="overlay"></div>
-<header class="header"><a href="/" class="logo"><span class="logo-mark">{{ hc.navbar.logo }}</span><span>{{ hc.navbar.title }}</span></a><nav class="nav">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }}</a>{% endfor %}</nav><a href="{{ hc.navbar.button.url }}" class="btn btn-accent" target="_blank">{{ hc.navbar.button.text }}</a><button class="hamburger" id="hamburger"><span></span></button></header>
+<header class="header"><a href="/" class="logo"><span class="logo-mark">{{ hc.navbar.logo }}</span><span>{{ hc.navbar.title }}</span></a><nav class="nav">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }}</a>{% endfor %}</nav><a href="{{ hc.navbar.button.url }}" class="btn btn-accent" target="_blank">{{ hc.navbar.button.text }}</a><button class="hamburger" id="hamburger" aria-label="Open menu"><span></span></button></header>
 <nav class="mobile-nav" id="mobileNav"><div class="mobile-nav-links">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }} <em> {{item.no}} </em></a>{% endfor %}<a href="{{ hc.navbar.button.url }}" target="_blank">{{ hc.navbar.button.text }} <em>{{ hc.navbar.list | length + 1 }}</em></a></div><div class="mobile-foot"><span>© 2026 {{ hc.navbar.title }}</span><span>Premium Themes That Convert</span></div></nav>
 <section class="section">
 <div class="head"><h1 class="huge display">{{ title }}<br><em>{{ description }}</em></h1><input id="q" class="input" placeholder="FILTER: ASTRO, COMMERCE..." aria-label="Filter"></div>
 <div class="stack-buttons" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;">
+<a href="{{ hc.widget.url }}" class="card" target="_blank" rel="noopener">
+  <h2 class="name display">{{ hc.widget.title }}<br><span>{{ hc.widget.text }}</span></h2>
+  <div class="thumb">
+    <img src="https://res.cloudinary.com/hockeycorp/image/upload/w_334/q_auto:low/f_avif/v1699871939/website%20design/{{ hc.cover }}" alt="{{ hc.widget.title }}" class="coveris" width="334" height="251" decoding="async" loading="eager" fetchpriority="high">
+  </div>
+  <div class="meta-tags">
+    <span class="tag">{{ hc.widget.tag1 }}</span>
+    <span class="tag">{{ hc.widget.tag2 }}</span>
+    <span class="tag">{{ hc.widget.tag3 }}</span>
+  </div>
+  <div class="price-row"><span class="mono">{{ hc.widget.label }}</span><b>{{ hc.widget.price }}</b></div>
+</a>
 {% for tag in tags %}
 <a href="/tags/{{ tag.name }}/" class="tag">
 <h3 class="name display">#{{ tag.name }}<br><span>{{ tag.name }}</span></h3>

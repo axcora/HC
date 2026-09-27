@@ -16,9 +16,7 @@
     <meta name="twitter:description" content="{{ description or hc.description }}">
     <meta name="twitter:image" content="{{ hc.url }}{{ hc.image }}">
 <link rel="canonical" href="{{ hc.url }}{{ url }}">
-<link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/bebasneue/v16/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2">
+<link rel="preconnect" href="https://res.cloudinary.com">
 {% if pagination.prev_url %}<link rel="prev" href="{{ hc.url }}{{ pagination.prev_url }}">{% endif %}
 {% if pagination.next_url %}<link rel="next" href="{{ hc.url }}{{ pagination.next_url }}">{% endif %}
 <meta name="generator" content="CAX SSG - Static Site Generator in C">

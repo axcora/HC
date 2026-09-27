@@ -6,6 +6,7 @@ thumb: "https://www.hockeycomputindo.com/favicon.png"
 cover: "creative_by_dre_oh_github_v5jpw0.png"
 url: "https://www.hockeycomputindo.com"
 author: "HockeyComputindo"
+
 navbar: 
   logo: "H"
   title: "HC"
@@ -177,6 +178,18 @@ footer:
       - button: "Multi Stack"
   copyrigths: "2026 HockeyComputindo - Multi Stack Themes"
   copyrigths2: "Trusted - Fast - One-Time - Global Delivery"
+
+widget:
+  title: Custom Web Architecture
+  text: Jekyll · 11ty · Astro · MultiStack — High Performance, Own 100%
+  image: NAMA_GAMBAR.avif
+  tag1: Fiverr
+  tag2: Jamstack
+  tag3: SSG
+  label: Escrow Protected
+  price: Custom
+  url: https://www.fiverr.com/creativitas/design-your-modern-website-using-jekyll
+  button: Hire on Fiverr
 
 stacks:
   - name: All Themes

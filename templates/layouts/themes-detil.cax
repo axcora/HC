@@ -5,7 +5,7 @@ layout: base.cax
 .detail-wrap{display:flex;flex-direction:column;gap:24px}.detail-left{width:100%;min-width:0}.detail-right{width:100%}
 .media-box img{width:100%;height:auto;display:block;aspect-ratio:800/600}
 .tabs{display:flex;padding:5px;gap:8px;overflow-x:auto;white-space:nowrap;padding-bottom:8px;-webkit-overflow-scrolling:touch}
-.tabs button{flex-shrink:0;padding:10px 16px;border-radius:8px;border:1px solid #000;background:#fff;color:#000}
+.tabs button{flex-shrink:0;padding:10px 16px;min-height:44px;border-radius:8px;border:1px solid #000;background:#fff;color:#000}
 .tabs button.active{background:#000;color:#fff}
 .panel{display:none;width:100%;content-visibility:auto;contain-intrinsic-size:0 500px}
 .panel.active{display:block}
@@ -29,6 +29,15 @@ code{background:#000;color:#fff;padding:2px 6px;border-radius:4px}
 .demo-box iframe,.demo-box video{width:100%;height:100%;border:0;display:block}
 @media(max-width:768px){.demo-box{aspect-ratio:auto;height:480px}}
 @media(min-width:1024px){.detail-wrap{flex-direction:row;align-items:flex-start}.detail-left{flex:1;min-width:0}.detail-right{width:380px;position:sticky;top:84px;height:fit-content}}
+.kv-list{width:100%;box-sizing:border-box}
+.kv-list .kv{width:100%;margin-bottom:12px}
+.kv-list dl{margin:0}
+.kv-list dt{font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
+.kv-list dd{margin:0;word-break:break-all}
+.link-inline{display:inline-block;padding:8px 12px;min-height:44px;line-height:1.4;word-break:break-all}
+.meta-tags{display:flex;flex-wrap:wrap;gap:8px}
+.meta-tags .tag{display:inline-flex;align-items:center;min-height:44px;padding:10px 14px;font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:6px}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px}
 </style>
 <div class="overlay" id="overlay"></div>
 <header class="header"><a href="/" class="logo"><span class="logo-mark">{{ hc.navbar.logo }}</span><span>{{ hc.navbar.title }}</span></a>
@@ -36,25 +45,26 @@ code{background:#000;color:#fff;padding:2px 6px;border-radius:4px}
 <a href="{{ download }}" class="btn btn-accent" target="_blank">{{hc.navbar.themes.button}}</a><button class="hamburger" id="hamburger" aria-label="Menu"><span></span></button></header>
 <nav class="mobile-nav" id="mobileNav"><div class="mobile-nav-links">{% for n in hc.navbar.list %}<a href="{{n.url}}">{{n.name}} <em>{{n.no}}</em></a>{% endfor %}<a href="{{ download }}" target="_blank">{{hc.navbar.themes.button}} <em>Code</em></a></div><div class="mobile-foot"><span>© 2026 {{ hc.navbar.title }}</span><span>Premium and Free Themes Template</span></div></nav>
 <section class="section"><div class="detail-wrap"><div class="detail-left">
-<p class="mono" style="word-break:break-all">{% for tag in tags %}{{ tag }} • {% endfor %}</p>
 <h1 class="display mt-12" style="word-break:break-word">{{ title }}<br><em class="serif" style="display:block;font-size:0.6em;line-height:1.3">{{ description }}</em></h1>
-
+<p class="mono" style="word-break:break-all">{% for tag in tags %}<a href="/tags/{{ tag }}">{{ tag }}</a> • {% endfor %}</p>
 <div class="media-box mt-16"><img class="img-fluid p-3 brun sc" alt="{{ description }}" width="800" height="600" src="https://res.cloudinary.com/hockeycorp/image/upload/w_800/q_auto:low/f_avif/v1699871939/website%20design/{{ image }}" decoding="async" fetchpriority="high"></div>
 
 <div class="demo-box" data-demo="{{ demo }}"></div>
 
 <div class="tabs mt-20" id="tabs"><button class="active" data-tab="f">Features</button><button data-tab="s">Share</button><button data-tab="l">License</button></div>
 
-<div class="panel active" data-panel="f">{% if toc %}<div class="p-3"><div class="card p-3"><h3>Table Of Content</h3>{{toc}}</div></div>{% endif %}<h3>{{ title }}</h3><div class="mt-16" style="word-break:break-word">{{ content }}</div></div>
+<div class="panel active" data-panel="f">{% if toc %}<div class="p-3"><div class="card p-3"><h2>Table Of Content</h2>{{toc}}</div></div>{% endif %}<h3>{{ title }}</h3><div class="mt-16" style="word-break:break-word">{{ content }}</div></div>
 
 <div class="panel" data-panel="s">
 <p>URL: {{hc.url}}{{url}}</p><input type="text" id="copyUrl" value="{{hc.url}}{{url}}" readonly class="form-control" style="padding:12px;background:#111;color:#fff;border:1px solid #555;border-radius:8px"><button onclick="copyUrl()" class="btn btn-accent w-full mt-12" style="color:#fff;width:100%;padding:12px;border-radius:8px">Copy URL</button>
 <p class="mt-16">Embed — Cloudinary</p><input type="text" id="copyEmbed" value="<a href='{{hc.url}}{{url}}'><img src='https://res.cloudinary.com/hockeycorp/image/upload/w_800/q_auto:low/f_avif/v1699871939/website%20design/{{image}}' alt='{{ title }}'></a>" readonly class="form-control" style="padding:12px;background:#111;color:#fff;border:1px solid #555;border-radius:8px"><button onclick="copyEmbed()" class="btn btn-accent w-full mt-12" style="color:#fff;width:100%;padding:12px;border-radius:8px">Copy Embed</button>
 <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px"><a href="https://www.facebook.com/sharer/sharer.php?u={{hc.url}}{{url}}" target="_blank" style="flex:1 1 100px;background:#000;color:#fff;padding:12px;text-align:center;border-radius:8px;text-decoration:none;border:1px solid #fff">Facebook</a><a href="https://twitter.com/intent/tweet?text={{ title }}&url={{hc.url}}{{url}}" target="_blank" style="flex:1 1 100px;background:#000;color:#fff;padding:12px;text-align:center;border-radius:8px;text-decoration:none;border:1px solid #fff">Twitter</a><a href="https://api.whatsapp.com/send?text={{hc.url}}{{url}}" target="_blank" style="flex:1 1 100px;background:#000;color:#fff;padding:12px;text-align:center;border-radius:8px;text-decoration:none;border:1px solid #fff">WhatsApp</a></div>
 </div>
-<div class="panel" data-panel="l"><p><strong>{{ title }}</strong></p><p style="word-break:break-all">{{hc.url}}{{url}}</p><a href="{{ download }}" class="btn btn-accent w-full mt-12" target="_blank" style="display:block;text-align:center;padding:14px;border-radius:8px">GET NOW →</a></div>
+<div class="panel" data-panel="l"><p><strong>{{ title }}</strong></p><p style="word-break:break-all">{{hc.url}}{{url}}</p><a href="{{ download }}" class="btn btn-accent w-full mt-12" target="_blank" style="display:block;text-align:center;padding:14px;border-radius:8px">DOWNLOAD →</a></div>
 </div>
-<div class="detail-right"><div class="card" style="width:100%;box-sizing:border-box"><p class="mono">Own 100%</p><b class="display" style="font-size:20px;word-break:break-word">{{ title }}</b><p class="hint" style="word-break:break-word">{{ description }}</p><a href="{{ download }}" class="btn btn-accent w-full mt-12" target="_blank" style="display:block;text-align:center;padding:14px;border-radius:8px">DOWNLOAD →</a><a href="{{ demo }}" class="btn btn-paper w-full mt-12" target="_blank" style="display:block;text-align:center;padding:14px;border-radius:8px;border:1px solid #000;margin-top:12px">DEMO →</a><div class="kv-list mt-16"><div class="kv"><dt>Features</dt><dd>{% for feature in features %}{{ feature }}<br/>{% endfor %}</dd></div><div class="kv"><dt>Url</dt><dd>{{ hc.url }}{{ url }}</dd></div><div class="kv"><dt>Demo</dt><dd><a href="{{ demo }}" target="_blank">{{ demo }}</a></dd></div></div><hr/><p class="mono">{% if prev_link %}<span class="btn btn-paper w-full mt-12">{{ prev_link }}</span>{% endif %}{% if next_link %}<span class="btn btn-paper w-full mt-12">{{ next_link }}</span>{% endif %}</p><p class="mono">Need Custom?</p><h4 class="display">Hire via Fiverr Escrow</h4><p class="hint">72+ verified reviews, escrow protected.</p><a href="https://www.fiverr.com/creativitas/create-your-custom-website-and-app" target="_blank" class="btn w-full mt-12">ORDER CUSTOM →</a><p class="mono mt-12">{% for t in tags %}<a href="/tags/{{t}}">{{t}}</a> {% endfor %}</p></div></div></div></section>
+<div class="detail-right"><div class="card" style="width:100%;box-sizing:border-box"><p class="mono">Own 100%</p><b class="display" style="font-size:20px;word-break:break-word">{{ title }}</b><p class="hint" style="word-break:break-word">{{ description }}</p><a href="{{ download }}" class="btn btn-accent w-full mt-12" target="_blank" style="display:block;text-align:center;padding:14px;border-radius:8px">DOWNLOAD →</a><a href="{{ demo }}" class="btn btn-paper w-full mt-12" target="_blank" style="display:block;text-align:center;padding:14px;border-radius:8px;border:1px solid #000;margin-top:12px">DEMO →</a>
+<div class="kv-list mt-16"><div class="kv"><p>Features</p><p class="mono">{% for feature in features %}{{ feature }}<br/>{% endfor %}</p></div><p class="mono"><a href="{{ demo }}" target="_blank" class="link-inline">{{ demo }}</a></p></div><hr/><p class="mono">{% if prev_link %}<span class="btn btn-paper w-full mt-12">{{ prev_link }}</span>{% endif %}{% if next_link %}<span class="btn btn-paper w-full mt-12">{{ next_link }}</span>{% endif %}</p><p class="mono">Need Custom?</p><h2 class="display">Hire via Fiverr Escrow</h2><p class="hint">72+ verified reviews, escrow protected.</p><a href="https://www.fiverr.com/creativitas/create-your-custom-website-and-app" target="_blank" class="btn w-full mt-12">ORDER CUSTOM →</a><div class="meta-tags mt-12">{% for t in tags %}<a href="/tags/{{t}}" class="tag">{{t}}</a>{% endfor %}</div>
+</div></section>
 <div id="toast" style="position:fixed;bottom:20px;left:10px;right:10px;background:#000;color:#fff;padding:14px;border-radius:10px;display:none;z-index:9999;border:1px solid #fff;text-align:center"></div>
 {% include widget/featured.cax %}
 {% include widget/services.cax %}
@@ -73,8 +83,8 @@ function copyEmbed(){navigator.clipboard.writeText(document.getElementById('copy
   if(!id && /^[A-Za-z0-9_-]{11}$/.test(url)) id = url;
 
   if(id){
-    inner.innerHTML=`<div class="lite-yt"><img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" loading="lazy"><button class="lty-play"></button></div>`;
-    inner.firstChild.onclick=()=>inner.innerHTML=`<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" allowfullscreen></iframe>`;
+    inner.innerHTML=`<div class="lite-yt"><img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" title="{{title}}" loading="lazy"><button class="lty-play" aria-label="Play Video {{title}}"></button></div>`;
+    inner.firstChild.onclick=()=>inner.innerHTML=`<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" title="{{title}}" allowfullscreen></iframe>`;
   }else if(/\.(mp4|webm)(\?|$)/.test(url)){
     inner.innerHTML=`<video src="${url}" controls muted loop playsinline></video>`;
   }else{

@@ -2,21 +2,34 @@
 layout: base.cax
 ---
 <div class="overlay" id="overlay"></div>
-<header class="header"><a href="/" class="logo"><span class="logo-mark">{{ hc.navbar.logo }}</span><span>{{ hc.navbar.title }}</span></a><nav class="nav">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }}</a>{% endfor %}</nav><a href="{{ hc.navbar.button.url }}" class="btn btn-accent" target="_blank">{{ hc.navbar.button.text }}</a><button class="hamburger" id="hamburger"><span></span></button></header>
+<header class="header"><a href="/" class="logo"><span class="logo-mark">{{ hc.navbar.logo }}</span><span>{{ hc.navbar.title }}</span></a><nav class="nav">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }}</a>{% endfor %}</nav><a href="{{ hc.navbar.button.url }}" class="btn btn-accent" target="_blank">{{ hc.navbar.button.text }}</a><button class="hamburger" id="hamburger" aria-label="Open menu"><span></span></button></header>
 <nav class="mobile-nav" id="mobileNav"><div class="mobile-nav-links">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }} <em> {{item.no}} </em></a>{% endfor %}<a href="{{ hc.navbar.button.url }}" target="_blank">{{ hc.navbar.button.text }} <em>{{ hc.navbar.list | length + 1 }}</em></a></div><div class="mobile-foot"><span>© 2026 {{ hc.navbar.title }}</span><span>Premium Themes That Convert</span></div></nav>
 <section class="section"><div class="head"><h1 class="huge display">ALL THEMES<br><em>{{ pagination.total_items }} Free and Premium Drops</em></h1><input id="q" class="input" placeholder="FILTER: ASTRO, COMMERCE..." aria-label="Filter"></div>
 <div class="grid-themes" id="grid">
+<a href="{{ hc.widget.url }}" class="card" target="_blank" rel="noopener">
+  <h2 class="name display">{{ hc.widget.title }}<br><span>{{ hc.widget.text }}</span></h2>
+  <div class="thumb">
+    <img src="https://res.cloudinary.com/hockeycorp/image/upload/w_334/q_auto:low/f_avif/v1699871939/website%20design/{{ hc.cover }}" alt="{{ hc.widget.title }}" class="coveris" width="334" height="251" decoding="async" loading="eager" fetchpriority="high">
+  </div>
+  <div class="meta-tags">
+    <span class="tag">{{ hc.widget.tag1 }}</span>
+    <span class="tag">{{ hc.widget.tag2 }}</span>
+    <span class="tag">{{ hc.widget.tag3 }}</span>
+  </div>
+  <div class="price-row"><span class="mono">{{ hc.widget.label }}</span><b>{{ hc.widget.price }}</b></div>
+</a>
 {% for post in pagination.items %}
 <a href="{{ post.url }}" class="card">
-<h3 class="name display">{{ post.title }}<br><span>{{ post.description }}</span></h3>
-<div class="thumb"><img src="https://res.cloudinary.com/hockeycorp/image/upload/w_500/q_auto:low/f_avif/v1699871939/website%20design/{{post.image or hc.cover}}" alt="{{ post.title }}" loading="lazy" class="coveris"></div>
+<h2 class="name display">{{ post.title }}<br><span>{{ post.description }}</span></h2>
+<div class="thumb">
+<img src="https://res.cloudinary.com/hockeycorp/image/upload/w_334/q_auto:low/f_avif/v1699871939/website%20design/{{ post.image or hc.cover }}" alt="{{ post.title }}" class="coveris" width="334" height="251" decoding="async" loading="lazy">
+</div>
 <div class="meta-tags">{% for tag in post.tags | limit(3) %}<span class="tag">{{ tag }}</span>{% endfor %}</div>
 </a>
 {% endfor %}
 </div>
 <div class="pag">
 {% if pagination.prev_url %}<a href="{{ pagination.prev_url }}">← PREV</a>{% endif %}
-<a class="active" data-page>{{ pagination.current_page }} / {{ pagination.total_pages }}</a>
 {% if pagination.next_url %}<a href="{{ pagination.next_url }}">NEXT →</a>{% endif %}
 </div>
 </section>
