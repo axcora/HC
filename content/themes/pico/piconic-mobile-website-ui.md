@@ -79,6 +79,4 @@ Folder location Content
 
 Open content folder, and you can create new static content or create new article in article folder. create new markdown file, and follow fontformatter and write your post with markdown lang.
 
--------------------------------
-
 For information detail about documentation you can open documentation in order page.
