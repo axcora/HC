@@ -20,7 +20,7 @@
 <link rel="dns-prefetch" href="https://res.cloudinary.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
 {% if pagination.prev_url %}<link rel="prev" href="{{ hc.url }}{{ pagination.prev_url }}">{% endif %}
 {% if pagination.next_url %}<link rel="next" href="{{ hc.url }}{{ pagination.next_url }}">{% endif %}
