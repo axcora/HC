@@ -18,10 +18,9 @@
 <link rel="canonical" href="{{ hc.url }}{{ url }}">
 <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
 <link rel="dns-prefetch" href="https://res.cloudinary.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/bebasneue/v16/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/syne/v24/8vIH7w4qzmVxm2BL9A.woff2">
 {% if pagination.prev_url %}<link rel="prev" href="{{ hc.url }}{{ pagination.prev_url }}">{% endif %}
 {% if pagination.next_url %}<link rel="next" href="{{ hc.url }}{{ pagination.next_url }}">{% endif %}
 <meta name="generator" content="CAX SSG - Static Site Generator in C">
