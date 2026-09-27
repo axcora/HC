@@ -69,7 +69,7 @@ We don't just sell themes. We build.
 - AI content automation for blogs
 - Chatbot for SaaS
 
-Contact: **hello@hockeycomputindo.com** or [hockeycomputindo.com](https://hockeycomputindo.com)
+Contact: **axcora@gmail.com** or [hockeycomputindo.com](https://hockeycomputindo.com)
 
 ## 📄 License
 
