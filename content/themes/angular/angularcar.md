@@ -29,7 +29,6 @@ tags:
   - angularthemes
   - jamstackthemes
   - premiumthemes
-  - featured
 date: 2025-01-22
 ---
 ### [Angular Webapp + Booking Form + Decap Headless CMS]({{page.url}})

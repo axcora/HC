@@ -31,7 +31,6 @@ tags:
   - flatfile cms
   - pico
   - picothemes
-  - featuredthemes
   - freethemes
 ---
 Clean and modern website design for your modern website.Work with markdown modern era website themes template.

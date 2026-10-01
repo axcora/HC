@@ -32,7 +32,6 @@ tags:
   - flatfile cms
   - bludit
   - bluditthemes
-  - featuredthemes
   - freethemes
 ---
 ### How to install

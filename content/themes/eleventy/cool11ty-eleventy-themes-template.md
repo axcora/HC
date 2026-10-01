@@ -28,7 +28,6 @@ tags:
   - themes
   - template
   - eleventythemes
-  - featuredthemes
   - jamstackthemes
   - freethemes
 ---

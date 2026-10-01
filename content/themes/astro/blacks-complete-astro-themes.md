@@ -38,7 +38,6 @@ tags:
   - featuredpremium
   - jamstackthemes
   - premiumthemes
-  - featured
 ---
 
 ### Blacks Astro JS Photography ART Themes

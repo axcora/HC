@@ -27,7 +27,6 @@ tags:
   - blog
   - jekyll
   - jekyllthemes
-  - featuredthemes
   - jamstackthemes
   - freethemes
 ---

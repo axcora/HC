@@ -34,6 +34,7 @@ tags:
   - bluditthemes
   - featuredpremium
   - premiumthemes
+  - featuredthemes
 ---
 ### About Text-X Pro
 

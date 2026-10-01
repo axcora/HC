@@ -28,7 +28,6 @@ tags:
   - astrothemes
   - jamstackthemes
   - premiumthemes
-  - featured
 ---
 ## Docuna Astro Starlight project
 

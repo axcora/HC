@@ -42,6 +42,7 @@ tags:
   - featuredpremium
   - jamstackthemes
   - premiumthemes
+  - featuredthemes
 ---
 ## New jekyll JAMSTACK themes template  - Cubber futuristic concept
 

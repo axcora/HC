@@ -26,7 +26,6 @@ tags:
   - template
   - laravelthemes
   - phpthemes
-  - featuredthemes
   - freethemes
 ---
 

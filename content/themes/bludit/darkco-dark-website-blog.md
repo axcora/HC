@@ -33,6 +33,7 @@ tags:
   - bluditthemes
   - featuredpremium
   - premiumthemes
+  - featuredthemes
 ---
 
 ### DARKCO Dark Modern Website

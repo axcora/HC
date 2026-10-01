@@ -35,6 +35,7 @@ tags:
   - jamstackthemes
   - premiumthemes
   - featured
+  - featuredthemes
 ---
 
 ### Astro JS Rent Car Themes

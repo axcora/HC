@@ -23,7 +23,6 @@ tags:
   - landing page
   - template
   - blazorthemes
-  - featuredthemes
   - jamstackthemes
   - freethemes
 ---
