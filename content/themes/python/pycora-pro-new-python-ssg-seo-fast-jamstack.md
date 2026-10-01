@@ -37,7 +37,9 @@ tags:
   - decapcms
   - headlesscms
   - jamstack
+  - jamstackthemes
   - featuredthemes
+  - premiumthemes
   - featured
   - pycora
   - axcora
