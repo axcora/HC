@@ -30,7 +30,6 @@ tags:
   - template
   - pythonssg
   - freethemes
-  - featuredthemes
   - pythonthemes
 date: 2026-08-07
 ---

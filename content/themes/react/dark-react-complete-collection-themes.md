@@ -23,7 +23,6 @@ tags:
   - themes
   - template
   - reactthemes
-  - featuredthemes
   - jamstackthemes
   - freethemes
 ---

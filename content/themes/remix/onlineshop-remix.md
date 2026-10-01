@@ -21,7 +21,6 @@ tags:
   - themes
   - template
   - remixthemes
-  - featuredthemes
   - jamstackthemes
   - freethemes
 ---

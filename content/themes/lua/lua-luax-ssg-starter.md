@@ -26,7 +26,6 @@ tags:
   - themes
   - blog template
   - template
-  - featuredthemes
   - luathemes
   - jamstackthemes
   - freethemes

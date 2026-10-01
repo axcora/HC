@@ -24,7 +24,6 @@ tags:
   - template
   - phpthemes
   - freethemes
-  - featuredthemes
   - otherthemes
   - others
 ---

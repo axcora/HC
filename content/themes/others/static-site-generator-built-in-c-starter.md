@@ -27,8 +27,6 @@ tags:
   - themes
   - template
   - freethemes
-  - featuredthemes
-  - featured
   - otherthemes
   - others
 date: 2026-08-07

@@ -23,7 +23,6 @@ tags:
   - themes
   - template
   - freethemes
-  - featuredthemes
   - otherthemes
   - others
 date: 2025-09-04

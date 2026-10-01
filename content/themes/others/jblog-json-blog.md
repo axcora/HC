@@ -27,7 +27,6 @@ tags:
   - phpthemes
   - htmlthemes
   - freethemes
-  - featuredthemes
   - otherthemes
   - others
 date: 2025-02-07

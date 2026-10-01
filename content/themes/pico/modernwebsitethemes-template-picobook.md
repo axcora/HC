@@ -33,7 +33,6 @@ tags:
   - flatfile cms
   - pico
   - picothemes
-  - featuredpremium
   - premiumthemes
 ---
 

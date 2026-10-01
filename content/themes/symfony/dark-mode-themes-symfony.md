@@ -24,7 +24,6 @@ tags:
   - template
   - symfonythemes
   - phpthemes
-  - featuredthemes
   - freethemes
 ---
 

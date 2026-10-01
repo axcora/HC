@@ -25,7 +25,6 @@ tags:
   - themes
   - template
   - freethemes
-  - featuredthemes
   - batchthemes
   - bashthemes
   - otherthemes

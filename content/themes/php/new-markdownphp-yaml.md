@@ -26,7 +26,6 @@ tags:
   - landing page
   - frontend
   - modern
-  - featuredthemes
   - phpthemes
   - freethemes
 date: 2025-02-08

@@ -23,7 +23,6 @@ tags:
   - template
   - nodethemes
   - otherthemes
-  - featuredthemes
   - freethemes
   - others
 ---

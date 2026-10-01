@@ -38,6 +38,7 @@ tags:
   - headlesscms
   - jamstack
   - featuredthemes
+  - featured
   - pycora
   - axcora
 date: 2026-10-01

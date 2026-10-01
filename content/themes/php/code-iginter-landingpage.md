@@ -27,7 +27,6 @@ tags:
   - modern
   - code iginiter
   - phpthemes
-  - featuredthemes
   - freethemes
 ---
 
