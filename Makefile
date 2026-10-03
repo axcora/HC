@@ -39,43 +39,44 @@ TARGET = cax.exe
 
 all: banner $(TARGET)
 
+ifeq ($(OS),Windows_NT)
+banner:
+	@echo.
+	@echo  CAX SSG - C STATIC SITE GENERATOR
+	@echo  BY AXCORA TECHNOLOGY
+	@echo  ------------------------------------------
+else
 banner:
 	@echo ""
 	@echo " CAX SSG - C STATIC SITE GENERATOR"
 	@echo " BY AXCORA TECHNOLOGY"
 	@echo " ------------------------------------------"
+endif
 
 $(TARGET): $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^ -lws2_32
-	@echo "[OK] Built $(TARGET) - Native C Server Ready!"
+	@echo [OK] Built $(TARGET) - Native C Server Ready!
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
+ifeq ($(OS),Windows_NT)
+	@echo.
+	@echo  CAX SSG - C STATIC SITE GENERATOR
+	@echo  BY AXCORA TECHNOLOGY
+	@echo  ------------------------------------------
+	@-del /F /Q src\main.o src\utils\file_utils.o src\utils\string_utils.o src\data\data_manager.o src\data\yaml_parser.o src\data\json_parser.o src\frontmatter\frontmatter.o src\markdown\markdown.o src\template\template_engine.o src\template\filter.o src\sitemap\sitemap.o src\collection\collection.o src\pagination\pagination.o src\tags\tags.o src\build\builder.o src\server\server.o 2>nul
+	@-del /F /Q cax.exe cax 2>nul
+	@echo [CLEAN] Done
+else
 	@echo ""
 	@echo " CAX SSG - C STATIC SITE GENERATOR"
 	@echo " BY AXCORA TECHNOLOGY"
 	@echo " ------------------------------------------"
-ifeq ($(OS),Windows_NT)
-	-del src\main.o 2>nul
-	-del src\utils\*.o 2>nul
-	-del src\data\*.o 2>nul
-	-del src\frontmatter\*.o 2>nul
-	-del src\markdown\*.o 2>nul
-	-del src\template\*.o 2>nul
-	-del src\sitemap\*.o 2>nul
-	-del src\collection\*.o 2>nul
-	-del src\pagination\*.o 2>nul
-	-del src\tags\*.o 2>nul
-	-del src\build\*.o 2>nul
-	-del src\server\*.o 2>nul
-	-del $(TARGET) 2>nul
-	-del cax 2>nul
-else
 	rm -f $(OBJ) $(TARGET) cax
-endif
 	@echo "[CLEAN] Done"
+endif
 
 linux: banner
 	$(CC) $(CFLAGS) -o cax $(SRC)

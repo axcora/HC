@@ -83,7 +83,11 @@ int cax_server_start(const char *root_dir, int port){
 #ifdef _WIN32
         recv(cl,req,sizeof(req)-1,0);
 #else
-        read(cl,req,sizeof(req)-1);
+        {
+            ssize_t _cax_r = read(cl,req,sizeof(req)-1);
+            if(_cax_r>0) req[_cax_r]='\0';
+            (void)_cax_r;
+        }
 #endif
         char method[8], url[2048];
         if(sscanf(req,"%7s %2047s",method,url)!=2){
@@ -137,8 +141,11 @@ int cax_server_start(const char *root_dir, int port){
             send(cl,header,strlen(header),0);
             send(cl,content,flen,0);
 #else
-            write(cl,header,strlen(header));
-            write(cl,content,flen);
+            {
+                ssize_t _w1 = write(cl,header,strlen(header));
+                ssize_t _w2 = write(cl,content,flen);
+                (void)_w1; (void)_w2;
+            }
 #endif
             free(content);
         } else {
@@ -150,8 +157,11 @@ int cax_server_start(const char *root_dir, int port){
             send(cl,header,strlen(header),0);
             send(cl,notfound,strlen(notfound),0);
 #else
-            write(cl,header,strlen(header));
-            write(cl,notfound,strlen(notfound));
+            {
+                ssize_t _w3 = write(cl,header,strlen(header));
+                ssize_t _w4 = write(cl,notfound,strlen(notfound));
+                (void)_w3; (void)_w4;
+            }
 #endif
         }
 #ifdef _WIN32
