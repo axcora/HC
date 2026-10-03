@@ -18,7 +18,6 @@ features:
  - FAQ Accordion
  - Testimonial Slider
  - Bento Stats Counters
- - Dark Mode — System Preference
  - Live Reload — python dev.py
  - White-label, Resale Allowed
  - One Payment, Own Forever
@@ -46,7 +45,7 @@ tags:
 date: 2026-10-01
 ---
 
-# Pycora Pro — Premium Python Static Site Generator
+## Pycora Pro — Premium Python Static Site Generator
 
 **Pycora Pro** is a premium Python static site generator by [Axcora Technology](https://axcora.com). It compiles Markdown and YAML into fast, secure, immutable static HTML — **no Node, no Ruby, just Python**.
 
