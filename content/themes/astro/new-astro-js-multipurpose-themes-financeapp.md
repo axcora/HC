@@ -1,42 +1,31 @@
 ---
 layout: themes-detil.cax
-title: New Astro Js Multipurpose Startup and Finance App
-description: Finance app is a newest astro js themes template with complete features for your startup ,finance app,others multipurpose website project.
+title: Finance App - Astro Startup Template - SaaS, Finance, App Landing
+description: Astro startup finance template with SaaS landing, finance app, pricing, blog, contact. SEO auto, fast, responsive, own 100% source, one-time.
 image: astro/astronewthemes_1_vhc1na.jpg
 features:
- - Astro JS
- - SEO Focus
- - Black Themes
- - Multipurpose Template
- - Astro Picture
- - Astro Image
- - Astro Transition
- - Preact Integration
- - Page Article
- - Blog Article
- - Contact Form
- - Categories and Tags
- - Pagination Page List
- - Modern Host support netlify vercel cloudflare and others 
- - Build production host firebase surge cpanel vps direct admin plesk and others
+  - Astro + Preact
+  - Startup + SaaS Landing
+  - Finance App + Pricing
+  - Blog + Article + Categories
+  - Contact Form
+  - SEO Auto + Picture + Transition
+  - Responsive + Fast
+  - Own 100% Source
 download: https://creativitaz.gumroad.com/l/financestartup-astrojs
 demo: https://financeapp.pages.dev/
 tags:
-  - themestemplate
-  - website themes
-  - website template
-  - blog themes
-  - blog template
-  - mulitpurpose themes
-  - mulitpurpose template
-  - astro
-  - themes
-  - template
-  - astrothemes
-  - featuredpremium
-  - jamstackthemes
-  - premiumthemes
-  - featured
+    - astro
+    - startup template
+    - finance template
+    - saas template
+    - finance app
+    - startup landing
+    - astro template
+    - app landing
+    - premiumthemes
+    - featured
+    - featuredpremium
 ---
 ### Startup FinanceApp Multipurpose Astro Js Themes
 

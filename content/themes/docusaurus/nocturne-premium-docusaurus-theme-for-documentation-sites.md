@@ -1,47 +1,31 @@
 ---
 layout: themes-detil.cax
-title: Nocturne Complete Documentation
-description: Complete guide to install, configure, and deploy Nocturne — premium Docusaurus documentation system with Decap CMS and Pagefind search.
+title: Nocturne - Premium Docusaurus Template - Docs, Blog, Decap CMS, Search
+description: Premium Docusaurus documentation template with docs, blog, landing, Decap CMS, Pagefind search, dark mode. Fast, SEO ready, MDX, own 100% source, one-time.
 image: react/docusaurus-premium1_pbinv1.jpg
 features:
- - React Tech
- - TypeScript
- - Docusaurus 3
- - Documentation Page
- - Blog Page
- - Static Pages
- - About Page
- - Pricing Page
- - Services Page
- - Decap CMS Integration
- - Pagefind Search
- - Dark Mode
- - Light Mode
- - JSON Data
- - Markdown
- - MDX
- - Premium Design
- - Total 7 Design UI
- - Modern Host Support Netlify Vercel Cloudflare
- - Build Production Host Firebase Surge CPanel AWS
+  - React + Docusaurus + TypeScript
+  - Documentation + Blog + Landing
+  - Decap CMS Integration
+  - Pagefind Search
+  - Dark Mode + Light Mode
+  - MDX + Markdown + JSON
+  - Static Pages + Pricing + Services
+  - Own 100% Source
 download: https://creativitaz.gumroad.com/l/nocturne
 demo: https://nocturne.axcora.com/
 tags:
-  - themestemplate
-  - website themes
-  - website template
-  - docs themes
-  - docs template
-  - react
-  - docusaurus
-  - themes
-  - template
-  - reactthemes
-  - docusaurusthemes
-  - jamstackthemes
-  - premiumthemes
-  - featuredthemes
-  - featured
+    - docusaurus
+    - docs template
+    - documentation template
+    - premium docusaurus
+    - decap cms
+    - pagefind search
+    - docusaurus template
+    - react template
+    - docusaurusthemes
+    - premiumthemes
+    - featured
 ---
 
 ## Start with Nocturne

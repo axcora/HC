@@ -1,8 +1,8 @@
 ---
 layout: stack.cax
-title: Cloudcannon Themes Template - Free & Premium Cloudcannon Website Templates
+title: CloudCannon Themes - Free & Premium CloudCannon Templates Download
 image: logo/cloudcannon-ar21_jujtdl.png
-description: Download free and premium cloudcannon themes template. Modern, fast, SEO optimized Cloudcannon website templates for blog, portfolio, landing page and business. Open source.
+description: Free & premium CloudCannon themes - Bookshop components, Jekyll, Eleventy sync, Git CMS, visual editing, blog, docs. 90+ Lighthouse, own 100% source, one-time.
 filter:
   value: cloudcannon
 collection: themes

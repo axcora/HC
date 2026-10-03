@@ -1,41 +1,31 @@
 ---
 layout: themes-detil.cax
-title: Astro Js Car Website themes template
-description: Car Website with booking system for astro js website blog themes template with complete features.
+title: Astro Car Rental Template - Car Booking, Fleet, Reservation Website
+description: Astro car rental website template with booking form, fleet gallery, detail, reservation system, SEO auto. Fast, responsive, own 100% source, one-time.
 image: astro/astro-rentcar_a3bpoq.jpg
 features:
- - Astro JS
- - SEO Focus
- - Car Themes
- - Multipurpose Template
- - Fleet Gallery
- - Fleet Detail
- - Astro Picture
- - Astro Transition
- - Preact Integration
- - Page Article
- - Fleet List
- - Booking Page
- - Booking Form
- - Contact Form
- - Modern Host support netlify vercel cloudflare and others 
- - Build production host firebase surge cpanel vps direct admin plesk and others
+  - Astro + Preact
+  - Car Rental + Booking System
+  - Fleet List + Gallery + Detail
+  - Reservation Form
+  - Contact Form
+  - SEO Auto + Picture + Transition
+  - Responsive + Fast
+  - Own 100% Source
 download: https://creativitaz.gumroad.com/l/astro-js-car
 demo: https://astrocar.pages.dev/
 tags:
-  - themestemplate
-  - website themes
-  - website template
-  - car themes
-  - car template
-  - astro
-  - themes
-  - template
-  - astrothemes
-  - jamstackthemes
-  - premiumthemes
-  - featured
-  - featuredthemes
+    - astro
+    - car rental
+    - car booking
+    - car rental template
+    - fleet management
+    - reservation website
+    - astro template
+    - car rental website
+    - premiumthemes
+    - featured
+    - featuredthemes
 ---
 
 ### Astro JS Rent Car Themes

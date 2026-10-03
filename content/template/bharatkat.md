@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/iamyybz0cneqepo62p28uf1yt8jp
 download: https://creativitaz.gumroad.com/l/bharatkat
 price: Free
 price_cents: 0
-sales: 25
+sales: 26
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - blogging
  - web development
 layout: template-detil.cax
-date: 2026-09-25
+date: 2026-10-03
 updated: 
 ---
 

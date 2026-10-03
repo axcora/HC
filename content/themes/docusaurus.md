@@ -1,7 +1,7 @@
 ---
 layout: stack.cax
-title: Docusaurus Themes Template - Free Documentation Themes
-description: Download free and premium docusaurus themes template. Modern, fast, SEO optimized Docusaurus website templates for blog, portfolio, landing page and business. Open source.
+title: Docusaurus Themes - Free & Premium Docusaurus Templates Download
+description: Free & premium Docusaurus themes - Docusaurus 3.x docs, blog, versioning, i18n, Algolia search, MDX. 90+ Lighthouse, SEO auto, own 100% source.
 image: logo/docusaurus-official_gtbktg.svg
 filter:
   value: docusaurus

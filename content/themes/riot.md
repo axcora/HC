@@ -1,7 +1,7 @@
 ---
 layout: stack.cax
-title: Riot Themes Template - Free & Premium Riot Website Templates
-description: Download free and premium riot themes template. Modern, fast, SEO optimized Riot website templates for blog, portfolio, landing page and business. Open source.
+title: Riot.js Themes - Free & Premium Riot.js Templates Download
+description: Free & premium Riot.js themes - Riot.js components, minimal, landing, blog, portfolio, dashboard. Ultra lightweight, fast, 90+ Lighthouse, own source.
 image: logo/riotjs_jur0ac.png
 filter:
   value: riot

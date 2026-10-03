@@ -1,7 +1,7 @@
 ---
 layout: stack.cax
-title: Ruby Themes Template - Free & Premium Ruby Website Templates
-description: Download free and premium ruby themes template. Modern, fast, SEO optimized Ruby website templates for blog, portfolio, landing page and business. Open source.
+title: Ruby Themes - Free & Premium Ruby Templates Download
+description: Free & premium Ruby themes - Rails, Jekyll, Sinatra, blog, e-commerce, landing, SaaS, dashboard. Fast, secure, own 100% source, one-time.
 image: logo/ruby_ooafdf.jpg
 filter:
   value: ruby

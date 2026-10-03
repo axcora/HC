@@ -1,7 +1,7 @@
 ---
 layout: stack.cax
-title: Nikola Themes Template - Free nikola Website Templates
-description: Download free and premium nikola themes template. Modern, fast, SEO optimized nikola website templates for blog, portfolio, landing page and business. Open source.
+title: Nikola Themes - Free & Premium Nikola Templates Download
+description: Free & premium Nikola themes - Python static, blog, docs, portfolio, landing. ReST, Markdown, fast, 90+ Lighthouse, own 100% source, instant download.
 image: logo/nikola.png
 filter:
   value: nikola

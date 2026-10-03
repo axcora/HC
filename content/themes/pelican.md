@@ -1,8 +1,8 @@
 ---
 layout: stack.cax
-title: Pelican Themes Template - Free & Premium Pelican Website Templates
+title: Pelican Themes - Free & Premium Pelican Templates Download
+description: Free & premium Pelican themes - Python static, Jinja2, blog, docs, portfolio, landing. Markdown, no database, 90+ Lighthouse, own 100% source.
 image: logo/pelician_hmmmzz.png
-description: Download free and premium pelican themes template. Modern, fast, SEO optimized Pelican website templates for blog, portfolio, landing page and business. Open source.
 filter:
   value: pelican
 collection: themes

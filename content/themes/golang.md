@@ -1,7 +1,7 @@
 ---
 layout: stack.cax
-title: Golang Themes Template - Free & Premium Golang Website Templates
-description: Download free and premium golang themes template. Modern, fast, SEO optimized Golang website templates for blog, portfolio, landing page and business. Open source.
+title: Golang Themes - Free & Premium Golang Templates Download
+description: Free & premium Golang themes - Golang, Hugo compatible, Gin, Fiber, landing, SaaS, admin, blog. Ultra fast, SEO optimized, own 100% source, one-time.
 image: logo/golang_rsndew.webp
 filter:
   value: golang

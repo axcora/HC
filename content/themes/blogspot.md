@@ -1,7 +1,8 @@
 ---
 layout: stack.cax
 title: Blogspot Themes Template
-description: Download free and premium blogspot themes template. Modern, fast, SEO optimized Blogger website templates for blog, portfolio, landing page and business. Open source.
+title: Blogspot Themes - Free & Premium Blogger XML Templates
+description: Free & premium Blogspot Blogger XML themes - responsive, SEO optimized, AdSense ready, fast loading, magazine, blog. Own 100% XML source.
 filter:
   value: blogspot
 collection: themes

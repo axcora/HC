@@ -1,47 +1,30 @@
 ---
 layout: themes-detil.cax
-title: Docusar Themes
-description: New modern documentation website themes template for docusaurus project.
+title: Docusar - Docusaurus Docs Template - Documentation, Blog, Landing
+description: Docusaurus documentation template with docs, blog, landing page, dark mode, search. MDX ready, SEO auto, fast, own 100% source, one-time.
 image: react/docusar_snkzrk.jpg
 features:
- - React Tech
- - Js Lang
- - Docusaurus
- - Documentation Page
- - Blog Page
- - Contact Page
- - Contact Form
- - Classic Preset
- - Product Services Page
- - Home Landing Page
- - About Page
- - Dark Mode
- - Light Mode
- - JSON data
- - Markdown
- - MDX
- - Image Cover
- - Total 7 Design UI
- - Modern Host support netlify vercel cloudflare and others 
- - Build production host firebase surge and others
+  - React + Docusaurus
+  - Documentation + Blog + Landing
+  - Dark Mode + Light Mode
+  - Search + Categories
+  - MDX + Markdown + JSON
+  - Contact Form + About
+  - Responsive + Fast
+  - Own 100% Source
 download: https://creativitaz.gumroad.com/l/docusa
 demo: https://docusardemo.pages.dev/
 tags:
-  - themestemplate
-  - website themes
-  - website template
-  - docs themes
-  - docs template
-  - react
-  - ducosaurus
-  - themes
-  - template
-  - reactthemes
-  - docusaurusthemes
-  - jamstackthemes
-  - premiumthemes
-  - featuredthemes
-  - featured
+    - docusaurus
+    - docs template
+    - documentation template
+    - docusaurus template
+    - react template
+    - docs website
+    - blog template
+    - docusaurusthemes
+    - premiumthemes
+    - featured
 ---
 
 ## Start with Docusar

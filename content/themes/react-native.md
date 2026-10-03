@@ -1,8 +1,8 @@
 ---
 layout: stack.cax
-title: React Native Themes Template - Free & Premium React Native Website Templates
+title: React Native Themes - Free & Premium React Native Templates Download
+description: Free & premium React Native themes - Expo, iOS, Android, PWA, dashboard, e-commerce, landing. Native performance, App Store ready, own 100% source.
 image: logo/reactnatives_kz8pxb.png
-description: Download free and premium react-native themes template. Modern, fast, SEO optimized React Native website templates for blog, portfolio, landing page and business. Open source.
 filter:
   value: react-native
 collection: themes

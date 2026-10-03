@@ -1,48 +1,31 @@
 ---
 layout: themes-detil.cax
-title: New Jekyll Themes Template - Cubber Project
-description: Modern Unique Elegant Futuristic Jekyll Theme Template - Cuber - Multipurpose Themes - SEO Jekyll Support for your website and blog project.
+title: Cubber - Jekyll Cyber Template - Futuristic, Multipurpose, Portfolio
+description: Jekyll cyber futuristic template with portfolio, blog, gallery, services, author, SEO auto. Markdown, YAML, responsive, own 100% source, one-time.
 image: jekyll/cubber/cubber-cyber-website-themes-template_4_epwkre.jpg
 features:
- - JAMSTACK
- - Ruby
- - Jekyll
- - Github
- - Easy Installation
- - Page Article
- - About Page
- - Services Page
- - Blog Article
- - Gallery Page
- - Author Page
- - Contact Form
- - Categories and Tags
- - Pagination Blog
- - YAML Data
- - Markdown Content
- - Previous Next Post
- - Documentation Ready
- - Full Source Code Themes Template Project
- - Modern Host support netlify vercel cloudflare and others 
- - Build production host firebase surge cpanel vps direct admin plesk and others
+  - Jekyll + Ruby + JAMSTACK
+  - Cyber Futuristic Design
+  - Portfolio + Gallery + Blog
+  - Services + About + Contact
+  - Author + Categories + Tags
+  - Markdown + YAML
+  - SEO Auto + Responsive
+  - Own 100% Source
 download: https://creativitaz.gumroad.com/l/cubber-jekyll
 demo: https://cubber.pages.dev/
 tags:
-  - themestemplate
-  - website themes
-  - website template
-  - blog themes
-  - blog template
-  - github
-  - themes
-  - template
-  - blog
-  - jekyll
-  - jekyllthemes
-  - featuredpremium
-  - jamstackthemes
-  - premiumthemes
-  - featuredthemes
+    - jekyll
+    - cyber template
+    - futuristic template
+    - jekyll template
+    - portfolio template
+    - multipurpose template
+    - jekyllthemes
+    - jamstackthemes
+    - premiumthemes
+    - featuredpremium
+    - featured
 ---
 ## New jekyll JAMSTACK themes template  - Cubber futuristic concept
 

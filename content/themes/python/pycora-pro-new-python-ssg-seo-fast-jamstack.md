@@ -1,47 +1,30 @@
 ---
 layout: themes-detil.cax
-title: Pycora Pro — Premium Python Static Site Generator
-description: Premium Python SSG by Axcora Technology. Minimalist Bento Grid design, Decap CMS pre-configured, zero Node. Build premium client websites with Python 3.8+.
+title: Pycora Pro - Python Static Site Template - Bento Grid, Decap CMS, Portfolio
+description: Premium Python static site template with bento grid, Decap CMS, portfolio filter, pricing, FAQ, blog. Zero Node, SEO auto, fast, own 100% source, one-time.
 image: python/python-ssg-pro-themes-jamstack-1_dl0ra6.webp
 features:
- - Axcora Technology
- - Premium Python SSG
- - Minimalist Bento Grid Design
- - Decap CMS Pre-configured
- - Zero Node, Zero Ruby
- - Python 3.8+ Native
- - Jinja2 + PAX Templating
- - Auto SEO — Sitemap, Robots, RSS, Atom, JSON Feed
- - JSON-LD, Open Graph, Twitter Card
- - Portfolio Filter with Categories
- - Pricing Tiers — YAML-wired
- - FAQ Accordion
- - Testimonial Slider
- - Bento Stats Counters
- - Live Reload — python dev.py
- - White-label, Resale Allowed
- - One Payment, Own Forever
- - Deploy Anywhere — Cloudflare, Vercel, Netlify, GitHub Pages
+  - Premium Python SSG
+  - Bento Grid + Minimalist Design
+  - Decap CMS Pre-configured
+  - Zero Node + Zero Ruby
+  - Portfolio Filter + Pricing + FAQ
+  - Auto SEO + Sitemap + RSS
+  - Live Reload + White-label
+  - Own Forever + One Payment
 download: https://creativitaz.gumroad.com/l/pycora-pro
 demo: https://pycorapro.axcora.com/
 tags:
-  - themestemplate
-  - website themes
-  - website template
-  - premium themes
-  - premium template
-  - pythonssg
-  - pythonstatic
-  - bentogrid
-  - decapcms
-  - headlesscms
-  - jamstack
-  - jamstackthemes
-  - featured
-  - featuredthemes
-  - premiumthemes
-  - pycora
-  - axcora
+    - python
+    - python ssg
+    - static site generator
+    - bento grid
+    - decap cms
+    - portfolio template
+    - jamstack
+    - pycora
+    - premiumthemes
+    - featured
 date: 2026-10-01
 ---
 

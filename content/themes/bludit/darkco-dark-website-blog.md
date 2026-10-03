@@ -1,39 +1,30 @@
 ---
 layout: themes-detil.cax
-title: Darkco Dark website blog themes
-description: Develope and build your modern website with Darkco project - dark modern website blog themes template.
+title: Darkco - Bludit Dark Mode Blog Template - Dark Modern
+description: Bludit dark mode blog template with dark modern design, clean, SEO auto. Flat-file no database, fast, responsive, own 100% source, one-time.
 image: bludit/newmodernwebsitedarkmode_n9zhnt.webp
 features:
-  - Flatifle CMS
-  - PHP Lang
-  - Dark Modern Website
-  - Easy Installation
-  - Auto SEO Injection
-  - All PHP host support Cpanel Plesk and Others
-  - Documentation Ready
-  - Full Source Code Themes Template Project
+  - Bludit Flat-File CMS
+  - Dark Mode + Modern
+  - Clean + Minimalist
+  - No Database + Fast
+  - SEO Auto + Responsive
+  - Blog + Pages
+  - Own 100% Source
 download: https://creativitaz.gumroad.com/l/darkco
 demo: https://www.youtube.com/watch?v=hOdQ0PCspW4
 tags:
-  - themestemplate
-  - website themes
-  - website template
-  - blog themes
-  - blog template
-  - themes
-  - template
-  - blog
-  - cms
-  - backend- frontend
-  - dark
-  - dark modern
-  - cool design
-  - flatfile cms
-  - bludit
-  - bluditthemes
-  - featuredpremium
-  - premiumthemes
-  - featuredthemes
+    - bludit
+    - dark mode
+    - dark template
+    - dark blog
+    - bludit template
+    - flat-file cms
+    - dark modern
+    - bluditthemes
+    - premiumthemes
+    - featuredpremium
+    - featuredthemes
 ---
 
 ### DARKCO Dark Modern Website

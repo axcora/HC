@@ -1,47 +1,31 @@
 ---
 layout: themes-detil.cax
-title: LITOV Minimalist website themes template
-description: Premium JAMSTACK minimalist eleventy 11ty themes template integrate headless cms tina.
+title: Litov - Eleventy Minimalist Template - Clean Blog, Landing, Portfolio
+description: Eleventy minimalist template with clean blog, landing, portfolio, Tina CMS. Lightweight, SEO auto, fast, responsive, own 100% source, one-time.
 image: eleventy/jamstack-cms-11ty-themes-new_uh5zjr.jpg
 features:
- - Node JS
- - Js Lang
- - SEO Focus
- - Landing Page
- - Minimalist Design
- - Eleventy 11ty
- - JAMSTACK
- - Static Site Generator
- - Two Dynamic Page
- - Complete Features
- - Headless CMS Tina Cloud
- - All host support for frontend
- - Tina Cloud Ready
+  - Eleventy + JAMSTACK
+  - Minimalist + Clean Design
+  - Blog + Landing + Portfolio
+  - Tina CMS + Tina Cloud Ready
+  - SEO Auto + Fast
+  - Responsive + Lightweight
+  - Own 100% Source
 download: https://creativitaz.gumroad.com/l/litov11ty
 demo: https://litov.pages.dev/
 tags:
-  - themestemplate
-  - website themes
-  - website template
-  - blog themes
-  - blog template
-  - landing page
-  - jamstack themes
-  - jamstack template
-  - minimalist
-  - headless cms
-  - tina cms
-  - tina cloud
-  - eleventy
-  - 11ty
-  - themes
-  - template
-  - eleventythemes
-  - tinacmsthemes
-  - jamstackthemes
-  - premiumthemes
-  - featured
-  - featuredthemes
+    - eleventy
+    - 11ty
+    - minimalist template
+    - clean template
+    - blog template
+    - eleventy template
+    - tina cms
+    - minimalist blog
+    - jamstack template
+    - premiumthemes
+    - featured
+    - featuredthemes
 date: 2024-09-08
 ---
 

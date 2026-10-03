@@ -1,8 +1,8 @@
 ---
 layout: stack.cax
-title: Symfony Themes Template - Free & Premium Symfony Website Templates
+title: Symfony Themes - Free & Premium Symfony Templates Download
+description: Free & premium Symfony themes - Twig, admin, e-commerce, SaaS, CRM, blog, landing. Enterprise grade, secure, fast, own 100% source, one-time.
 image: logo/symfos_eyw8j0.png
-description: Download free and premium symfony themes template. Modern, fast, SEO optimized Symfony website templates for blog, portfolio, landing page and business. Open source.
 filter:
   value: symfony
 collection: themes

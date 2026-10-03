@@ -1,40 +1,30 @@
 ---
 layout: themes-detil.cax
-title: Clean Minimalist website blog with Text-X Pro
-description: Minimalis design clean concept for blog and website Text-X PRO Project
+title: Text-X Pro - Bludit Minimalist Blog Template - Clean, Minimal
+description: Bludit minimalist blog template with clean design, fast, SEO auto, flat-file no database. Easy install, responsive, own 100% source, one-time.
 image: bludit/text-x-pro_ligkpw.webp
 features:
- - Flatifle CMS
- - PHP Lang
- - Clean Minimalist Design
- - Easy Installation
- - Auto SEO Injection
- - All PHP host support Cpanel Plesk and Others
- - Documentation Ready
- - Full Source Code Themes Template Project
+  - Bludit Flat-File CMS
+  - Minimalist + Clean Design
+  - No Database + Fast
+  - SEO Auto + Responsive
+  - Blog + Pages
+  - Easy Installation
+  - Own 100% Source
 download: https://creativitaz.gumroad.com/l/text-x-pro
 demo: https://www.youtube.com/watch?v=ML0554sYNgI
 tags:
-  - themestemplate
-  - website themes
-  - website template
-  - blog themes
-  - blog template
-  - themes
-  - template
-  - blog
-  - cms
-  - backend
-  - frontend
-  - clean
-  - minimalist
-  - clean minimalist
-  - flatfile cms
-  - bludit
-  - bluditthemes
-  - featuredpremium
-  - premiumthemes
-  - featuredthemes
+    - bludit
+    - minimalist template
+    - clean blog
+    - bludit template
+    - flat-file cms
+    - blog template
+    - minimalist blog
+    - bluditthemes
+    - premiumthemes
+    - featuredpremium
+    - featuredthemes
 ---
 ### About Text-X Pro
 

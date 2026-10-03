@@ -1,7 +1,7 @@
 ---
 layout: stack.cax
-title: Remix Themes Template - Free Remix Website Templates
-description: Download free and premium remix themes template. Modern, fast, SEO optimized Remix website templates for blog, portfolio, landing page and business. Open source.
+title: Remix Themes - Free & Premium Remix Templates Download
+description: Free & premium Remix themes - full stack, SSR, nested routing, dashboard, SaaS, blog, e-commerce, landing. Fast, SEO auto, own 100% source, one-time.
 image: logo/rxm_uft2qf.jpg
 filter:
   value: remix

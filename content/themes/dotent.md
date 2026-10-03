@@ -1,7 +1,7 @@
 ---
 layout: stack.cax
-title: .Net C# Themes Template - Free Documentation Themes
-description: Download free and premium .Net C# themes template. Modern, fast, SEO optimized .Net C# website templates for blog, portfolio, landing page and business. Open source.
+title: .NET Themes - Free & Premium .NET C# Templates Download
+description: Free & premium .NET themes - ASP.NET Core 8, MVC, Razor Pages, Blazor, admin dashboard, SaaS. C# native, fast, 90+ Lighthouse, own 100% source.
 filter:
   value: dotnet
 collection: themes

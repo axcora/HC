@@ -1,38 +1,28 @@
 ---
 layout: themes-detil.cax
-title: Tailwind CMS
-description: Modern fast website with tailwind cms project - clean minimalist design UI.
+title: Tailwind Blog - Bludit Tailwind CSS Template - Minimalist Blog
+description: Bludit Tailwind CSS blog template with minimalist design, fast, SEO auto. Flat-file, utility-first, responsive, own 100% source, one-time.
 image: bludit/tailwindpro_x72wti.webp
 features:
- - Flatifle CMS
- - PHP Lang
- - Mobile Website App UI Design
- - Easy Installation
- - Auto SEO Injection
- - All PHP host support Cpanel Plesk and Others
- - Documentation Ready
- - Full Source Code Themes Template Project
+  - Bludit + Tailwind CSS
+  - Minimalist + Clean
+  - Flat-File + No Database
+  - SEO Auto + Fast
+  - Blog + Pages
+  - Responsive + Utility First
+  - Own 100% Source
 download: https://creativitaz.gumroad.com/l/tailwindblog
 demo: https://www.youtube.com/watch?v=AkqI6zRN2Gw
 tags:
-  - themestemplate
-  - website themes
-  - website template
-  - blog themes
-  - blog template
-  - themes
-  - template
-  - blog
-  - cms
-  - backend
-  - frontend
-  - tailwind
-  - tailwind blog
-  - tailwind cms
-  - flatfile cms
-  - bludit
-  - bluditthemes
-  - premiumthemes
+    - bludit
+    - tailwind template
+    - tailwind blog
+    - tailwind css
+    - minimalist blog
+    - bludit template
+    - flat-file cms
+    - bluditthemes
+    - premiumthemes
 ---
 
 ### Just a Flatfile CMS no Database !!

@@ -1,7 +1,7 @@
 ---
 layout: stack.cax
-title: Eleventy 11ty Themes Template - Free 11ty Website Templates
-description: Download free and premium eleventy themes template. Modern, fast, SEO optimized Eleventy website templates for blog, portfolio, landing page and business. Open source.
+title: Eleventy Themes - Free & Premium 11ty Eleventy Templates Download
+description: Free & premium Eleventy themes - 11ty Nunjucks, Liquid, webc,blog, portfolio, docs. Zero JS baseline, 100 Lighthouse, own 100% source, instant download.
 image: logo/eleventy-limousine-website_ill1eu.webp
 filter:
   value: eleventy

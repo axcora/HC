@@ -1,35 +1,30 @@
 ---
 layout: themes-detil.cax
-title: Docuna a landing page starlight project
-description: Starlight Docuna landing page themes template for your documentation website project.
+title: Docuna - Astro Starlight Docs Template - Documentation, Landing, Blog
+description: Astro Starlight documentation template with landing page, blog, search, sidebar nav, dark mode. Fast, SEO ready, MDX, own 100% source, one-time.
 image: astro/starlighttemplate_uyq8cf.jpg
 features:
- - Astro JS
- - Starlight
- - SEO Focus
- - Documentation Themes
- - Documentation Template
- - Astro Picture
- - Landing Page
- - Contact Form
- - Modern Host support netlify vercel cloudflare and others 
- - Build production host firebase surge cpanel vps direct admin plesk and others
+  - Astro + Starlight
+  - Documentation + Landing + Blog
+  - Sidebar Nav + Search
+  - Dark Mode + SEO Auto
+  - MDX + Markdown
+  - Contact Form
+  - Responsive + Fast
+  - Own 100% Source
 download: https://creativitaz.gumroad.com/l/docuna
 demo: https://docuna.pages.dev/
 tags:
-  - themestemplate
-  - website themes
-  - website template
-  - documentation themes
-  - documentation template
-  - astro
-  - themes
-  - template
-  - astrothemes
-  - jamstackthemes
-  - featured
-  - featuredthemes
-  - premiumthemes
+    - astro
+    - starlight
+    - documentation template
+    - docs template
+    - astro template
+    - documentation website
+    - astro docs
+    - premiumthemes
+    - featured
+    - featuredthemes
 ---
 ## Docuna Astro Starlight project
 

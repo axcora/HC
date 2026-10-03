@@ -1,8 +1,8 @@
 ---
 layout: stack.cax
-title: LUA Themes Template - Free & Premium lua Website Templates
+title: Lua Themes - Free & Premium Lua Templates Download
+description: Free & premium Lua themes - Lapis, OpenResty, landing, blog, admin, SaaS. Lightweight, fast, embedded ready, 90+ Lighthouse, own 100% source, one-time.
 image: logo/logo_mxaabz.png
-description: Download free and premium lua themes template. Modern, fast, SEO optimized lua website templates for blog, portfolio, landing page and business. Open source.
 filter:
   value: lua
 collection: themes

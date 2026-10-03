@@ -1,37 +1,30 @@
 ---
 layout: themes-detil.cax
-title: React Web Themes Rent Car
-description: React Car is a modern book website for your rent car and limousine services, integration with headless decap cms to make easier for you update your website quickly.
+title: React Car Rental Template - Booking, Fleet, Limousine Website
+description: React car rental template with booking form, fleet list, detail, limousine, Decap CMS, SEO auto. Fast, responsive, own 100% source, one-time.
 image: react/reactcar_nxidee.webp
 features:
- - React Tech
- - Vite Js
- - JSX Lang
- - Minimalist UI
- - Clean Design
- - Booking Form
- - Booking Page
- - Car Fleet List
- - Car Fleet Detail
- - React Helmet Auto SEO
- - Headless Decap CMS 
- - Modern Host support netlify vercel cloudflare and others 
- - Build production host firebase surge cpanel vps direct admin plesk and others
+  - React + Vite
+  - Car Rental + Limousine
+  - Booking Form + Fleet List
+  - Fleet Detail + Reservation
+  - Decap CMS Integration
+  - SEO Auto + Responsive
+  - Clean + Minimalist UI
+  - Own 100% Source
 download: https://creativitaz.gumroad.com/l/reactcar
 demo: https://reactcar.pages.dev/
 tags:
-  - themestemplate
-  - website themes
-  - website template
-  - react
-  - themes
-  - template
-  - rentcar
-  - booking
-  - reactthemes
-  - vitethemes
-  - jamstackthemes
-  - premiumthemes
+    - react
+    - car rental
+    - car booking
+    - rental template
+    - limousine
+    - fleet management
+    - react template
+    - vite template
+    - premiumthemes
+    - jamstackthemes
 date: 2025-01-21
 ---
 

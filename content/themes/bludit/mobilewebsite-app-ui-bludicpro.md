@@ -1,41 +1,29 @@
 ---
 layout: themes-detil.cax
-title: Develope Modern Mobile website app UI with Bludic Project
-description: Elegant and beauty design with ionic mobile framework for develope your mobile website app UI.
+title: Bludic Pro - Bludit Ionic Mobile Template - PWA, App UI
+description: Bludit Ionic mobile template with PWA, app UI, mobile website, SEO auto. Flat-file CMS, fast, responsive, own 100% source, one-time.
 image: bludit/Bludicpro_pm1l4q.webp
 features:
- - Flatifle CMS
- - PHP Lang
- - Mobile Website App UI Design
- - Easy Installation
- - Auto SEO Injection
- - All PHP host support Cpanel Plesk and Others
- - Documentation Ready
- - Full Source Code Themes Template Project
+  - Bludit + Ionic Framework
+  - Mobile App UI + PWA
+  - Flat-File + No Database
+  - SEO Auto + Responsive
+  - Blog + Mobile Pages
+  - Easy Installation
+  - Own 100% Source
 download: https://creativitaz.gumroad.com/l/bludicpro
 demo: https://www.youtube.com/watch?v=S0rdBKYl7lM
 tags:
-  - themestemplate
-  - website themes
-  - website template
-  - blog themes
-  - blog template
-  - themes
-  - template
-  - blog
-  - cms
-  - backend
-  - frontend
-  - android app
-  - ionic
-  - ionic cms
-  - flatfile cms
-  - bludit
-  - featured
-  - featuredthemes
-  - bluditthemes
-  - ionicthemes
-  - premiumthemes
+    - bludit
+    - ionic template
+    - mobile template
+    - pwa template
+    - app ui
+    - bludit template
+    - ionic cms
+    - ionicthemes
+    - bluditthemes
+    - premiumthemes
 ---
 ### About Bludic
 

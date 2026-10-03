@@ -1,8 +1,8 @@
 ---
 layout: stack.cax
-title: Jekyll Themes Template - Free Jekyll Website Templates for GitHub Pages
+title: Jekyll Themes - Free & Premium Jekyll Templates Download
+description: Free & premium Jekyll themes - GitHub Pages ready, Liquid, Markdown, blog, portfolio, docs, landing. No database, secure, 90+ Lighthouse, own 100% source.
 image: logo/jekyllls_aukic9.jpg
-description: Download free and premium jekyll themes template. Modern, fast, SEO optimized Jekyll website templates for blog, portfolio, landing page and business. Open source.
 filter:
   value: jekyll
 collection: themes

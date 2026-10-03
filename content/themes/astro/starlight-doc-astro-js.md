@@ -1,39 +1,31 @@
 ---
 layout: themes-detil.cax
-title: Starlight Docus themes template Astro JS
-description: Docus is all in one documentation, landing page, and blog themes template with complete features for astro js.
+title: Docus - Astro Starlight Docs Template - Documentation, Blog, Landing
+description: Astro Starlight docs template with documentation, blog, landing page, search, sidebar, dark mode. MDX ready, SEO auto, fast, own 100% source, one-time.
 image: astro/astrodocumentationwebsite_ltdbcx.jpg
 features:
- - Astro JS
- - Starlight
- - SEO Focus
- - Documentation Themes
- - Documentation Template
- - Astro Picture
- - Astro Image
- - Page Article
- - Blog Article
- - Contact Form
- - Categories and Tags
- - Pagination 
- - Modern Host support netlify vercel cloudflare and others 
- - Build production host firebase surge cpanel vps direct admin plesk and others
+  - Astro + Starlight
+  - Documentation + Blog + Landing
+  - Sidebar Nav + Search
+  - Dark Mode + SEO Auto
+  - MDX + Markdown
+  - Categories + Tags + Pagination
+  - Contact Form
+  - Own 100% Source
 download: https://creativitaz.gumroad.com/l/starlightastrodocus
 demo: https://astrodoc.pages.dev/
 tags:
-  - themestemplate
-  - website themes
-  - website template
-  - blog themes
-  - blog template
-  - documentation themes
-  - documentation template
-  - astro
-  - themes
-  - template
-  - astrothemes
-  - jamstackthemes
-  - premiumthemes
+    - astro
+    - starlight
+    - documentation template
+    - docs template
+    - blog template
+    - astro template
+    - documentation website
+    - landing page
+    - astro docs
+    - premiumthemes
+    - jamstackthemes
 ---
 ## Docus Astro Starlight project.
 

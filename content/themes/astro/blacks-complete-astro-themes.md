@@ -1,44 +1,31 @@
 ---
 layout: themes-detil.cax
-title: Astro Js Blacks multipurpose themes template
-description: Blacks multipurpose for astro js website blog themes template with complete features.
+title: Blacks - Astro Multipurpose Template - Portfolio, Gallery, Blog, Landing
+description: Astro multipurpose dark template with portfolio, image gallery, video gallery, blog, landing, SEO auto. Modern, fast, responsive, own 100% source, one-time.
 image: astro/astro-complete-template-themes_yoyqsn.jpg
 features:
- - Astro JS
- - SEO Focus
- - Black Themes
- - Multipurpose Template
- - Image Gallery
- - Video Gallery
- - Astro Picture
- - Astro Image
- - Astro Transition
- - Preact Integration
- - Page Article
- - Blog Article
- - Contact Form
- - Categories and Tags
- - Pagination Page List
- - Modern Host support netlify vercel cloudflare and others 
- - Build production host firebase surge cpanel vps direct admin plesk and others
+  - Astro + Preact
+  - Multipurpose Dark Theme
+  - Portfolio + Gallery + Video
+  - Blog + Categories + Tags
+  - Pagination + Article Page
+  - Contact Form
+  - SEO Auto + Picture + Transition
+  - Own 100% Source
 download: https://creativitaz.gumroad.com/l/astrojs-blacks
 demo: https://conceptualart.pages.dev/
 tags:
-  - themestemplate
-  - website themes
-  - website template
-  - blog themes
-  - blog template
-  - mulitpurpose themes
-  - mulitpurpose template
-  - astro
-  - themes
-  - template
-  - astrothemes
-  - featuredpremium
-  - featured
-  - jamstackthemes
-  - premiumthemes
+    - astro
+    - multipurpose template
+    - portfolio template
+    - dark template
+    - gallery template
+    - blog template
+    - astro template
+    - blacks template
+    - premiumthemes
+    - featured
+    - featuredpremium
 ---
 
 ### Blacks Astro JS Photography ART Themes

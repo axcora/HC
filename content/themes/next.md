@@ -1,7 +1,7 @@
 ---
 layout: stack.cax
-title: Next.js Themes Template - Free Next.js 14 Website Templates
-description: Download free and premium next themes template. Modern, fast, SEO optimized Next website templates for blog, portfolio, landing page and business. Open source.
+title: Next.js Themes - Free & Premium Next.js Templates Download
+description: Free & premium Next.js themes - App Router, SSR, SSG, dashboard, SaaS, e-commerce, landing. SEO auto, fast, 90+ Lighthouse, own 100% source, one-time.
 image: logo/nextjsicon_xrgbo2.png
 filter:
   value: next

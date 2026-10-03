@@ -1,43 +1,31 @@
 ---
 layout: themes-detil.cax
-title: JAMSTACK Company Profile website themes template
-description: Premium JAMSTACK Company portfolio bussiness website themes template.
+title: Captaline - Eleventy Company Profile Template - Business, Startup, Landing
+description: Eleventy company profile template with business landing, portfolio, startup, SEO auto, Tina CMS. Fast, responsive, 14+ sections, own 100% source, one-time.
 image: eleventy/jamstackthemes_ehxgrv.jpg
 features:
- - Node JS
- - Js Lang
- - SEO Focus
- - Landing Page
- - Eleventy 11ty
- - JAMSTACK
- - Static Site Generator
- - 14 + Design
- - Widget Ready
- - Complete Features
- - Headless CMS Tina Cloud
- - All host support for frontend
- - Tina Cloud Host Support Netlify and Vercel
+  - Eleventy + JAMSTACK
+  - Company Profile + Business
+  - Startup Landing + Portfolio
+  - 14+ Sections + Widget Ready
+  - Tina CMS Integration
+  - SEO Auto + Fast
+  - Responsive + Modern
+  - Own 100% Source
 download: https://creativitaz.gumroad.com/l/captaline11ty
 demo: https://captaline.pages.dev/
 tags:
-  - themestemplate
-  - website themes
-  - website template
-  - blog themes
-  - blog template
-  - landing page
-  - jamstack themes
-  - jamstack template
-  - company
-  - bussiness
-  - eleventy
-  - 11ty
-  - themes
-  - template
-  - tinacmsthemes
-  - eleventythemes
-  - jamstackthemes
-  - premiumthemes
+    - eleventy
+    - 11ty
+    - company profile
+    - business template
+    - startup template
+    - landing page
+    - eleventy template
+    - jamstack template
+    - tinacmsthemes
+    - premiumthemes
+    - jamstackthemes
 ---
 
 ### About JAMSTACK Company Themes Captaline

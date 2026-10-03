@@ -1,8 +1,8 @@
 ---
 layout: stack.cax
-title: Ionic Themes Template - Free & Premium Ionic Website Templates
 image: logo/ions_v8ijek.png
-description: Download free and premium ionic themes template. Modern, fast, SEO optimized Ionic website templates for blog, portfolio, landing page and business. Open source.
+title: Ionic Themes - Free & Premium Ionic Templates Download
+description: Free & premium Ionic themes - Capacitor, PWA, iOS, Android, Angular, React, Vue, landing, app. App Store ready, native feel, own 100% source, one-time.
 filter:
   value: ionic
 collection: themes

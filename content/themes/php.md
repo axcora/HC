@@ -1,7 +1,7 @@
 ---
 layout: stack.cax
-title: Php Themes Template - Free & Premium Php Website Templates
-description: Download free and premium php themes template. Modern, fast, SEO optimized Php website templates for blog, portfolio, landing page and business. Open source.
+title: PHP Themes - Free & Premium PHP Templates Download
+description: Free & premium PHP themes - vanilla PHP, MVC, admin, blog, e-commerce, landing, SaaS. Fast, SEO optimized, secure, own 100% source, one-time.
 image: logo/phps_jrnsvm.png
 filter:
   value: PHP

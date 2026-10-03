@@ -1,37 +1,28 @@
 ---
 layout: themes-detil.cax
-title: Creative Agency Clean Minimalist Design
-description: Develope your startup creative agency website with this project, super fast with SEO injection.
+title: Creative Agency - Bludit Agency Template - Startup, Portfolio, Landing
+description: Bludit creative agency template with startup landing, portfolio, minimalist, SEO auto. Flat-file, no database, fast, own 100% source, one-time.
 image: bludit/creativedigitalagencywebsitethemes_ft217k.webp
 features:
- - Flatifle CMS
- - PHP Lang
- - Minimalist Concept Art
- - Easy Installation
- - Auto SEO Injection
- - All PHP host support Cpanel Plesk and Others
- - Documentation Ready
- - Full Source Code Themes Template Project
+  - Bludit Flat-File CMS
+  - Creative Agency + Startup
+  - Portfolio + Landing
+  - Minimalist Concept
+  - SEO Auto + Responsive
+  - Easy Installation
+  - Own 100% Source
 download: https://creativitaz.gumroad.com/l/creativeagency-bl
 demo: https://bludit.axcora.com/agency
 tags:
-  - themestemplate
-  - website themes
-  - website template
-  - blog themes
-  - blog template
-  - themes
-  - template
-  - blog
-  - cms
-  - backend
-  - frontend
-  - agency
-  - startup
-  - flatfile cms
-  - bludit
-  - bluditthemes
-  - premiumthemes
+    - bludit
+    - agency template
+    - startup template
+    - creative agency
+    - portfolio template
+    - bludit template
+    - flat-file cms
+    - bluditthemes
+    - premiumthemes
 ---
 
 ### Installation
