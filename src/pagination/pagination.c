@@ -60,7 +60,7 @@ void cax_pagination_process(CAXArray *coll_array, int per_page, const char *out_
         cax_object_set_pointer(ctx,"paginator",paginator);
         cax_object_set_pointer(ctx,"posts",slice);
         char *html=cax_template_render_file(tpl,ctx);
-        char out[2048];
+        char out[4096];
         if(p==0) snprintf(out,sizeof(out),"%s/index.html",out_dir);
                 else {
             char page_base[2048];
@@ -69,7 +69,7 @@ void cax_pagination_process(CAXArray *coll_array, int per_page, const char *out_
             char d[2048];
             snprintf(d,sizeof(d),"%s/page/%d",out_dir,p+1);
             cax_create_directory(d);
-            snprintf(out,sizeof(out),"%s/index.html",d); // out now 2048, safe for d 1024 + 11
+            snprintf(out,sizeof(out),"%s/index.html",d);
         }
         cax_write_file(out, html?html:"");
         free(html);

@@ -120,9 +120,9 @@ static void save_cache(void){
 static void inject_livereload_script(){
     cax_write_file("site/__cax_live.js","(function(){let h=null;setInterval(async()=>{try{let t=await fetch(location.href,{cache:'no-store'}).then(r=>r.text());if(h===null)h=t.length;else if(h!=t.length)location.reload();}catch(e){}},1000);})();");
 #ifdef _WIN32
-    (void)system("powershell -Command \"$files=Get-ChildItem site -Filter *.html -Recurse -ErrorAction SilentlyContinue; foreach($f in $files){ $c=Get-Content $f.FullName -Raw -ErrorAction SilentlyContinue; if($c -and $c -notmatch '__cax_live'){ $c=$c -replace '</body>','<script src=\\\"/__cax_live.js\\\"></script></body>'; Set-Content $f.FullName $c -NoNewline } }\" >nul 2>&1");
+    { int _s3 = system("powershell -Command \"$files=Get-ChildItem site -Filter *.html -Recurse -ErrorAction SilentlyContinue; foreach($f in $files){ $c=Get-Content $f.FullName -Raw -ErrorAction SilentlyContinue; if($c -and $c -notmatch '__cax_live'){ $c=$c -replace '</body>','<script src=\\\"/__cax_live.js\\\"></script></body>'; Set-Content $f.FullName $c -NoNewline } }\" >nul 2>&1"); (void)_s3; }
 #else
-   { int _cax_sys = system("find site -name '*.html' -exec sed -i 's|</body>|<script src=/__cax_live.js></script></body>|g' {} \\; 2>/dev/null"); if(_cax_sys!=0) {} }
+   { int _s = system("find site -name '*.html' -exec sed -i 's|</body>|<script src=/__cax_live.js></script></body>|g' {} \\; 2>/dev/null"); (void)_s; }
 #endif
 }
 static void remove_livereload_script(){
@@ -703,7 +703,7 @@ static void render_collection_items(const char *dir_path, const char *coll_name,
         char out_dir[8192];
         snprintf(out_dir, sizeof(out_dir), "site/%s/%s", coll_name, slug);
         cax_create_directory(out_dir);
-        char out_path[8192];
+        char out_path[16384];
         snprintf(out_path, sizeof(out_path), "%s/index.html", out_dir);
         cax_write_file(out_path, seo_final);
         free(seo_final);
@@ -798,7 +798,7 @@ void cax_builder_run(void) {
                     struct dirent *se;
                     while((se=readdir(sub))!=NULL){
                         if(se->d_name[0]=='.') continue;
-                        char sub_full[12288];
+                        char sub_full[16384];
                         snprintf(sub_full, sizeof(sub_full), "%s/%s", sub_path, se->d_name);
                         if(cax_is_directory(sub_full)){
                             char nested_key[1024];
@@ -861,7 +861,7 @@ void cax_builder_run(void) {
                 cax_create_directory(out_sub_dir);
                 int per_page = 5;
                 char list_tpl_name[512] = "posts-list.cax";
-                char normalized_entry[512];
+                char normalized_entry[1024];
                 normalize_coll_name(entry->d_name, normalized_entry, sizeof(normalized_entry));
                 CAXObject *ctrl = cax_object_get_pointer(pagination_controllers, entry->d_name);
                 if(!ctrl) ctrl = cax_object_get_pointer(pagination_controllers, normalized_entry);
@@ -869,11 +869,11 @@ void cax_builder_run(void) {
                     const char *pp = cax_object_get_string(ctrl,"pagination");
                     if(pp) per_page = atoi(pp);
                     const char *ll = cax_object_get_string(ctrl,"layout");
-                    if(ll) snprintf(list_tpl_name, sizeof(list_tpl_name), "%.511s", ll);
+                    if(ll) snprintf(list_tpl_name, sizeof(list_tpl_name), "%s", ll);
                 } else {
                     char tmp[512];
                     get_coll_list_template(entry->d_name, tmp, sizeof(tmp));
-                    snprintf(list_tpl_name, sizeof(list_tpl_name), "%.511s", tmp);
+                    snprintf(list_tpl_name, sizeof(list_tpl_name), "%s", tmp);
                 }
                 char full_list_tpl[1024];
                 snprintf(full_list_tpl, sizeof(full_list_tpl), "templates/layouts/%s", list_tpl_name);
@@ -912,7 +912,7 @@ void cax_builder_run(void) {
                                     if(pp) per_page = atoi(pp);
                                     char list_tpl_name[256]="posts-list.cax";
                                     const char *ll = cax_object_get_string(doc->metadata,"layout");
-                                    if(ll) snprintf(list_tpl_name, sizeof(list_tpl_name), "%.511s", ll);
+                                    if(ll) snprintf(list_tpl_name, sizeof(list_tpl_name), "%s", ll);
                                     char full_list_tpl[1024];
                                     snprintf(full_list_tpl, sizeof(full_list_tpl), "templates/layouts/%s", list_tpl_name);
                                     if(!file_exists(full_list_tpl)){
@@ -1118,7 +1118,7 @@ void cax_builder_start_with_watch(void){
     time_t lt=scan_dir("templates");
     time_t ld=scan_dir("_data");
     time_t lp=scan_dir("public");
-    { int _cax_sys2 = system("xdg-open http://localhost:8080 2>/dev/null &"); if(_cax_sys2!=0) {} }
+    { int _s2 = system("xdg-open http://localhost:8080 2>/dev/null &"); (void)_s2; }
     while(1){
         sleep(1);
         time_t c=scan_dir("content"); time_t t=scan_dir("templates");

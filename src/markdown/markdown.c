@@ -342,8 +342,8 @@ char *cax_markdown_to_html(const char *md_content) {
     if(fc>0){
         strncat(html_output, "<section class=\"footnotes\"><hr><ol>\n", buf_size - strlen(html_output) - 1);
         for(int i=0;i<fc;i++){
-            char inline_buf[2048]; parse_inline_formatting(fns[i].text, inline_buf, sizeof(inline_buf));
-            char foot[4096]; snprintf(foot, sizeof(foot), "<li id=\"fn:%s\">%s <a href=\"#fnref:%s\" class=\"footnote-backref\">↩</a></li>\n", fns[i].label, inline_buf, fns[i].label);
+            char inline_buf[4096]; parse_inline_formatting(fns[i].text, inline_buf, sizeof(inline_buf));
+            char foot[16384]; snprintf(foot, sizeof(foot), "<li id=\"fn:%.63s\">%.8000s <a href=\"#fnref:%.63s\" class=\"footnote-backref\">↩</a></li>\n", fns[i].label, inline_buf, fns[i].label);
             strncat(html_output, foot, buf_size - strlen(html_output) - 1);
         }
         strncat(html_output, "</ol></section>\n", buf_size - strlen(html_output) - 1);
