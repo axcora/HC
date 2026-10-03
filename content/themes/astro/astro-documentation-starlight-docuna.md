@@ -27,6 +27,8 @@ tags:
   - template
   - astrothemes
   - jamstackthemes
+  - featured
+  - featuredthemes
   - premiumthemes
 ---
 ## Docuna Astro Starlight project

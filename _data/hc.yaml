@@ -39,10 +39,10 @@ navbar:
       no: "Skill"
 
 hero: 
-  title: "Free"
-  title2: "Premium Themes"
+  title: "Premium"
+  title2: "Themes"
   description: "Documentation, SaaS and blog themes - Astro, Starlight, Docusaurus, Hugo, Jekyll."
-  text: "Multi-stack collection for docs, SaaS and blogs. Astro, Starlight, Docusaurus, Hugo, Jekyll, Bludit, Pico - each theme built for 90+ Lighthouse, native SEO, pure HTML/CSS/JS, no subscription. One purchase, lifetime ownership."
+  text: "Curated collection for docs, SaaS and blogs. Each theme built for 90+ Lighthouse, native SEO, pure HTML/CSS/JS, no subscription. One purchase, lifetime ownership."
   list: 
     - title: "Curated"
       info: "SELECTION"
@@ -55,12 +55,13 @@ hero:
       text: "One time. Forever yours."
 
 themes: 
-  title: "Selected Themes"
+  title: "Selected Premium Themes"
   description: "A focused collection, not a marketplace."
-  search: "Search collection..."
+  search: "Search premium collection..."
   button: 
-    text: "View Collection"
-    url: "/themes/"
+    text: "View Premium Collection"
+    url: "/premium/"
+
 services:
   title: "Custom Web Architecture"
   description: "Headless Commerce, Booking OS, SSG & Vision AI - Custom built for your business"

@@ -25,7 +25,6 @@ tags:
   - themes
   - landing page
   - template
-  - featuredthemes
   - dotnetthemes
   - jamstackthemes
   - freethemes

@@ -24,7 +24,6 @@ tags:
   - template
   - go
   - golangthemes
-  - featuredthemes
   - gothemes
   - freethemes
 date: 2026-08-15

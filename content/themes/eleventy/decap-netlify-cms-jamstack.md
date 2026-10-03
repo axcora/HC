@@ -32,7 +32,6 @@ tags:
   - themes
   - template
   - decapcmsthemes
-  - featuredthemes
   - jamstackthemes
   - eleventythemes
   - freethemes

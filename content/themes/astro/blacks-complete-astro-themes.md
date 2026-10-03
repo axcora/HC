@@ -36,6 +36,7 @@ tags:
   - template
   - astrothemes
   - featuredpremium
+  - featured
   - jamstackthemes
   - premiumthemes
 ---

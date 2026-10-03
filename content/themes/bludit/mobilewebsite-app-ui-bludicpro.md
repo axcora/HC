@@ -31,6 +31,8 @@ tags:
   - ionic cms
   - flatfile cms
   - bludit
+  - featured
+  - featuredthemes
   - bluditthemes
   - ionicthemes
   - premiumthemes
