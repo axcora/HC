@@ -33,7 +33,84 @@ A project present by [creativitas](https://www.fiverr.com/creativitas)
 
 Hire developer : [https://www.fiverr.com/users/creativitas](https://www.fiverr.com/users/creativitas)
 
-![docus astro js](astrodocumentationwebsite.jpg)
+-----
+
+## Why Docus Exists
+
+Most documentation sites force you to pick one thing: either a docs platform that can't blog, or a blog platform that can't handle docs. Then you end up maintaining two separate sites — two builds, two designs, two hosts, two things that can break.
+
+Docus ends that. One Astro project. Documentation, blog, and landing page — all sharing the same design system, the same navigation, the same deployment pipeline.
+
+Built on Astro + Starlight, it's fast, static, SEO-ready, and easy to maintain. You own 100% of the source code, one-time purchase, use on unlimited projects.
+
+-----
+
+## What You Get
+
+**Documentation System**
+Starlight with auto-generated sidebar, full-text search, syntax highlighting, and multi-level navigation. Write in MDX or Markdown — both supported out of the box.
+
+**Blog System**
+Blog list with pagination, post detail pages, tags, categories, and RSS feed. Content stays in Markdown files. No database, no CMS required.
+
+**Landing Page**
+Hero section, feature cards, services, tech stack, and CTA — all JSON-driven. Edit text without touching a single component.
+
+**Pricing Page**
+Plan comparison layout with JSON-driven tiers. Ready for Gumroad, Fiverr, or any checkout you use.
+
+**Contact Form**
+Built-in form integration. Receive messages without a backend server.
+
+**SEO Ready**
+Meta tags, Open Graph, sitemap, and canonical URLs handled automatically. Just set your site URL in `astro.config.mjs`.
+
+-----
+
+## Built for Speed and Ownership
+
+Docus builds to **static HTML**. That means:
+
+- Loads instantly from any CDN
+- No server runtime, no database
+- Deploys free to Cloudflare Pages, Vercel, Netlify, Firebase, or any static host
+- Zero maintenance overhead
+
+You own the source code. No monthly fees. No vendor lock-in. Use it on unlimited projects.
+
+-----
+
+## Who This Is For
+
+- **Product teams** launching documentation for the first time
+- **Developers** building docs sites for clients
+- **Open-source projects** that need proper docs and a blog
+- **SaaS companies** tired of maintaining three separate sites
+- **Agencies** that want a professional starting point for documentation projects
+
+If you need a documentation site that's actually fast, easy to update, and looks intentional — Docus is built for you.
+
+-----
+
+## Live Demo
+
+See the full template in action:
+
+👉 [Run Live Demo](https://astrodoc.pages.dev/)
+
+Browse the documentation, test the blog, check the landing page. Everything is functional.
+
+-----
+
+*Docus — built with Astro + Starlight. Documentation, blog, and landing in one project. JSON-driven, MDX ready, SEO optimized.*
+
+-----
+
+## Get Docus Now
+
+One-time purchase. Use on unlimited projects. Full source code, complete documentation, and deployment guides included.
+
+👉 [Get Docus on Gumroad — $65](https://creativitaz.gumroad.com/l/starlightastrodocus)
 
 -----
 
