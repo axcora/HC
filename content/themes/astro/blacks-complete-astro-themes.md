@@ -389,8 +389,4 @@ change `yourdomain.com` with your domain name.
 
 If you want , you can use our services for work with headless cms and setup your website project,until your website is live !!
 
-Need Help ?? [Contact Us](mailto:axcora@gmail.com)
 
----------------------------
-
-Premium Astro Template - Develope by [https://www.hockeycomputindo.com/en/jamstack/](https://www.hockeycomputindo.com/en/jamstack/)
