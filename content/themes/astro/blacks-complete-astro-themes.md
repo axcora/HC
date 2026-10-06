@@ -13,7 +13,7 @@ features:
   - SEO Auto + Picture + Transition
   - Own 100% Source
 download: https://creativitaz.gumroad.com/l/astrojs-blacks
-demo: https://conceptualart.pages.dev/
+demo: https://astro-blacks-themes.pages.dev/
 tags:
     - astro
     - multipurpose template
