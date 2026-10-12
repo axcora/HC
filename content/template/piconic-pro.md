@@ -4,8 +4,8 @@ description: Features
 image: https://wsrv.nl/?url=https%3A%2F%2Fpublic-files.gumroad.com%2Fns6neyxawks5cq257cxhsl62kep1&w=1200&output=webp&q=85&af=
 image_raw: https://public-files.gumroad.com/ns6neyxawks5cq257cxhsl62kep1
 download: https://creativitaz.gumroad.com/l/piconic-pro
-price: 65
-price_cents: 6500
+price: 59
+price_cents: 5900
 sales: 0
 tags:
  - themes

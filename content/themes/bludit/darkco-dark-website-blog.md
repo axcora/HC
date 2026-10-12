@@ -23,8 +23,6 @@ tags:
     - dark modern
     - bluditthemes
     - premiumthemes
-    - featuredpremium
-    - featuredthemes
 ---
 
 ### DARKCO Dark Modern Website

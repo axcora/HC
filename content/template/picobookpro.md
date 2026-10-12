@@ -4,8 +4,8 @@ description: Features
 image: https://wsrv.nl/?url=https%3A%2F%2Fpublic-files.gumroad.com%2Fd21gmubwqp6pltpwnz06c68oneep&w=1200&output=webp&q=85&af=
 image_raw: https://public-files.gumroad.com/d21gmubwqp6pltpwnz06c68oneep
 download: https://creativitaz.gumroad.com/l/picobookpro
-price: 65
-price_cents: 6500
+price: 39
+price_cents: 3900
 sales: 0
 tags:
  - themes
