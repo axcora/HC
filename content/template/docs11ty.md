@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/gj7mwvngv6vqm97vtilqtbut69tf
 download: https://creativitaz.gumroad.com/l/docs11ty
 price: Free
 price_cents: 0
-sales: 7
+sales: 8
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - website
  - website template
 layout: template-detil.cax
-date: 2026-10-03
+date: 2026-10-12
 updated: 
 ---
 

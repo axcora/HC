@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/mk5y24pr9sgvq0kgudxp5alpj2c2
 download: https://creativitaz.gumroad.com/l/blazor-starter-web
 price: Free
 price_cents: 0
-sales: 8
+sales: 9
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - web development
  - website template
 layout: template-detil.cax
-date: 2026-10-03
+date: 2026-10-12
 updated: 
 ---
 

@@ -16,7 +16,7 @@ tags:
  - website template
  - website theme
 layout: template-detil.cax
-date: 2026-10-03
+date: 2026-10-12
 updated: 
 ---
 

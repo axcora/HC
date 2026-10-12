@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/sh8gjth0o4n8a9fvd8n7xejmbgzd
 download: https://creativitaz.gumroad.com/l/bpers-bludit
 price: Free
 price_cents: 0
-sales: 128
+sales: 130
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - web development
  - website template
 layout: template-detil.cax
-date: 2026-10-03
+date: 2026-10-12
 updated: 
 ---
 

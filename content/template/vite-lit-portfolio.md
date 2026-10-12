@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/jrv354sg7klnhvafthpuxoee16dq
 download: https://creativitaz.gumroad.com/l/vite-lit-portfolio
 price: Free
 price_cents: 0
-sales: 19
+sales: 20
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - website design
  - web development
 layout: template-detil.cax
-date: 2026-10-03
+date: 2026-10-12
 updated: 
 ---
 

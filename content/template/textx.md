@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/5xobrqyswnslzbt9ersc4p4rbjtk
 download: https://creativitaz.gumroad.com/l/textx
 price: Free
 price_cents: 0
-sales: 61
+sales: 63
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - blogging
  - blogger
 layout: template-detil.cax
-date: 2026-10-03
+date: 2026-10-12
 updated: 
 ---
 

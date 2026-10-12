@@ -896,8 +896,6 @@ Or you can use headless cms for your dev local mode with Tina CMS
 
 If you interest work with headless cms, so you can use our services for develope your backend headless cms admin for your project.
 
-[Order Headless CMS integration](https://www.hockeycomputindo.com/en/jamstack/)
-
 -----
 
 ## BONUS SEO TIPS
