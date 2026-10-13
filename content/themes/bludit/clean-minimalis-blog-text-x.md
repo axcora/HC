@@ -23,8 +23,6 @@ tags:
     - minimalist blog
     - bluditthemes
     - premiumthemes
-    - featuredpremium
-    - featuredthemes
 ---
 ### About Text-X Pro
 
