@@ -4,7 +4,7 @@ title: RentCar - Gatsby JS Car Rental Theme with Headless Decap CMS
 description: Premium Gatsby JS theme for car rental, limousine, and party bus websites. Direct email booking, Decap CMS, SEO optimized. One-time $79, unlimited projects.
 image: gatsby/gatsby-js-themes-car1_uxmpfg.jpg
 features:
- - Gatsby 5 + React 20/22 UP
+ - Gatsby + React
  - Headless Decap CMS
  - Direct Email Booking
  - JSON Data Content
@@ -51,7 +51,7 @@ OTAs take 15-25% of every booking. Payment gateways add complexity and fees. Wor
 
 **RentCar** solves all four.
 
-Built on Gatsby 5 and React 18 - 20 - 22 Up — the same modern stack used by high-performance websites worldwide — this theme gives you a car rental website that Google loves, customers trust, and competitors cannot match.
+Built on Gatsby and React  - 20 - 22 Up — the same modern stack used by high-performance websites worldwide — this theme gives you a car rental website that Google loves, customers trust, and competitors cannot match.
 
 ### What Makes RentCar Different
 
@@ -61,7 +61,7 @@ Built on Gatsby 5 and React 18 - 20 - 22 Up — the same modern stack used by hi
 
 **No monthly fees.** One-time $79. Unlimited projects. Forever.
 
-**Modern stack.** Gatsby 5, React 18, Decap CMS. Built for speed and SEO.
+**Modern stack.** Gatsby, React , Decap CMS. Built for speed and SEO.
 
 **Open source.** You own the code. Modify it. Extend it.
 
@@ -69,9 +69,9 @@ Built on Gatsby 5 and React 18 - 20 - 22 Up — the same modern stack used by hi
 
 **Gatsby JS theme.** RentCar is built specifically for car rental. Not a generic template.
 
-**Next JS theme.** Same modern stack philosophy. But RentCar uses Gatsby 5 for static generation and built-in GraphQL data layer.
+**Next JS theme.** Same modern stack philosophy. But RentCar uses Gatsby for static generation and built-in GraphQL data layer.
 
-**Astro JS theme.** Astro is great for content sites. RentCar uses Gatsby 5 with React 18 for interactive booking forms and CMS integration.
+**Astro JS theme.** Astro is great for content sites. RentCar uses Gatsby with React  for interactive booking forms and CMS integration.
 
 **WordPress theme.** No plugins. No updates. No security patches. No monthly hosting bills.
 
@@ -89,7 +89,7 @@ Built on Gatsby 5 and React 18 - 20 - 22 Up — the same modern stack used by hi
 
 ## What You Get
 
-**Complete Gatsby JS car rental theme.** Built with Gatsby 5, React 18, and Bootstrap 5. Static, fast, secure.
+**Complete Gatsby JS car rental theme.** Built with Gatsby, React , and Bootstrap 5. Static, fast, secure.
 
 **Headless Decap CMS included.** Edit your fleet, blog, and content without touching code. Add a car in 2 minutes. Upload photos. Update pricing. No developer needed.
 
@@ -131,10 +131,10 @@ Built on Gatsby 5 and React 18 - 20 - 22 Up — the same modern stack used by hi
 
 ## Tech Stack
 
-- Gatsby 5.16
-- React 18 -20 -22 
+- Gatsby 5.16.1
+- React  18 / 20
 - Decap CMS
-- Bootstrap 5
+- Bootstrap
 - Framer Motion
 - Sharp image optimization
 
