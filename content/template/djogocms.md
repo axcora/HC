@@ -10,13 +10,13 @@ sales: 6
 tags:
  - themes
  - template
+ - website
  - python
  - django
  - web design
- - website
  - web development
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

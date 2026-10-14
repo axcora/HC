@@ -11,12 +11,12 @@ tags:
  - themes
  - template
  - website
- - pelician
  - python
- - website template
  - website design
+ - website template
+ - pelician
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

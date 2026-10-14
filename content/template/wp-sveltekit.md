@@ -10,13 +10,13 @@ sales: 4
 tags:
  - themes
  - template
- - website
- - web design
- - website template
  - wordpress
+ - website
+ - website template
  - svelte
+ - web design
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

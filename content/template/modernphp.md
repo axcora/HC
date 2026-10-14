@@ -10,13 +10,13 @@ sales: 0
 tags:
  - themes
  - template
- - php
+ - blogging
  - website
+ - php
  - web design
  - web development
- - blogging
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

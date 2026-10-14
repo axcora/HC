@@ -10,13 +10,13 @@ sales: 4
 tags:
  - themes
  - template
- - python
- - web design
  - website
- - web development
+ - python
  - jamstack
+ - web design
+ - web development
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

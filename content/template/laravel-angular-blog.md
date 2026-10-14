@@ -10,13 +10,13 @@ sales: 3
 tags:
  - themes
  - template
- - laravel
- - angular
- - web design
  - website
+ - angular
+ - laravel
+ - web design
  - web development
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

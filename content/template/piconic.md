@@ -10,13 +10,13 @@ sales: 5
 tags:
  - themes
  - template
+ - website theme
  - website design
+ - mobile ui
  - website template
  - mobile app design
- - mobile ui
- - website theme
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

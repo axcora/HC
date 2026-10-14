@@ -10,13 +10,13 @@ sales: 7
 tags:
  - themes
  - template
- - jamstack
  - website
+ - website template
+ - jamstack
  - web design
  - web development
- - website template
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

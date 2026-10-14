@@ -10,13 +10,13 @@ sales: 0
 tags:
  - themes
  - template
- - perl
- - jamstack
  - website
- - website template
  - website design
+ - website template
+ - jamstack
+ - perl
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

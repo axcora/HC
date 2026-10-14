@@ -10,13 +10,13 @@ sales: 4
 tags:
  - themes
  - template
- - decap
  - netlify
  - netlify cms
- - decap cms
  - web design
+ - decap
+ - decap cms
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

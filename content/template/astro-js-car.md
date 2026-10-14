@@ -10,13 +10,13 @@ sales: 4
 tags:
  - themes
  - template
- - astro
  - website
  - website template
  - web design
  - web development
+ - astro
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

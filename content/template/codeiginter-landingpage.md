@@ -10,13 +10,13 @@ sales: 4
 tags:
  - themes
  - template
- - code igniter
  - website
+ - website template
  - web design
  - web development
- - website template
+ - code igniter
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

@@ -10,13 +10,13 @@ sales: 5
 tags:
  - themes
  - template
+ - blogging
+ - website
  - react.js
  - web design
- - website
  - web development
- - blogging
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

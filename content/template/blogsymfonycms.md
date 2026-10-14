@@ -10,13 +10,13 @@ sales: 0
 tags:
  - themes
  - template
+ - blogging
+ - website
+ - website template
  - symfony
  - web design
- - website
- - blogging
- - website template
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

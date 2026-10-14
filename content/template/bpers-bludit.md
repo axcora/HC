@@ -10,13 +10,13 @@ sales: 130
 tags:
  - themes
  - template
+ - website
+ - website template
  - bludit
  - web design
- - website
  - web development
- - website template
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

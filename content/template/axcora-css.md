@@ -10,12 +10,12 @@ sales: 0
 tags:
  - themes
  - template
- - css
- - css-framework
- - stylesheet
  - website
+ - css
+ - stylesheet
+ - css-framework
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

@@ -10,13 +10,13 @@ sales: 2
 tags:
  - themes
  - template
- - svelte
- - sveltekit
- - web design
  - website
+ - svelte
+ - web design
  - web development
+ - sveltekit
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

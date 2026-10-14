@@ -10,13 +10,13 @@ sales: 19
 tags:
  - themes
  - template
- - nextjs
- - react.js
- - web design
  - website
+ - react.js
+ - nextjs
+ - web design
  - web development
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

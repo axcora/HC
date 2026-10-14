@@ -10,13 +10,13 @@ sales: 5
 tags:
  - themes
  - template
- - svelte
- - bulma
- - web design
  - website
+ - bulma
+ - svelte
+ - web design
  - web development
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

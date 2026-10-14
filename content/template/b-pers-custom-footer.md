@@ -10,13 +10,13 @@ sales: 0
 tags:
  - themes
  - template
+ - blogging
  - plugin
  - widgets
- - web design
  - website
- - blogging
+ - web design
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

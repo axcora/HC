@@ -10,13 +10,13 @@ sales: 0
 tags:
  - themes
  - template
- - ionic
- - ionicframework
- - angular
  - website
+ - angular
+ - ionic
  - website template
+ - ionicframework
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

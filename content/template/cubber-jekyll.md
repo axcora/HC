@@ -10,13 +10,13 @@ sales: 0
 tags:
  - themes
  - template
+ - website
+ - website design
+ - website template
  - jekyll
  - jekyll theme
- - website
- - website template
- - website design
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

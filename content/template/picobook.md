@@ -10,13 +10,13 @@ sales: 4
 tags:
  - themes
  - template
- - website template
  - website theme
  - website design
  - website builder
+ - website template
  - website development
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

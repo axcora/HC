@@ -11,12 +11,12 @@ tags:
  - themes
  - template
  - blogging
- - blogger template
  - blogger
+ - blogger template
  - blogspot
  - blogspot template
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

@@ -10,13 +10,13 @@ sales: 2
 tags:
  - themes
  - template
+ - website
  - rails
  - ruby
- - ruby on rails
- - website
  - website template
+ - ruby on rails
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

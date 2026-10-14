@@ -10,13 +10,13 @@ sales: 2
 tags:
  - themes
  - template
- - react.js
- - react
  - website
+ - react.js
  - website template
+ - react
  - web design
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

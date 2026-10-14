@@ -10,13 +10,13 @@ sales: 11
 tags:
  - themes
  - template
- - restaurant
- - cafe
- - menu
- - web design
  - website
+ - menu
+ - cafe
+ - restaurant
+ - web design
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

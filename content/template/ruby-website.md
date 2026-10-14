@@ -10,13 +10,13 @@ sales: 3
 tags:
  - themes
  - template
- - ruby
  - website
- - website template
+ - ruby
  - website design
+ - website template
  - web design
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

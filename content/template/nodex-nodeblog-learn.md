@@ -10,13 +10,13 @@ sales: 1
 tags:
  - themes
  - template
- - node
- - node.js
  - website
+ - node.js
+ - node
  - web design
  - web development
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

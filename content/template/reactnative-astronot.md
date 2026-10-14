@@ -10,13 +10,13 @@ sales: 20
 tags:
  - themes
  - template
- - react native
+ - website
  - mobile
  - mobile app
  - web design
- - website
+ - react native
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

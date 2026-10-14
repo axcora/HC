@@ -10,13 +10,13 @@ sales: 8
 tags:
  - themes
  - template
- - eleventy
- - 11ty
- - web design
  - website
+ - eleventy
+ - web design
  - web development
+ - 11ty
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

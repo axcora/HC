@@ -10,13 +10,13 @@ sales: 6
 tags:
  - themes
  - template
- - eleventy
- - 11ty
- - jamstack
  - cms
+ - jamstack
+ - eleventy
  - web design
+ - 11ty
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

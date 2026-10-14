@@ -10,13 +10,13 @@ sales: 6
 tags:
  - themes
  - template
- - golang
  - website
- - website template
- - website design
  - website theme
+ - website design
+ - golang
+ - website template
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

@@ -10,13 +10,13 @@ sales: 0
 tags:
  - themes
  - template
- - angular
  - website
- - web design
+ - angular
  - website template
  - car
+ - web design
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

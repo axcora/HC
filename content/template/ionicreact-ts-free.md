@@ -10,13 +10,13 @@ sales: 3
 tags:
  - themes
  - template
- - ionic
- - ionicframework
- - react.js
  - mobile
+ - ionic
+ - react.js
+ - ionicframework
  - web design
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

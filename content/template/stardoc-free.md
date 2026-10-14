@@ -10,13 +10,13 @@ sales: 23
 tags:
  - themes
  - template
+ - website
+ - starlight
+ - web design
  - astro
  - astrojs
- - starlight
- - website
- - web design
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

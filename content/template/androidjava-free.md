@@ -11,12 +11,12 @@ tags:
  - themes
  - template
  - android
- - android java
  - mobile
  - mobile app
  - mobile app design
+ - android java
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

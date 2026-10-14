@@ -10,13 +10,13 @@ sales: 1
 tags:
  - themes
  - template
- - react.js
  - document
- - docusaurus
+ - react.js
  - documentation
  - web design
+ - docusaurus
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

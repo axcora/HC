@@ -10,13 +10,13 @@ sales: 3
 tags:
  - themes
  - template
- - solid
- - solid.js
+ - website
  - react.js
  - web design
- - website
+ - solid
+ - solid.js
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

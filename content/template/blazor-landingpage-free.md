@@ -10,13 +10,13 @@ sales: 12
 tags:
  - themes
  - template
- - blazor
- - web design
  - website
- - web development
  - website template
+ - web design
+ - web development
+ - blazor
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

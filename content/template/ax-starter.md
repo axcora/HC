@@ -11,12 +11,12 @@ tags:
  - themes
  - template
  - website
- - website development
- - web development
  - website template
  - web design
+ - web development
+ - website development
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 

@@ -10,13 +10,13 @@ sales: 2
 tags:
  - themes
  - template
- - vuejs
  - website
- - website template
  - website design
+ - vuejs
+ - website template
  - web design
 layout: template-detil.cax
-date: 2026-10-13
+date: 2026-10-15
 updated: 
 ---
 
