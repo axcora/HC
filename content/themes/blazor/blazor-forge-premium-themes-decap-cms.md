@@ -31,6 +31,7 @@ tags:
   - enterprise blazor
   - csharp razor
   - aspnet core themes
+  - blazorthemes
   - premium blazor themes
   - premiumthemes
 ---
