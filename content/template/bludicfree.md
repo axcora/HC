@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/5zp11jni94228lpvn8y98k3gofth
 download: https://creativitaz.gumroad.com/l/bludicfree
 price: Free
 price_cents: 0
-sales: 18
+sales: 19
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - web design
  - web development
 layout: template-detil.cax
-date: 2026-10-15
+date: 2026-10-16
 updated: 
 ---
 

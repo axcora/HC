@@ -23,8 +23,6 @@ tags:
     - documentation website
     - astro docs
     - premiumthemes
-    - featured
-    - featuredthemes
 ---
 ## Docuna Astro Starlight project
 

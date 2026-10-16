@@ -16,7 +16,7 @@ tags:
  - website template
  - mobile app design
 layout: template-detil.cax
-date: 2026-10-15
+date: 2026-10-16
 updated: 
 ---
 
