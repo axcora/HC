@@ -30,6 +30,7 @@ tags:
   - fluent design blazor
   - enterprise blazor
   - csharp razor
+  - blazor
   - aspnet core themes
   - blazorthemes
   - premium blazor themes
