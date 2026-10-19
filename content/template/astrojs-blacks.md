@@ -16,21 +16,22 @@ tags:
  - web development
  - astrojs
 layout: template-detil.cax
-date: 2026-10-16
+date: 2026-10-20
 updated: 
 ---
 
-<p><strong>Develope your website with astro js</strong></p><p>New and modern static site generator - fast and SEO website with astro.</p><div class=tiptap__raw><div><div style=left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;><iframe src=//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fyoutu.be%2FaFYEr4mjuCM&amp;key=31708e31359468f73bc5b03e9dcab7da style=top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0; allowfullscreen= allow=accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *; fullscreen *;></iframe></div></div></div><p><br></p><p><strong>Blacks — Astro JS Multipurpose Theme</strong></p><p><strong>Develop your website with Astro JS — a modern static site generator built for speed and SEO.</strong></p><p><strong>Blacks is a multipurpose Astro theme designed for creative and professional projects. Whether you are building a portfolio, a company profile, an art gallery, or a personal site, Blacks gives you the structure and features you need without starting from scratch.</strong></p><p><strong>Who it is for</strong></p><ul>
+<p><strong>Develope your website with astro js</strong></p><p>New and modern static site generator - fast and SEO website with astro.</p><div class=tiptap__raw data-title=ASTRO JS Themes Template - Blacks - for multipurpose projects data-url=https://www.youtube.com/watch?v=YwnAax4okAg data-thumbnail=https://i.ytimg.com/vi/YwnAax4okAg/maxresdefault.jpg><div><div style=left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;><iframe src=https://iframely.net/api/iframe?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DYwnAax4okAg&amp;key=31708e31359468f73bc5b03e9dcab7da style=top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0; allowfullscreen= allow=accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *; fullscreen *;></iframe></div></div></div><hr><p><strong>Blacks — Astro JS Multipurpose Theme</strong></p><p><strong>Develop your website with Astro JS — a modern static site generator built for speed and SEO.</strong></p><p><strong>Blacks is a multipurpose Astro theme designed for creative and professional projects. Whether you are building a portfolio, a company profile, an art gallery, or a personal site, Blacks gives you the structure and features you need without starting from scratch.</strong></p><p><strong>Who it is for</strong></p><ul>
 <li><strong>Photographers and visual artists who need a portfolio site.</strong></li>
 <li><strong>Studios and creative agencies presenting services and past work.</strong></li>
 <li><strong>Companies that want a profile site with a blog and gallery.</strong></li>
 <li><strong>Freelancers who want one theme they can adapt to multiple projects.</strong></li>
 </ul><p><strong>Who it is not for</strong></p><ul>
 <li>
-<strong>Documentation-only projects. Our Docuna or Docus is a better fit. </strong><br><strong>Docuna: </strong><a href=https://creativitaz.gumroad.com/l/docuna target=_blank rel=noopener noreferrer nofollow>https://creativitaz.gumroad.com/l/docuna</a><br><strong>Docus: </strong><a target=_blank rel=noopener noreferrer nofollow href=https://creativitaz.gumroad.com/l/starlightastrodocus><strong>https://creativitaz.gumroad.com/l/starlightastrodocus</strong></a>
+<strong>Documentation-only projects. Our Docuna or Docus is a better fit. </strong><br><strong>Docuna: </strong><a href=https://creativitaz.gumroad.com/l/docuna target=_blank rel=noopener noreferrer nofollow>https://creativitaz.gumroad.com/l/docuna</a><br><strong>Docus: </strong><a href=https://creativitaz.gumroad.com/l/starlightastrodocus target=_blank rel=noopener noreferrer nofollow><strong>https://creativitaz.gumroad.com/l/starlightastrodocus</strong></a>
 </li>
 <li>
-<strong>Booking-based sites like rentals. Our Astro Car is a better fit for that.</strong><br><a target=_blank rel=noopener noreferrer nofollow href=https://creativitaz.gumroad.com/l/astro-js-car>https://creativitaz.gumroad.com/l/astro-js-car</a> </li>
+<strong>Booking-based sites like rentals. Our Astro Car is a better fit for that.</strong><br><a href=https://creativitaz.gumroad.com/l/astro-js-car target=_blank rel=noopener noreferrer nofollow>https://creativitaz.gumroad.com/l/astro-js-car</a>
+</li>
 </ul><p><strong>What you get</strong></p><p><strong>Pages</strong></p><ul>
 <li><strong>Home Page</strong></li>
 <li><strong>About Page</strong></li>

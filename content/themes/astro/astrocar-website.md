@@ -24,8 +24,6 @@ tags:
     - astro template
     - car rental website
     - premiumthemes
-    - featured
-    - featuredthemes
 ---
 
 ### Astro JS Rent Car Themes

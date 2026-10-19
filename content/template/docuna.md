@@ -16,7 +16,7 @@ tags:
  - web design
  - astro
 layout: template-detil.cax
-date: 2026-10-16
+date: 2026-10-20
 updated: 
 ---
 

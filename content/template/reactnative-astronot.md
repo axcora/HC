@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/kan97imn7cbcsaxemwk4cndeny4e
 download: https://creativitaz.gumroad.com/l/reactnative-astronot
 price: Free
 price_cents: 0
-sales: 20
+sales: 21
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - web design
  - react native
 layout: template-detil.cax
-date: 2026-10-16
+date: 2026-10-20
 updated: 
 ---
 

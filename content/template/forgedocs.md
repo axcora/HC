@@ -16,7 +16,7 @@ tags:
  - astro js
  - astro themes
 layout: template-detil.cax
-date: 2026-10-16
+date: 2026-10-20
 updated: 
 ---
 
@@ -24,7 +24,7 @@ updated:
 <li>Landing page — for marketing your product or service</li>
 <li>Documentation — powered by Starlight, Astro's official docs framework</li>
 <li>Blog — with pagination, tags, and RSS feed</li>
-</ul><p>Instead of stitching three separate templates together, you get one codebase. One design system. One deployment.</p><p>No subscription. No per-site license. Pay once, use it on unlimited projects.</p><p>WHAT YOU GET</p><p>Landing Page</p><ul>
+</ul><p>Instead of stitching three separate templates together, you get one codebase. One design system. One deployment.</p><p>No subscription. No per-site license. Pay once, use it on unlimited projects.</p><div class=tiptap__raw data-title=ForgeDocs: Astro Starlight Theme with Landing Page, Docs, Blog &amp; Decap CMS data-url=https://www.youtube.com/watch?v=K_V52q5etR0 data-thumbnail=https://i.ytimg.com/vi/K_V52q5etR0/maxresdefault.jpg><div><div style=left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;><iframe src=https://iframely.net/api/iframe?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DK_V52q5etR0&amp;key=31708e31359468f73bc5b03e9dcab7da style=top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0; allowfullscreen= allow=accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *; fullscreen *;></iframe></div></div></div><p>WHAT YOU GET</p><p>Landing Page</p><ul>
 <li>Hero section, feature grid, pricing table, CTA — all driven from JSON</li>
 <li>Change copy without touching component code</li>
 <li>Responsive, mobile-first layout</li>

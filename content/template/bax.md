@@ -16,11 +16,11 @@ tags:
  - web design
  - web development
 layout: template-detil.cax
-date: 2026-10-16
+date: 2026-10-20
 updated: 
 ---
 
-<h1><strong>BAX - Static Site Generator</strong></h1><h2><strong>⚡ The Simplest Static Site Generator You'll Ever Use</strong></h2><p><strong>BAX</strong> is a lightweight, cross-platform static site generator built with pure Batch (Windows) and Bash (Linux/Mac) scripts. No dependencies, no bloat - just pure static site magic!</p><hr><h2><strong>✨ Features</strong></h2><ul>
+<h1><strong>BAX - Static Site Generator</strong></h1><h2><strong>⚡ The Simplest Static Site Generator You'll Ever Use</strong></h2><p><strong>BAX</strong> is a lightweight, cross-platform static site generator built with pure Batch (Windows) and Bash (Linux/Mac) scripts. No dependencies, no bloat - just pure static site magic!</p><div class=tiptap__raw data-title=BAX: A Minimal Bash-Powered Static Site Generator for Simple Projects #ssg #bashscripting data-url=https://www.youtube.com/watch?v=36xVCoZEpDc data-thumbnail=https://i.ytimg.com/vi/36xVCoZEpDc/sddefault.jpg><div><div style=left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;><iframe src=https://iframely.net/api/iframe?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D36xVCoZEpDc&amp;key=31708e31359468f73bc5b03e9dcab7da style=top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0; allowfullscreen= allow=accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *; fullscreen *;></iframe></div></div></div><hr><h2><strong>✨ Features</strong></h2><ul>
 <li>⚡ <strong>Zero Dependencies</strong> - No Node.js, no Python, no Ruby. Just your system's built-in shell!</li>
 <li>🌐 <strong>Cross-Platform</strong> - Works on Windows, Linux, and macOS out of the box</li>
 <li>🎨 <strong>Modern Design</strong> - Bootstrap 5 with custom elegant CSS</li>
