@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/jysqfpxzjlqm5rwagmoe49nve4ob
 download: https://creativitaz.gumroad.com/l/adbux
 price: Free
 price_cents: 0
-sales: 4
+sales: 5
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - android studio
  - android app
 layout: template-detil.cax
-date: 2026-10-20
+date: 2026-10-21
 updated: 
 ---
 

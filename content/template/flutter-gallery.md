@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/6jbd8mwv8cunvhcaaaoou6993761
 download: https://creativitaz.gumroad.com/l/flutter-gallery
 price: Free
 price_cents: 0
-sales: 12
+sales: 13
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - dart
  - flutter
 layout: template-detil.cax
-date: 2026-10-20
+date: 2026-10-21
 updated: 
 ---
 

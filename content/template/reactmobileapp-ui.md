@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/jtiesp8wowfrz0mcsgvsc5cb9tej
 download: https://creativitaz.gumroad.com/l/reactmobileapp-ui
 price: Free
 price_cents: 0
-sales: 1
+sales: 2
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - web design
  - web development
 layout: template-detil.cax
-date: 2026-10-20
+date: 2026-10-21
 updated: 
 ---
 

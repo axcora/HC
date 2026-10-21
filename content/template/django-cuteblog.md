@@ -16,7 +16,7 @@ tags:
  - django
  - web design
 layout: template-detil.cax
-date: 2026-10-20
+date: 2026-10-21
 updated: 
 ---
 
