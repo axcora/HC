@@ -6,5 +6,4 @@ layout: base.cax
 {% include home/nav.cax %}
 {% include home/hero.cax %}
 {% include home/themes.cax %}
-{% include home/services.cax %}
 {% include home/footer.cax %}
