@@ -56,6 +56,8 @@ a{color:inherit;text-decoration:none}img{max-width:100%;height:auto;display:bloc
 .card{background:var(--paper);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:420px;transition:.15s}
 .card:hover{background:var(--accent);color:#fff}
 .card:hover .tag{background:var(--paper);color:var(--ink)}
+.black{background:#000;color:#fff}
+.black a{color:#fff}
 .top{display:flex;justify-content:space-between}
 .tag{border:var(--b2);padding:4px 7px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--paper);color:var(--ink)}
 .name{font-size:34px;line-height:.9}

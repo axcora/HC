@@ -6,7 +6,7 @@ layout: base.cax
 <nav class="mobile-nav" id="mobileNav"><div class="mobile-nav-links">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }} <em> {{item.no}} </em></a>{% endfor %}<a href="{{ hc.navbar.button.url }}" target="_blank">{{ hc.navbar.button.text }} <em>{{ hc.navbar.list | length + 1 }}</em></a></div><div class="mobile-foot"><span>© 2026 {{ hc.navbar.title }}</span><span>Premium Themes That Convert</span></div></nav>
 <section class="section"><div class="head"><h1 class="huge display">ALL THEMES<br><em>{{ pagination.total_items }} Free and Premium Drops</em></h1><input id="q" class="input" placeholder="FILTER: ASTRO, COMMERCE..." aria-label="Filter"></div>
 <div class="grid-themes" id="grid">
-<a href="{{ hc.widget.url }}" class="card" target="_blank" rel="noopener">
+<a href="{{ hc.widget.url }}" class="card black" target="_blank" rel="noopener">
   <h2 class="name display">{{ hc.widget.title }}<br><span>{{ hc.widget.text }}</span></h2>
   <div class="thumb">
     <img src="https://res.cloudinary.com/hockeycorp/image/upload/w_334/q_auto:low/f_avif/v1699871939/website%20design/{{ hc.cover }}" alt="{{ hc.widget.title }}" class="coveris" width="334" height="251" decoding="async" loading="eager" fetchpriority="high">

@@ -9,7 +9,7 @@ layout: base.cax
 <input id="q" class="input" placeholder="FILTER: ASTRO, COMMERCE..." aria-label="Filter">
 </div>
 <div class="grid-themes">
-<a href="{{ hc.widget.url }}" class="card" target="_blank" rel="noopener">
+<a href="{{ hc.widget.url }}" class="card black" target="_blank" rel="noopener">
   <h2 class="name display">{{ hc.widget.title }}<br><span>{{ hc.widget.text }}</span></h2>
   <div class="thumb">
     <img src="https://res.cloudinary.com/hockeycorp/image/upload/w_334/q_auto:low/f_avif/v1699871939/website%20design/{{ hc.cover }}" alt="{{ hc.widget.title }}" class="coveris" width="334" height="251" decoding="async" loading="eager" fetchpriority="high">
