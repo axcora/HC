@@ -16,7 +16,7 @@ tags:
  - web design
  - web development
 layout: template-detil.cax
-date: 2026-10-21
+date: 2026-10-26
 updated: 
 ---
 
@@ -38,5 +38,5 @@ updated:
 <li>Sample templates and content structure</li>
 <li>Deployment guides for all major platforms</li>
 <li>MIT License - use commercially</li>
-</ul><hr><p><strong>Ready to build the fastest static site of your life?</strong> Stop wrestling with JavaScript frameworks and get back to writing.</p><p><strong>Download CAX SSG today</strong> - the static site generator that puts speed and simplicity first.</p><hr><h3>FAQ</h3><p><strong>Is it really zero dependencies?</strong></p><p>Yes! The binary includes everything needed. No package manager required.</p><p><strong>Can I use it on Windows and Linux / Macos?</strong></p><p>Yes, via WSL2 or MinGW.or Make. Native build works too.</p><p><strong>Does it support custom domains?</strong></p><p>Absolutely - CAX generates static HTML that works with any domain/hosting.</p><p><strong>How hard is it to learn?</strong></p><p>If you know basic Markdown and HTML, you're ready in 5 minutes.</p><p><strong>Is it open source?</strong></p><p>Yes! MIT license. The source code is available on Gumroad and GitHub.</p>
+</ul><hr><p><strong>Ready to build the fastest static site of your life?</strong> Stop wrestling with JavaScript frameworks and get back to writing.</p><div class=tiptap__raw data-title=CAX SSG — C Static Site Generator | Single Binary 0.4s Build, Zero Dependencies, Pure HTML data-url=https://www.youtube.com/watch?v=5hNO1FrOhQA data-thumbnail=https://i.ytimg.com/vi/5hNO1FrOhQA/sddefault.jpg><div><div style=left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;><iframe src=https://iframely.net/api/iframe?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D5hNO1FrOhQA&amp;key=31708e31359468f73bc5b03e9dcab7da style=top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0; allowfullscreen= allow=accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *; fullscreen *;></iframe></div></div></div><p><strong>Download CAX SSG today</strong> - the static site generator that puts speed and simplicity first.</p><hr><h3>FAQ</h3><p><strong>Is it really zero dependencies?</strong></p><p>Yes! The binary includes everything needed. No package manager required.</p><p><strong>Can I use it on Windows and Linux / Macos?</strong></p><p>Yes, via WSL2 or MinGW.or Make. Native build works too.</p><p><strong>Does it support custom domains?</strong></p><p>Absolutely - CAX generates static HTML that works with any domain/hosting.</p><p><strong>How hard is it to learn?</strong></p><p>If you know basic Markdown and HTML, you're ready in 5 minutes.</p><p><strong>Is it open source?</strong></p><p>Yes! MIT license. The source code is available on Gumroad and GitHub.</p>
 

@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/zlxucuiff83fq6jfh53zuilj1h1k
 download: https://creativitaz.gumroad.com/l/bl-creative
 price: Free
 price_cents: 0
-sales: 16
+sales: 17
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - web design
  - web development
 layout: template-detil.cax
-date: 2026-10-21
+date: 2026-10-26
 updated: 
 ---
 

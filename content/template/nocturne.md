@@ -16,7 +16,7 @@ tags:
  - web design
  - docusaurus
 layout: template-detil.cax
-date: 2026-10-21
+date: 2026-10-26
 updated: 
 ---
 
@@ -50,5 +50,5 @@ updated:
 <strong>Documentation</strong> — so you're not alone when you customize</li>
 <li>
 <strong>Peace of mind</strong> — because you own it, forever</li>
-</ul><hr><h3><strong>Ready to Ship?</strong></h3><p>One payment. Own forever. Unlimited projects.</p>
+</ul><hr><h3><strong>Ready to Ship?</strong></h3><p>One payment. Own forever. Unlimited projects.</p><p>Get Started with Nocturne</p>
 

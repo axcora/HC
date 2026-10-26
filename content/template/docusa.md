@@ -16,7 +16,7 @@ tags:
  - web design
  - docusaurus
 layout: template-detil.cax
-date: 2026-10-21
+date: 2026-10-26
 updated: 
 ---
 
@@ -53,5 +53,5 @@ updated:
 <li>Static pages: About, Contact, Services</li>
 <li>Dark/Light mode</li>
 <li>Documentation guide</li>
-</ul><p><strong>Tech Stack:</strong> Docusaurus, React, Markdown, MDX, JSON, Bootstrap</p><p>Build your documentation site faster with Docusar - Docusaurus themes template for modern projects.</p><p><br></p><p>Lighthouse Target Mobile Test Result</p><figure><img src=https://public-files.gumroad.com/6eyoposq577q72pmjnr57du191qv><p class=figcaption></p></figure><p><br></p><p>Google Page Speed Target Desktop Test Result</p><figure><img src=https://public-files.gumroad.com/m0r20gmap8lyusuqleuh9ipzqtoo><p class=figcaption></p></figure><p><br></p><p>Get start now with Docusar Project !!</p>
+</ul><p><strong>Tech Stack:</strong> Docusaurus, React, Markdown, MDX, JSON, Bootstrap</p><p>Build your documentation site faster with Docusar - Docusaurus themes template for modern projects.</p><p><br></p><p>Lighthouse Target Mobile Test Result</p><figure><img src=https://public-files.gumroad.com/6eyoposq577q72pmjnr57du191qv><p class=figcaption></p></figure><p>Google Page Speed Target Desktop Test Result</p><figure><img src=https://public-files.gumroad.com/m0r20gmap8lyusuqleuh9ipzqtoo><p class=figcaption></p></figure><p>Get start now with Docusar Project !!</p><div class=tiptap__raw data-title=Docusaurus Themes That Convert - All in One SaaS Docs Blog - Docusar vs Old Docs data-url=https://www.youtube.com/watch?v=f46mnwqpqSY data-thumbnail=https://i.ytimg.com/vi/f46mnwqpqSY/maxresdefault.jpg><div><div style=left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;><iframe src=https://iframely.net/api/iframe?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Df46mnwqpqSY&amp;key=31708e31359468f73bc5b03e9dcab7da style=top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0; allowfullscreen= allow=accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *; fullscreen *;></iframe></div></div></div><p><br></p>
 

@@ -16,7 +16,7 @@ tags:
  - web design
  - web development
 layout: template-detil.cax
-date: 2026-10-21
+date: 2026-10-26
 updated: 
 ---
 
@@ -45,5 +45,5 @@ button:
 <li>LiveReload development server</li>
 <li>Production build optimization</li>
 <li>MIT License - use commercially</li>
-</ul><hr><p><strong>Stop waiting for builds. Start shipping.</strong> Get the speed of C with the developer experience you love.</p><p><strong>Download CAX Minimalis now</strong> - where 1972 power meets modern DX.</p><hr><h3>FAQ</h3><p><strong>Is this different from regular CAX?</strong></p><p>Yes! Minimalis is focused on Jekyll/11ty-style frontmatter and workflows with extreme size optimization.</p><p><strong>Can I migrate from Jekyll/Eleventy?</strong></p><p>Absolutely - the frontmatter and templating will feel familiar.</p><p><strong>Does it support nested data?</strong></p><p>Yes! Deep nesting like <code>hero.button.text</code> works automatically.</p><p><strong>Is it really &lt;500KB?</strong></p><p>Yes - the entire binary is smaller than most images.</p><p><strong>Is it open source?</strong></p><p>MIT licensed. Free forever with the Axcora ecosystem.</p>
+</ul><hr><p><strong>Stop waiting for builds. Start shipping.</strong> Get the speed of C with the developer experience you love.</p><div class=tiptap__raw data-title=Why CAX? — No npm install, No Bundle, No Runtime | The 1.2MB SSG That Outlives Frameworks data-url=https://www.youtube.com/watch?v=_Hl_COqx8wU data-thumbnail=https://i.ytimg.com/vi/_Hl_COqx8wU/sddefault.jpg><div><div style=left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;><iframe src=https://iframely.net/api/iframe?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D_Hl_COqx8wU&amp;key=31708e31359468f73bc5b03e9dcab7da style=top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0; allowfullscreen= allow=accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *; fullscreen *;></iframe></div></div></div><p><strong>Download CAX Minimalis now</strong> - where 1972 power meets modern DX.</p><hr><h3>FAQ</h3><p><strong>Is this different from regular CAX?</strong></p><p>Yes! Minimalis is focused on Jekyll/11ty-style frontmatter and workflows with extreme size optimization.</p><p><strong>Can I migrate from Jekyll/Eleventy?</strong></p><p>Absolutely - the frontmatter and templating will feel familiar.</p><p><strong>Does it support nested data?</strong></p><p>Yes! Deep nesting like <code>hero.button.text</code> works automatically.</p><p><strong>Is it really &lt;500KB?</strong></p><p>Yes - the entire binary is smaller than most images.</p><p><strong>Is it open source?</strong></p><p>MIT licensed. Free forever with the Axcora ecosystem.</p>
 

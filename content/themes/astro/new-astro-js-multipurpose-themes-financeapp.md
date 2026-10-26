@@ -24,8 +24,6 @@ tags:
     - astro template
     - app landing
     - premiumthemes
-    - featured
-    - featuredpremium
 ---
 ### Startup FinanceApp Multipurpose Astro Js Themes
 
