@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/rlusdnj86ihmlfsaepvawegs8ytl
 download: https://creativitaz.gumroad.com/l/astro-landingpage-free
 price: Free
 price_cents: 0
-sales: 7
+sales: 8
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - web development
  - astro
 layout: template-detil.cax
-date: 2026-10-26
+date: 2026-10-30
 updated: 
 ---
 

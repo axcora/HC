@@ -15,7 +15,7 @@ tags:
  - stylesheet
  - css-framework
 layout: template-detil.cax
-date: 2026-10-26
+date: 2026-10-30
 updated: 
 ---
 

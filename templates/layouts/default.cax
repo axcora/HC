@@ -14,6 +14,7 @@
 {% include nav.cax %}
 {{ content }}
 {% include footer.cax %}
+{% include chat.cax %}
 {% include scripts.cax %}
 </body>
 </html>

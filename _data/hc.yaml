@@ -7,30 +7,31 @@ cover: "logo-512_d59bk0.webp"
 url: "https://www.hockeycomputindo.com"
 author: "HockeyComputindo"
 
-navbar: 
+navbar:
   logo: "H"
   title: "HC"
-  button: 
+  button:
     text: "Axcora"
     url: "https://axcora.com"
-  template: 
+  template:
     text: Template
     url: /template/
     button: Download
-  themes: 
+  themes:
     text: Themes
     url: /themes/
     button: Download
   list:
+    - name: "Premium"
+      url: "/premium/"
+      no: "pro"
+      highlight: true
     - name: "Themes"
       url: "/themes/"
       no: "design"
     - name: "Free"
       url: "/free/"
       no: "free"
-    - name: "Premium"
-      url: "/premium/"
-      no: "pro"
     - name: "Templates"
       url: "/template/"
       no: "Layout"
@@ -64,75 +65,75 @@ themes:
 
 services:
   title: "Custom Web Architecture"
-  description: "Headless Commerce, Booking OS, SSG & Vision AI - Custom built for your business"
-  info: "Commerce, Booking, SSG, AI - Built to own, not rented."
-  list: 
-    - title: "Own 100% .NET Engine - 12ms Build No Lock"
-      info: "01 — Static Site Generator"
-      description: "Slow builds & rented platform? DAX .NET 8 static builder - 12ms compile, zero bloat, single binary, immutable infra you control forever. Own source, not subscription."
-      button: 
-        text: "Order Now"
-        url: "https://www.fiverr.com/creativitas/design-your-website-with-progresive-web-application"
-    - title: "Forensic Self-Hosted AI - Vision Finance & Autoblog"
-      info: "02 — AI Automation"
-      description: "Stop giving data to cloud. SAEDI Vision runs on your infra - forensic audit trail, vision intelligence, finance automation, 100% auditable. Own pipeline & data."
-      button: 
-        text: "Order Now"
-        url: "https://www.fiverr.com/creativitas/ai-automation-finance-vision-saedi-autoblog-own-100"
-    - title: "Python-First SSG - No Ruby Node Headache"
-      info: "03 — Static Site Generator"
-      description: "Sick of gem & npm conflicts? Pycora is Python-native - own your pipeline, no dependency hell, no Jekyll, no Astro, just clean Python build."
-      button: 
-        text: "Order Now"
-        url: "https://www.fiverr.com/creativitas/design-your-website-with-phyton-django"
-    - title: "Zero Oversell Commerce - FoxyCart Supabase POS"
-      info: "04 — Headless Architecture"
-      description: "Overselling kills trust. Unified POS + online shop with FoxyCart checkout & Supabase backend - guaranteed zero oversell, enterprise inventory without bloat."
-      button: 
-        text: "Order Now"
-        url: "https://www.fiverr.com/creativitas/design-modern-headless-online-shop-ecommerce-website"
-    - title: "Payment Freedom Booking - Decoupled Automation"
-      info: "05 — Headless Architecture"
-      description: "Payment provider locking your booking? Decouple it. Own your flow, not rent it. Separated logic, provider-agnostic, automation-first, no commission."
-      button: 
-        text: "Order Now"
-        url: "https://www.fiverr.com/creativitas/create-your-website-with-cms"
-    - title: "90+ Lighthouse Headless - Next.js Gatsby Edge"
-      info: "06 — Headless Architecture"
-      description: "Need scale & speed? Headless Next.js & Gatsby - 90++ Lighthouse, edge-ready, own 100% source. No lock-in, no performance ceiling, built to own."
-      button: 
-        text: "Order Now"
-        url: "https://www.fiverr.com/creativitas/create-your-website-with-new-technology"
-    - title: "Lightweight Flat-File CMS - No WP Bloat"
-      info: "07 — Web Presence"
-      description: "WordPress slow & vulnerable? Custom flat-file with MySQL/SQLite - fast, secure, own 100%. No plugin updates, no patches, just performance."
-      button: 
-        text: "Order Now"
-        url: "https://www.fiverr.com/creativitas/design-a-website-blog-with-our-cool-template-flat-file-cms"
-    - title: "Free Hosting JAMstack - Jekyll Astro 11ty Migration"
-      info: "08 — Static Site Generator"
-      description: "Why pay monthly for static? Migrate WordPress to high-performance JAMstack - 90++ PageSpeed, $0 hosting bill, content stays in your repo."
-      button: 
-        text: "Order Now"
-        url: "https://www.fiverr.com/creativitas/design-your-modern-website-using-jekyll"
-    - title: "Rank-Ready Premium Presence - Forensic SEO 100 Score"
-      info: "09 — Web Presence"
-      description: "Competitors rank, you don't? Premium presence with forensic SEO arch - semantic, canonical, OG, JSON-LD - crafted to rank, not rent. 100 PageSpeed day one."
-      button: 
+  description: "Headless commerce, booking systems, static site generators, and AI automation — engineered for speed, SEO, and full ownership. No subscriptions, no lock-in."
+  info: "Commerce, booking, SSG, AI — built to own, not rent."
+  list:
+    - title: "Rank-Ready Premium Website — Forensic SEO, 100 PageSpeed"
+      info: "Web Presence"
+      description: "Your competitors rank, you don't. Get a premium website with forensic SEO architecture — semantic HTML, canonical tags, Open Graph, JSON-LD, sitemap — crafted to rank and convert. 100 PageSpeed score from day one. No monthly fees, no rented platform."
+      button:
         text: "Order Now"
         url: "https://www.fiverr.com/creativitas/create-your-custom-website-and-app"
-    - title: "Figma to Git CMS Bridge - Decap Sveltia Tina"
-      info: "10 — Headless Architecture"
-      description: "Content stuck in Figma? Bridge to Git-based CMS - Decap, Sveltia, Tina. You own content, repo & workflow. Visual editing, Git source truth."
-      button: 
+    - title: "Free-Hosting JAMstack Migration — Jekyll, Astro, 11ty"
+      info: "Static Site Generator"
+      description: "Still paying monthly for a static website? Migrate from WordPress to high-performance JAMstack — 90+ PageSpeed, $0 hosting bill, content stays in your Git repo. Fast, secure, and fully yours."
+      button:
         text: "Order Now"
-        url: "https://www.fiverr.com/creativitas/convert-your-figma-and-ui-design-to-flatfile-cms-or-ssg"
-    - title: "Docs That Scale - Docusaurus Starlight Nextra OS"
-      info: "11 — Web Presence"
-      description: "Docs broken, slow, unsearchable? Documentation OS with Docusaurus, Starlight, Nextra - sovereign knowledge base that scales with you, searchable forever."
-      button: 
+        url: "https://www.fiverr.com/creativitas/design-your-modern-website-using-jekyll"
+    - title: "Lightweight Flat-File CMS — No WordPress Bloat"
+      info: "Web Presence"
+      description: "WordPress slow and vulnerable? Get a custom flat-file CMS with MySQL or SQLite — fast, secure, and 100% yours. No plugin updates, no security patches, no bloat. Just performance."
+      button:
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/design-a-website-blog-with-our-cool-template-flat-file-cms"
+    - title: "Headless Next.js & Gatsby — 90+ Lighthouse, Edge-Ready"
+      info: "Headless Architecture"
+      description: "Need scale and speed? Headless Next.js and Gatsby builds with 90+ Lighthouse scores, edge-ready deployment, and 100% source ownership. No lock-in, no performance ceiling, built to own."
+      button:
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/create-your-website-with-new-technology"
+    - title: "Documentation OS — Docusaurus, Starlight, Nextra"
+      info: "Web Presence"
+      description: "Docs broken, slow, unsearchable? Build a documentation OS with Docusaurus, Starlight, or Nextra — a sovereign knowledge base that scales with you and stays searchable forever."
+      button:
         text: "Order Now"
         url: "https://www.fiverr.com/creativitas/design-modern-documentation-website-astro-js-stalight"
+    - title: "Zero-Oversell Commerce — FoxyCart + Supabase POS"
+      info: "Headless Architecture"
+      description: "Overselling kills trust. Unified POS and online shop with FoxyCart checkout and Supabase backend — guaranteed zero oversell, enterprise inventory without the bloat."
+      button:
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/design-modern-headless-online-shop-ecommerce-website"
+    - title: "Payment-Freedom Booking System — Decoupled Automation"
+      info: "Headless Architecture"
+      description: "Payment provider locking your booking flow? Decouple it. Own your flow, not rent it — separated logic, provider-agnostic, automation-first, zero commission."
+      button:
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/create-your-website-with-cms"
+    - title: "Forensic Self-Hosted AI — Vision, Finance, Autoblog"
+      info: "AI Automation"
+      description: "Stop giving your data to the cloud. SAEDI Vision runs on your own infrastructure — forensic audit trail, vision intelligence, finance automation, 100% auditable. Own your pipeline and your data."
+      button:
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/ai-automation-finance-vision-saedi-autoblog-own-100"
+    - title: "Python-First SSG — No Ruby, No Node Headache"
+      info: "Static Site Generator"
+      description: "Sick of gem and npm conflicts? Pycora is Python-native — own your pipeline, no dependency hell, no Jekyll, no Astro. Just a clean Python build."
+      button:
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/design-your-website-with-phyton-django"
+    - title: "Git-Based CMS Bridge — Decap, Sveltia, Tina"
+      info: "Headless Architecture"
+      description: "Decap, Sveltia, Tina. You own the content, the repo, and the workflow. Visual editing on top of Git source truth — no database, no lock-in."
+      button:
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/convert-your-figma-and-ui-design-to-flatfile-cms-or-ssg"
+    - title: "Own 100% .NET Engine — 12ms Build, No Lock-In"
+      info: "Static Site Generator"
+      description: "Slow builds and rented platforms? DAX .NET 8 static builder — 12ms compile, zero bloat, single binary, immutable infrastructure you control forever. Own the source, not the subscription."
+      button:
+        text: "Order Now"
+        url: "https://www.fiverr.com/creativitas/design-your-website-with-progresive-web-application"
 
 footer:
   section1: 
@@ -208,7 +209,9 @@ stacks:
   - name: Gatsby
     url: /themes/gatsby/
   - name: Next.js
-    url: /themes/next/
+    url: /themes/next/    
+  - name: Nuxt s
+    url: /themes/nuxt/
   - name: Docusaurus
     url: /themes/docusaurus/
   - name: Angular

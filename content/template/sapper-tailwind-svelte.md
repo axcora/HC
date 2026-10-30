@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/q7oufzyrkmuv1f63lcq1nsewrd41
 download: https://creativitaz.gumroad.com/l/sapper-tailwind-svelte
 price: Free
 price_cents: 0
-sales: 8
+sales: 9
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - web development
  - sapper
 layout: template-detil.cax
-date: 2026-10-26
+date: 2026-10-30
 updated: 
 ---
 

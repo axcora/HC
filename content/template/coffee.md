@@ -11,7 +11,7 @@ tags:
  - themes
  - template
 layout: template-detil.cax
-date: 2026-10-26
+date: 2026-10-30
 updated: 
 ---
 

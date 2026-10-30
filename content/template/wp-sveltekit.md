@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/1ynw1stgyd8wos8c02u7u4yr6kjm
 download: https://creativitaz.gumroad.com/l/wp-sveltekit
 price: Free
 price_cents: 0
-sales: 4
+sales: 5
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - svelte
  - web design
 layout: template-detil.cax
-date: 2026-10-26
+date: 2026-10-30
 updated: 
 ---
 

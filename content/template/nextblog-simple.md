@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/5u17aacccwwwi83vouesyd5k8t9i
 download: https://creativitaz.gumroad.com/l/nextblog-simple
 price: Free
 price_cents: 0
-sales: 2
+sales: 3
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - web design
  - web development
 layout: template-detil.cax
-date: 2026-10-26
+date: 2026-10-30
 updated: 
 ---
 

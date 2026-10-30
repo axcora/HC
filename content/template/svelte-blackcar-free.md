@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/535tpzast1rblhqayaf4pq71bo0j
 download: https://creativitaz.gumroad.com/l/svelte-blackcar-free
 price: Free
 price_cents: 0
-sales: 3
+sales: 4
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - web development
  - sveltekit
 layout: template-detil.cax
-date: 2026-10-26
+date: 2026-10-30
 updated: 
 ---
 

@@ -34,6 +34,12 @@ jobs:
       - name: Build Site
         run: ./cax build
 
+      - name: Build Chat Index
+        run: |
+          gcc -O2 -std=c11 -o cax-chat-index src/chat/chat_json.c src/chat/chat_main.c
+          ./cax-chat-index content/themes site/themes-index.json
+          ls -lh site/themes-index.json
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

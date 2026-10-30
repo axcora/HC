@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/8ii5t5z89rbfv3754442wvns43l1
 download: https://creativitaz.gumroad.com/l/stardoc-free
 price: Free
 price_cents: 0
-sales: 23
+sales: 24
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - astro
  - astrojs
 layout: template-detil.cax
-date: 2026-10-26
+date: 2026-10-30
 updated: 
 ---
 

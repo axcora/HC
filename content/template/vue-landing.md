@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/ouc0ymnm424dkpx4amzoaw4uxj34
 download: https://creativitaz.gumroad.com/l/vue-landing
 price: Free
 price_cents: 0
-sales: 2
+sales: 3
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - website template
  - web design
 layout: template-detil.cax
-date: 2026-10-26
+date: 2026-10-30
 updated: 
 ---
 

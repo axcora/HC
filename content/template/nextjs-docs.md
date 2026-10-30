@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/ybk6m1260flekzyau9g4gulm302u
 download: https://creativitaz.gumroad.com/l/nextjs-docs
 price: Free
 price_cents: 0
-sales: 7
+sales: 8
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - nextjs
  - web design
 layout: template-detil.cax
-date: 2026-10-26
+date: 2026-10-30
 updated: 
 ---
 

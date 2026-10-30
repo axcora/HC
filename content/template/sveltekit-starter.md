@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/nsku6jvpabmgilp5qpff2hgl1xm2
 download: https://creativitaz.gumroad.com/l/sveltekit-starter
 price: Free
 price_cents: 0
-sales: 3
+sales: 4
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - web development
  - sveltekit
 layout: template-detil.cax
-date: 2026-10-26
+date: 2026-10-30
 updated: 
 ---
 

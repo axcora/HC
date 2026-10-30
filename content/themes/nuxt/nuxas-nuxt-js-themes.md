@@ -29,6 +29,7 @@ tags:
   - nuxt themes
   - nuxt js
   - nuxt 4
+  - nuxt
   - saas template
   - landing page
   - blog theme

@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/dclclgo471722otca7dxpb7tke58
 download: https://creativitaz.gumroad.com/l/svelte-mdl-free
 price: Free
 price_cents: 0
-sales: 3
+sales: 4
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - web design
  - web development
 layout: template-detil.cax
-date: 2026-10-26
+date: 2026-10-30
 updated: 
 ---
 
