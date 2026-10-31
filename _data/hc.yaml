@@ -29,6 +29,9 @@ navbar:
     - name: "Themes"
       url: "/themes/"
       no: "design"
+    - name: "Blog"
+      url: "/blog/"
+      no: "blog"
     - name: "Free"
       url: "/free/"
       no: "free"
@@ -210,7 +213,7 @@ stacks:
     url: /themes/gatsby/
   - name: Next.js
     url: /themes/next/    
-  - name: Nuxt s
+  - name: Nuxt
     url: /themes/nuxt/
   - name: Docusaurus
     url: /themes/docusaurus/

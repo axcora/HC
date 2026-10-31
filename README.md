@@ -1,11 +1,12 @@
-# HC Themes - 100+ Free & Premium Themes for Docs, SaaS, Blogs
+# HC Themes - 100+ Free & Premium Themes for Astro, Next.js, Nuxt, Svelte, Blazor & Eleventy
 
-Premium and free themes for **Astro, Starlight, Docusaurus, Hugo, Jekyll, Bludit, Pico**. Built for **90+ Lighthouse**, native SEO, pure HTML/CSS/JS. No subscription. Lifetime ownership.
+Premium and free themes for **Astro, Starlight, Docusaurus, Hugo, Jekyll, Eleventy, Next.js, Nuxt, SvelteKit, Blazor, and Bludit**. Built for **90+ Lighthouse**, native SEO, pure HTML/CSS/JS. No subscription. Lifetime ownership.
 
 > By [Hockey Computindo](https://hockeycomputindo.com) - Web Architect & AI Solutions
 
-
 ## 🚀 Live Demo
+
+[![HC Themes](https://hockeycomputindo.com/logo-512.webp)](https://hockeycomputindo.com/)
 
 **[hockeycomputindo.com/themes](https://hockeycomputindo.com/themes)** - Explore 100+ themes
 
@@ -19,34 +20,30 @@ Premium and free themes for **Astro, Starlight, Docusaurus, Hugo, Jekyll, Bludit
 
 ## 📦 Stack
 
-- **Astro** - Modern static site builder
+- **Astro** - [View Astro themes](https://hockeycomputindo.com/themes/astro/)
 - **Starlight** - Documentation theme
-- **Docusaurus** - Docs by Meta
-- **Hugo / Jekyll** - Classic SSG
-- **Bludit / Pico** - Flat-file CMS
+- **Docusaurus** - [View Docusaurus themes](https://hockeycomputindo.com/themes/docusaurus/)
+- **Next.js** - [View Next.js themes](https://hockeycomputindo.com/themes/next/)
+- **Nuxt** - [View Nuxt themes](https://hockeycomputindo.com/themes/nuxt/)
+- **SvelteKit** - [View Svelte themes](https://hockeycomputindo.com/themes/svelte/)
+- **Blazor** - [View Blazor themes](https://hockeycomputindo.com/themes/blazor/)
+- **Hugo / Jekyll / Eleventy** - [View Jekyll](https://hockeycomputindo.com/themes/jekyll/) · [View Eleventy](https://hockeycomputindo.com/themes/eleventy/)
+- **Bludit** - [View Bludit themes](https://hockeycomputindo.com/themes/bludit/)
 
 All themes: **90+ Lighthouse, SEO optimized, responsive, dark mode ready**
 
-## 🎨 Categories
+## 🎨 Browse
 
-- `docs` - Documentation themes
-- `saas` - SaaS landing & dashboard
-- `blog` - Blog & portfolio
-- `free` - Free themes
-- `premium` - Premium themes
-
-Filter by tag:
-```
-/themes/astro/ 
-/tags/docs/
-/tags/saas/
-/tags/free/
-/tags/premium/
-```
+- [All Themes](https://hockeycomputindo.com/themes/)
+- [Premium](https://hockeycomputindo.com/premium/)
+- [Free](https://hockeycomputindo.com/free/)
 
 ## 🛠️ Built With CAX SSG
 
-Fast Static Site Generator in C - built for speed.
+HC is built with **CAX SSG** - a fast static site generator written in pure C.
+
+- Website: **[cax.axcora.com](https://cax.axcora.com)**
+- GitHub: **[github.com/mesinkasir/cax](https://github.com/mesinkasir/cax)**
 
 ```bash
 make
@@ -69,14 +66,8 @@ We don't just sell themes. We build.
 - AI content automation for blogs
 - Chatbot for SaaS
 
-Contact: **axcora@gmail.com** or [hockeycomputindo.com](https://hockeycomputindo.com)
-
-## 📄 License
-
-- Free themes: MIT
-- Premium themes: Commercial license, lifetime ownership
+[View all services](https://hockeycomputindo.com/services/) or contact **axcora@gmail.com**
 
 ---
 
 © 2026 Hockey Computindo - Premium Themes That Convert
-

@@ -16,6 +16,7 @@ typedef struct {
     char image[512];
     char price[64];
     char download[512];
+    char demo[512];
     char tags[CHAT_MAX_TAGS][CHAT_MAX_TAG_LEN];
     int tag_count;
     int has_collection;
@@ -105,6 +106,8 @@ static int parse_theme_file(const char *path, ChatTheme *t) {
             strncpy(t->image, val, sizeof(t->image) - 1);
         } else if (ci_equal(key, "download")) {
             strncpy(t->download, val, sizeof(t->download) - 1);
+        } else if (ci_equal(key, "demo")) {
+            strncpy(t->demo, val, sizeof(t->demo) - 1);
         } else if (ci_equal(key, "collection")) {
             t->has_collection = 1;
         } else if (ci_equal(key, "tags")) {
@@ -217,20 +220,22 @@ static void scan_dir_recursive(const char *dir_path, FILE *out, int *first, int 
         char price_clean[64];
         clean_price(t.price, price_clean, sizeof(price_clean));
 
-        char esc_title[1024], esc_desc[4096], esc_slug[512], esc_url[1024], esc_img[1024];
+        char esc_title[1024], esc_desc[4096], esc_slug[512], esc_url[1024], esc_img[1024], esc_demo[1024];
         json_escape(t.title, esc_title, sizeof(esc_title));
         json_escape(t.description, esc_desc, sizeof(esc_desc));
         json_escape(t.slug, esc_slug, sizeof(esc_slug));
         json_escape(url, esc_url, sizeof(esc_url));
         json_escape(t.image, esc_img, sizeof(esc_img));
+        json_escape(t.demo, esc_demo, sizeof(esc_demo));
 
         if (!*first) fprintf(out, ",\n");
         *first = 0;
 
         fprintf(out,
             "  {\"title\":\"%s\",\"slug\":\"%s\",\"url\":\"%s\",\"image\":\"%s\","
+            "\"demo\":\"%s\","
             "\"description\":\"%s\",\"price\":\"%s\",\"is_premium\":%s,\"is_free\":%s,\"tags\":[",
-            esc_title, esc_slug, esc_url, esc_img, esc_desc,
+            esc_title, esc_slug, esc_url, esc_img, esc_demo, esc_desc,
             price_clean,
             is_premium ? "true" : "false",
             is_free ? "true" : "false");
