@@ -452,9 +452,14 @@ static int validate_article(const char *md, const char **required_urls, int url_
     if (!strstr(md, "title:")) { printf("  [FAIL] missing title\n"); return 0; }
     if (!strstr(md, "description:")) { printf("  [FAIL] missing description\n"); return 0; }
     if (!strstr(md, "tags:")) { printf("  [FAIL] missing tags\n"); return 0; }
+        const char *body = md;
+    if (strncmp(md, "---", 3) == 0) {
+        const char *end = strstr(md + 3, "\n---");
+        if (end) body = end + 4;
+    }
     for (int i = 0; i < url_count; i++) {
-        if (!strstr(md, required_urls[i])) {
-            printf("  [FAIL] missing link: %s\n", required_urls[i]);
+        if (!strstr(body, required_urls[i])) {
+            printf("  [FAIL] missing body link: %s\n", required_urls[i]);
             return 0;
         }
     }
@@ -526,7 +531,7 @@ static char *build_prompt_comparison(Theme *a, Theme *b, const char *aText, cons
         "Explore more at [All Themes](https://www.hockeycomputindo.com/themes/) and [Premium Themes](https://www.hockeycomputindo.com/premium/).\n\n"
         "RULES:\n"
         "- Total body MUST be 2000-2500 words.\n"
-        "- MUST link to %s and %s in the body.\n"
+        "- MUST include IN THE BODY markdown links to %s and %s using exactly the url shown above. The links MUST appear inside paragraphs.\n"
         "- MUST link to demos in 'See It Live'.\n"
         "- MUST link to /themes/ and /premium/ in 'Related Themes'.\n"
         "- ONLY use features from data. Never invent features.\n"
@@ -595,12 +600,13 @@ static char *build_prompt_review(Theme *t, const char *text, const char *demo) {
         "## Verdict\n"
         "<2-3 paragraphs with a clear recommendation. 200-300 words.>\n\n"
         "## See It Live\n"
-        "Try the demo: [%s](%s)\n\n"
+        "Read the full theme details at [%s](%s).\n"
+        "Try the demo: [Demo](%s)\n\n"
         "## Related Themes\n"
         "Explore more at [All Themes](https://www.hockeycomputindo.com/themes/) and [Premium Themes](https://www.hockeycomputindo.com/premium/).\n\n"
         "RULES (NON-NEGOTIABLE):\n"
         "- Total body MUST be 2000-2500 words.\n"
-        "- MUST include a link to the theme page: [%s](https://www.hockeycomputindo.com%s)\n"
+        "- MUST include IN THE BODY a markdown link to the theme page: [%s](%s). Do NOT add domain. Use as-is.\n"
         "- MUST include a link to the demo in 'See It Live' section.\n"
         "- MUST include internal links to /themes/ and /premium/ in 'Related Themes'.\n"
         "- ONLY use features from data. Never invent features.\n"
@@ -609,7 +615,7 @@ static char *build_prompt_review(Theme *t, const char *text, const char *demo) {
         text, demo,
         t->title, t->description, t->image,
         t->title,
-        t->demo, t->demo,
+        t->title, t->url, t->demo,
         t->title, t->url);
     return p;
 }
@@ -662,7 +668,7 @@ static char *build_prompt_trend(const char *topic, Theme **themes, int count, co
         "RULES:\n"
         "- Total body MUST be 2000-2500 words.\n"
         "- FOCUS ON OUR PREMIUM THEMES, not the trend itself.\n"
-        "- MUST link to each theme URL in the body.\n"
+        "- MUST include IN THE BODY a markdown link to EACH theme using exactly the url shown above (e.g. [Theme Name](/themes/astro/slug/)). Do NOT modify the URL. Do NOT add domain. Use as-is. The links MUST appear inside paragraphs, not only in frontmatter.\n"
         "- MUST link to /premium/ at the end.\n"
         "- ONLY use features from data. Never invent features.\n"
         "- DO NOT use: revolutionary, game-changing, seamless, cutting-edge.\n"

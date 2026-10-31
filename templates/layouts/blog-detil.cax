@@ -1,23 +1,34 @@
 ---
 layout: base.cax
 ---
+<style>
+.detail-wrap{display:flex;flex-direction:column;gap:24px}.detail-left{width:100%;min-width:0}
+.media-box img{width:100%;height:auto;display:block;aspect-ratio:800/600}
+.panel{display:block;width:100%;content-visibility:auto;contain-intrinsic-size:0 500px}
+ol,ul{margin-left:20px;padding-left:15px}
+pre{background:#000;color:#fff;padding:16px;border-radius:8px;overflow:auto}
+pre code{background:0 0;color:inherit;padding:0}
+code{background:#000;color:#fff;padding:2px 6px;border-radius:4px}
+.meta-tags{display:flex;flex-wrap:wrap;gap:8px}
+.meta-tags .tag{display:inline-flex;align-items:center;min-height:44px;padding:10px 14px;font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:6px}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px}
+@media(min-width:1024px){.detail-wrap{flex-direction:row;align-items:flex-start}.detail-left{flex:1;min-width:0}}
+</style>
 <div class="overlay" id="overlay"></div>
-<header class="header"><a href="/" class="logo"><span class="logo-mark">{{ hc.navbar.logo }}</span><span>{{ hc.navbar.title }}</span></a><nav class="nav">{% for n in hc.navbar.list %}<a href="{{n.url}}">{{n.name}}</a>{% endfor %}</nav><a href="{{ hc.navbar.button.url }}" class="btn btn-accent" target="_blank">{{hc.navbar.button.text}}</a><button class="hamburger" id="hamburger" aria-label="Menu"><span></span></button></header>
+<header class="header"><a href="/" class="logo"><span class="logo-mark">{{ hc.navbar.logo }}</span><span>{{ hc.navbar.title }}</span></a>
+<nav class="nav">{% for n in hc.navbar.list %}<a href="{{n.url}}">{{n.name}}</a>{% endfor %}</nav>
+<a href="{{ hc.navbar.button.url }}" class="btn btn-accent" target="_blank">{{hc.navbar.button.text}}</a><button class="hamburger" id="hamburger" aria-label="Menu"><span></span></button></header>
 <nav class="mobile-nav" id="mobileNav"><div class="mobile-nav-links">{% for n in hc.navbar.list %}<a href="{{n.url}}">{{n.name}} <em>{{n.no}}</em></a>{% endfor %}<a href="{{ hc.navbar.button.url }}" target="_blank">{{hc.navbar.button.text}} <em>Gumroad</em></a></div><div class="mobile-foot"><span>© 2026 {{ hc.navbar.title }}</span><span>Premium Themes That Convert</span></div></nav>
-<section class="section">
-<article style="max-width:800px;margin:0 auto">
-<h1 class="display" style="word-break:break-word">{{ title }}</h1>
-<p class="mono" style="opacity:.7">{{ description }}</p>
-{% if date %}<p class="mono" style="opacity:.5">Published {{ date }}</p>{% endif %}
-{% if image %}<div class="media-box mt-16"><img src="https://res.cloudinary.com/hockeycorp/image/upload/w_800/q_auto:low/f_avif/v1699871939/website%20design/{{ image }}" alt="{{ title }}" width="800" height="600" loading="eager" fetchpriority="high" decoding="async"></div>{% endif %}
-{% if toc %}<div class="card p-3 mt-20"><h2 class="mono">Table of Contents</h2>{{ toc }}</div>{% endif %}
-<div class="mt-20" style="word-break:break-word;line-height:1.7">{{ content }}</div>
-{% if tags %}<div class="meta-tags mt-20">{% for t in tags %}<a href="/tags/{{t}}" class="tag">{{t}}</a>{% endfor %}</div>{% endif %}
+<section class="section"><div class="detail-wrap"><div class="detail-left">
+<h1 class="display mt-12" style="word-break:break-word">{{ title }}<br><em class="serif" style="display:block;font-size:0.6em;line-height:1.3">{{ description }}</em></h1>
+<p class="mono" style="word-break:break-all">{% for tag in tags %}<a href="/tags/{{ tag }}">{{ tag }}</a> • {% endfor %}</p>
+<div class="media-box mt-16"><img class="img-fluid p-3 brun sc" alt="{{ description }}" width="800" height="600" src="https://res.cloudinary.com/hockeycorp/image/upload/w_800/q_auto:low/f_avif/v1699871939/website%20design/{{ image }}" decoding="async" fetchpriority="high"></div>
+<div class="panel active" data-panel="f">{% if toc %}<div class="p-3"><div class="card p-3"><h2>Table Of Content</h2>{{toc}}</div></div>{% endif %}<div class="mt-16" style="word-break:break-word">{{ content }}</div></div>
+<div class="meta-tags mt-20">{% for t in tags %}<a href="/tags/{{t}}" class="tag">{{t}}</a>{% endfor %}</div>
 <hr class="mt-20">
-<div class="mt-16">{% if prev_link %}<p>{{ prev_link }}</p>{% endif %}{% if next_link %}<p>{{ next_link }}</p>{% endif %}</div>
-<div class="card p-3 mt-20"><p class="mono">Need Custom?</p><h2 class="display">Hire via Fiverr Escrow</h2><p class="hint">72+ verified reviews, escrow protected.</p><a href="https://www.fiverr.com/creativitas/create-your-custom-website-and-app" target="_blank" class="btn w-full mt-12">ORDER CUSTOM →</a></div>
-</article>
-</section>
+<p class="mono">{% if prev_link %}<span class="btn btn-paper w-full mt-12">{{ prev_link }}</span>{% endif %}{% if next_link %}<span class="btn btn-paper w-full mt-12">{{ next_link }}</span>{% endif %}</p>
+<p class="mono">Need Custom?</p><h2 class="display">Hire via Fiverr Escrow</h2><p class="hint">72+ verified reviews, escrow protected.</p><a href="https://www.fiverr.com/creativitas/create-your-custom-website-and-app" target="_blank" class="btn w-full mt-12">ORDER CUSTOM →</a>
+</div></div></section>
 <div id="toast" style="position:fixed;bottom:20px;left:10px;right:10px;background:#000;color:#fff;padding:14px;border-radius:10px;display:none;z-index:9999;border:1px solid #fff;text-align:center"></div>
 {% include widget/featured.cax %}
 {% include widget/services.cax %}

@@ -1012,30 +1012,128 @@ void cax_builder_run(void) {
         snprintf(robots_buf, sizeof(robots_buf), "User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n", robots_site_url);
         cax_write_file("site/robots.txt", robots_buf);
     }
-    // PHASE SEO: RSS feed
+    // PHASE SEO: RSS + FEED.XML + JSON FEED - GOOGLE COMPLIANT FIX
     {
-        char rss[65536];
-        snprintf(rss, sizeof(rss), "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\">\n<channel>\n<title>%s</title>\n<link>%s</link>\n<description>%s - Powered by %s</description>\n<generator>%s</generator>\n<language>en</language>\n",
-            cax_object_get_string(global_data, "site_title") ? cax_object_get_string(global_data, "site_title") : "CAX Atelier",
-            cax_object_get_string(global_data, "site_url"),
-            cax_object_get_string(global_data, "site_title") ? cax_object_get_string(global_data, "site_title") : "CAX Atelier",
-            "CAX SSG",
-            cax_object_get_string(global_data, "generator"));
-        // add items from master
-        for(int i=0;i<all_collections_master->count && i<50;i++){
-            CAXObject *it = all_collections_master->items[i];
-            if(!it) continue;
-            const char *t = cax_object_get_string(it, "title");
-            const char *u = cax_object_get_string(it, "url");
-            const char *d = cax_object_get_string(it, "description");
-            if(!t || !u) continue;
-            char item[2048];
-            snprintf(item, sizeof(item), "<item><title><![CDATA[%s]]></title><link>%s%s</link><guid>%s%s</guid><description><![CDATA[%s]]></description></item>\n",
-                t, cax_object_get_string(global_data, "site_url"), u, cax_object_get_string(global_data, "site_url"), u, d?d:t);
-            strncat(rss, item, sizeof(rss)-strlen(rss)-1);
+        const char *site_title = cax_object_get_string(global_data, "site_title");
+        if(!site_title) site_title = cax_object_get_string(global_data, "title");
+        if(!site_title){
+            CAXObject *site_obj = cax_object_get_pointer(global_data, "site");
+            if(site_obj) site_title = cax_object_get_string(site_obj, "title");
         }
-        strncat(rss, "</channel></rss>", sizeof(rss)-strlen(rss)-1);
-        cax_write_file("site/rss.xml", rss);
+        if(!site_title) site_title = "CAX Atelier";
+
+        const char *site_url_raw = seo_resolve_url(global_data);
+        char site_url[1024]; snprintf(site_url, sizeof(site_url), "%s", site_url_raw);
+        size_t slen = strlen(site_url);
+        if(slen>0 && site_url[slen-1]=='/') site_url[slen-1]='\0';
+
+        const char *site_desc = seo_resolve_desc(NULL, global_data);
+        const char *generator = cax_object_get_string(global_data, "generator");
+        if(!generator) generator = CAX_VERSION;
+
+        time_t now = time(NULL);
+        struct tm *gmt = gmtime(&now);
+        char now_rfc822[128]; strftime(now_rfc822, sizeof(now_rfc822), "%a, %d %b %Y %H:%M:%S GMT", gmt);
+        char now_iso[64]; strftime(now_iso, sizeof(now_iso), "%Y-%m-%dT%H:%M:%SZ", gmt);
+
+        char *rss = malloc(262144);
+        if(rss){
+            int off = 0;
+            off += snprintf(rss+off, 262144-off,
+                "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+                "<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\">\n"
+                "<channel>\n"
+                "<title><![CDATA[%s]]></title>\n"
+                "<link>%s/</link>\n"
+                "<description><![CDATA[%s]]></description>\n"
+                "<language>en-us</language>\n"
+                "<lastBuildDate>%s</lastBuildDate>\n"
+                "<generator>%s</generator>\n"
+                "<atom:link href=\"%s/feed.xml\" rel=\"self\" type=\"application/rss+xml\" />\n",
+                site_title, site_url, site_desc, now_rfc822, generator, site_url
+            );
+
+            int count=0;
+            for(int i=0;i<all_collections_master->count && count<100;i++){
+                CAXObject *it = all_collections_master->items[i];
+                if(!it) continue;
+                const char *t = cax_object_get_string(it, "title");
+                const char *u = cax_object_get_string(it, "url");
+                const char *d = cax_object_get_string(it, "description");
+                if(!t || !u) continue;
+                if(strstr(u,"/404")!=NULL) continue;
+                if(strcasecmp(t,"404")==0) continue;
+                if(strlen(t)<3) continue;
+
+                char abs_url[2048];
+                if(u[0]=='h') snprintf(abs_url,sizeof(abs_url),"%s",u);
+                else snprintf(abs_url,sizeof(abs_url),"%s%s",site_url,u);
+
+                // simple safe
+                char *item_buf = malloc(4096);
+                if(!item_buf) continue;
+                snprintf(item_buf,4096,
+                    "<item>\n<title><![CDATA[%s]]></title>\n<link>%s</link>\n<guid isPermaLink=\"true\">%s</guid>\n<description><![CDATA[%s]]></description>\n<pubDate>%s</pubDate>\n</item>\n",
+                    t, abs_url, abs_url, d?d:t, now_rfc822
+                );
+                if(off + (int)strlen(item_buf) < 262144-1024){
+                    strcpy(rss+off, item_buf);
+                    off+=strlen(item_buf);
+                }
+                free(item_buf);
+                count++;
+            }
+            snprintf(rss+off, 262144-off, "</channel>\n</rss>\n");
+            cax_write_file("site/rss.xml", rss);
+            cax_write_file("site/feed.xml", rss);
+            free(rss);
+        }
+
+        // JSON Feed 1.1 with date_published
+        char *jfeed = malloc(262144);
+        if(jfeed){
+            int off=0;
+            off+=snprintf(jfeed+off, 262144-off,
+                "{\n \"version\": \"https://jsonfeed.org/version/1.1\",\n \"title\": \"%s\",\n \"home_page_url\": \"%s/\",\n \"feed_url\": \"%s/feed.json\",\n \"description\": \"%s\",\n \"items\": [\n",
+                site_title, site_url, site_url, site_desc
+            );
+            int count=0;
+            for(int i=0;i<all_collections_master->count && count<100;i++){
+                CAXObject *it = all_collections_master->items[i];
+                if(!it) continue;
+                const char *t = cax_object_get_string(it, "title");
+                const char *u = cax_object_get_string(it, "url");
+                const char *d = cax_object_get_string(it, "description");
+                if(!t || !u) continue;
+                if(strstr(u,"/404")) continue;
+                if(strcasecmp(t,"404")==0) continue;
+                if(strlen(t)<3) continue;
+
+                char abs_url[2048];
+                if(u[0]=='h') snprintf(abs_url,sizeof(abs_url),"%s",u);
+                else snprintf(abs_url,sizeof(abs_url),"%s%s",site_url,u);
+
+                char esc_title[1024]={0}; int k=0;
+                for(int x=0; t[x] && k<900; x++){
+                    if(t[x]=='\"'){ esc_title[k++]='\\'; esc_title[k++]='\"'; }
+                    else if(t[x]=='\n'){ esc_title[k++]='\\'; esc_title[k++]='n'; }
+                    else esc_title[k++]=t[x];
+                }
+                esc_title[k]='\0';
+
+                if(count>0) off+=snprintf(jfeed+off, 262144-off, ",\n");
+
+                off+=snprintf(jfeed+off, 262144-off,
+                    "  {\"id\": \"%s\", \"url\": \"%s\", \"title\": \"%s\", \"content_text\": \"%s\", \"date_published\": \"%s\"}",
+                    abs_url, abs_url, esc_title, d?d:t, now_iso
+                );
+                count++;
+                if(off>250000) break;
+            }
+            off+=snprintf(jfeed+off, 262144-off, "\n ]\n}\n");
+            cax_write_file("site/feed.json", jfeed);
+            free(jfeed);
+        }
     }
     save_cache();
     clock_t end = clock();
