@@ -1,0 +1,61 @@
+name: Autoblog AI
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  autoblog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup GCC
+        run: sudo apt-get update && sudo apt-get install -y gcc make
+
+      - name: Build CAX SSG
+        run: |
+          make clean || true
+          make linux
+          chmod +x ./cax
+          ls -lh ./cax
+
+      - name: Build Site
+        run: ./cax build
+
+      - name: Build Chat Index
+        run: |
+          gcc -O2 -std=c11 -o cax-chat-index src/chat/chat_json.c src/chat/chat_main.c
+          ./cax-chat-index content/themes site/themes-index.json
+
+      - name: Build Autoblog
+        run: |
+          gcc -Wall -Wextra -std=c11 -O3 -D_POSIX_C_SOURCE=200809L -D_DEFAULT_SOURCE -D_GNU_SOURCE -o cax-autoblog src/autoblog/autoblog.c src/autoblog/autoblog_main.c
+
+      - name: Run Autoblog
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: ./cax-autoblog
+
+      - name: Rebuild Site
+        run: ./cax build
+
+      - name: Commit New Articles
+        run: |
+          git config user.name "autoblog-bot"
+          git config user.email "bot@hockeycomputindo.com"
+          git add content/blog/ autoblog/state.json
+          git diff --staged --quiet || git commit -m "autoblog: $(date +%Y-%m-%d)"
+          git push
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
