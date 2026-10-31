@@ -30,7 +30,7 @@ navbar:
       url: "/themes/"
       no: "design"
     - name: "Blog"
-      url: "/blog/"
+      url: "/blogs/"
       no: "blog"
     - name: "Free"
       url: "/free/"
