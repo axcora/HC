@@ -1,4 +1,4 @@
- <title>{{ title or hc.title }}</title>
+<title>{{ title or hc.title }}</title>
     <meta name="title" content="{{ title or hc.title }}">
     <meta name="description" content="{{ description or hc.description }}">
     <meta name="author" content="{{ author or hc.author }}">
@@ -16,6 +16,11 @@
     <meta name="twitter:description" content="{{ description or hc.description }}">
     <meta name="twitter:image" content="{{ hc.url }}{{ hc.image }}">
 <link rel="canonical" href="{{ hc.url }}{{ url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ hc.title }}" href="{{ hc.url }}/rss.xml">
+<link rel="alternate" type="application/atom+xml" title="{{ hc.title }}" href="{{ hc.url }}/feed.xml">
+<link rel="alternate" type="application/feed+json" title="{{ hc.title }}" href="{{ hc.url }}/feed.json">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ hc.url }}/sitemap.xml">
+<link rel="describedby" type="text/plain" title="LLMs.txt" href="{{ hc.url }}/llms.txt">
 <link rel="preconnect" href="https://res.cloudinary.com">
 {% if pagination.prev_url %}<link rel="prev" href="{{ hc.url }}{{ pagination.prev_url }}">{% endif %}
 {% if pagination.next_url %}<link rel="next" href="{{ hc.url }}{{ pagination.next_url }}">{% endif %}

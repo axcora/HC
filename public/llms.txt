@@ -1,0 +1,37 @@
+# Hockey Computindo
+
+> Premium and free themes for Astro, Next.js, Nuxt, SvelteKit, Blazor, Docusaurus, Starlight, Hugo, Jekyll, and Eleventy. 90+ Lighthouse, SEO-ready, full source code, one-time purchase.
+
+Hockey Computindo is a theme shop and web architecture studio. We sell curated, hand-built static site themes that you own 100%. No subscriptions. We also build custom web systems (headless commerce, booking, SSG, AI automation) via Fiverr escrow.
+
+## Themes
+
+- [All Themes](https://www.hockeycomputindo.com/themes/): Browse the full catalog of free and premium themes.
+- [Premium Themes](https://www.hockeycomputindo.com/premium/): Premium themes with lifetime ownership, full source code.
+- [Free Themes](https://www.hockeycomputindo.com/free/): Free themes to download and try.
+
+## Theme Stacks
+
+- [Astro Themes](https://www.hockeycomputindo.com/themes/astro/): Astro and Starlight themes for docs, SaaS, blogs.
+- [Next.js Themes](https://www.hockeycomputindo.com/themes/next/): Next.js themes and starters.
+- [Nuxt Themes](https://www.hockeycomputindo.com/themes/nuxt/): Nuxt 4 themes for SaaS and startups.
+- [Svelte Themes](https://www.hockeycomputindo.com/themes/svelte/): SvelteKit themes for content and SaaS.
+- [Blazor Themes](https://www.hockeycomputindo.com/themes/blazor/): Blazor WebAssembly themes for .NET developers.
+- [Docusaurus Themes](https://www.hockeycomputindo.com/themes/docusaurus/): Docusaurus documentation themes.
+- [Hugo Themes](https://www.hockeycomputindo.com/themes/hugo/): Hugo themes and templates.
+- [Jekyll Themes](https://www.hockeycomputindo.com/themes/jekyll/): Jekyll blog and portfolio themes.
+- [Eleventy Themes](https://www.hockeycomputindo.com/themes/eleventy/): Eleventy (11ty) JAMstack themes.
+- [Bludit Themes](https://www.hockeycomputindo.com/themes/bludit/): Bludit flat-file CMS themes.
+
+## Blog
+
+- [Blog](https://www.hockeycomputindo.com/blogs/): Theme reviews, comparisons, and web stack insights.
+
+## Services
+
+- [Services](https://www.hockeycomputindo.com/services/): Custom web architecture, headless commerce, booking systems, SSG, AI automation.
+
+## About
+
+- [Axcora Framework](https://www.hockeycomputindo.com/themes/others/axcora-framework/): All-in-one SSG and CSS framework built in C.
+- [CAX SSG](https://cax.axcora.com): The C static site generator that powers this site.
