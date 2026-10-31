@@ -1,0 +1,26 @@
+---
+layout: base.cax
+---
+<div class="overlay" id="overlay"></div>
+<header class="header"><a href="/" class="logo"><span class="logo-mark">{{ hc.navbar.logo }}</span><span>{{ hc.navbar.title }}</span></a><nav class="nav">{% for n in hc.navbar.list %}<a href="{{n.url}}">{{n.name}}</a>{% endfor %}</nav><a href="{{ hc.navbar.button.url }}" class="btn btn-accent" target="_blank">{{hc.navbar.button.text}}</a><button class="hamburger" id="hamburger" aria-label="Menu"><span></span></button></header>
+<nav class="mobile-nav" id="mobileNav"><div class="mobile-nav-links">{% for n in hc.navbar.list %}<a href="{{n.url}}">{{n.name}} <em>{{n.no}}</em></a>{% endfor %}<a href="{{ hc.navbar.button.url }}" target="_blank">{{hc.navbar.button.text}} <em>Gumroad</em></a></div><div class="mobile-foot"><span>© 2026 {{ hc.navbar.title }}</span><span>Premium Themes That Convert</span></div></nav>
+<section class="section">
+<article style="max-width:800px;margin:0 auto">
+<h1 class="display" style="word-break:break-word">{{ title }}</h1>
+<p class="mono" style="opacity:.7">{{ description }}</p>
+{% if date %}<p class="mono" style="opacity:.5">Published {{ date }}</p>{% endif %}
+{% if image %}<div class="media-box mt-16"><img src="https://res.cloudinary.com/hockeycorp/image/upload/w_800/q_auto:low/f_avif/v1699871939/website%20design/{{ image }}" alt="{{ title }}" width="800" height="600" loading="eager" fetchpriority="high" decoding="async"></div>{% endif %}
+{% if toc %}<div class="card p-3 mt-20"><h2 class="mono">Table of Contents</h2>{{ toc }}</div>{% endif %}
+<div class="mt-20" style="word-break:break-word;line-height:1.7">{{ content }}</div>
+{% if tags %}<div class="meta-tags mt-20">{% for t in tags %}<a href="/tags/{{t}}" class="tag">{{t}}</a>{% endfor %}</div>{% endif %}
+<hr class="mt-20">
+<div class="mt-16">{% if prev_link %}<p>{{ prev_link }}</p>{% endif %}{% if next_link %}<p>{{ next_link }}</p>{% endif %}</div>
+<div class="card p-3 mt-20"><p class="mono">Need Custom?</p><h2 class="display">Hire via Fiverr Escrow</h2><p class="hint">72+ verified reviews, escrow protected.</p><a href="https://www.fiverr.com/creativitas/create-your-custom-website-and-app" target="_blank" class="btn w-full mt-12">ORDER CUSTOM →</a></div>
+</article>
+</section>
+<div id="toast" style="position:fixed;bottom:20px;left:10px;right:10px;background:#000;color:#fff;padding:14px;border-radius:10px;display:none;z-index:9999;border:1px solid #fff;text-align:center"></div>
+{% include widget/featured.cax %}
+{% include widget/services.cax %}
+<script>
+var h=document.getElementById('hamburger'),m=document.getElementById('mobileNav'),o=document.getElementById('overlay');h&&h.addEventListener('click',()=>{m.classList.toggle('active');o.classList.toggle('active')});
+</script>

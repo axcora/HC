@@ -17,6 +17,7 @@ typedef struct {
     char price[64];
     char download[512];
     char demo[512];
+    char category[128];
     char tags[CHAT_MAX_TAGS][CHAT_MAX_TAG_LEN];
     int tag_count;
     int has_collection;
@@ -108,6 +109,8 @@ static int parse_theme_file(const char *path, ChatTheme *t) {
             strncpy(t->download, val, sizeof(t->download) - 1);
         } else if (ci_equal(key, "demo")) {
             strncpy(t->demo, val, sizeof(t->demo) - 1);
+        } else if (ci_equal(key, "category")) {
+            strncpy(t->category, val, sizeof(t->category) - 1);
         } else if (ci_equal(key, "collection")) {
             t->has_collection = 1;
         } else if (ci_equal(key, "tags")) {
@@ -146,6 +149,33 @@ static void slug_from_filename(const char *name, char *out, size_t out_size) {
     out[j] = '\0';
 }
 
+static void category_from_path(const char *dir_path, char *out, size_t out_size) {
+    const char *prefix = "content/themes/";
+    size_t pl = strlen(prefix);
+    const char *cat = "stack";
+    if (strncmp(dir_path, prefix, pl) == 0) {
+        cat = dir_path + pl;
+        const char *slash = strchr(cat, '/');
+        if (slash) {
+            size_t cl = slash - cat;
+            if (cl > 0 && cl < out_size) {
+                memcpy(out, cat, cl);
+                out[cl] = '\0';
+                return;
+            }
+        } else if (*cat) {
+            size_t cl = strlen(cat);
+            if (cl < out_size) {
+                memcpy(out, cat, cl);
+                out[cl] = '\0';
+                return;
+            }
+        }
+    }
+    strncpy(out, cat, out_size - 1);
+    out[out_size - 1] = '\0';
+}
+
 static int is_premium_tag(const char *tag) {
     if (ci_equal(tag, "premium")) return 1;
     if (ci_equal(tag, "premiumthemes")) return 1;
@@ -176,6 +206,9 @@ static void clean_price(const char *in, char *out, size_t out_size) {
 static void scan_dir_recursive(const char *dir_path, FILE *out, int *first, int *count) {
     DIR *d = opendir(dir_path);
     if (!d) return;
+
+    char cat[128];
+    category_from_path(dir_path, cat, sizeof(cat));
 
     struct dirent *e;
     while ((e = readdir(d)) != NULL) {
@@ -214,8 +247,10 @@ static void scan_dir_recursive(const char *dir_path, FILE *out, int *first, int 
             else is_free = 1;
         }
 
+        const char *use_cat = t.category[0] ? t.category : cat;
+
         char url[512];
-        snprintf(url, sizeof(url), "/themes/stack/%s/", t.slug);
+        snprintf(url, sizeof(url), "/themes/%s/%s/", use_cat, t.slug);
 
         char price_clean[64];
         clean_price(t.price, price_clean, sizeof(price_clean));

@@ -11,7 +11,7 @@
 #define MAX_TAG_LEN 128
 #define MIN_WORDS 1800
 #define MAX_RETRIES 2
-#define GEMINI_MODEL "gemini-3.8-flash"
+#define GEMINI_MODEL "gemini-3.6-flash"
 #define SITE_BASE "https://www.hockeycomputindo.com"
 #define THEMES_JSON "site/themes-index.json"
 #define STATE_FILE "autoblog/state.json"
@@ -305,7 +305,7 @@ static char *fetch_url_text(const char *url, int timeout) {
 }
 
 static char *call_gemini(const char *prompt) {
-        const char *key = getenv("GEMINI_API_KEY");
+    const char *key = getenv("GEMINI_API_KEY");
     if (!key || !*key) { fprintf(stderr, "[gemini] NO KEY\n"); return NULL; }
 
     size_t prompt_len = strlen(prompt);
@@ -319,7 +319,7 @@ static char *call_gemini(const char *prompt) {
     if (!body) { free(prompt_esc); return NULL; }
     snprintf(body, body_cap,
         "{\"contents\":[{\"parts\":[{\"text\":\"%s\"}]}],"
-        "\"generationConfig\":{\"temperature\":0.7,\"maxOutputTokens\":8192}}",
+        "\"generationConfig\":{\"temperature\":0.7,\"maxOutputTokens\":16384}}",
         prompt_esc);
     free(prompt_esc);
 
@@ -349,15 +349,27 @@ static char *call_gemini(const char *prompt) {
         "-d @\"%s\" -o \"%s\" \"%s\" 2>nul",
         bodyfile, respfile, url);
 
-    int rc = system(cmd);
+    int rc = 0;
+    int retry_delay = 5;
+    for (int attempt = 0; attempt < 3; attempt++) {
+        rc = system(cmd);
+        if (rc == 0) break;
+        if (rc == 22) {
+            fprintf(stderr, "[gemini] 503 high demand, retry %ds\n", retry_delay);
+            sleep(retry_delay);
+            retry_delay *= 2;
+        } else {
+            break;
+        }
+    }
     remove(bodyfile);
-        if (rc != 0) { fprintf(stderr, "[gemini] curl rc=%d\n", rc); remove(respfile); return NULL; }
+    if (rc != 0) { fprintf(stderr, "[gemini] curl rc=%d\n", rc); remove(respfile); return NULL; }
 
     char *resp = read_file(respfile);
     remove(respfile);
     if (!resp) return NULL;
 
-        const char *p = strstr(resp, "\"text\":");
+    const char *p = strstr(resp, "\"text\":");
     if (!p) { fprintf(stderr, "[gemini] no text: %.300s\n", resp); free(resp); return NULL; }
     p += 7;
     while (*p == ' ') p++;
@@ -436,11 +448,9 @@ static char *inject_toc(const char *md) {
 static int validate_article(const char *md, const char **required_urls, int url_count) {
     if (!md) return 0;
     if (strncmp(md, "---", 3) != 0) { printf("  [FAIL] missing frontmatter\n"); return 0; }
-    if (!strstr(md, "layout: themes-detil.cax")) { printf("  [FAIL] missing layout\n"); return 0; }
+    if (!strstr(md, "layout: blog-detil.cax")) { printf("  [FAIL] missing layout\n"); return 0; }
     if (!strstr(md, "title:")) { printf("  [FAIL] missing title\n"); return 0; }
     if (!strstr(md, "description:")) { printf("  [FAIL] missing description\n"); return 0; }
-    if (!strstr(md, "features:")) { printf("  [FAIL] missing features\n"); return 0; }
-    if (!strstr(md, "download:")) { printf("  [FAIL] missing download\n"); return 0; }
     if (!strstr(md, "tags:")) { printf("  [FAIL] missing tags\n"); return 0; }
     for (int i = 0; i < url_count; i++) {
         if (!strstr(md, required_urls[i])) {
@@ -458,11 +468,11 @@ static int validate_article(const char *md, const char **required_urls, int url_
 }
 
 static char *build_prompt_comparison(Theme *a, Theme *b, const char *aText, const char *aDemo, const char *bText, const char *bDemo) {
-    size_t cap = 32768;
+    size_t cap = 65536;
     char *p = malloc(cap);
     if (!p) return NULL;
     int n = snprintf(p, cap,
-        "Generate a comparison page for a premium theme shop. Output ONLY markdown. No explanation.\n\n"
+        "You are a senior technical writer. Write a long-form comparison article in English, 2000-2500 words.\n\n"
         "THEME A:\ntitle: %s\ndescription: %s\nimage: %s\nprice: %s\nurl: %s\ndemo: %s\nraw tags: ",
         a->title, a->description, a->image, a->price, a->url, a->demo);
     for (int i = 0; i < a->tag_count && (size_t)n < cap - 128; i++) {
@@ -475,21 +485,14 @@ static char *build_prompt_comparison(Theme *a, Theme *b, const char *aText, cons
         n += snprintf(p + n, cap - n, "%s%s", b->tags[i], (i < b->tag_count - 1) ? ", " : "");
     }
     snprintf(p + n, cap - n,
-        "\n\nA TEXT: %.2000s\nA DEMO: %.1000s\nB TEXT: %.2000s\nB DEMO: %.1000s\n\n"
-        "OUTPUT FORMAT (must match exactly):\n"
+        "\n\nA TEXT: %.1000s\nA DEMO: %.500s\nB TEXT: %.1000s\nB DEMO: %.500s\n\n"
+        "OUTPUT FORMAT:\n"
         "---\n"
-        "layout: themes-detil.cax\n"
+        "layout: blog-detil.cax\n"
         "title: %s vs %s - Which Is Better?\n"
         "description: <120-160 chars comparison summary>\n"
         "image: %s\n"
-        "features:\n"
-        "  - <feature 1>\n"
-        "  - <feature 2>\n"
-        "  - <feature 3>\n"
-        "  - <feature 4>\n"
-        "  - <feature 5>\n"
-        "download: %s\n"
-        "demo: %s\n"
+        "date: 2026-10-31\n"
         "tags:\n"
         "  - <tag 1>\n"
         "  - <tag 2>\n"
@@ -500,27 +503,50 @@ static char *build_prompt_comparison(Theme *a, Theme *b, const char *aText, cons
         "  - <tag 7>\n"
         "  - <tag 8>\n"
         "---\n\n"
-        "### %s vs %s\n\n"
-        "<3-4 sentences comparing both themes, based on data only.>\n\n"
+        "## Introduction\n"
+        "<2-3 paragraphs about the problem both themes solve. 200-300 words.>\n\n"
+        "## Overview of %s\n"
+        "<2-3 paragraphs. 200-300 words.>\n\n"
+        "## Overview of %s\n"
+        "<2-3 paragraphs. 200-300 words.>\n\n"
+        "## Features Comparison\n"
+        "<5-7 H3 subsections comparing features. 400-500 words.>\n\n"
+        "## Pricing\n"
+        "<1-2 paragraphs. 100-150 words.>\n\n"
+        "## Who Should Choose %s\n"
+        "<3-4 specific user profiles. 200-300 words.>\n\n"
+        "## Who Should Choose %s\n"
+        "<3-4 specific user profiles. 200-300 words.>\n\n"
+        "## Verdict\n"
+        "<2-3 paragraphs with clear recommendation. 200-300 words.>\n\n"
+        "## See It Live\n"
+        "Demo A: [%s](%s)\n"
+        "Demo B: [%s](%s)\n\n"
+        "## Related Themes\n"
+        "Explore more at [All Themes](https://www.hockeycomputindo.com/themes/) and [Premium Themes](https://www.hockeycomputindo.com/premium/).\n\n"
         "RULES:\n"
-        "- FEATURES: 5-7 comparison points.\n"
-        "- TAGS: 8-10 SEO tags covering both stacks + 'comparison' + 'premiumthemes'.\n"
-        "- BODY: 3-4 sentences only. MUST link to %s and %s.\n"
-        "- Output ONLY the markdown. No code fences, no explanation.",
+        "- Total body MUST be 2000-2500 words.\n"
+        "- MUST link to %s and %s in the body.\n"
+        "- MUST link to demos in 'See It Live'.\n"
+        "- MUST link to /themes/ and /premium/ in 'Related Themes'.\n"
+        "- ONLY use features from data. Never invent features.\n"
+        "- DO NOT use: revolutionary, game-changing, seamless, cutting-edge.\n"
+        "- Output ONLY markdown. No code fences, no explanation.",
         aText, aDemo, bText, bDemo,
         a->title, b->title, a->image,
-        a->url, a->demo,
         a->title, b->title,
+        a->title, b->title,
+        a->title, a->demo, b->title, b->demo,
         a->url, b->url);
     return p;
 }
 
 static char *build_prompt_review(Theme *t, const char *text, const char *demo) {
-    size_t cap = 32768;
+    size_t cap = 65536;
     char *p = malloc(cap);
     if (!p) return NULL;
     int n = snprintf(p, cap,
-        "Generate a theme detail page for a premium theme shop. Output ONLY markdown. No explanation.\n\n"
+        "You are a senior technical writer. Write a long-form review article in English, 2000-2500 words.\n\n"
         "THEME DATA:\n"
         "title: %s\n"
         "description: %s\n"
@@ -534,21 +560,14 @@ static char *build_prompt_review(Theme *t, const char *text, const char *demo) {
         n += snprintf(p + n, cap - n, "%s%s", t->tags[i], (i < t->tag_count - 1) ? ", " : "");
     }
     snprintf(p + n, cap - n,
-        "\n\nPAGE TEXT (context only): %.3000s\nDEMO TEXT (context only): %.1500s\n\n"
-        "OUTPUT FORMAT (must match exactly):\n"
+        "\n\nPAGE TEXT (context): %.1000s\nDEMO TEXT (context): %.500s\n\n"
+        "OUTPUT FORMAT:\n"
         "---\n"
-        "layout: themes-detil.cax\n"
+        "layout: blog-detil.cax\n"
         "title: %s\n"
         "description: %s\n"
         "image: %s\n"
-        "features:\n"
-        "  - <feature 1>\n"
-        "  - <feature 2>\n"
-        "  - <feature 3>\n"
-        "  - <feature 4>\n"
-        "  - <feature 5>\n"
-        "download: %s\n"
-        "demo: %s\n"
+        "date: 2026-10-31\n"
         "tags:\n"
         "  - <tag 1>\n"
         "  - <tag 2>\n"
@@ -559,31 +578,48 @@ static char *build_prompt_review(Theme *t, const char *text, const char *demo) {
         "  - <tag 7>\n"
         "  - <tag 8>\n"
         "---\n\n"
-        "### <short title>\n\n"
-        "<2-3 sentences describing the theme, based on data only. No fluff.>\n\n"
-        "RULES:\n"
-        "- FEATURES: 5-7 descriptive lines. Convert raw tags into readable features. "
-        "Example: 'bludit' → 'Bludit Flat-File CMS', 'dark mode' → 'Dark Mode + Modern'. "
-        "Do NOT copy raw tags verbatim.\n"
-        "- TAGS: 8-10 SEO-relevant tags. Include: stack tag, category tags, type tags "
-        "(e.g. 'bluditthemes', 'premiumthemes'), descriptive tags. "
-        "Do NOT include generic tags like 'website' or 'template' alone.\n"
-        "- BODY: 2-3 sentences only. Based on data only. Do NOT invent features.\n"
-        "- download MUST be %s (the theme page URL, not Gumroad).\n"
-        "- Output ONLY the markdown. No code fences, no explanation.",
+        "## Introduction\n"
+        "<2-3 paragraphs about the problem this theme solves. 200-300 words.>\n\n"
+        "## What is %s?\n"
+        "<3-4 paragraphs explaining the theme, its stack, and who it is for. 300-400 words.>\n\n"
+        "## Key Features\n"
+        "<5-7 H3 subsections, each 100-150 words, explaining a feature from the data.>\n\n"
+        "## Performance and SEO\n"
+        "<2-3 paragraphs based on data only. 200-300 words.>\n\n"
+        "## Pricing\n"
+        "<1-2 paragraphs about the price. 100-150 words.>\n\n"
+        "## Who Is This For?\n"
+        "<3-4 specific user profiles. 200-300 words.>\n\n"
+        "## Who Should Skip This?\n"
+        "<2-3 honest limitations. 150-200 words.>\n\n"
+        "## Verdict\n"
+        "<2-3 paragraphs with a clear recommendation. 200-300 words.>\n\n"
+        "## See It Live\n"
+        "Try the demo: [%s](%s)\n\n"
+        "## Related Themes\n"
+        "Explore more at [All Themes](https://www.hockeycomputindo.com/themes/) and [Premium Themes](https://www.hockeycomputindo.com/premium/).\n\n"
+        "RULES (NON-NEGOTIABLE):\n"
+        "- Total body MUST be 2000-2500 words.\n"
+        "- MUST include a link to the theme page: [%s](https://www.hockeycomputindo.com%s)\n"
+        "- MUST include a link to the demo in 'See It Live' section.\n"
+        "- MUST include internal links to /themes/ and /premium/ in 'Related Themes'.\n"
+        "- ONLY use features from data. Never invent features.\n"
+        "- DO NOT use: revolutionary, game-changing, seamless, cutting-edge.\n"
+        "- Output ONLY markdown. No code fences, no explanation.",
         text, demo,
         t->title, t->description, t->image,
-        t->url, t->demo,
-        t->url);
+        t->title,
+        t->demo, t->demo,
+        t->title, t->url);
     return p;
 }
 
 static char *build_prompt_trend(const char *topic, Theme **themes, int count, const char *image) {
-    size_t cap = 32768;
+    size_t cap = 65536;
     char *p = malloc(cap);
     if (!p) return NULL;
     int n = snprintf(p, cap,
-        "Generate a trend article for a premium theme shop. Output ONLY markdown. No explanation.\n\n"
+        "You are a senior technical writer. Write a long-form trend article in English, 2000-2500 words.\n\n"
         "TRENDING TOPIC: %s\n\n"
         "OUR PREMIUM THEMES:\n", topic);
     for (int i = 0; i < count && (size_t)n < cap - 512; i++) {
@@ -592,20 +628,13 @@ static char *build_prompt_trend(const char *topic, Theme **themes, int count, co
             themes[i]->title, themes[i]->url, themes[i]->demo, themes[i]->description);
     }
     snprintf(p + n, cap - n,
-        "\nOUTPUT FORMAT (must match exactly):\n"
+        "\nOUTPUT FORMAT:\n"
         "---\n"
-        "layout: themes-detil.cax\n"
+        "layout: blog-detil.cax\n"
         "title: <trend keyword> - Premium Themes That Fit\n"
         "description: <120-160 chars>\n"
         "image: %s\n"
-        "features:\n"
-        "  - <feature 1>\n"
-        "  - <feature 2>\n"
-        "  - <feature 3>\n"
-        "  - <feature 4>\n"
-        "  - <feature 5>\n"
-        "download: %s\n"
-        "demo: %s\n"
+        "date: 2026-10-31\n"
         "tags:\n"
         "  - <tag 1>\n"
         "  - <tag 2>\n"
@@ -616,15 +645,29 @@ static char *build_prompt_trend(const char *topic, Theme **themes, int count, co
         "  - <tag 7>\n"
         "  - <tag 8>\n"
         "---\n\n"
-        "### <trend title>\n\n"
-        "<3-4 sentences about why this trend matters and which of our themes fit.>\n\n"
+        "## Introduction\n"
+        "<2-3 paragraphs about the trend. 200-300 words.>\n\n"
+        "## Why This Matters\n"
+        "<2-3 paragraphs. 200-300 words.>\n\n"
+        "## Our Premium Themes That Fit\n"
+        "<5-7 H3 subsections, one per theme, each 100-150 words.>\n\n"
+        "## Feature Deep-Dive\n"
+        "<2-3 paragraphs. 200-300 words.>\n\n"
+        "## Who Should Upgrade\n"
+        "<3-4 specific user profiles. 200-300 words.>\n\n"
+        "## Verdict\n"
+        "<2-3 paragraphs with clear recommendation. 200-300 words.>\n\n"
+        "## Explore All Premium Themes\n"
+        "Visit [Premium Themes](https://www.hockeycomputindo.com/premium/).\n\n"
         "RULES:\n"
+        "- Total body MUST be 2000-2500 words.\n"
         "- FOCUS ON OUR PREMIUM THEMES, not the trend itself.\n"
-        "- FEATURES: 5-7 points about our themes that fit the trend.\n"
-        "- TAGS: 8-10 tags including trend keyword + 'premiumthemes'.\n"
-        "- BODY: 3-4 sentences only. MUST link to each theme URL.\n"
-        "- Output ONLY the markdown. No code fences, no explanation.",
-                image, themes[0]->url, themes[0]->demo);
+        "- MUST link to each theme URL in the body.\n"
+        "- MUST link to /premium/ at the end.\n"
+        "- ONLY use features from data. Never invent features.\n"
+        "- DO NOT use: revolutionary, game-changing, seamless, cutting-edge.\n"
+        "- Output ONLY markdown. No code fences, no explanation.",
+        image);
     return p;
 }
 

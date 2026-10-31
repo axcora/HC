@@ -64,7 +64,7 @@
         'themes': 1, 'theme': 1, 'template': 1, 'templates': 1,
         'website': 1, 'web': 1, 'design': 1, 'web-design': 1,
         'web-development': 1, 'website-theme': 1, 'website-template': 1,
-        'free': 1, 'premium': 1, 'download': 1,
+        'free': 1, 'premium': 1, 'download': 1, 'stack': 1,
         'for': 1, 'the': 1, 'and': 1, 'with': 1, 'using': 1, 'from': 1
     };
 
@@ -156,7 +156,9 @@
             var badge = t.is_premium ? '💎 Premium' : '🆓 Free';
             var price = t.price && parseFloat(t.price) > 0 ? ' — $' + t.price : '';
             out += '<b>' + esc(t.title) + '</b> (' + badge + price + ')<br>';
-            out += '<a href="' + esc(t.url) + '">View theme →</a><br><br>';
+            out += '<a href="' + esc(t.url) + '">View theme →</a>';
+            if (t.demo) out += ' · <a href="' + esc(t.demo) + '" target="_blank" rel="noopener">Demo</a>';
+            out += '<br><br>';
         });
         if (total > shown.length) {
             out += '<small>Showing ' + shown.length + ' of ' + total + '. Refine your search for more specific results.</small><br><br>';
