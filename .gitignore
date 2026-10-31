@@ -1,5 +1,12 @@
 .env
 site/
 cax.exe
+cax
 cax-chat-index
 cax-chat-index.exe
+cax-autoblog
+cax-autoblog.exe
+autoblog_*
+gemini_body_*
+gemini_resp_*
+node_modules/
