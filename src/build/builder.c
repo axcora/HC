@@ -165,7 +165,7 @@ void cax_builder_init_project(void) {
     cax_create_directory("templates/partials");
     cax_create_directory("public/css");
     cax_create_directory("site");
-    cax_write_file("_data/metadata.json", "{\n \"site\": {\n \"title\": \"CAX Enterprise SSG\",\n \"description\": \"High performance Static Site Generator in C - Horologe Atelier Brass Chronometer\",\n \"url\": \"http://localhost:8080\",\n \"author\": \"Axcora\",\n \"image\": \"/og-image.jpg\",\n \"favicon\": \"/favicon.ico\",\n \"icon\": \"/favicon.ico\",\n \"seo\": true\n }\n}\n");
+    cax_write_file("_data/metadata.json", "{\n \"site\": {\n \"title\": \"CAX Enterprise SSG\",\n \"description\": \"High performance Static Site Generator in C - Horologe Atelier Brass Chronometer\",\n \"url\": \"http://localhost:8080\",\n \"author\": \"Axcora\",\n \"image\": \"/logo-512.webp\",\n \"favicon\": \"/favicon.ico\",\n \"icon\": \"/favicon.ico\",\n \"seo\": true\n }\n}\n");
     cax_write_file("_data/nav.json","{\n \"nav1_name\": \"Home\",\n \"nav1_url\": \"/\",\n \"nav2_name\": \"Posts\",\n \"nav2_url\": \"/posts/\",\n \"nav3_name\": \"About\",\n \"nav3_url\": \"/about/\"\n}\n");
     cax_write_file("templates/partials/seo.cax","<!-- MANUAL SEO - BEBAS EDIT kalau seo:false -->\n<title>{{ title }}</title>\n<meta name=\"description\" content=\"{{ description }}\">\n<meta name=\"author\" content=\"{{ author }}\">\n<meta name=\"generator\" content=\"{{ generator }}\">\n<link rel=\"icon\" href=\"{{ favicon or icon }}\">\n<link rel=\"canonical\" href=\"{{ site_url }}{{ url }}\">\n<meta property=\"og:title\" content=\"{{ title }}\">\n<meta property=\"og:description\" content=\"{{ description }}\">\n<meta property=\"og:url\" content=\"{{ site_url }}{{ url }}\">\n<meta property=\"og:image\" content=\"{{ site_url }}{{ image }}\">\n");
     cax_write_file("templates/partials/header.cax","<header class=\"py-4 border-bottom bg-white shadow-sm mb-4\">\n <div class=\"container d-flex justify-content-between align-items-center\">\n <a class=\"navbar-brand fw-bold text-dark text-decoration-none fs-4\" href=\"/\">{{ title }}</a>\n <nav class=\"nav\">\n <a class=\"nav-link text-secondary fw-medium px-3\" href=\"{{ nav1_url }}\">{{ nav1_name }}</a>\n <a class=\"nav-link text-secondary fw-medium px-3\" href=\"{{ nav2_url }}\">{{ nav2_name }}</a>\n <a class=\"nav-link text-secondary fw-medium px-3\" href=\"{{ nav3_url }}\">{{ nav3_name }}</a>\n </nav>\n </div>\n</header>\n");
@@ -348,7 +348,7 @@ static const char* seo_resolve_image(CAXObject *ctx, CAXObject *global){
         v = seo_get_nonempty(site, "og_image");
         if(v) return v;
     }
-    return "/og-image.jpg";
+    return "/logo-512.webp";
 }
 
 static const char* seo_resolve_favicon(CAXObject *ctx, CAXObject *global){
