@@ -395,46 +395,6 @@ static char *call_gemini(const char *prompt) {
     return out;
 }
 
-static char *inject_toc(const char *md) {
-    if (!md) return NULL;
-    if (strstr(md, "## Table of Contents")) return strdup(md);
-
-    char toc[8192] = "## Table of Contents\n";
-    const char *p = md;
-    int found = 0;
-    while ((p = strstr(p, "\n## ")) != NULL) {
-        p += 4;
-        const char *e = strchr(p, '\n');
-        if (!e) e = p + strlen(p);
-        size_t l = e - p;
-        if (l > 0 && l < 200) {
-            char heading[256];
-            memcpy(heading, p, l);
-            heading[l] = '\0';
-            char slug[256];
-            slug_from(heading, slug, sizeof(slug));
-            char line[512];
-            snprintf(line, sizeof(line), "- [%s](#%s)\n", heading, slug);
-            strncat(toc, line, sizeof(toc) - strlen(toc) - 1);
-            found = 1;
-        }
-        p = e;
-    }
-    if (!found) return strdup(md);
-
-    const char *first_h2 = strstr(md, "\n## ");
-    if (!first_h2) return strdup(md);
-    size_t prefix_len = first_h2 - md + 1;
-    size_t total = prefix_len + strlen(toc) + 2 + strlen(first_h2 + 1) + 1;
-    char *out = malloc(total);
-    if (!out) return strdup(md);
-    memcpy(out, md, prefix_len);
-    out[prefix_len] = '\0';
-    strcat(out, toc);
-    strcat(out, "\n");
-    strcat(out, first_h2 + 1);
-    return out;
-}
 
 static int validate_article(const char *md, const char **required_urls, int url_count) {
     if (!md) return 0;
@@ -831,8 +791,6 @@ static int do_comparison(Theme *themes, int count) {
                 free(aText); free(aDemo); free(bText); free(bDemo);
 
                 if (md) {
-                    char *with_toc = inject_toc(md);
-                    if (with_toc) { free(md); md = with_toc; }
                     char file[512];
                     snprintf(file, sizeof(file), "%s/compare-%s.md", POSTS_DIR, key);
                     if (write_file(file, md)) {
@@ -878,8 +836,6 @@ static int do_review(Theme *themes, int count) {
         free(demo);
 
         if (md) {
-            char *with_toc = inject_toc(md);
-            if (with_toc) { free(md); md = with_toc; }
             char file[512];
             snprintf(file, sizeof(file), "%s/review-%s.md", POSTS_DIR, themes[i].slug);
             if (write_file(file, md)) {
@@ -957,8 +913,6 @@ static int do_trend(Theme *themes, int count) {
             free(prompt);
 
             if (md) {
-                char *with_toc = inject_toc(md);
-                if (with_toc) { free(md); md = with_toc; }
                 char slug[256];
                 slug_from(line, slug, sizeof(slug));
                 char file[512];
@@ -1008,8 +962,6 @@ static int do_trend(Theme *themes, int count) {
                 free(prompt);
 
                 if (md) {
-                    char *with_toc = inject_toc(md);
-                    if (with_toc) { free(md); md = with_toc; }
                     char slug[256];
                     slug_from(fallback, slug, sizeof(slug));
                     char file[512];
