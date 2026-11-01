@@ -15,8 +15,8 @@
     </div>
     <div class="detail-left">
       <p class="mono">{{ hc.footer.section2.mono }}</p>
-	  <p><a href="https://creativitaz.gumroad.com/" target="_blank" rel="noopener">⭐ 4.8 / 5 from 24 verified reviews on Gumroad</a></p>
-	  <p><a href="https://fiverr.com/creativitas" target="_blank" rel="noopener">⭐ 5.0 on Fiverr (73 reviews) • Top Rated Seller</a></p>
+	  <p class="lead serif mt-16"><a href="{{ hc.footer.section2.get_gumroad_url }}" target="_blank" rel="noopener">{{ hc.footer.section2.get_gumroad }}</a></p>
+	  <p class="lead serif mt-16"><a href="{{ hc.footer.section2.get_fiverr_url }}" target="_blank" rel="noopener">{{ hc.footer.section2.get_fiverr }}</a></p>
       <h3 class="display mt-12">{{ hc.footer.section2.title }}</h3>
       <p class="mt-12">{{ hc.footer.section2.description }}</p>
       {% for para in hc.footer.section2.text %}

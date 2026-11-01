@@ -15,18 +15,6 @@ tags:
   - astro template
 ---
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Overview of Finance App - Astro Startup Template - SaaS, Finance, App Landing](#overview-of-finance-app---astro-startup-template---saas-finance-app-landing)
-- [Overview of Docuna - Astro Starlight Docs Template - Documentation, Landing, Blog](#overview-of-docuna---astro-starlight-docs-template---documentation-landing-blog)
-- [Features Comparison](#features-comparison)
-- [Pricing](#pricing)
-- [Who Should Choose Finance App - Astro Startup Template - SaaS, Finance, App Landing](#who-should-choose-finance-app---astro-startup-template---saas-finance-app-landing)
-- [Who Should Choose Docuna - Astro Starlight Docs Template - Documentation, Landing, Blog](#who-should-choose-docuna---astro-starlight-docs-template---documentation-landing-blog)
-- [Verdict](#verdict)
-- [See It Live](#see-it-live)
-- [Related Themes](#related-themes)
-
 ## Introduction
 Modern web development heavily relies on static site generators like Astro JS to build fast, search-engine-optimized websites. When launching a new digital product, engineering teams and product managers face a foundational architectural choice regarding site structure. Do you require a marketing-driven landing page focused on sales lead generation, conversion funnels, and feature promotion, or do you require a structured technical documentation system built for developer onboarding and knowledge management?
 

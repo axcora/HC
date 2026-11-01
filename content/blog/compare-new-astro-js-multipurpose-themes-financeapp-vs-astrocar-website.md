@@ -15,18 +15,6 @@ tags:
   - jamstack
 ---
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Overview of Finance App - Astro Startup Template - SaaS, Finance, App Landing](#overview-of-finance-app---astro-startup-template---saas-finance-app-landing)
-- [Overview of Astro Car Rental Template - Car Booking, Fleet, Reservation Website](#overview-of-astro-car-rental-template---car-booking-fleet-reservation-website)
-- [Features Comparison](#features-comparison)
-- [Pricing](#pricing)
-- [Who Should Choose Finance App - Astro Startup Template - SaaS, Finance, App Landing](#who-should-choose-finance-app---astro-startup-template---saas-finance-app-landing)
-- [Who Should Choose Astro Car Rental Template - Car Booking, Fleet, Reservation Website](#who-should-choose-astro-car-rental-template---car-booking-fleet-reservation-website)
-- [Verdict](#verdict)
-- [See It Live](#see-it-live)
-- [Related Themes](#related-themes)
-
 ## Introduction
 
 Selecting the correct website frontend template is a fundamental architectural decision for any digital venture. Whether launching a modern software platform or deploying a localized transport service, the underlying site structure dictates build speed, search engine performance, user experience, and long-term maintenance overhead. The modern Jamstack ecosystem, powered by static site generators like Astro JS, offers significant speed and security advantages over traditional dynamic CMS architectures. By rendering pages into static HTML, CSS, and minimal JavaScript during the build process, Astro sites eliminate server-side database bottlenecks while serving pages directly from edge content delivery networks.
