@@ -1065,7 +1065,6 @@ int cax_autoblog_run(void) {
     else if (task == 2) ok = do_review(themes, count);
     else if (task == 3) ok = do_trend(themes, count);
 
-    /* Fallback: kalau task utama kehabisan materi, coba yang lain */
     if (!ok && task != 2) ok = do_review(themes, count);
     if (!ok && task != 1) ok = do_comparison(themes, count);
     if (!ok && task != 3) ok = do_trend(themes, count);
