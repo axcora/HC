@@ -16,7 +16,7 @@
 #define THEMES_JSON "site/themes-index.json"
 #define STATE_FILE "autoblog/state.json"
 #define POSTS_DIR "content/blog"
-#define FALLBACK_IMAGE "logo-192_a7rkga.webp"
+#define FALLBACK_IMAGE "web-themes-web-template_r9lqqx.jpg"
 #define STACKS_COUNT 10
 #define HN_URL "https://hn.algolia.com/api/v1/search?tags=front_page&hitsPerPage=30"
 

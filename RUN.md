@@ -19,5 +19,8 @@ Run the Chat
 gcc -O2 -std=c11 -o cax-chat-index.exe src\chat\chat_json.c src\chat\chat_main.c
 cax-chat-index.exe content/themes site/themes-index.json
 ```
-
+Check Broken Link
+```
+checker.bat
+```
 

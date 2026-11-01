@@ -17,7 +17,7 @@ features:
  - Markdown Content
  - All Static Hosting support Vercel, Cloudflare, Netlify , Github Pages and others.
  - All PHP Hosting support Cpanel, Plesk, Direct Admin , VPS and others.
-download: https://creativitaz.gumroad.com/l/cax-minmimalis
+download: https://creativitaz.gumroad.com/l/cax-minimalis
 demo: https://cax.axcora.com/minimalis/
 tags:
   - themestemplate

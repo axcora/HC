@@ -626,7 +626,7 @@ import '../../styles/deja.css';
     class="img-fluid"
     decoding="async"
   />
-<h2><strong><a href="/about">{frontmatter.description}</a></strong></h2>
+<h2><strong>{frontmatter.description}</strong></h2>
 
 
 

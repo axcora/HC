@@ -10,3 +10,8 @@ autoblog_*
 gemini_body_*
 gemini_resp_*
 node_modules/
+broken-links.txt
+sync.bat
+RUN.md
+checker.bat
+links-temp.txt
