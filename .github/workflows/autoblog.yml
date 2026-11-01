@@ -10,11 +10,15 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "autoblog"
+  cancel-in-progress: false
+
 jobs:
   autoblog:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Setup GCC
         run: sudo apt-get update && sudo apt-get install -y gcc make
@@ -55,9 +59,9 @@ jobs:
           git push
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./site
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
