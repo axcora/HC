@@ -1,8 +1,8 @@
 ---
 layout: blog-detil.cax
-title: Finance App - Astro Startup Template - SaaS, Finance, App Landing vs Docuna - Astro Starlight Docs Template - Documentation, Landing, Blog - Which Is Better?
-description: Deep technical comparison between Finance App and Docuna Astro JS templates. Explore features, layouts, Starlight docs, pricing, and optimal use cases.
-image: astro/astronewthemes_1_vhc1na.jpg
+title: Docuna Starlight Docs Template Review - When Documentation Beats a SaaS Landing Page
+description: Docuna Starlight vs Finance App Astro template. A focused review of Starlight docs features, Ctrl+K search, MDX workflow, and when a docs portal wins.
+image: astro/starlighttemplate_uyq8cf.jpg
 date: 2026-10-31
 tags:
   - astro
