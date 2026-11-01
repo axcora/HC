@@ -41,7 +41,7 @@ tags:
 
 How to install and work with [Svelte Kit Frontend for your Wordpress Project]({{page.url}}) project.
 
-Note: Make sure you have run WordPress project, before use this source code project, if you need to SEO Wordpress Themes template , so you can download our worpdress template. [Download wordpress themes →](/themes/clean-simple-wordpress-seo)
+Note: Make sure you have run WordPress project, before use this source code project, if you need to SEO Wordpress Themes template , so you can download our worpdress template. [Download wordpress themes →](/themes/svelte)
 
 Before we start, we need to configure your WordPress Project.
 

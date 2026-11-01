@@ -60,7 +60,7 @@ If you want work with mysql database, so you can follow this step
 
 Documentation detail :
 
-[https://www.hockeycomputindo.com/2021/12/laravel-website-cms-source-code-full.html]( https://www.hockeycomputindo.com/2021/12/laravel-website-cms-source-code-full.html)
+[https://www.hockeycomputindo.com/themes/laravel/]( https://www.hockeycomputindo.com/themes/laravel/)
 
 #### Thank You by using [Fast laravel blog themes template]({{page.url}}) project
 

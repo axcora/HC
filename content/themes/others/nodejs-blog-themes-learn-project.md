@@ -56,11 +56,6 @@ tags:
 + Run node app.js
 + Restart your node app
 
-Documentation detail :
-
-[https://www.hockeycomputindo.com/2021/02/node-x-node-express-cms-blog-new-and.html](https://www.hockeycomputindo.com/2021/02/node-x-node-express-cms-blog-new-and.html)
-
-
 #### Thank You by using [node js blog themes template]({{page.url}}) project
 
 We hope with this source code you can build modern website blog for your project.

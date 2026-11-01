@@ -67,10 +67,6 @@ git push -u origin main` need to change username with your github username , and
 + After you have create new project now you can integration your github repo, select your repo project, and select next js framework , then click deploy.
 + Congratulations your next blog website is live now !!
 
-
-Read detail documentation :
-[https://www.hockeycomputindo.com/2021/05/create-website-using-next-js-free.html](https://www.hockeycomputindo.com/2021/05/create-website-using-next-js-free.html)
-
 #### Thank You by using [Next JS Doc themes template]({{page.url}}) project
 
 We hope with this source code you can build modern website documentation for your project.

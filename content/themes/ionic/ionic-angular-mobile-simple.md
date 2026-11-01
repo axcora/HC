@@ -84,11 +84,6 @@ If you need to deploy and run or install on android and ios you just need run a 
 `ionic capacitor run android -l --external`
 
 
-
-Detail documentation and live source code online , you can visit here : 
-[https://www.hockeycomputindo.com/2021/01/build-website-ios-app-apk-android-with.html](https://www.hockeycomputindo.com/2021/01/build-website-ios-app-apk-android-with.html)
-
-
 ### Live Stackblitz IDE Online
 You can try or fork our live IDE [https://stackblitz.com/edit/ionicapps?embed=1](https://stackblitz.com/edit/ionicapps?embed=1)
 

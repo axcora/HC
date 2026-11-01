@@ -31,7 +31,6 @@ code{background:#000;color:#fff;padding:2px 6px;border-radius:4px}
 </div></div></section>
 <div id="toast" style="position:fixed;bottom:20px;left:10px;right:10px;background:#000;color:#fff;padding:14px;border-radius:10px;display:none;z-index:9999;border:1px solid #fff;text-align:center"></div>
 {% include widget/featured.cax %}
-{% include widget/services.cax %}
 <script>
 var h=document.getElementById('hamburger'),m=document.getElementById('mobileNav'),o=document.getElementById('overlay');h&&h.addEventListener('click',()=>{m.classList.toggle('active');o.classList.toggle('active')});
 </script>

@@ -16,7 +16,7 @@ features:
  - Documentation Ready
  - Full Source Code Themes Template Project
 download: https://creativitaz.gumroad.com/l/minimals-nikola
-demo: https://www.hockeycomputindo.com/dokumentasi/programrestoranmurah/
+
 tags:
   - themestemplate
   - website themes

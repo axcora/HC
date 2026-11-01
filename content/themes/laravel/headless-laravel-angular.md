@@ -94,7 +94,7 @@ Configuration your connection on frontend/connect.php with your database
 
 Documentation detail :
 
-[https://www.hockeycomputindo.com/2021/01/cara-integrasi-laravel-angular-learn.html](https://www.hockeycomputindo.com/2021/01/cara-integrasi-laravel-angular-learn.html)
+[https://www.hockeycomputindo.com/themes/laravel/](https://www.hockeycomputindo.com/themes/laravel/)
 
 
 #### Thank You by using unique [headless laravel angular themes template]({{page.url}}) project

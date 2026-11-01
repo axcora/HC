@@ -15,7 +15,6 @@ features:
  - Documentation Ready
  - Full Source Code Themes Template Project
 download: https://creativitaz.gumroad.com/l/minimals-pelican
-demo: https://www.hockeycomputindo.com/dokumentasi/programtokomurah/
 tags:
   - themestemplate
   - website themes
@@ -51,11 +50,11 @@ First you need to download and install python in to your devices, how to install
 
 ### Install PIP
 
-Afer download and install python , now we need to install PIP too.. , how to install pip you can read [pip documentation](https://pip.pypa.io/en/stable/installation/) , you can skip this step if you have install PIP in to your device.
+Afer download and install python , now we need to install PIP too.. , how to install pip you can read pip documentation https://pip.pypa.io/en/stable/installation/ , you can skip this step if you have install PIP in to your device.
 
 ### Install Virtual Env
 
-And yess... now we need to install vitrualvenv in to your devices, you can read [how to install venv](https://virtualenv.pypa.io/en/latest/installation.html) here , you can skip this step if you have install venv in to your device.
+And yess... now we need to install vitrualvenv in to your devices, you can read how to install venv - https://docs.python.org/3/library/venv.html , you can skip this step if you have install venv in to your device.
 
 ### Install Pelican
 

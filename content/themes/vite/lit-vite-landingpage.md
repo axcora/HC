@@ -17,7 +17,6 @@ features:
  - All Modern static host support netlify, vercel, firebase and others.
  - All PHP Hosting support with build production mode Cpanel, Plesk, Direct Admin , VPS and others.
 download: https://creativitaz.gumroad.com/l/vite-lit-portfolio
-demo: https://www.hockeycomputindo.com/dokumentasi/
 tags:
   - themestemplate
   - website themes

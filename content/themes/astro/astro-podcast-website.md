@@ -74,9 +74,6 @@ Run `npm run build` and upload your build production `dist` folder into your hos
 
 But we recommended to you for use modern static hosting.
 
-Detail documentation and live source code IDE online , you can visit here :
-
-[https://www.hockeycomputindo.com/2022/09/new-podcast-vlog-web-template-free.html](https://www.hockeycomputindo.com/2022/09/new-podcast-vlog-web-template-free.html)
 
 #### Thank You by using simple [astro js themes template]({{page.url}}) project
 

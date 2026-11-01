@@ -81,7 +81,7 @@ git push -u origin main` need to change username with your github username , and
 
 Detail documentation and live source code IDE online , you can visit here : 
 
-[https://www.hockeycomputindo.com/2023/02/photographer-portfolio-website-template.html](https://www.hockeycomputindo.com/2023/02/photographer-portfolio-website-template.html)
+[https://www.hockeycomputindo.com/themes/eleventy/](https://www.hockeycomputindo.com/themes/eleventy/)
 
 #### Thank You by using [JAMSTACK CMS themes template]({{page.url}}) project
 

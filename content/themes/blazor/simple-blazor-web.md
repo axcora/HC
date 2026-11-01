@@ -51,7 +51,7 @@ How to install and work with [Blazor website themes template]({{page.url}}) proj
 git push -u origin main` need to change username with your github username , and myrepo with your repo project name , and main with your github repo default branch for example main or master - check on your github repo.
 
 Detail documentation and live source code online , you can visit here : 
-[https://www.hockeycomputindo.com/2021/02/build-develope-modern-website-using.html](https://www.hockeycomputindo.com/2021/02/build-develope-modern-website-using.html)
+[https://www.hockeycomputindo.com/themes/blazor/-modern-website-using.html](https://www.hockeycomputindo.com/themes/blazor/-modern-website-using.html)
 
 
 #### Thank You by using unique [blazor themes template]({{page.url}}) project

@@ -78,7 +78,7 @@ But we recommended to you for use modern static hosting.
 
 Detail documentation and live source code IDE online , you can visit here : 
 
-https://www.hockeycomputindo.com/2023/02/photographer-portfolio-website-template.html
+https://www.hockeycomputindo.com/themes/eleventy/
 
 #### Thank You by using [JAMSTACK themes template]({{page.url}}) project
 

@@ -41,7 +41,7 @@ This project you will be learn how to develope [angular](https://angular.io) blo
 + Deploy your project from stackblitz in to firebase host
 + Update content blog in to src/app/blogs.ts
 
-Documentation details : [https://www.hockeycomputindo.com/2020/09/angular-blog-new-modern-with-seo.html](https://www.hockeycomputindo.com/2020/09/angular-blog-new-modern-with-seo.html)
+Explore all angular themes - [ANGULAR POWER](/themes/angular/)
 
 #### Thank You by using [angular blog cms themes template]({{page.url}}) project
 

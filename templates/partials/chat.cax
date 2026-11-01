@@ -15,7 +15,7 @@
         '.hc-btn{position:fixed;bottom:20px;right:20px;width:58px;height:58px;border-radius:50%;background:#D90000;color:#fff;border:2px solid #111;cursor:pointer;z-index:2147483000;box-shadow:4px 4px 0 #111;display:flex;align-items:center;justify-content:center;transition:transform .15s,box-shadow .15s}',
         '.hc-btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #111}',
         '.hc-btn svg{width:26px;height:26px;fill:#fff;display:block}',
-        '.hc-panel{position:fixed;bottom:90px;right:20px;width:350px;height:500px;background:#fff;border-radius:0;box-shadow:6px 6px 0 #111;display:none;flex-direction:column;z-index:2147483000;font-family:ui-monospace,monospace;overflow:hidden;border:2px solid #111;contain:content}',
+        '.hc-panel{position:fixed;bottom:90px;right:20px;width:370px;height:560px;background:#fff;border-radius:0;box-shadow:6px 6px 0 #111;display:none;flex-direction:column;z-index:2147483000;font-family:ui-monospace,monospace;overflow:hidden;border:2px solid #111;contain:content}',
         '.hc-panel.open{display:flex}',
         '.hc-head{background:#D90000;color:#fff;padding:14px 16px;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #111;gap:8px}',
         '.hc-head-txt{display:flex;flex-direction:column;line-height:1.2;min-width:0}',
@@ -32,6 +32,16 @@
         '.hc-user a{color:#fff;text-decoration:underline}',
         '.hc-msg small{color:#666;font-size:10px;display:block;margin-top:6px;line-height:1.4}',
         '.hc-msg b{font-weight:800}',
+        '.hc-msg .hc-theme-img{width:100%;height:auto;aspect-ratio:334/251;object-fit:cover;object-position:center;border:1px solid #111;margin-bottom:8px;display:block;background:#f0f0f0}',
+        '.hc-msg .hc-cta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}',
+        '.hc-msg .hc-cta a{display:inline-block;padding:6px 10px;border:1px solid #111;background:#fff;color:#111;text-decoration:none;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;box-shadow:2px 2px 0 #111;transition:transform .1s,box-shadow .1s}',
+        '.hc-msg .hc-cta a:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 #111}',
+        '.hc-msg .hc-cta a.hc-cta-primary{background:#D90000;color:#fff}',
+        '.hc-msg .hc-cta a.hc-cta-accent{background:#111;color:#fff}',
+        '.hc-msg .hc-divider{height:1px;background:#111;margin:10px 0;opacity:.2}',
+        '.hc-quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}',
+        '.hc-quick button{padding:6px 10px;border:1px solid #111;background:#FFFBF8;color:#111;font-size:10px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:2px 2px 0 #111;transition:transform .1s,box-shadow .1s}',
+        '.hc-quick button:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 #111;background:#fff}',
         '.hc-input-wrap{display:flex;padding:10px;gap:8px;background:#fff;border-top:2px solid #111}',
         '.hc-input{flex:1;padding:10px 12px;border:2px solid #111;border-radius:0;font-size:12px;outline:none;font-family:inherit;background:#FFFBF8;transition:border-color .15s}',
         '.hc-input:focus{border-color:#D90000;background:#fff}',
@@ -55,21 +65,94 @@
     var body = $('hc-body');
     var input = $('hc-input');
     var toggle = $('hc-toggle');
+    var btnSend = $('hc-send');
+    var btnClose = $('hc-close');
+
+    var WORKER_URL = 'https://withered-sound-73b6.hockeycorpmarketing.workers.dev';
+    var FIVERR_URL = 'https://www.fiverr.com/creativitas/create-your-custom-website-and-app';
+    var PREMIUM_URL = '/premium/';
+    var THEMES_URL = '/themes/';
+    var SERVICES_URL = '/services/';
+    var CLOUDINARY_BASE = 'https://res.cloudinary.com/hockeycorp/image/upload/w_334/q_auto:low/f_avif/v1699871939/website%20design/';
 
     var themes = [];
     var loaded = false;
+    var loadPromise = null;
     var initialized = false;
+    var aiLimitUntil = 0;
+    var queryCount = 0;
 
     var STOPWORDS = {
         'themes': 1, 'theme': 1, 'template': 1, 'templates': 1,
         'website': 1, 'web': 1, 'design': 1, 'web-design': 1,
         'web-development': 1, 'website-theme': 1, 'website-template': 1,
-        'free': 1, 'premium': 1, 'download': 1, 'stack': 1,
-        'for': 1, 'the': 1, 'and': 1, 'with': 1, 'using': 1, 'from': 1
+        'free': 1, 'premium': 1, 'download': 1, 'stack': 1, 'source': 1,
+        'code': 1, 'open': 1, 'opensource': 1, 'open-source': 1,
+        'for': 1, 'the': 1, 'and': 1, 'with': 1, 'using': 1, 'from': 1,
+        'a': 1, 'an': 1, 'i': 1, 'need': 1, 'want': 1, 'looking': 1,
+        'have': 1, 'do': 1, 'you': 1, 'me': 1, 'my': 1, 'your': 1,
+        'is': 1, 'are': 1, 'any': 1, 'some': 1, 'can': 1, 'get': 1,
+        'please': 1, 'thanks': 1, 'hello': 1, 'hi': 1, 'hey': 1,
+        'good': 1, 'best': 1, 'top': 1, 'recommend': 1, 'suggest': 1,
+        'give': 1, 'show': 1, 'find': 1, 'help': 1, 'like': 1,
+        'new': 1, 'version': 1, 'latest': 1, 'updated': 1,
+        'project': 1, 'projects': 1, 'build': 1, 'building': 1,
+        'make': 1, 'making': 1, 'create': 1, 'creating': 1,
+        'wanted': 1, 'needed': 1,
+        'bro': 1, 'dude': 1, 'man': 1, 'pls': 1, 'plz': 1,
+        'just': 1, 'really': 1, 'very': 1, 'much': 1,
+        'more': 1, 'less': 1, 'about': 1, 'into': 1,
+        'than': 1, 'then': 1, 'what': 1, 'which': 1, 'who': 1,
+        'when': 1, 'where': 1, 'how': 1, 'why': 1,
+        'this': 1, 'that': 1, 'these': 1, 'those': 1,
+        'here': 1, 'there': 1
+    };
+
+    var GENERIC_TAGS = {
+        'themestemplate': 1, 'website themes': 1, 'website template': 1,
+        'themes': 1, 'template': 1, 'templates': 1,
+        'website': 1, 'web': 1, 'design': 1,
+        'blog themes': 1, 'blog template': 1, 'blog': 1,
+        'cms': 1, 'backend': 1, 'frontend': 1,
+        'modern': 1, 'clean': 1, 'simple': 1, 'unique': 1,
+        'free': 1, 'premium': 1, 'download': 1, 'source': 1, 'code': 1,
+        'phpthemes': 1, 'freethemes': 1, 'otherthemes': 1, 'others': 1,
+        'premiumthemes': 1, 'featured': 1, 'featuredpremium': 1,
+        'landing page': 1, 'landingpage': 1, 'company profile': 1,
+        'jamstackthemes': 1, 'starter': 1
+    };
+
+    var KEYWORD_ALIASES = {
+        'sass': 'saas', 'sas': 'saas',
+        'ecom': 'ecommerce', 'e-commerce': 'ecommerce', 'ecommerce': 'ecommerce',
+        'shop': 'ecommerce', 'store': 'ecommerce',
+        'doc': 'docs', 'documentation': 'docs', 'docu': 'docs',
+        'blogs': 'blog',
+        'landing': 'landingpage',
+        'next': 'nextjs', 'next.js': 'nextjs',
+        'nuxtjs': 'nuxt', 'reactjs': 'react', 'vuejs': 'vue', 'astrojs': 'astro',
+        'net': 'dotnet'
     };
 
     function esc(s) {
-        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        return String(s)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    function safeUrl(u) {
+        if (!u) return '';
+        var s = String(u).trim();
+        if (/^(https?:|\/)/i.test(s)) return s;
+        return '';
+    }
+
+    function buildImageUrl(imagePath) {
+        if (!imagePath) return '';
+        if (/^https?:\/\//i.test(imagePath)) return imagePath;
+        return CLOUDINARY_BASE + imagePath.replace(/^\//, '');
     }
 
     function addMsg(html, isUser) {
@@ -78,6 +161,11 @@
         div.innerHTML = html;
         body.appendChild(div);
         body.scrollTop = body.scrollHeight;
+        return div;
+    }
+
+    function removeMsg(el) {
+        if (el && el.parentNode) el.parentNode.removeChild(el);
     }
 
     function fetchThemes() {
@@ -88,83 +176,300 @@
 
     function loadThemes() {
         if (loaded) return Promise.resolve();
-        return fetchThemes()
-            .then(function (d) { themes = d; loaded = true; })
-            .catch(function () {
-                return fetchThemes()
-                    .then(function (d) { themes = d; loaded = true; })
-                    .catch(function () { themes = []; loaded = true; });
-            });
+        if (loadPromise) return loadPromise;
+        loadPromise = fetchThemes()
+            .catch(function () { return fetchThemes(); })
+            .then(function (d) { themes = d || []; loaded = true; })
+            .catch(function () { themes = []; loaded = true; });
+        return loadPromise;
     }
 
-    function score(t, words, wantPremium, wantFree) {
+    function score(t, words) {
         var title = (t.title || '').toLowerCase();
         var desc = (t.description || '').toLowerCase();
-        var tags = (t.tags || []).join(' ').toLowerCase();
-        var hay = title + ' ' + desc + ' ' + tags;
+        var tagsArr = t.tags || [];
+        var tagsLower = tagsArr.join(' ').toLowerCase();
+        var hay = title + ' ' + desc + ' ' + tagsLower;
 
         var s = 0;
+        var matchedInTitle = 0;
+
         words.forEach(function (w) {
             if (w.length <= 2 || STOPWORDS[w]) return;
             if (hay.indexOf(w) === -1) return;
-            if (title.indexOf(w) !== -1) s += 3;
-            else if (tags.indexOf(w) !== -1) s += 2;
-            else s += 1;
+
+            if (title.indexOf(w) !== -1) {
+                s += 10;
+                matchedInTitle++;
+            } else {
+                var matchTag = null;
+                for (var i = 0; i < tagsArr.length; i++) {
+                    if (tagsArr[i].toLowerCase().indexOf(w) !== -1) {
+                        matchTag = tagsArr[i].toLowerCase();
+                        break;
+                    }
+                }
+                if (matchTag) {
+                    if (!GENERIC_TAGS[matchTag]) s += 3;
+                } else {
+                    s += 1;
+                }
+            }
         });
 
-        if (s === 0) return 0;
-        if (wantPremium && !wantFree && !t.is_premium) return 0;
-        if (wantFree && !wantPremium && !t.is_free) return 0;
+        if (matchedInTitle >= 2) s += 5;
         return s;
     }
 
-    function answer(query) {
-        if (!themes.length) return 'Theme data is not ready yet. Please refresh the page.';
-        var q = query.toLowerCase();
-        var words = q.split(/\s+/).filter(function (w) { return w.length > 2; });
-        var wantFree = /\b(free|gratis)\b/.test(q);
-        var wantPremium = /\b(premium|paid|buy|purchase)\b/.test(q);
-
-        var keywords = words.filter(function (w) { return !STOPWORDS[w]; });
-        if (!keywords.length) {
-            return 'Please specify a technology or category, e.g. <b>astro</b>, <b>next</b>, <b>docusaurus</b>, or <b>docs</b>.';
-        }
+    function rankThemes(words, wantPremium, wantFree) {
+        var MIN_SCORE = 5;
 
         var ranked = themes
-            .map(function (t) { return { t: t, s: score(t, keywords, wantPremium, wantFree) }; })
-            .filter(function (x) { return x.s > 0; });
+            .map(function (t) { return { t: t, s: score(t, words) }; })
+            .filter(function (x) { return x.s >= MIN_SCORE; });
+
+        if (wantFree && !wantPremium) {
+            ranked = ranked.filter(function (x) { return x.t.is_free === true; });
+        } else if (wantPremium && !wantFree) {
+            ranked = ranked.filter(function (x) { return x.t.is_premium === true; });
+        }
+
+        ranked.sort(function (a, b) { return b.s - a.s; });
+        return ranked;
+    }
+
+    function detectIntent(q) {
+        var lower = q.toLowerCase();
+        var wantFree = /\b(free|gratis|opensource|open-source)\b/.test(lower);
+        var wantPremium = /\b(premium|paid|buy|purchase|pro|commercial)\b/.test(lower);
+        var wantCustom = /\b(custom|hire|build|develop|freelance|service|services|project|consult)\b/.test(lower);
+
+        var intent = 'browse';
+        if (wantCustom) intent = 'custom';
+        else if (wantPremium) intent = 'premium';
+        else if (wantFree) intent = 'free';
+
+        return { wantFree: wantFree, wantPremium: wantPremium, wantCustom: wantCustom, intent: intent };
+    }
+
+    function themeCard(t) {
+        var badge = t.is_premium ? '💎 Premium' : '🆓 Free';
+        var price = t.price && parseFloat(t.price) > 0 ? ' — $' + t.price : '';
+
+        var html = '';
+
+        var imgUrl = buildImageUrl(t.image);
+        if (imgUrl) {
+            html += '<img src="' + esc(imgUrl) + '" alt="' + esc(t.title) + '" class="hc-theme-img" width="334" height="251" decoding="async" loading="lazy">';
+        }
+
+        html += '<b>' + esc(t.title) + '</b> (' + badge + price + ')';
+        if (t.description) html += '<br><small>' + esc(String(t.description).slice(0, 140)) + '</small>';
+
+        html += '<div class="hc-cta">';
+        var url = safeUrl(t.url);
+        if (url) {
+            html += '<a href="' + esc(url) + '" class="hc-cta-primary">View theme →</a>';
+        }
+        var demo = safeUrl(t.demo);
+        if (demo) {
+            html += '<a href="' + esc(demo) + '" target="_blank" rel="noopener">Live demo</a>';
+        }
+        if (t.is_free) {
+            html += '<a href="' + esc(PREMIUM_URL) + '">See premium version</a>';
+        }
+        html += '</div>';
+        return html;
+    }
+
+    function renderUpsell(intent) {
+        var html = '<div class="hc-divider"></div>';
+
+        if (intent === 'free') {
+            html += '<b>💎 Want more power?</b><br>';
+            html += '<small>Premium themes include <b>lifetime updates</b>, priority support, and production-ready features — one-time payment, no subscriptions.</small>';
+            html += '<div class="hc-cta">';
+            html += '<a href="' + esc(PREMIUM_URL) + '" class="hc-cta-primary">Browse premium →</a>';
+            html += '<a href="' + esc(FIVERR_URL) + '" target="_blank" rel="noopener" class="hc-cta-accent">Hire custom build →</a>';
+            html += '</div>';
+        } else if (intent === 'premium') {
+            html += '<b>🚀 Need something custom?</b><br>';
+            html += '<small>Our team builds headless commerce, booking systems, SSG, and AI automation — escrow protected on Fiverr, full ownership, no lock-in.</small>';
+            html += '<div class="hc-cta">';
+            html += '<a href="' + esc(FIVERR_URL) + '" target="_blank" rel="noopener" class="hc-cta-primary">Hire on Fiverr →</a>';
+            html += '<a href="' + esc(SERVICES_URL) + '">Learn about services</a>';
+            html += '</div>';
+        } else if (intent === 'custom') {
+            html += '<b>🚀 Let\'s build it</b><br>';
+            html += '<small>Book a custom build on Fiverr — escrow protected. Or explore our full service catalog first.</small>';
+            html += '<div class="hc-cta">';
+            html += '<a href="' + esc(FIVERR_URL) + '" target="_blank" rel="noopener" class="hc-cta-primary">Order on Fiverr →</a>';
+            html += '<a href="' + esc(SERVICES_URL) + '">View services</a>';
+            html += '</div>';
+        } else {
+            html += '<b>💎 Upgrade or go custom</b><br>';
+            html += '<small>Premium themes come with lifetime updates. Need a fully custom build? We\'re on Fiverr with escrow protection.</small>';
+            html += '<div class="hc-cta">';
+            html += '<a href="' + esc(PREMIUM_URL) + '" class="hc-cta-primary">Premium themes →</a>';
+            html += '<a href="' + esc(FIVERR_URL) + '" target="_blank" rel="noopener">Hire on Fiverr →</a>';
+            html += '</div>';
+        }
+        return html;
+    }
+
+    function renderFollowUp(intent) {
+        var questions = intent === 'custom'
+            ? ['What are you building?', 'Do you need booking, commerce, or docs?', 'What\'s your timeline?']
+            : ['What project is this for?', 'Free or premium budget?', 'Do you need custom work too?'];
+        var html = '<div class="hc-quick">';
+        questions.forEach(function (q) {
+            html += '<button type="button" data-hc-quick="' + esc(q) + '">' + esc(q) + '</button>';
+        });
+        html += '</div>';
+        return html;
+    }
+
+    function parseQuery(query) {
+        var q = query.toLowerCase();
+        var words = q.split(/\s+/).filter(function (w) { return w.length > 2; });
+
+        var normalized = words.map(function (w) {
+            var clean = w.replace(/[^a-z0-9\-\.]/g, '');
+            return KEYWORD_ALIASES[clean] || clean;
+        });
+
+        var intentData = detectIntent(q);
+        return {
+            words: normalized,
+            keywords: normalized.filter(function (w) { return !STOPWORDS[w]; }),
+            wantFree: intentData.wantFree,
+            wantPremium: intentData.wantPremium,
+            wantCustom: intentData.wantCustom,
+            intent: intentData.intent
+        };
+    }
+
+    function renderResults(query) {
+        var p = parseQuery(query);
+
+        if (p.intent === 'custom' && !p.keywords.length) {
+            addMsg('Got it — you\'re looking for a custom build. 🚀<br><br>Our team handles headless commerce, booking systems, SSG, and AI automation — escrow protected on Fiverr, with full source ownership and no lock-in.' + renderUpsell('custom'), false);
+            return [];
+        }
+
+        if (!p.keywords.length) {
+            addMsg('Tell me a bit more — which tech or category are you after? For example: <b>astro</b>, <b>next</b>, <b>docusaurus</b>, <b>docs</b>, or <b>commerce</b>.', false);
+            return null;
+        }
+
+        var ranked = rankThemes(p.keywords, p.wantPremium, p.wantFree);
 
         if (!ranked.length) {
-            return 'No matching theme found. Try keywords like <b>astro</b>, <b>next</b>, <b>docs</b>, <b>free</b>, or <b>premium</b>.';
+            addMsg('No exact match — but here\'s what I can do for you:' + renderUpsell(p.intent === 'custom' ? 'custom' : 'browse'), false);
+            return [];
         }
 
-        if (!wantFree) {
-            ranked.sort(function (a, b) {
-                if (a.t.is_premium !== b.t.is_premium) return b.t.is_premium - a.t.is_premium;
-                return b.s - a.s;
-            });
-        } else {
-            ranked.sort(function (a, b) { return b.s - a.s; });
+        var top = ranked.slice(0, 4).map(function (x) { return x.t; });
+        var out = 'Found ' + ranked.length + ' matching theme' + (ranked.length > 1 ? 's' : '') + ':<br><br>';
+        top.forEach(function (t) { out += themeCard(t) + '<br><br>'; });
+
+        if (ranked.length > top.length) {
+            out += '<small>Showing ' + top.length + ' of ' + ranked.length + '. Tell me more (tech stack, project type) to narrow down.</small>';
         }
 
-        var total = ranked.length;
-        var shown = ranked.slice(0, 6);
+        addMsg(out, false);
+        addMsg(renderUpsell(p.intent), false);
 
-        var out = 'Found ' + total + ' theme' + (total > 1 ? 's' : '') + ':<br><br>';
-        shown.forEach(function (x) {
-            var t = x.t;
-            var badge = t.is_premium ? '💎 Premium' : '🆓 Free';
-            var price = t.price && parseFloat(t.price) > 0 ? ' — $' + t.price : '';
-            out += '<b>' + esc(t.title) + '</b> (' + badge + price + ')<br>';
-            out += '<a href="' + esc(t.url) + '">View theme →</a>';
-            if (t.demo) out += ' · <a href="' + esc(t.demo) + '" target="_blank" rel="noopener">Demo</a>';
-            out += '<br><br>';
+        return top;
+    }
+
+    function askAI(query, top, intent) {
+        var thinkingEl = addMsg('<small>Thinking...</small>', false);
+        var controller = ('AbortController' in window) ? new AbortController() : null;
+        var timeoutId = controller ? setTimeout(function () { controller.abort(); }, 15000) : null;
+
+        var payload = {
+            question: query,
+            context: top.map(function (t) {
+                return {
+                    title: t.title,
+                    description: t.description,
+                    url: t.url,
+                    is_premium: t.is_premium,
+                    is_free: t.is_free,
+                    price: t.price
+                };
+            }),
+            intent: intent,
+            fiverr_url: FIVERR_URL,
+            premium_url: PREMIUM_URL,
+            services_url: SERVICES_URL,
+            themes_url: THEMES_URL
+        };
+
+        fetch(WORKER_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+            signal: controller ? controller.signal : undefined
+        })
+        .then(function (r) {
+            if (timeoutId) clearTimeout(timeoutId);
+            if (r.status === 429) {
+                aiLimitUntil = Date.now() + 5 * 60 * 1000;
+                return null;
+            }
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.json();
+        })
+        .then(function (data) {
+            removeMsg(thinkingEl);
+            if (data && data.answer) {
+                addMsg('<b>Assistant:</b> ' + esc(data.answer), false);
+                addMsg(renderFollowUp(intent), false);
+            } else if (aiLimitUntil > Date.now()) {
+                addMsg('<small>💡 AI limit reached for now — search results above are live. Ask me anything else!</small>', false);
+            }
+        })
+        .catch(function (err) {
+            if (timeoutId) clearTimeout(timeoutId);
+            console.warn('[askAI] failed:', err);
+            removeMsg(thinkingEl);
+            addMsg('<small>⚠️ AI unavailable right now — but theme results above are live. Want me to help you pick?</small>', false);
         });
-        if (total > shown.length) {
-            out += '<small>Showing ' + shown.length + ' of ' + total + '. Refine your search for more specific results.</small><br><br>';
+    }
+
+    function answer(query) {
+        if (!loaded) {
+            var waitEl = addMsg('<small>Loading theme catalog...</small>', false);
+            loadThemes().then(function () {
+                removeMsg(waitEl);
+                answer(query);
+            });
+            return;
         }
-        out += '<small>Need custom work? <a href="https://www.fiverr.com/creativitas/create-your-custom-website-and-app" target="_blank" rel="noopener">Hire our team on Fiverr</a>.</small>';
-        return out;
+
+        if (!themes.length) {
+            addMsg('Theme catalog is temporarily unavailable. In the meantime, you can browse all themes at <a href="' + esc(THEMES_URL) + '">/themes/</a> or hire us directly on <a href="' + esc(FIVERR_URL) + '" target="_blank" rel="noopener">Fiverr</a>.', false);
+            return;
+        }
+
+        queryCount++;
+
+        if (aiLimitUntil > Date.now()) {
+            renderResults(query);
+            return;
+        }
+
+        var p = parseQuery(query);
+        var top = renderResults(query);
+        if (top === null) return;
+        if (top.length === 0) {
+            askAI(query, [], p.intent);
+            return;
+        }
+
+        askAI(query, top, p.intent);
     }
 
     function send() {
@@ -172,18 +477,29 @@
         if (!q) return;
         addMsg(esc(q), true);
         input.value = '';
-        setTimeout(function () { addMsg(answer(q), false); }, 0);
+        setTimeout(function () { answer(q); }, 0);
     }
+
+    body.addEventListener('click', function (e) {
+        var btn = e.target.closest('button[data-hc-quick]');
+        if (!btn) return;
+        input.value = btn.getAttribute('data-hc-quick');
+        send();
+    });
 
     function initChat() {
         if (initialized) return;
         initialized = true;
-        loadThemes().then(function () {
-            addMsg('Hi! I can help you find premium or free themes. Try: <b>"free astro theme"</b> or <b>"premium docusaurus theme"</b>.', false);
+
+        addMsg('Hey 👋 I\'m your theme assistant. Tell me what you\'re building — I\'ll match the right theme, or connect you with our custom build team if you need something tailored.<br><br>Try: <b>"free astro blog"</b> · <b>"premium next commerce"</b> · <b>"I need a custom booking site"</b>.', false);
+
+        loadThemes();
+
+        btnSend.addEventListener('click', send);
+        input.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') send();
         });
-        $('hc-send').addEventListener('click', send);
-        input.addEventListener('keypress', function (e) { if (e.key === 'Enter') send(); });
-        $('hc-close').addEventListener('click', function () {
+        btnClose.addEventListener('click', function () {
             panel.classList.remove('open');
             toggle.setAttribute('aria-expanded', 'false');
         });

@@ -42,7 +42,7 @@ tags:
 
 Documentation detail :
 
-[https://www.hockeycomputindo.com/2020/09/larablog-laravel-cms-blog-with-seo.html]( https://www.hockeycomputindo.com/2020/09/larablog-laravel-cms-blog-with-seo.html)
+[https://www.hockeycomputindo.com/themes/laravel/]( https://www.hockeycomputindo.com/themes/laravel/)
 
 #### Thank You by using [laravel blog themes template]({{page.url}}) project
 

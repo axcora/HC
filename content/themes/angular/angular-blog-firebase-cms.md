@@ -70,8 +70,7 @@ Run `ng build` and upload your build production _dist folder into your hosting.
 
 But we recommended to you for use modern static hosting.
 
-Detail documentation and live source code online , you can visit here :
-[https://www.hockeycomputindo.com/2020/10/angular-cms-blog-new-phoneixs-angular.html](https://www.hockeycomputindo.com/2020/10/angular-cms-blog-new-phoneixs-angular.html)
+Explore all angular themes - [ANGULAR POWER](/themes/angular/)
 
 #### Thank You by using [angular firebase cms themes template]({{page.url}}) project
 

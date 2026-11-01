@@ -70,10 +70,6 @@ Run `npm run build` and upload your build production `dist` folder into your hos
 
 But we recommended to you for use modern static hosting.
 
-Documentation and live IDE online visit here
-
-[https://www.hockeycomputindo.com/2022/03/astro-website-template-free-download.html](https://www.hockeycomputindo.com/2022/03/astro-website-template-free-download.html)
-
 #### Thank You by using simple [astro js astroboy themes template]({{page.url}}) project
 
 We hope with this source code you can build modern website blog for your project.

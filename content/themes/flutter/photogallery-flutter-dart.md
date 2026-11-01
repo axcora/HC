@@ -55,6 +55,6 @@ How to :
 
 Full Documentation :
 
-[https://www.hockeycomputindo.com/2021/10/free-download-flutter-template-gallery.html](https://www.hockeycomputindo.com/2021/10/free-download-flutter-template-gallery.html)
+[Explore all flutter themes - [FLutter POWER](/themes/flutter/)](Explore all flutter themes - [FLutter POWER](/themes/flutter/))
 
 We hope with this source code you can build modern website blog for your project.

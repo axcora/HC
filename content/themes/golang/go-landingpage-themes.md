@@ -36,4 +36,4 @@ Run Project with access on your project folder , then run command
 
 For detail documentation : 
 
-[https://www.hockeycomputindo.com/2021/11/golang-website-template-landing-page.html](https://www.hockeycomputindo.com/2021/11/golang-website-template-landing-page.html)
+[https://www.hockeycomputindo.com/themes/golang/](https://www.hockeycomputindo.com/themes/golang/)
