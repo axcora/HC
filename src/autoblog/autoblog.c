@@ -63,15 +63,6 @@ static int ci_contains(const char *hay, const char *needle) {
     return 0;
 }
 
-static char *trim(char *s) {
-    while (*s && isspace((unsigned char)*s)) s++;
-    if (!*s) return s;
-    char *e = s + strlen(s) - 1;
-    while (e > s && isspace((unsigned char)*e)) e--;
-    e[1] = '\0';
-    return s;
-}
-
 static void slug_from(const char *in, char *out, size_t out_size) {
     size_t j = 0;
     for (size_t i = 0; in[i] && j < out_size - 1; i++) {
@@ -245,7 +236,7 @@ static int has_tag(Theme *t, const char *tag) {
 static int run_curl(const char *url, const char *output_file, int timeout, int post_body) {
     char cmd[8192];
     if (post_body) {
-                snprintf(cmd, sizeof(cmd),
+        snprintf(cmd, sizeof(cmd),
             "curl -sfL --max-time %d -X POST "
             "-H \"Content-Type: application/json\" "
             "-d @\"%s\" -o \"%s\" \"%s\" 2>nul",
@@ -452,7 +443,14 @@ static int validate_article(const char *md, const char **required_urls, int url_
     if (!strstr(md, "title:")) { printf("  [FAIL] missing title\n"); return 0; }
     if (!strstr(md, "description:")) { printf("  [FAIL] missing description\n"); return 0; }
     if (!strstr(md, "tags:")) { printf("  [FAIL] missing tags\n"); return 0; }
-        const char *body = md;
+
+    int wc = word_count_body(md);
+    if (wc < MIN_WORDS) {
+        printf("  [FAIL] too short: %d words (min %d)\n", wc, MIN_WORDS);
+        return 0;
+    }
+
+    const char *body = md;
     if (strncmp(md, "---", 3) == 0) {
         const char *end = strstr(md + 3, "\n---");
         if (end) body = end + 4;
@@ -677,17 +675,13 @@ static char *build_prompt_trend(const char *topic, Theme **themes, int count, co
     return p;
 }
 
-static int state_contains(const char *content, const char *value) {
-    return content && strstr(content, value) != NULL;
-}
-
 static int save_state(const char *key, const char *value) {
     char *content = read_file(STATE_FILE);
     char buf[32768];
     int n = 0;
 
     if (!content) {
-        n = snprintf(buf, sizeof(buf), "{\n  \"%s\": [\"%s\"]\n}\n", key, value);
+        snprintf(buf, sizeof(buf), "{\n  \"%s\": [\"%s\"]\n}\n", key, value);
         return write_file(STATE_FILE, buf);
     }
 
@@ -695,10 +689,10 @@ static int save_state(const char *key, const char *value) {
     if (!keypos) {
         size_t clen = strlen(content);
         if (clen > 0 && content[clen-1] == '}') {
-            n = snprintf(buf, sizeof(buf), "%.*s,\n  \"%s\": [\"%s\"]\n}\n",
+            snprintf(buf, sizeof(buf), "%.*s,\n  \"%s\": [\"%s\"]\n}\n",
                 (int)(clen - 2), content, key, value);
         } else {
-            n = snprintf(buf, sizeof(buf), "%s", content);
+            snprintf(buf, sizeof(buf), "%s", content);
         }
         free(content);
         return write_file(STATE_FILE, buf);
@@ -711,7 +705,7 @@ static int save_state(const char *key, const char *value) {
     size_t prefix = open - content + 1;
     const char *inner = open + 1;
     size_t inner_len = close - inner;
-    int empty = 1;
+        int empty = 1;
     for (size_t i = 0; i < inner_len; i++) {
         if (!isspace((unsigned char)inner[i])) { empty = 0; break; }
     }
@@ -759,10 +753,9 @@ static int get_task_for_today(void) {
     time_t now = time(NULL);
     struct tm *tm = localtime(&now);
     int d = tm->tm_wday;
-    if (d == 1 || d == 4) return 1;
-    if (d == 2 || d == 5) return 2;
-    if (d == 3 || d == 6) return 3;
-    return 0;
+    if (d == 1 || d == 4) return 2;
+    if (d == 2 || d == 5) return 3;
+    return 1;
 }
 
 static char *extract_hn_titles(const char *json) {
@@ -805,7 +798,7 @@ static int do_comparison(Theme *themes, int count) {
 
         for (int i = 0; i < gcount; i++) {
             for (int j = i + 1; j < gcount; j++) {
-                char key[1024], revkey[1024];
+                char key[256], revkey[256];
                 snprintf(key, sizeof(key), "%s-vs-%s", group[i]->slug, group[j]->slug);
                 snprintf(revkey, sizeof(revkey), "%s-vs-%s", group[j]->slug, group[i]->slug);
 
@@ -826,7 +819,7 @@ static int do_comparison(Theme *themes, int count) {
                 if (!prompt) { free(aText); free(aDemo); free(bText); free(bDemo); continue; }
 
                 char *md = NULL;
-                                for (int attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+                for (int attempt = 0; attempt <= MAX_RETRIES; attempt++) {
                     char *raw = call_gemini(prompt);
                     if (!raw) break;
                     const char *required[] = { group[i]->url, group[j]->url };
@@ -838,6 +831,8 @@ static int do_comparison(Theme *themes, int count) {
                 free(aText); free(aDemo); free(bText); free(bDemo);
 
                 if (md) {
+                    char *with_toc = inject_toc(md);
+                    if (with_toc) { free(md); md = with_toc; }
                     char file[512];
                     snprintf(file, sizeof(file), "%s/compare-%s.md", POSTS_DIR, key);
                     if (write_file(file, md)) {
@@ -864,7 +859,7 @@ static int do_review(Theme *themes, int count) {
         char url[1024];
         snprintf(url, sizeof(url), "%s%s", SITE_BASE, themes[i].url);
         char *text = fetch_url_text(url, 15);
-                char *demo = themes[i].demo[0] ? fetch_url_text(themes[i].demo, 15) : strdup("");
+        char *demo = themes[i].demo[0] ? fetch_url_text(themes[i].demo, 15) : strdup("");
 
         char *prompt = build_prompt_review(&themes[i], text, demo);
         if (!prompt) { free(text); free(demo); continue; }
@@ -873,7 +868,7 @@ static int do_review(Theme *themes, int count) {
         for (int attempt = 0; attempt <= MAX_RETRIES; attempt++) {
             char *raw = call_gemini(prompt);
             if (!raw) break;
-                        const char *required[] = { themes[i].url };
+            const char *required[] = { themes[i].url };
             if (validate_article(raw, required, 1)) { md = raw; break; }
             free(raw);
         }
@@ -883,6 +878,8 @@ static int do_review(Theme *themes, int count) {
         free(demo);
 
         if (md) {
+            char *with_toc = inject_toc(md);
+            if (with_toc) { free(md); md = with_toc; }
             char file[512];
             snprintf(file, sizeof(file), "%s/review-%s.md", POSTS_DIR, themes[i].slug);
             if (write_file(file, md)) {
@@ -939,13 +936,13 @@ static int do_trend(Theme *themes, int count) {
             }
             if (!rcount) continue;
 
-            char statekey[256];
-            snprintf(statekey, sizeof(statekey), "%s-%s", STACKS[s], line);
+            char statekey[512];
+            snprintf(statekey, sizeof(statekey), "%.200s-%.300s", STACKS[s], line);
             if (already_done("trends", statekey)) continue;
 
             printf("Trend: %s (stack: %s)\n", line, STACKS[s]);
 
-			char *prompt = build_prompt_trend(line, relevant, rcount, relevant[0]->image);
+            char *prompt = build_prompt_trend(line, relevant, rcount, relevant[0]->image);
             if (!prompt) continue;
 
             char *md = NULL;
@@ -960,6 +957,8 @@ static int do_trend(Theme *themes, int count) {
             free(prompt);
 
             if (md) {
+                char *with_toc = inject_toc(md);
+                if (with_toc) { free(md); md = with_toc; }
                 char slug[256];
                 slug_from(line, slug, sizeof(slug));
                 char file[512];
@@ -993,7 +992,7 @@ static int do_trend(Theme *themes, int count) {
         }
 
         char statekey[512];
-        snprintf(statekey, sizeof(statekey), "fallback-%s", fallback);
+        snprintf(statekey, sizeof(statekey), "fallback-%.400s", fallback);
         if (!already_done("trends", statekey)) {
             char *prompt = build_prompt_trend(fallback, relevant, rcount, FALLBACK_IMAGE);
             if (prompt) {
@@ -1009,6 +1008,8 @@ static int do_trend(Theme *themes, int count) {
                 free(prompt);
 
                 if (md) {
+                    char *with_toc = inject_toc(md);
+                    if (with_toc) { free(md); md = with_toc; }
                     char slug[256];
                     slug_from(fallback, slug, sizeof(slug));
                     char file[512];
@@ -1063,7 +1064,11 @@ int cax_autoblog_run(void) {
     if (task == 1) ok = do_comparison(themes, count);
     else if (task == 2) ok = do_review(themes, count);
     else if (task == 3) ok = do_trend(themes, count);
-    else printf("[autoblog] rest day\n");
+
+    /* Fallback: kalau task utama kehabisan materi, coba yang lain */
+    if (!ok && task != 2) ok = do_review(themes, count);
+    if (!ok && task != 1) ok = do_comparison(themes, count);
+    if (!ok && task != 3) ok = do_trend(themes, count);
 
     if (!ok) printf("[autoblog] nothing generated\n");
 
