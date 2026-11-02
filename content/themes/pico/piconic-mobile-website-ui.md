@@ -82,3 +82,122 @@ Folder location Content
 Open content folder, and you can create new static content or create new article in article folder. create new markdown file, and follow fontformatter and write your post with markdown lang.
 
 For information detail about documentation you can open documentation in order page.
+
+## Frequently Asked Questions
+
+### What is Piconic Pro, and what problem does it solve?
+
+Piconic Pro is a premium flat-file CMS template built in PHP with a mobile web app UI design. It runs on any PHP hosting — cPanel, Plesk, or similar — with no database required. Content is written in Markdown, the design is controlled through YAML and a meta file, and SEO is injected automatically. Instead of setting up a database, a CMS, and a mobile UI from scratch, you upload the source, edit a config file, and the site is live.
+
+### Do I need a database or Node.js to run Piconic Pro?
+
+No. Piconic Pro is a flat-file CMS: no database, no Node.js, no build step. It runs on standard PHP hosting. You upload the source code to your host, edit `config/_config.yml` for the site title, and the site is live. Any PHP host that supports cPanel, Plesk, or similar control panels works.
+
+### How do I install it — main domain, subdomain, or subdirectory?
+
+All three are supported. For a main domain, upload and extract the source into the root or `public_html` folder. For a subdomain, create the subdomain in your panel, configure the A record and nameservers, then upload the source into that subdomain folder. For a subdirectory, create a folder inside `public_html` (for example `mobileweb`) and upload the source there.
+
+### How do I configure the site title and design?
+
+Open `config/_config.yml` in a code editor and change `site_title` to your site title. For design-level changes, open `content/_meta.md` and edit the fields to match your needs. Both are plain text files — no admin panel login, no database migration.
+
+### How do I manage content and articles?
+
+Open the `content` folder. Create new static pages or new blog articles by adding Markdown files that follow the frontmatter format. Write the post body in Markdown. The template reads those files directly — no database, no import step.
+
+### Where do I store images and media?
+
+Use the provided `assets` folder. It is the storage location for all media your project needs — images, photos, videos, and other files. Reference them from your Markdown content and meta file.
+
+### Is SEO handled automatically?
+
+Yes. Piconic Pro injects SEO tags automatically. Combined with clean Markdown content and a mobile-first UI, the template is built to be search-ready without manual meta tag wiring on every page.
+
+### What do I get with the purchase, and is documentation included?
+
+You get the full source code of the theme and template project, the flat-file CMS setup, and documentation. Documentation is available from the order page, and the demo video walks through the template. The license is a one-time purchase at $59.
+
+### Where can I see the demo and get support?
+
+The demo video is available at the YouTube link in the listing. For support and custom work, contact creativebydre@gmail.com or use the Fiverr link in the theme listing.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Piconic Pro, and what problem does it solve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Piconic Pro is a premium flat-file CMS template built in PHP with a mobile web app UI design. It runs on any PHP hosting — cPanel, Plesk, or similar — with no database required. Content is written in Markdown, the design is controlled through YAML and a meta file, and SEO is injected automatically. Instead of setting up a database, a CMS, and a mobile UI from scratch, you upload the source, edit a config file, and the site is live."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a database or Node.js to run Piconic Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Piconic Pro is a flat-file CMS: no database, no Node.js, no build step. It runs on standard PHP hosting. You upload the source code to your host, edit config/_config.yml for the site title, and the site is live. Any PHP host that supports cPanel, Plesk, or similar control panels works."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I install it — main domain, subdomain, or subdirectory?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All three are supported. For a main domain, upload and extract the source into the root or public_html folder. For a subdomain, create the subdomain in your panel, configure the A record and nameservers, then upload the source into that subdomain folder. For a subdirectory, create a folder inside public_html (for example mobileweb) and upload the source there."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I configure the site title and design?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open config/_config.yml in a code editor and change site_title to your site title. For design-level changes, open content/_meta.md and edit the fields to match your needs. Both are plain text files — no admin panel login, no database migration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I manage content and articles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open the content folder. Create new static pages or new blog articles by adding Markdown files that follow the frontmatter format. Write the post body in Markdown. The template reads those files directly — no database, no import step."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do I store images and media?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the provided assets folder. It is the storage location for all media your project needs — images, photos, videos, and other files. Reference them from your Markdown content and meta file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SEO handled automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Piconic Pro injects SEO tags automatically. Combined with clean Markdown content and a mobile-first UI, the template is built to be search-ready without manual meta tag wiring on every page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I get with the purchase, and is documentation included?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You get the full source code of the theme and template project, the flat-file CMS setup, and documentation. Documentation is available from the order page, and the demo video walks through the template. The license is a one-time purchase at $59."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I see the demo and get support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The demo video is available at the YouTube link in the listing. For support and custom work, contact creativebydre@gmail.com or use the Fiverr link in the theme listing."
+      }
+    }
+  ]
+}
+</script>

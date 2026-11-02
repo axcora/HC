@@ -31,11 +31,9 @@
         width="334"
         height="251"
         decoding="async"/></div></div>
-        <!--<div class="meta-tags">
-          {% for tag in theme.tags | limit(2) %}
-            <span class="tag">{{ tag }}</span>
-          {% endfor %}
-        </div>-->
+       <div class="meta-tags">
+       {% if theme.price %}<span class="tag">{{ theme.price }}</span>{% endif %}
+       </div>{% endif %}
       </a>
     {% endfor %}
   </div>

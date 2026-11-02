@@ -159,3 +159,133 @@ Now you can open your email, and you will received new email, and click activate
 
 We hope with this source code you can build modern website blog for your project.
 
+## Frequently Asked Questions
+
+### What is Angular Car Rental Template, and what problem does it solve?
+
+Angular Car Rental Template is a premium car rental website template built with Angular and TypeScript. It ships with a home page, about page, car list page, car detail with booking form, booking page, and contact page, plus Decap CMS headless integration for browser-based content editing and fleet management. SEO is injected automatically with meta tags, Twitter Card, Open Graph, and canonical URLs. Instead of building a rental site, a booking flow, and a CMS from scratch, you install the project, configure through the admin panel, and the site is live.
+
+### Do I need to know Angular to use this template?
+
+You need Node.js and the Angular CLI to install and run the project, but daily content editing happens through Decap CMS in the browser. Configuration, navigation, footer, home, about, car fleet, booking, and contact content are all edited in the admin panel, so you do not need to touch Angular components to run the site. Angular and TypeScript knowledge helps if you want to extend the booking logic or customize the layout.
+
+### How do I install and run the template locally?
+
+Download Node.js from nodejs.org, then install the Angular CLI with `npm install -g @angular/cli`. Download the source code and extract it into your project folder, run `npm install`, then `ng serve`. Open `localhost:4200` in your browser. In a second terminal, run `npx decap-server` to start the CMS backend, then access the admin page at `localhost:4200/admin/index.html`.
+
+### How do I configure the site, navbar, and footer?
+
+Log in to the admin panel at `localhost:4200/admin/index.html`. Open the Configuration menu and set your favicon, URL, Twitter, and Facebook fields for the SEO meta tags, Open Graph, and Twitter Card. Update the booking form fields and add your email in the form area. Save by clicking Publish in the header and selecting Publish now. Nav menu and footer menu are edited in their own menus, where you can add new items, update names and URLs, and change the footer logo and contact information.
+
+### How do I manage the car fleet?
+
+Open the Car Fleet menu in the admin dashboard. To add a new car, press the Add new car button and fill in the car details. The car appears in the car list page and gets its own detail page with the booking form. The Car Page menu controls the car list page title, description, and cover, while Home, About, Booking, and Contact each have their own content menus.
+
+### How do I activate the booking form?
+
+Set your email in the Configuration menu under the booking form email field. After your site is live, open the frontend, go to a car, fill in the booking form, and click Book now. Check your inbox for a new email and click the activation link. After activation, every booking submission goes to your inbox. There is no payment gateway and no backend database; the form sends directly to your email.
+
+### What do I need to change before deploying to production?
+
+Three things. First, in the admin Configuration menu, change the URL to your domain. Second, update the canonical URL on every page, including home, about, contact, booking, and car pages. Third, open `src/admin/config.yml` and change the backend configuration from `local_backend: true` with the git-gateway block to a production block with `name: git-gateway`, `repo: your-github-user/your-repo`, and `branch: main`. Save the file before pushing.
+
+### How do I deploy the site and the CMS?
+
+Create a GitHub account, create a new repository, and push or upload the project. Then log in to Netlify with your GitHub account, create a new project, select GitHub, select your repository, select Angular as the web technology, and click deploy. After the deploy, open Netlify Identity, enable Git Gateway, set up registration with GitHub or Google, and change registration from open to invite only. Add your custom domain in the Netlify project settings. The site and the CMS are now live at `/admin/`.
+
+### Is SEO handled automatically?
+
+Yes. The template injects meta tags, Twitter Card, Open Graph, and canonical URLs automatically. The Configuration menu holds the favicon, URL, Twitter, and Facebook fields that feed the meta tags. Before deploying, update the URL and every page's canonical URL to your domain so search engines see the correct canonical values instead of the demo domain.
+
+### What is the license, and where can I see the demo and get support?
+
+The template is a one-time purchase at $65, and you own 100% of the source. You can use it on personal and client projects. The license does not permit reselling or redistributing the template itself. Live demo: `angularcar.pages.dev`. Download: `creativitaz.gumroad.com/l/angularcar`. For support, email creativebydre@gmail.com. Custom development is available through the Fiverr link in the theme listing.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Angular Car Rental Template, and what problem does it solve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Angular Car Rental Template is a premium car rental website template built with Angular and TypeScript. It ships with a home page, about page, car list page, car detail with booking form, booking page, and contact page, plus Decap CMS headless integration for browser-based content editing and fleet management. SEO is injected automatically with meta tags, Twitter Card, Open Graph, and canonical URLs. Instead of building a rental site, a booking flow, and a CMS from scratch, you install the project, configure through the admin panel, and the site is live."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to know Angular to use this template?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You need Node.js and the Angular CLI to install and run the project, but daily content editing happens through Decap CMS in the browser. Configuration, navigation, footer, home, about, car fleet, booking, and contact content are all edited in the admin panel, so you do not need to touch Angular components to run the site. Angular and TypeScript knowledge helps if you want to extend the booking logic or customize the layout."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I install and run the template locally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Download Node.js from nodejs.org, then install the Angular CLI with npm install -g @angular/cli. Download the source code and extract it into your project folder, run npm install, then ng serve. Open localhost:4200 in your browser. In a second terminal, run npx decap-server to start the CMS backend, then access the admin page at localhost:4200/admin/index.html."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I configure the site, navbar, and footer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Log in to the admin panel at localhost:4200/admin/index.html. Open the Configuration menu and set your favicon, URL, Twitter, and Facebook fields for the SEO meta tags, Open Graph, and Twitter Card. Update the booking form fields and add your email in the form area. Save by clicking Publish in the header and selecting Publish now. Nav menu and footer menu are edited in their own menus, where you can add new items, update names and URLs, and change the footer logo and contact information."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I manage the car fleet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open the Car Fleet menu in the admin dashboard. To add a new car, press the Add new car button and fill in the car details. The car appears in the car list page and gets its own detail page with the booking form. The Car Page menu controls the car list page title, description, and cover, while Home, About, Booking, and Contact each have their own content menus."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I activate the booking form?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Set your email in the Configuration menu under the booking form email field. After your site is live, open the frontend, go to a car, fill in the booking form, and click Book now. Check your inbox for a new email and click the activation link. After activation, every booking submission goes to your inbox. There is no payment gateway and no backend database; the form sends directly to your email."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I need to change before deploying to production?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three things. First, in the admin Configuration menu, change the URL to your domain. Second, update the canonical URL on every page, including home, about, contact, booking, and car pages. Third, open src/admin/config.yml and change the backend configuration from local_backend: true with the git-gateway block to a production block with name: git-gateway, repo: your-github-user/your-repo, and branch: main. Save the file before pushing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I deploy the site and the CMS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Create a GitHub account, create a new repository, and push or upload the project. Then log in to Netlify with your GitHub account, create a new project, select GitHub, select your repository, select Angular as the web technology, and click deploy. After the deploy, open Netlify Identity, enable Git Gateway, set up registration with GitHub or Google, and change registration from open to invite only. Add your custom domain in the Netlify project settings. The site and the CMS are now live at /admin/."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SEO handled automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The template injects meta tags, Twitter Card, Open Graph, and canonical URLs automatically. The Configuration menu holds the favicon, URL, Twitter, and Facebook fields that feed the meta tags. Before deploying, update the URL and every page's canonical URL to your domain so search engines see the correct canonical values instead of the demo domain."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the license, and where can I see the demo and get support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The template is a one-time purchase at $65, and you own 100% of the source. You can use it on personal and client projects. The license does not permit reselling or redistributing the template itself. Live demo: angularcar.pages.dev. Download: creativitaz.gumroad.com/l/angularcar. For support, email creativebydre@gmail.com. Custom development is available through the Fiverr link in the theme listing."
+      }
+    }
+  ]
+}
+</script>

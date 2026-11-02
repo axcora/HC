@@ -125,3 +125,123 @@ git push -u origin main` need to change username with your github username , and
 #### Thank You by using [JAMSTACK Minimalist 11ty eleventy themes template]({{page.url}}) project
 
 We hope with this source code you can build modern website blog for your project.
+
+
+## Frequently Asked Questions
+
+### What is Litov, and what problem does it solve?
+
+Litov is a premium minimalist JAMSTACK theme built on the Eleventy (11ty) static site generator, designed for speed and SEO. It ships with a landing homepage, services, products, static pages, blog, and a contact form integrated with email, plus Tina CMS for content editing without touching code. SEO meta tags, Twitter Cards, and Open Graph tags are generated automatically from each page's title and description. Instead of assembling an Eleventy build, a CMS backend, and SEO wiring from scratch, you install the source, edit content through the admin panel, and the site is live.
+
+### Do I need to know Eleventy or Node.js to use Litov?
+
+Basic Node.js knowledge helps for the initial install, but day-to-day content editing happens through Tina CMS in the browser. Install Node.js from nodejs.org, download the source code, extract it into a project folder, then run `npm install && npm start`. The frontend runs at `localhost:8080` and the CMS admin at `localhost:8080/admin`. After that, you edit content, services, blog posts, static pages, and media from the admin panel without touching code.
+
+### How does the content and CMS structure work?
+
+The CMS admin is at `/admin`. Configuration is managed in the configuration menu, the homepage in the home page menu, and static pages (about, 404, and new pages you add) in the static page area. Dynamic pages control the title and description for the services and blog list pages. The services menu creates and edits service articles with cover and gallery sections. The blog post area creates and edits articles. The contact page holds contact information. The media manager handles PDFs, images, and other files.
+
+### How do I connect Tina Cloud to the project?
+
+Register at Tina Cloud with your GitHub account, create a new project, select your repository, and insert your domain URL. Copy the Client ID and Token. In your project, open `tina/config.ts`, then paste the Client ID into `clientId` and the Token into `token`. Save the file. With Tina Cloud connected, you can develop the backend online and edit content from the cloud dashboard.
+
+### Is SEO handled automatically?
+
+Yes. Litov injects SEO scripts automatically, generating meta data, Twitter Cards, and Open Graph tags that follow each page's title and description. Combined with the Eleventy static output and the lightweight, responsive design, the theme is built for fast loads and search-ready pages without manual meta wiring per page.
+
+### How do I deploy Litov?
+
+Push the project to GitHub first: create a repository, then run the `git init`, `git add`, `git commit`, `git remote add origin`, and `git push` commands from the article, replacing the username, repo name, and branch with yours. Then create an account with your GitHub account on Netlify, Vercel, or Cloudflare, create a new project, connect your repository, select Eleventy as the framework, and click deploy. Netlify, Vercel, and Cloudflare are the recommended hosts for an Eleventy site.
+
+### What pages and features are included?
+
+Homepage with a landing section, service and product pages, static pages for about and privacy and similar needs, a blog page, and a contact page with a form integrated directly with email. A headless CMS backend for fast updates, automatic SEO script injection, responsive and lightweight output, and 100% source code ownership. The theme also works with Tina Cloud for cloud-based backend development.
+
+### Can I use Litov for client projects, and what is the license?
+
+Yes. The theme is a one-time purchase and you own 100% of the source code, so you can use it on personal and client projects without recurring fees. The license does not permit reselling or redistributing the theme itself as a competing product. If you need a fully custom build, custom work is available through the Fiverr link in the theme listing.
+
+### Where can I see the demo and get support?
+
+The live demo is at `litov.pages.dev`. The article also includes three walkthrough videos: an overview, a feature walkthrough, and a documentation walkthrough. For support, email creativebydre@gmail.com. Custom development and AI automation work are available through the Fiverr link in the theme listing.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Litov, and what problem does it solve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Litov is a premium minimalist JAMSTACK theme built on the Eleventy (11ty) static site generator, designed for speed and SEO. It ships with a landing homepage, services, products, static pages, blog, and a contact form integrated with email, plus Tina CMS for content editing without touching code. SEO meta tags, Twitter Cards, and Open Graph tags are generated automatically from each page's title and description. Instead of assembling an Eleventy build, a CMS backend, and SEO wiring from scratch, you install the source, edit content through the admin panel, and the site is live."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to know Eleventy or Node.js to use Litov?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Basic Node.js knowledge helps for the initial install, but day-to-day content editing happens through Tina CMS in the browser. Install Node.js from nodejs.org, download the source code, extract it into a project folder, then run npm install && npm start. The frontend runs at localhost:8080 and the CMS admin at localhost:8080/admin. After that, you edit content, services, blog posts, static pages, and media from the admin panel without touching code."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the content and CMS structure work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The CMS admin is at /admin. Configuration is managed in the configuration menu, the homepage in the home page menu, and static pages (about, 404, and new pages you add) in the static page area. Dynamic pages control the title and description for the services and blog list pages. The services menu creates and edits service articles with cover and gallery sections. The blog post area creates and edits articles. The contact page holds contact information. The media manager handles PDFs, images, and other files."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I connect Tina Cloud to the project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Register at Tina Cloud with your GitHub account, create a new project, select your repository, and insert your domain URL. Copy the Client ID and Token. In your project, open tina/config.ts, then paste the Client ID into clientId and the Token into token. Save the file. With Tina Cloud connected, you can develop the backend online and edit content from the cloud dashboard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SEO handled automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Litov injects SEO scripts automatically, generating meta data, Twitter Cards, and Open Graph tags that follow each page's title and description. Combined with the Eleventy static output and the lightweight, responsive design, the theme is built for fast loads and search-ready pages without manual meta wiring per page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I deploy Litov?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Push the project to GitHub first: create a repository, then run the git init, git add, git commit, git remote add origin, and git push commands from the article, replacing the username, repo name, and branch with yours. Then create an account with your GitHub account on Netlify, Vercel, or Cloudflare, create a new project, connect your repository, select Eleventy as the framework, and click deploy. Netlify, Vercel, and Cloudflare are the recommended hosts for an Eleventy site."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What pages and features are included?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Homepage with a landing section, service and product pages, static pages for about and privacy and similar needs, a blog page, and a contact page with a form integrated directly with email. A headless CMS backend for fast updates, automatic SEO script injection, responsive and lightweight output, and 100% source code ownership. The theme also works with Tina Cloud for cloud-based backend development."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use Litov for client projects, and what is the license?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The theme is a one-time purchase and you own 100% of the source code, so you can use it on personal and client projects without recurring fees. The license does not permit reselling or redistributing the theme itself as a competing product. If you need a fully custom build, custom work is available through the Fiverr link in the theme listing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I see the demo and get support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The live demo is at litov.pages.dev. The article also includes three walkthrough videos: an overview, a feature walkthrough, and a documentation walkthrough. For support, email creativebydre@gmail.com. Custom development and AI automation work are available through the Fiverr link in the theme listing."
+      }
+    }
+  ]
+}
+</script>

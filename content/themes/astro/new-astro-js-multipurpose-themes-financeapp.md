@@ -1148,3 +1148,134 @@ And thanks alot for use financeapp astro js template, we hope this project can h
 If you need help, you can contact our team developer .
 
 [axcora@gmail.com](mailto:axcora@gmail.com)
+
+## Frequently Asked Questions
+
+### What is Finance App, and what problem does it solve?
+
+Finance App is a premium Astro startup template built with Astro and Preact, designed for finance apps, SaaS products, startups, and business sites. It ships with a startup landing page, finance app sections, pricing, a product catalog with pagination, a blog with categories and pagination, a contact form, SEO auto, Picture optimization, and page transitions. Site configuration lives in `src/data/config.json`, homepage content in `src/data/home.json`, and each page lives as Markdown in `src/pages/`. Instead of building a startup site, a product catalog, and a blog from scratch, you install the project, edit JSON and Markdown, and the site is live.
+
+### Do I need to know Astro or Preact to use Finance App?
+
+You need Node.js and a terminal to install and run the project, but daily content editing happens through JSON and Markdown. Site settings live in `src/data/config.json`, homepage content in `src/data/home.json`, and each page in `src/pages/` (about, product, blog, contact). If you can edit JSON and Markdown, you can customize most of it. Astro and Preact knowledge helps for layout changes.
+
+### How do I install and run Finance App locally?
+
+Install Node.js from nodejs.org. Download the source code and extract it into a project folder named `financeapp`. Open a terminal, run `cd C:\Users\yourpcname\Desktop\financeapp` (replace `yourpcname` with your PC name), then `npm install && npm run dev`. Open `localhost:4321` in your browser.
+
+### How do I configure the site title, navbar, and footer?
+
+Open `src/data/config.json`. Change `url`, `title`, `description`, `favicon`, and `image`. The `navbar` block holds the navbar title and cover image, and the `nav_list` array holds each menu item with `nav`, `icon`, and `link`. Add new nav items by copying an existing block. The `nav_footer_title` sets the footer brand line, `social` holds the social links (facebook, twitter, youtube, telegram, linked), `nav_footer` holds the footer menu items, and `developer` and `copyrights` set the developer credit and copyright line. The `widget_blog` and `widget_product` blocks hold the title, description, button text, and link for the blog and product widget sections.
+
+### How do I update the homepage sections?
+
+Open `src/data/home.json`. The file has sections for `title`, `description`, `image`, `chart` (stats with icon, title, and number), `marquee` (scrolling text), `intro`, `product`, `list` (feature list with icon, title, and text), `section1`, and `section2`. Each section has its own fields. Edit the values, save, and the homepage updates. Image paths use `public/img`, so an image stored at `public/img/coverfinanceapp.avif` is referenced as `/img/coverfinanceapp.avif`.
+
+### How do I add a product or a blog post?
+
+For a product, create a `.md` file in `src/pages/product/` with `layout: ../../design/product/productpost.astro` and frontmatter `title`, `description`, and `image`. For a blog post, create a `.md` file in `src/pages/blog/` with `layout: ../../design/blog/blogpost.astro` and frontmatter `title`, `description`, `image`, `pubDate`, `tags`, and `categories`. Copy an existing example and rename it with your URL slug. The product and blog list pages pick up new entries automatically. To change how many items display per page, open `src/pages/product/[...page].astro` or `src/pages/blog/[...page].astro` and change `pageSize: 6` to your number.
+
+### How does the contact form work?
+
+Open `src/pages/contact/index.md` and set the `forms_id` frontmatter field to your form endpoint. The layout is `../../design/contact.astro`. The article body is the contact page content, so you can explain the consultation and project discussion process. The form ID setup is documented in the Gumroad project under Contact Page → Form Id. Without a valid form ID, the form will not submit.
+
+### Is SEO handled automatically?
+
+Yes. Astro generates `sitemap.xml` automatically when the `sitemap()` integration is enabled in `astro.config.mjs`. Set the `site` URL in `astro.config.mjs` and the `url` field in `src/data/config.json` to your domain. Then register the site on Google Search Console, upload the Google HTML verification file to `public/`, verify, and submit `sitemap.xml` and `rss.xml`. Create `public/robots.txt` with the `Sitemap:` line pointing to your domain's `sitemap-index.xml`. The template also injects meta tags, Twitter Cards, and Open Graph from page frontmatter.
+
+### How do I deploy Finance App, and does it support a CMS?
+
+Set the `site` URL in `astro.config.mjs` and the `url` in `src/data/config.json`, push the project to GitHub, then register on Netlify, Vercel, or Cloudflare with your GitHub account, create a new project, connect your repository, select Astro as the framework, and click deploy. A headless CMS is optional: Decap CMS works through Netlify, and Tina CMS works in local development mode. If you want a CMS built for your project, custom CMS integration is available through the Fiverr link in the article.
+
+### What is the license, and where can I see the demo and get support?
+
+The license is a one-time purchase at $55, and you own 100% of the source. You can use it on personal and client projects. The license does not permit reselling or redistributing the template itself. Live demo: `financeapp.pages.dev`. Download: `creativitaz.gumroad.com/l/financestartup-astrojs`. For support, email axcora@gmail.com or creativebydre@gmail.com. Custom headless CMS integration and custom development are available through the Fiverr link in the article.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Finance App, and what problem does it solve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Finance App is a premium Astro startup template built with Astro and Preact, designed for finance apps, SaaS products, startups, and business sites. It ships with a startup landing page, finance app sections, pricing, a product catalog with pagination, a blog with categories and pagination, a contact form, SEO auto, Picture optimization, and page transitions. Site configuration lives in src/data/config.json, homepage content in src/data/home.json, and each page lives as Markdown in src/pages/. Instead of building a startup site, a product catalog, and a blog from scratch, you install the project, edit JSON and Markdown, and the site is live."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to know Astro or Preact to use Finance App?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You need Node.js and a terminal to install and run the project, but daily content editing happens through JSON and Markdown. Site settings live in src/data/config.json, homepage content in src/data/home.json, and each page in src/pages/ (about, product, blog, contact). If you can edit JSON and Markdown, you can customize most of it. Astro and Preact knowledge helps for layout changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I install and run Finance App locally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Install Node.js from nodejs.org. Download the source code and extract it into a project folder named financeapp. Open a terminal, run cd C:\\Users\\yourpcname\\Desktop\\financeapp (replace yourpcname with your PC name), then npm install && npm run dev. Open localhost:4321 in your browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I configure the site title, navbar, and footer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open src/data/config.json. Change url, title, description, favicon, and image. The navbar block holds the navbar title and cover image, and the nav_list array holds each menu item with nav, icon, and link. Add new nav items by copying an existing block. The nav_footer_title sets the footer brand line, social holds the social links (facebook, twitter, youtube, telegram, linked), nav_footer holds the footer menu items, and developer and copyrights set the developer credit and copyright line. The widget_blog and widget_product blocks hold the title, description, button text, and link for the blog and product widget sections."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I update the homepage sections?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open src/data/home.json. The file has sections for title, description, image, chart (stats with icon, title, and number), marquee (scrolling text), intro, product, list (feature list with icon, title, and text), section1, and section2. Each section has its own fields. Edit the values, save, and the homepage updates. Image paths use public/img, so an image stored at public/img/coverfinanceapp.avif is referenced as /img/coverfinanceapp.avif."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I add a product or a blog post?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a product, create a .md file in src/pages/product/ with layout: ../../design/product/productpost.astro and frontmatter title, description, and image. For a blog post, create a .md file in src/pages/blog/ with layout: ../../design/blog/blogpost.astro and frontmatter title, description, image, pubDate, tags, and categories. Copy an existing example and rename it with your URL slug. The product and blog list pages pick up new entries automatically. To change how many items display per page, open src/pages/product/[...page].astro or src/pages/blog/[...page].astro and change pageSize: 6 to your number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the contact form work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open src/pages/contact/index.md and set the forms_id frontmatter field to your form endpoint. The layout is ../../design/contact.astro. The article body is the contact page content, so you can explain the consultation and project discussion process. The form ID setup is documented in the Gumroad project under Contact Page → Form Id. Without a valid form ID, the form will not submit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SEO handled automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Astro generates sitemap.xml automatically when the sitemap() integration is enabled in astro.config.mjs. Set the site URL in astro.config.mjs and the url field in src/data/config.json to your domain. Then register the site on Google Search Console, upload the Google HTML verification file to public/, verify, and submit sitemap.xml and rss.xml. Create public/robots.txt with the Sitemap: line pointing to your domain's sitemap-index.xml. The template also injects meta tags, Twitter Cards, and Open Graph from page frontmatter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I deploy Finance App, and does it support a CMS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Set the site URL in astro.config.mjs and the url in src/data/config.json, push the project to GitHub, then register on Netlify, Vercel, or Cloudflare with your GitHub account, create a new project, connect your repository, select Astro as the framework, and click deploy. A headless CMS is optional: Decap CMS works through Netlify, and Tina CMS works in local development mode. If you want a CMS built for your project, custom CMS integration is available through the Fiverr link in the article."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the license, and where can I see the demo and get support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The license is a one-time purchase at $55, and you own 100% of the source. You can use it on personal and client projects. The license does not permit reselling or redistributing the template itself. Live demo: financeapp.pages.dev. Download: creativitaz.gumroad.com/l/financestartup-astrojs. For support, email axcora@gmail.com or creativebydre@gmail.com. Custom headless CMS integration and custom development are available through the Fiverr link in the article."
+      }
+    }
+  ]
+}
+</script>

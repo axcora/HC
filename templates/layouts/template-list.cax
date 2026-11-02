@@ -1,11 +1,35 @@
 ---
 layout: base.cax
 ---
+
 <div class="overlay" id="overlay"></div>
 <header class="header"><a href="/" class="logo"><span class="logo-mark">{{ hc.navbar.logo }}</span><span>{{ hc.navbar.title }}</span></a><nav class="nav">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }}</a>{% endfor %}</nav><a href="{{ hc.navbar.button.url }}" class="btn btn-accent" target="_blank">{{ hc.navbar.button.text }}</a><button class="hamburger" id="hamburger" aria-label="Open menu"><span></span></button></header>
-<nav class="mobile-nav" id="mobileNav"><div class="mobile-nav-links">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }} <em>0{{ loop.index }}</em></a>{% endfor %}<a href="{{ hc.navbar.button.url }}" target="_blank">{{ hc.navbar.button.text }} <em>{{ hc.navbar.list | length + 1 }}</em></a></div><div class="mobile-foot"><span>© 2026 {{ hc.navbar.title }}</span><span>Premium Themes That Convert</span></div></nav>
+<nav class="mobile-nav" id="mobileNav"><div class="mobile-nav-links">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }} <em>0{{ loop.index }}</em></a>{% endfor %}<a href="{{ hc.navbar.button.url }}" target="_blank">{{ hc.navbar.button.text }} <em>{{ hc.navbar.list | length + 1 }}</em></a></div><div class="mobile-foot"><span>© 2026 {{ hc.navbar.title }}</span><span>{{ hero.title }}</span></div></nav>
+
 <section class="section">
-<div class="head"><h1 class="huge display">ALL TEMPLATE<br><em>{{ pagination.total_items }} Premium and Free Drops</em></h1><input id="q" class="input" placeholder="FILTER: ASTRO, COMMERCE..." aria-label="Filter"></div>
+<div class="head">
+  <h1 class="huge display">
+    {{ hero.title }}<br>
+    <em>{{ pagination.total_items }} {{ hero.desc }}</em>
+  </h1>
+  <input id="q" class="input" placeholder="FILTER: ASTRO, SVELTEKIT, BLUDIT..." aria-label="Filter templates by stack or name">
+</div>
+
+<div class="sell" style="margin-bottom:24px;">
+  <div>
+    <p class="lead">{{ intro.title }}</p>
+  </div>
+  <div>
+    <p>{{ intro.desc }}</p>
+  </div>
+</div>
+
+<div class="stack-buttons" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;margin-bottom:15px;">
+  {% for s in hc.stacks %}
+    <a href="{{ s.url }}" class="tag">{{ s.name }}</a>
+  {% endfor %}
+</div>
+
 <div class="grid-themes" id="grid">
 <a href="{{ hc.widget.url }}" class="card" target="_blank" rel="noopener">
   <h2 class="name display">{{ hc.widget.title }}<br><span>{{ hc.widget.text }}</span></h2>
@@ -28,12 +52,65 @@ layout: base.cax
 </a>
 {% endfor %}
 </div>
+
 <div class="pag">
 {% if pagination.prev_url %}<a href="{{ pagination.prev_url }}">← PREV</a>{% endif %}
 {% if pagination.next_url %}<a href="{{ pagination.next_url }}">NEXT →</a>{% endif %}
 </div>
 </section>
+
+<section class="section">
+  <div class="head">
+    <h2 class="huge display">{{ engines.title }}<br><em>{{ engines.title_em }}</em></h2>
+  </div>
+  <div class="sell">
+    <div>
+      <p class="lead">{{ engines.lead }}</p>
+      <p class="hint">{{ engines.hint }}</p>
+    </div>
+    <div>
+      {% for e in engines.list %}
+      <div class="check">
+        <i>✓</i>
+        <div><a href="{{ e.url }}"><b>{{ e.name }}</b></a> — {{ e.desc }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="head">
+    <h2 class="huge display">{{ faq.title }}<br><em>{{ faq.title_em }}</em></h2>
+  </div>
+  <div class="kv-list">
+    {% for item in faq.list %}
+    <div class="kv">
+      <dt>{{ item.q }}</dt>
+      <dd>{{ item.a }}</dd>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in seo.faq %}
+    {"@type":"Question","name":"{{ item.q }}","acceptedAnswer":{"@type":"Answer","text":"{{ item.a }}"}}{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
 <script>
-document.querySelector('img.coveris')?.setAttribute('fetchpriority','high');
-document.querySelector('img.coveris')?.removeAttribute('loading');
+document.getElementById('q')?.addEventListener('input', function(e){
+  var q = e.target.value.toLowerCase();
+  document.querySelectorAll('#grid .card').forEach(function(c){
+    c.style.display = c.innerText.toLowerCase().includes(q) ? '' : 'none';
+  });
+});
+var ham=document.getElementById('hamburger'); var nav=document.getElementById('mobileNav'); var over=document.getElementById('overlay');
+if(ham){ham.addEventListener('click',()=>{nav.classList.toggle('active'); over.classList.toggle('active')})}
 </script>

@@ -720,3 +720,134 @@ You can also integration your website project with cloudcannon headless cms if y
 ### Others
 
 There are many Headless CMS that you can use for integration with your projects, like decap cms, sveltia cms, tina cloud cms, and others.
+
+## Frequently Asked Questions
+
+### What is Docuna, and what problem does it solve?
+
+Docuna is a premium Astro Starlight documentation template. It ships with a documentation system, a landing page, a blog section, sidebar navigation, search, dark mode, MDX and Markdown support, a contact form, and responsive output. Site configuration lives in `astro.config.mjs`, landing content in `src/data/home/home.json`, navbar and footer in `src/data/config/config.json`, and documentation articles in `src/content/docs/`. Instead of assembling a Starlight docs site, a landing page, and a CMS from scratch, you install the project, run `npm run dev`, and start editing JSON and Markdown.
+
+### Do I need to know Astro or Starlight to use Docuna?
+
+You need Node.js and a terminal to install and run the project, but daily content editing happens through JSON, Markdown, and MDX files. Sidebar categories live in `astro.config.mjs`, landing content in `src/data/home/home.json`, and documentation articles in `src/content/docs/`. If you can edit JSON and Markdown, you can customize most of it. Basic Starlight knowledge helps if you want to extend the splash page templates.
+
+### How do I install and run Docuna locally?
+
+Download and install Node.js from nodejs.org. Download the Docuna source code from Gumroad, create a new folder named `docuna` on your desktop, and extract the source into it. Open a terminal, run `cd C:\Users\pcname\Desktop\docuna` (replace `pcname` with your PC name), then run `npm install` and `npm run dev`. Open `localhost:4321` in your browser.
+
+### How do I configure the sidebar and documentation categories?
+
+Open `astro.config.mjs` with a code editor. Set `site` to your domain and `title` to your doc title. In the `sidebar` array, you can list items manually with `label` and `link`, or use `autogenerate` with a `directory` value to generate the sidebar from a folder. For example, `{ label: 'Project', autogenerate: { directory: 'project' } }` builds a section from the `project` folder inside `src/content/docs/`. To add a new documentation category, create a new folder inside `src/content/docs/` and add `.md` files to it.
+
+### How do I write a documentation article or a static page?
+
+For a documentation article, create a `.md` file inside a category folder in `src/content/docs/` and add frontmatter with `title` and `description`, then write the body in Markdown. For a static page such as about or contact, create an `.mdx` file in `src/content/docs/` with frontmatter including `title`, `description`, `image`, and `template: splash`. The splash template imports Starlight components, the `Picture` component, the `Conf` config, and the `Footer` and `Header` widgets, which is why it produces a full-width landing-style page rather than a standard docs page.
+
+### How do I update the landing page and navbar?
+
+Landing page content lives in `src/data/home/home.json`, with sections for `intro`, `why`, `why_list`, `features`, `feature_list`, `pricing`, `plan`, and `section`. Icons use Starlight icon names, so you can pick from the Starlight component icon list. Navbar and footer links live in `src/data/config/config.json`, with `nav1`, `nav2`, `nav3`, and `nav4` groups, each with a title and a list of `nav` and `link` entries. Edit the JSON, save, and the dev server reflects the changes.
+
+### Does Docuna include a CMS?
+
+Not pre-configured, but it supports several headless CMS options. Decap CMS works through the Netlify app, and you can also deploy the site on Netlify with Decap. Tina CMS is the best choice for local development mode. Cloudcannon is supported if you prefer it. Sveltia CMS and other Git-based headless CMS options also work. For teams that want a CMS out of the box, Nocturne is the better fit; for teams that prefer JSON and Markdown editing with optional CMS, Docuna is the lighter and more affordable option at $35.
+
+### Is SEO handled automatically?
+
+Yes. Starlight and Astro handle the SEO pipeline: page titles and descriptions from frontmatter, canonical URLs from the site config, and Open Graph tags. The landing page JSON also carries title, description, and image fields, and the navbar and footer config includes a site description and image. Combined with the fast Astro static output and the responsive layout, the site is ready for search engines without manual meta wiring per page.
+
+### How do I deploy Docuna?
+
+Push the project to a GitHub repository first, then register on Netlify, Vercel, or Cloudflare with your GitHub account, create a new project, connect your repository, and click deploy. To use a custom domain, change your domain nameservers to the hosting provider's nameservers, following the provider's documentation. For the Decap CMS option, Netlify is the recommended host because of its built-in Identity and Git Gateway.
+
+### What is the license, and where can I see the demo and get support?
+
+Docuna is a one-time purchase at $35. You own 100% of the source, and you can use it on personal and client projects. The license does not permit reselling or redistributing the theme itself as a competing product. Live demo: `docuna.pages.dev`. Download: `creativitaz.gumroad.com/l/docuna`. For support, email creativebydre@gmail.com. Custom Astro and Starlight work is available through the Fiverr link in the article.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Docuna, and what problem does it solve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Docuna is a premium Astro Starlight documentation template. It ships with a documentation system, a landing page, a blog section, sidebar navigation, search, dark mode, MDX and Markdown support, a contact form, and responsive output. Site configuration lives in astro.config.mjs, landing content in src/data/home/home.json, navbar and footer in src/data/config/config.json, and documentation articles in src/content/docs/. Instead of assembling a Starlight docs site, a landing page, and a CMS from scratch, you install the project, run npm run dev, and start editing JSON and Markdown."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to know Astro or Starlight to use Docuna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You need Node.js and a terminal to install and run the project, but daily content editing happens through JSON, Markdown, and MDX files. Sidebar categories live in astro.config.mjs, landing content in src/data/home/home.json, and documentation articles in src/content/docs/. If you can edit JSON and Markdown, you can customize most of it. Basic Starlight knowledge helps if you want to extend the splash page templates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I install and run Docuna locally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Download and install Node.js from nodejs.org. Download the Docuna source code from Gumroad, create a new folder named docuna on your desktop, and extract the source into it. Open a terminal, run cd C:\\Users\\pcname\\Desktop\\docuna (replace pcname with your PC name), then run npm install and npm run dev. Open localhost:4321 in your browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I configure the sidebar and documentation categories?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open astro.config.mjs with a code editor. Set site to your domain and title to your doc title. In the sidebar array, you can list items manually with label and link, or use autogenerate with a directory value to generate the sidebar from a folder. For example, { label: 'Project', autogenerate: { directory: 'project' } } builds a section from the project folder inside src/content/docs/. To add a new documentation category, create a new folder inside src/content/docs/ and add .md files to it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I write a documentation article or a static page?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a documentation article, create a .md file inside a category folder in src/content/docs/ and add frontmatter with title and description, then write the body in Markdown. For a static page such as about or contact, create an .mdx file in src/content/docs/ with frontmatter including title, description, image, and template: splash. The splash template imports Starlight components, the Picture component, the Conf config, and the Footer and Header widgets, which is why it produces a full-width landing-style page rather than a standard docs page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I update the landing page and navbar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Landing page content lives in src/data/home/home.json, with sections for intro, why, why_list, features, feature_list, pricing, plan, and section. Icons use Starlight icon names, so you can pick from the Starlight component icon list. Navbar and footer links live in src/data/config/config.json, with nav1, nav2, nav3, and nav4 groups, each with a title and a list of nav and link entries. Edit the JSON, save, and the dev server reflects the changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Docuna include a CMS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not pre-configured, but it supports several headless CMS options. Decap CMS works through the Netlify app, and you can also deploy the site on Netlify with Decap. Tina CMS is the best choice for local development mode. Cloudcannon is supported if you prefer it. Sveltia CMS and other Git-based headless CMS options also work. For teams that want a CMS out of the box, Nocturne is the better fit; for teams that prefer JSON and Markdown editing with optional CMS, Docuna is the lighter and more affordable option at $35."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SEO handled automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Starlight and Astro handle the SEO pipeline: page titles and descriptions from frontmatter, canonical URLs from the site config, and Open Graph tags. The landing page JSON also carries title, description, and image fields, and the navbar and footer config includes a site description and image. Combined with the fast Astro static output and the responsive layout, the site is ready for search engines without manual meta wiring per page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I deploy Docuna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Push the project to a GitHub repository first, then register on Netlify, Vercel, or Cloudflare with your GitHub account, create a new project, connect your repository, and click deploy. To use a custom domain, change your domain nameservers to the hosting provider's nameservers, following the provider's documentation. For the Decap CMS option, Netlify is the recommended host because of its built-in Identity and Git Gateway."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the license, and where can I see the demo and get support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Docuna is a one-time purchase at $35. You own 100% of the source, and you can use it on personal and client projects. The license does not permit reselling or redistributing the theme itself as a competing product. Live demo: docuna.pages.dev. Download: creativitaz.gumroad.com/l/docuna. For support, email creativebydre@gmail.com. Custom Astro and Starlight work is available through the Fiverr link in the article."
+      }
+    }
+  ]
+}
+</script>

@@ -15,7 +15,7 @@ features:
  - All PHP host support Cpanel Plesk and Others
  - Documentation Ready
  - Full Source Code Themes Template Project
-download: https://creativitaz.gumroad.com/l/piconic-pro
+download: https://creativitaz.gumroad.com/l/picobookpro
 demo: https://www.youtube.com/watch?v=FeqTiQHiDw0
 tags:
   - themestemplate
@@ -192,7 +192,135 @@ implementation : **I'm Bold text**
 
 ```
 
--------------------------------
-
 For information detail about documentation you can open documentation in order page.
 
+## Frequently Asked Questions
+
+### What is Picobook Pro, and what problem does it solve?
+
+Picobook Pro is a premium Markdown website theme built on the Pico flat-file CMS and runs on PHP hosting. It combines a modern static site generator workflow with a flat-file CMS: no database, no admin panel, and full control over your site files. Content pages, blog lists, blog posts, and contact pages are Markdown files, and Open Graph, Twitter Card, and meta tags follow each page's title and description automatically. Instead of setting up a database-driven CMS, you upload the source, edit two config files, and the site is live.
+
+### Do I need a database or an admin panel to run Picobook Pro?
+
+No. Pico is a flat-file CMS, so there is no database and no admin area. You work directly with Markdown files, the same way a modern static site generator works. This keeps the site fast, safe, and easy to back up, since everything is plain files on your PHP hosting.
+
+### Which hosting does Picobook Pro support?
+
+Any PHP host works, including cPanel, Plesk, and similar control panels. You can install on a main domain (upload to root `public_html`), on a subdomain (create the subdomain and upload the source into its folder), or in a subdirectory (create a folder inside `public_html` and upload the source there). After upload, the site is live.
+
+### How do I configure the site title and base URL?
+
+Open `config/config.yml` in your hosting panel or code editor. Change `site_title` and `base_url` to match your site. This is the first configuration step after installation.
+
+### How do I change the design and the static pages?
+
+Open `content/_meta.md` to adjust the design-level settings. For the homepage UI, open `content/index.md` and edit the frontmatter. Static pages such as about and contact live in the `content` folder. You can edit, update, or rename the sample files: `index.md`, `_meta.md`, `404.md`, `contact.md`, and `blog.md`. Do not delete these files; edit them as needed.
+
+### How do I add a new static page or a new blog post?
+
+For a new static page, create a new `.md` file in `content`, name it after your page, and follow the frontmatter format (Title, Description, Cover, Template). For a new blog post, create a new `.md` file inside `content/blog`, then copy the example blog post frontmatter (Title, Description, Cover, Date, Hidden, Template) and write the body in Markdown.
+
+### Is SEO handled automatically?
+
+Yes. Open Graph, Twitter Card, and meta tags follow the title and description of each page automatically. Combined with the flat-file, static-generator approach, the template is built for fast, search-ready sites without manual meta wiring per page.
+
+### What is the folder structure, and where do I put media files?
+
+The project has six main folders: `Assets` for images, videos, and other media; `Config` for `_config.yml`; `Content` for Markdown pages and blog posts; `Plugins` for additional features; `Themes` for the theme files; and `Vendor` for the Symfony and Pico support files. Put media inside `Assets` and reference it from your Markdown content.
+
+### What do I get with the purchase, and is Markdown knowledge required?
+
+You get the full source code of the theme and template project, documentation ready, and the flat-file CMS setup. Basic Markdown is all you need: headings with `#`, images with `![]()`, links with `[]()`, lists with `-` or `+`, and bold text with `**`. Documentation is available from the order page.
+
+### Where can I see the demo and get support?
+
+The demo video is available at the YouTube link in the listing. For support and custom work, contact creativebydre@gmail.com or use the Fiverr link in the theme listing.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Picobook Pro, and what problem does it solve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Picobook Pro is a premium Markdown website theme built on the Pico flat-file CMS and runs on PHP hosting. It combines a modern static site generator workflow with a flat-file CMS: no database, no admin panel, and full control over your site files. Content pages, blog lists, blog posts, and contact pages are Markdown files, and Open Graph, Twitter Card, and meta tags follow each page's title and description automatically. Instead of setting up a database-driven CMS, you upload the source, edit two config files, and the site is live."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a database or an admin panel to run Picobook Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Pico is a flat-file CMS, so there is no database and no admin area. You work directly with Markdown files, the same way a modern static site generator works. This keeps the site fast, safe, and easy to back up, since everything is plain files on your PHP hosting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which hosting does Picobook Pro support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any PHP host works, including cPanel, Plesk, and similar control panels. You can install on a main domain (upload to root public_html), on a subdomain (create the subdomain and upload the source into its folder), or in a subdirectory (create a folder inside public_html and upload the source there). After upload, the site is live."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I configure the site title and base URL?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open config/config.yml in your hosting panel or code editor. Change site_title and base_url to match your site. This is the first configuration step after installation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I change the design and the static pages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open content/_meta.md to adjust the design-level settings. For the homepage UI, open content/index.md and edit the frontmatter. Static pages such as about and contact live in the content folder. You can edit, update, or rename the sample files: index.md, _meta.md, 404.md, contact.md, and blog.md. Do not delete these files; edit them as needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I add a new static page or a new blog post?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a new static page, create a new .md file in content, name it after your page, and follow the frontmatter format (Title, Description, Cover, Template). For a new blog post, create a new .md file inside content/blog, then copy the example blog post frontmatter (Title, Description, Cover, Date, Hidden, Template) and write the body in Markdown."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SEO handled automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Open Graph, Twitter Card, and meta tags follow the title and description of each page automatically. Combined with the flat-file, static-generator approach, the template is built for fast, search-ready sites without manual meta wiring per page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the folder structure, and where do I put media files?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The project has six main folders: Assets for images, videos, and other media; Config for _config.yml; Content for Markdown pages and blog posts; Plugins for additional features; Themes for the theme files; and Vendor for the Symfony and Pico support files. Put media inside Assets and reference it from your Markdown content."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I get with the purchase, and is Markdown knowledge required?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You get the full source code of the theme and template project, documentation ready, and the flat-file CMS setup. Basic Markdown is all you need: headings with #, images with ![](), links with [](), lists with - or +, and bold text with **. Documentation is available from the order page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I see the demo and get support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The demo video is available at the YouTube link in the listing. For support and custom work, contact creativebydre@gmail.com or use the Fiverr link in the theme listing."
+      }
+    }
+  ]
+}
+</script>

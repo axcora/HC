@@ -330,3 +330,146 @@ If you get stuck, contact creativebydre@gmail.com with your order ID and a descr
 ### License
 
 One-time purchase. Unlimited personal and commercial projects. Not for resale as a template or theme. You own the code you buy.
+
+## Frequently Asked Questions
+
+### What is Nuxas, and what problem does it solve?
+
+Nuxas is a production-ready Nuxt 4 frontend theme built for SaaS founders, indie developers, and small teams who need a fast, SEO-friendly marketing site. Layout, content collections, SEO meta, sitemap, accessible base components, and dark mode are already wired. Routes stay focused on layout, so editing copy does not mean editing components. It is a codebase, not a page builder: content lives in Markdown and YAML files you edit directly or through the optional Decap CMS edition.
+
+### What is the difference between the Code Only and Code + Decap CMS editions?
+
+Both editions share the same Nuxt 4 frontend foundation: strict TypeScript, SEO pipeline, dark and light theming, accessible components, and blog and product collections. Code Only is for developers who edit content in Markdown and YAML files with a code editor. Code + Decap CMS adds a fully integrated Decap CMS dashboard for browser-based editing, which relies on Netlify Identity and Git Gateway, so it must be deployed to Netlify. Choose Code Only for full file-level control; choose the CMS edition when handing off a site to non-technical editors.
+
+### Do I need to know Nuxt or Vue to use Nuxas?
+
+Basic Nuxt and Vue knowledge is enough. The component layer uses Vue 3.5 with the Composition API, and the code is readable and idiomatic. If you already know Vue, you will feel at home. If you are new, the beginner guide walks through installation, project structure, configuration, build, and deployment step by step.
+
+### How does the content layer work?
+
+Content collections are powered by Nuxt Content 3, a Git-based CMS for Nuxt. Blog posts and products are Markdown files; site settings, navigation, and footer are YAML files. Every collection has a schema defined in `content.config.ts`, so frontmatter is validated automatically at build time. Nuxt Content also provides a MongoDB-like query API, automatic navigation generation, and MDC syntax for using Vue components inside Markdown.
+
+### Is SEO handled automatically?
+
+Yes. The `@nuxtjs/seo` module bundles sitemap, robots, Open Graph images, Schema.org structured data, and canonical URLs into one install. Every page gets its meta tags generated from page data, so you do not duplicate title and description by hand. The sitemap module generates `sitemap.xml` automatically from static pages and content entries, ready to submit to Google Search Console after deploy.
+
+### What is the most common deployment mistake?
+
+Leaving `site.url` as `http://localhost:3000` in `nuxt.config.ts`. That URL is used for canonical tags, sitemap entries, and Open Graph metadata, so if you leave it as localhost, Google will treat your site as localhost. Replace it with your production domain before deploying, and update `runtimeConfig.public.appUrl` to match. The second most common mistake is running `npm run build` instead of `npm run generate` for a static site: `build` produces a Node server, `generate` produces static files.
+
+### How do I build and deploy Nuxas?
+
+For a static frontend site, run `npm run generate`. The output lands in `.output/public/`, which you can upload to any static host. Netlify is the recommended host (especially for the Decap CMS edition). Cloudflare Pages, Vercel, cPanel shared hosting via File Manager with an `.htaccess` SPA fallback, and a VPS with Nginx all work with the same output. If you need API routes, authentication, or per-request logic, run `npm run build` and start the Nitro Node server with `node .output/server/index.mjs`.
+
+### How does dark mode work, and does it flicker?
+
+Theming uses CSS custom properties with a token architecture. The theme respects system preference, stores the user's choice, and works on every page. There is no flash of unstyled content on load. This is the kind of detail that separates a production-ready theme from a demo.
+
+### How do I set up the contact form?
+
+Nuxas uses Formspree by default. Create a free account at formspree.io, create a new form, and copy the form ID. Open `content/data/site.yml`, find the contact section, and replace `YOUR_FORMSPREE_ID` with your actual ID. Submissions are emailed to you and visible in the Formspree dashboard. If you prefer, replace the form action with your own endpoint or remove the form entirely.
+
+### Can I sell products with Nuxas, and what license do I get?
+
+Product pages accept any purchase URL: Gumroad, Lemon Squeezy, Stripe, or PayPal. There is no backend checkout logic to maintain: you paste the link, and the button works. The license is a one-time purchase for unlimited personal and commercial projects. Resale as a template or theme is not permitted.
+
+### Where can I find documentation and support?
+
+The official documentation at `nuxas.pages.dev/docs` covers installation, running with Decap CMS locally, project structure, global site settings, managing blog posts and products, pushing to GitHub, deploying to Netlify and other hosts, custom domains, and support. For help, email creativebydre@gmail.com with your order ID and a description of the issue. Custom development and AI automation work are available through the Fiverr link in the article.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Nuxas, and what problem does it solve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nuxas is a production-ready Nuxt 4 frontend theme built for SaaS founders, indie developers, and small teams who need a fast, SEO-friendly marketing site. Layout, content collections, SEO meta, sitemap, accessible base components, and dark mode are already wired. Routes stay focused on layout, so editing copy does not mean editing components. It is a codebase, not a page builder: content lives in Markdown and YAML files you edit directly or through the optional Decap CMS edition."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between the Code Only and Code + Decap CMS editions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both editions share the same Nuxt 4 frontend foundation: strict TypeScript, SEO pipeline, dark and light theming, accessible components, and blog and product collections. Code Only is for developers who edit content in Markdown and YAML files with a code editor. Code + Decap CMS adds a fully integrated Decap CMS dashboard for browser-based editing, which relies on Netlify Identity and Git Gateway, so it must be deployed to Netlify. Choose Code Only for full file-level control; choose the CMS edition when handing off a site to non-technical editors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to know Nuxt or Vue to use Nuxas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Basic Nuxt and Vue knowledge is enough. The component layer uses Vue 3.5 with the Composition API, and the code is readable and idiomatic. If you already know Vue, you will feel at home. If you are new, the beginner guide walks through installation, project structure, configuration, build, and deployment step by step."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the content layer work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Content collections are powered by Nuxt Content 3, a Git-based CMS for Nuxt. Blog posts and products are Markdown files; site settings, navigation, and footer are YAML files. Every collection has a schema defined in content.config.ts, so frontmatter is validated automatically at build time. Nuxt Content also provides a MongoDB-like query API, automatic navigation generation, and MDC syntax for using Vue components inside Markdown."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SEO handled automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The @nuxtjs/seo module bundles sitemap, robots, Open Graph images, Schema.org structured data, and canonical URLs into one install. Every page gets its meta tags generated from page data, so you do not duplicate title and description by hand. The sitemap module generates sitemap.xml automatically from static pages and content entries, ready to submit to Google Search Console after deploy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most common deployment mistake?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Leaving site.url as http://localhost:3000 in nuxt.config.ts. That URL is used for canonical tags, sitemap entries, and Open Graph metadata, so if you leave it as localhost, Google will treat your site as localhost. Replace it with your production domain before deploying, and update runtimeConfig.public.appUrl to match. The second most common mistake is running npm run build instead of npm run generate for a static site: build produces a Node server, generate produces static files."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I build and deploy Nuxas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a static frontend site, run npm run generate. The output lands in .output/public/, which you can upload to any static host. Netlify is the recommended host (especially for the Decap CMS edition). Cloudflare Pages, Vercel, cPanel shared hosting via File Manager with an .htaccess SPA fallback, and a VPS with Nginx all work with the same output. If you need API routes, authentication, or per-request logic, run npm run build and start the Nitro Node server with node .output/server/index.mjs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does dark mode work, and does it flicker?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Theming uses CSS custom properties with a token architecture. The theme respects system preference, stores the user's choice, and works on every page. There is no flash of unstyled content on load. This is the kind of detail that separates a production-ready theme from a demo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I set up the contact form?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nuxas uses Formspree by default. Create a free account at formspree.io, create a new form, and copy the form ID. Open content/data/site.yml, find the contact section, and replace YOUR_FORMSPREE_ID with your actual ID. Submissions are emailed to you and visible in the Formspree dashboard. If you prefer, replace the form action with your own endpoint or remove the form entirely."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I sell products with Nuxas, and what license do I get?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Product pages accept any purchase URL: Gumroad, Lemon Squeezy, Stripe, or PayPal. There is no backend checkout logic to maintain: you paste the link, and the button works. The license is a one-time purchase for unlimited personal and commercial projects. Resale as a template or theme is not permitted."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I find documentation and support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The official documentation at nuxas.pages.dev/docs covers installation, running with Decap CMS locally, project structure, global site settings, managing blog posts and products, pushing to GitHub, deploying to Netlify and other hosts, custom domains, and support. For help, email creativebydre@gmail.com with your order ID and a description of the issue. Custom development and AI automation work are available through the Fiverr link in the article."
+      }
+    }
+  ]
+}
+</script>

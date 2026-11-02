@@ -296,6 +296,139 @@ No license key. No subscription. No renewal. No seat limit.
 
 ---
 
+## Frequently Asked Questions
+
+### What is Pycora Pro, and how is it different from the free Pycora engine?
+
+Pycora Pro is a premium Python static site generator built by Axcora Technology. It compiles Markdown and YAML into fast, immutable static HTML with zero Node and zero Ruby. The free Pycora engine gives you the SSG core (Nyiblorong or Medusa versions); Pycora Pro adds the full production system on top: Minimalist Bento Grid design, Decap CMS pre-configured, pricing, FAQ, portfolio filter, testimonial, and a complete YAML-wired section set.
+
+### Do I need Node.js or Ruby to run Pycora Pro?
+
+No. Pycora Pro is pure Python 3.8+ with four pip dependencies. There is no `node_modules`, no `Gemfile`, no version manager. If your machine runs Python, it runs Pycora Pro. Build a 40+ page site in about 0.87 seconds with one command: `python ssg.py`.
+
+### How does Decap CMS work in Pycora Pro?
+
+Decap CMS is pre-configured and wired to your content. In local mode, run `npx decap-server` alongside `python dev.py` to edit from a browser. In cloud mode, use GitHub OAuth or Netlify Identity. Collections include Site Settings, Pages, Blog Posts, and Projects, so editors can update content without touching code.
+
+### Is SEO handled automatically?
+
+Yes. Pycora Pro auto-generates `sitemap.xml`, `robots.txt`, `feed.xml` (RSS 2.0), `atom.xml`, `feed.json` (JSON Feed 1.0), a custom `404.html`, JSON-LD structured data, Open Graph tags, and Twitter Card tags. No plugins, no configuration — it ships pre-wired.
+
+### Does the template ship any client-side JavaScript?
+
+Zero client JavaScript by default. Every interaction is pure HTML/CSS or opt-in vanilla JS. The result is Lighthouse 90++ on slow phones, 0 CLS, no hydration, and instant loads even on 3G.
+
+### Can I use Pycora Pro for client projects and rebrand it?
+
+Yes. The license allows unlimited personal projects, unlimited client projects, white-label rebranding, and resale as part of client work. There is no license key, no subscription, no renewal, and no seat limit. Free lifetime updates are included.
+
+### Which hosting providers can I deploy to?
+
+Pycora Pro outputs pure static HTML, so it deploys anywhere: Cloudflare Pages, Vercel, Netlify, GitHub Pages, or your own NGINX/Apache server. The build command is `python ssg.py`; for GitHub Pages, push the `output/` folder to `gh-pages`. No server, no database, no runtime required.
+
+### What sections and features are included?
+
+The template ships with Hero, Trusted logo strip, Intro Grid, Stats counters, Journal (blog listing), Projects portfolio grid with category filter, two-tier Pricing, FAQ accordion, Testimonial, and Footer. All sections are wired to `_data/site.yaml`, so you edit once and update everywhere. Dark mode follows system preference with no flash.
+
+### How does Pycora Pro compare in cost to WordPress, Webflow, or Squarespace?
+
+Pycora Pro is $145 once. WordPress, Webflow, and Squarespace each charge monthly, adding up to $120–360, $348, and $192 per year respectively. Pycora Pro has no monthly cost and no renewal, so it pays for itself in under six months. You own 100% of the source.
+
+### What is included in the package and where can I see the demo?
+
+You get the Pycora SSG engine (`ssg.py`, `dev.py`, `install.py`), Minimalist Bento Grid templates, the Decap CMS config, the YAML site config, sample content (12 projects, 9 blog posts, all pages), full documentation, README, and the license. Live demo: `pycorapro.axcora.com`. Support and custom builds are available through the Fiverr link in the article.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Pycora Pro, and how is it different from the free Pycora engine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pycora Pro is a premium Python static site generator built by Axcora Technology. It compiles Markdown and YAML into fast, immutable static HTML with zero Node and zero Ruby. The free Pycora engine gives you the SSG core (Nyiblorong or Medusa versions); Pycora Pro adds the full production system on top: Minimalist Bento Grid design, Decap CMS pre-configured, pricing, FAQ, portfolio filter, testimonial, and a complete YAML-wired section set."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need Node.js or Ruby to run Pycora Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Pycora Pro is pure Python 3.8+ with four pip dependencies. There is no node_modules, no Gemfile, no version manager. If your machine runs Python, it runs Pycora Pro. Build a 40+ page site in about 0.87 seconds with one command: python ssg.py."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Decap CMS work in Pycora Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Decap CMS is pre-configured and wired to your content. In local mode, run npx decap-server alongside python dev.py to edit from a browser. In cloud mode, use GitHub OAuth or Netlify Identity. Collections include Site Settings, Pages, Blog Posts, and Projects, so editors can update content without touching code."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SEO handled automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Pycora Pro auto-generates sitemap.xml, robots.txt, feed.xml (RSS 2.0), atom.xml, feed.json (JSON Feed 1.0), a custom 404.html, JSON-LD structured data, Open Graph tags, and Twitter Card tags. No plugins, no configuration — it ships pre-wired."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the template ship any client-side JavaScript?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zero client JavaScript by default. Every interaction is pure HTML/CSS or opt-in vanilla JS. The result is Lighthouse 90++ on slow phones, 0 CLS, no hydration, and instant loads even on 3G."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use Pycora Pro for client projects and rebrand it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The license allows unlimited personal projects, unlimited client projects, white-label rebranding, and resale as part of client work. There is no license key, no subscription, no renewal, and no seat limit. Free lifetime updates are included."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which hosting providers can I deploy to?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pycora Pro outputs pure static HTML, so it deploys anywhere: Cloudflare Pages, Vercel, Netlify, GitHub Pages, or your own NGINX/Apache server. The build command is python ssg.py; for GitHub Pages, push the output folder to gh-pages. No server, no database, no runtime required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sections and features are included?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The template ships with Hero, Trusted logo strip, Intro Grid, Stats counters, Journal (blog listing), Projects portfolio grid with category filter, two-tier Pricing, FAQ accordion, Testimonial, and Footer. All sections are wired to _data/site.yaml, so you edit once and update everywhere. Dark mode follows system preference with no flash."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Pycora Pro compare in cost to WordPress, Webflow, or Squarespace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pycora Pro is $145 once. WordPress, Webflow, and Squarespace each charge monthly, adding up to $120–360, $348, and $192 per year respectively. Pycora Pro has no monthly cost and no renewal, so it pays for itself in under six months. You own 100% of the source."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is included in the package and where can I see the demo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You get the Pycora SSG engine (ssg.py, dev.py, install.py), Minimalist Bento Grid templates, the Decap CMS config, the YAML site config, sample content (12 projects, 9 blog posts, all pages), full documentation, README, and the license. Live demo: pycorapro.axcora.com. Support and custom builds are available through the Fiverr link in the article."
+      }
+    }
+  ]
+}
+</script>
+
+---
+
 ## Pycora Pro vs Free Pycora
 
 **Free Pycora** gives you the engine — Nyiblorong or Medusa.

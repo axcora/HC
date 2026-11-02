@@ -724,23 +724,6 @@ When contacting support, include:
 - Description of the issue
 - Screenshot or error message
 
-#### License Summary
-
-**You may:**
-
-- Use on unlimited personal projects
-- Use on unlimited client projects
-- Modify the source code
-- Charge clients for websites built with this theme
-
-**You may not:**
-
-- Resell the theme as-is
-- Redistribute the source code
-- Share with others who did not purchase
-
-See the `LICENSE` file for full terms.
-
 #### Need a Custom Website?
 
 If you need a fully custom website built from scratch, we offer professional web development services.
@@ -764,3 +747,134 @@ https://creativitaz.gumroad.com/l/gatsbycar
 Thank you for choosing RentCar. We hope this theme helps you build an amazing car rental website.
 
 If you find this theme useful, please leave a review on Gumroad. Your support helps us continue building high-quality products.
+
+## Frequently Asked Questions
+
+### What is RentCar, and how is it different from an OTA or a WordPress theme?
+
+RentCar is a premium Gatsby JS car rental theme built with Gatsby 5, React 18, Bootstrap 5, and a headless Decap CMS. It is built specifically for car rental, limousine, party bus, and chauffeur businesses. Unlike OTAs that take 15–25% of every booking, RentCar uses direct email booking so you keep 100% of each booking and control price, terms, and negotiation. Unlike WordPress themes, there are no plugins, no updates, no security patches, and no monthly hosting bills. One-time $79, unlimited projects, lifetime updates, and you own the code.
+
+### Do I need coding skills to use RentCar?
+
+No. Content is edited through the Decap CMS admin panel: fleet, blog, homepage, about, contact, widget settings, and navbar. Add a car in about two minutes, upload photos, update pricing, and publish. No code required. You only touch code if you want to customize the theme itself, and the source is fully open for that.
+
+### Do I need a payment gateway to take bookings?
+
+No. Bookings come through email. Visitors fill out a booking form on the car detail page, and submissions go straight to your inbox. You handle payment directly with your customer, on your own terms. No payment gateway fees, no OTA commission, no third-party booking platform in the middle.
+
+### How do I run Decap CMS locally?
+
+Gatsby's `develop` server does not serve the `/admin/` path, so `npm start` alone returns a 404 for the CMS. To use the CMS locally, run `npm run build` and `npm run serve` in one terminal, then run `npx decap-server` in a second terminal. The CMS is available at `http://localhost:9000/admin/`. In local mode, no login is required.
+
+### Can I use RentCar on multiple projects, and can I resell it?
+
+Yes to multiple projects. One purchase covers unlimited personal and commercial projects, and you can charge clients for websites built with the theme. No to reselling: you cannot resell the theme as-is, redistribute the source code, or share it with others who did not purchase it.
+
+### Do I get updates and support?
+
+Yes. Free lifetime updates are included. For support, email creativebydre@gmail.com. Response time is within 24 hours on business days. When contacting support, include your operating system, Node.js version (`node -v`), a description of the issue, and a screenshot or error message. Check the documentation first; most questions are answered there.
+
+### What hosting do you recommend, and does it work elsewhere?
+
+Netlify is recommended. The theme is optimized for it, the free tier is enough for most car rental websites, and the setup guide walks through GitHub, Netlify import, custom domain, and automatic HTTPS via Let's Encrypt. Vercel also works with a Gatsby framework preset. Cloudflare Pages, Firebase Hosting, and cPanel, VPS, DirectAdmin, or Plesk hosting are supported as well, since the output is static.
+
+### Is SEO handled automatically?
+
+Yes. The theme ships with semantic HTML, Schema.org markup, sitemap, RSS feed, canonical URLs, and `robots.txt`. The blog system with tags creates automatic category pages, so you can build backlinks and rank for keywords like "luxury car rental [your city]". Page transitions are handled by Framer Motion, and images are optimized by Sharp. Everything Google needs to rank the site is wired in.
+
+### What pages and CMS collections are included?
+
+Pages: homepage with hero, fleet, features, and customer section; fleet listing; car detail with booking form; blog listing; blog post with tags; about; contact with email form; tags index and tag pages; and a 404 page. CMS collections: Home Page, About Page, Contact Page, Cars (Fleet), Blog Posts, Widget Setting, Navbar, Car List (Homepage), and Contact Widget. JSON data files live in `content/data/`, car Markdown files in `content/car/`, and blog Markdown files in `content/blog/`.
+
+### What is the tech stack, and what do I need to install it?
+
+The stack is Gatsby 5.16.1, React 18, Decap CMS, Bootstrap 5, Framer Motion, and Sharp image optimization. You need Node.js LTS from nodejs.org and VS Code from code.visualstudio.com. Extract the ZIP, open the folder in VS Code, open a terminal, run `npm install`, then `npm start` and open `http://localhost:8000`. Configure `gatsby-config.js` with your title, description, site URL, author name, and the two plugin site URLs, then save and restart.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is RentCar, and how is it different from an OTA or a WordPress theme?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RentCar is a premium Gatsby JS car rental theme built with Gatsby 5, React 18, Bootstrap 5, and a headless Decap CMS. It is built specifically for car rental, limousine, party bus, and chauffeur businesses. Unlike OTAs that take 15–25% of every booking, RentCar uses direct email booking so you keep 100% of each booking and control price, terms, and negotiation. Unlike WordPress themes, there are no plugins, no updates, no security patches, and no monthly hosting bills. One-time $79, unlimited projects, lifetime updates, and you own the code."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need coding skills to use RentCar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Content is edited through the Decap CMS admin panel: fleet, blog, homepage, about, contact, widget settings, and navbar. Add a car in about two minutes, upload photos, update pricing, and publish. No code required. You only touch code if you want to customize the theme itself, and the source is fully open for that."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a payment gateway to take bookings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Bookings come through email. Visitors fill out a booking form on the car detail page, and submissions go straight to your inbox. You handle payment directly with your customer, on your own terms. No payment gateway fees, no OTA commission, no third-party booking platform in the middle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I run Decap CMS locally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gatsby's develop server does not serve the /admin/ path, so npm start alone returns a 404 for the CMS. To use the CMS locally, run npm run build and npm run serve in one terminal, then run npx decap-server in a second terminal. The CMS is available at http://localhost:9000/admin/. In local mode, no login is required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use RentCar on multiple projects, and can I resell it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes to multiple projects. One purchase covers unlimited personal and commercial projects, and you can charge clients for websites built with the theme. No to reselling: you cannot resell the theme as-is, redistribute the source code, or share it with others who did not purchase it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I get updates and support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Free lifetime updates are included. For support, email creativebydre@gmail.com. Response time is within 24 hours on business days. When contacting support, include your operating system, Node.js version (node -v), a description of the issue, and a screenshot or error message. Check the documentation first; most questions are answered there."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What hosting do you recommend, and does it work elsewhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Netlify is recommended. The theme is optimized for it, the free tier is enough for most car rental websites, and the setup guide walks through GitHub, Netlify import, custom domain, and automatic HTTPS via Let's Encrypt. Vercel also works with a Gatsby framework preset. Cloudflare Pages, Firebase Hosting, and cPanel, VPS, DirectAdmin, or Plesk hosting are supported as well, since the output is static."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SEO handled automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The theme ships with semantic HTML, Schema.org markup, sitemap, RSS feed, canonical URLs, and robots.txt. The blog system with tags creates automatic category pages, so you can build backlinks and rank for keywords like luxury car rental in your city. Page transitions are handled by Framer Motion, and images are optimized by Sharp. Everything Google needs to rank the site is wired in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What pages and CMS collections are included?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pages: homepage with hero, fleet, features, and customer section; fleet listing; car detail with booking form; blog listing; blog post with tags; about; contact with email form; tags index and tag pages; and a 404 page. CMS collections: Home Page, About Page, Contact Page, Cars (Fleet), Blog Posts, Widget Setting, Navbar, Car List (Homepage), and Contact Widget. JSON data files live in content/data/, car Markdown files in content/car/, and blog Markdown files in content/blog/."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the tech stack, and what do I need to install it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The stack is Gatsby 5.16.1, React 18, Decap CMS, Bootstrap 5, Framer Motion, and Sharp image optimization. You need Node.js LTS from nodejs.org and VS Code from code.visualstudio.com. Extract the ZIP, open the folder in VS Code, open a terminal, run npm install, then npm start and open http://localhost:8000. Configure gatsby-config.js with your title, description, site URL, author name, and the two plugin site URLs, then save and restart."
+      }
+    }
+  ]
+}
+</script>

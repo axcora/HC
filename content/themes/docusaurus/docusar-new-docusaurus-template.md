@@ -1227,3 +1227,134 @@ Include with credential security for login on backend admin, make your website s
 We can use netlify decap cms for cloud cms or use tina cms for your local dev mode.
 
 With CMS integration, it makes it easier for you to update quickly without needing coding.
+
+## Frequently Asked Questions
+
+### What is Docusar, and what problem does it solve?
+
+Docusar is a Docusaurus documentation template built with React. It ships with documentation, blog, landing page, product page, contact page, about page, dark and light mode, search, categories, and MDX + Markdown + JSON content. Page content is driven by JSON files in `data/` (Home, About, Product, Contact), documentation and blog content by Markdown, and site configuration by `docusaurus.config.js`. Instead of assembling a docs site, a blog, a landing page, and product and contact pages from scratch, you extract the project, run `npm install`, and start editing JSON and Markdown.
+
+### Do I need to know React or Docusaurus to use Docusar?
+
+You need Node.js and a terminal to install and run the project, but daily content editing happens through JSON and Markdown files. Home page content lives in `data/Home.json`, about in `data/About.json`, product in `data/Product.json`, and contact in `data/Contact.json`. Documentation lives in `docs/`, blog posts in `blog/`, and static pages in `src/pages/`. If you can edit JSON and Markdown, you can customize most of it. Basic Docusaurus knowledge helps for layout changes.
+
+### How do I install and run Docusar locally?
+
+Install Node.js (Yarn is optional). Download the project from Gumroad, create a new folder, and extract the source into it. Open a terminal in the project folder, run `npm install` (or `yarn install`), then run `npm start` and open `localhost:3000` in your browser. To stop the dev server, press `Ctrl+C`.
+
+### How is Docusar different from Nocturne?
+
+Both are Docusaurus templates by the same lab, but they target different needs. Nocturne is the premium documentation system at $145 with Decap CMS pre-configured and Pagefind search, positioned for teams shipping documentation as a product. Docusar is the $75 documentation template with docs, blog, landing, product, and contact pages, JSON-driven page content, and optional CMS (Decap CMS cloud or Tina CMS local) rather than pre-configured. Nocturne uses `docusaurus.config.ts`; Docusar uses `docusaurus.config.js`.
+
+### How do I configure the site title, navigation, and footer?
+
+Open `docusaurus.config.js` in the project root with a code editor. Set `title`, `tagline`, `favicon`, `url`, `baseUrl`, `organizationName`, and `projectName`. Navigation is configured under `themeConfig.navbar`, with `items` using `position: 'left'` or `position: 'right'`, `to` for internal routes, and `href` for outbound links. Footer is configured under `themeConfig.footer`, with `links` grouped by title and `copyright` text. You can add more groups by copying an existing block.
+
+### How do I add a new documentation group or article?
+
+For a new group, create a new folder inside `docs/` (for example `get-start`), then add a `_category_.json` file with `label`, `position`, and a `link` block with `type: generated-index` and `description`. For a new article, create a Markdown file inside the group folder and add frontmatter with `title`, `description`, `image`, and `sidebar_position`. The sidebar reflects both automatically. To edit or delete, open the group folder and edit or delete the Markdown file.
+
+### How do I add a new blog post?
+
+Create a Markdown file in `blog/` named with the format `year-month-date-your-url-link` (for example `2024-02-28-myfirstpost.md`). Add frontmatter with `slug`, `title`, `description`, `authors`, and `tags`. Authors are defined in `blog/authors.yml`, with `name`, `title`, `url`, and `image_url` for each author. To edit or delete a post, open the `blog/` folder and edit or delete the Markdown file.
+
+### Does Docusar include a CMS?
+
+Not pre-configured like Nocturne. Docusar supports headless CMS through Decap CMS for cloud editing or Tina CMS for local development, and you can connect either to your repository. With a CMS connected, you update website and blog content quickly without touching code, with credential security for the backend admin. For teams that want a CMS out of the box, Nocturne is the better fit; for teams that prefer JSON and Markdown editing with optional CMS, Docusar is the lighter option.
+
+### Is SEO handled automatically?
+
+Each page defines its SEO fields in JSON. For the home page, set `title`, `description`, `url`, and `image` in `data/Home.json`. Do the same in `data/About.json`, `data/Product.json`, and `data/Contact.json`. Documentation and blog pages use frontmatter for title, description, and image. Docusaurus renders meta tags from these fields, and the `themeConfig.image` value supplies the Twitter Card and Open Graph image.
+
+### How do I deploy Docusar, and what is the license?
+
+Push the project to GitHub first, then register on Cloudflare Pages, Netlify, or Vercel with your GitHub account, create a new project, connect your repository, select Docusaurus as the framework, and click deploy. The license is a one-time purchase for unlimited projects. You own 100% of the source. Live demo: `docusardemo.pages.dev`. Download: `creativitaz.gumroad.com/l/docusa`. Custom work is available through the Fiverr link in the article.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Docusar, and what problem does it solve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Docusar is a Docusaurus documentation template built with React. It ships with documentation, blog, landing page, product page, contact page, about page, dark and light mode, search, categories, and MDX + Markdown + JSON content. Page content is driven by JSON files in data/ (Home, About, Product, Contact), documentation and blog content by Markdown, and site configuration by docusaurus.config.js. Instead of assembling a docs site, a blog, a landing page, and product and contact pages from scratch, you extract the project, run npm install, and start editing JSON and Markdown."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to know React or Docusaurus to use Docusar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You need Node.js and a terminal to install and run the project, but daily content editing happens through JSON and Markdown files. Home page content lives in data/Home.json, about in data/About.json, product in data/Product.json, and contact in data/Contact.json. Documentation lives in docs/, blog posts in blog/, and static pages in src/pages/. If you can edit JSON and Markdown, you can customize most of it. Basic Docusaurus knowledge helps for layout changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I install and run Docusar locally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Install Node.js (Yarn is optional). Download the project from Gumroad, create a new folder, and extract the source into it. Open a terminal in the project folder, run npm install (or yarn install), then run npm start and open localhost:3000 in your browser. To stop the dev server, press Ctrl+C."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Docusar different from Nocturne?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both are Docusaurus templates by the same lab, but they target different needs. Nocturne is the premium documentation system at $145 with Decap CMS pre-configured and Pagefind search, positioned for teams shipping documentation as a product. Docusar is the $75 documentation template with docs, blog, landing, product, and contact pages, JSON-driven page content, and optional CMS (Decap CMS cloud or Tina CMS local) rather than pre-configured. Nocturne uses docusaurus.config.ts; Docusar uses docusaurus.config.js."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I configure the site title, navigation, and footer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open docusaurus.config.js in the project root with a code editor. Set title, tagline, favicon, url, baseUrl, organizationName, and projectName. Navigation is configured under themeConfig.navbar, with items using position: 'left' or position: 'right', to for internal routes, and href for outbound links. Footer is configured under themeConfig.footer, with links grouped by title and copyright text. You can add more groups by copying an existing block."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I add a new documentation group or article?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a new group, create a new folder inside docs/ (for example get-start), then add a _category_.json file with label, position, and a link block with type: generated-index and description. For a new article, create a Markdown file inside the group folder and add frontmatter with title, description, image, and sidebar_position. The sidebar reflects both automatically. To edit or delete, open the group folder and edit or delete the Markdown file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I add a new blog post?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Create a Markdown file in blog/ named with the format year-month-date-your-url-link (for example 2024-02-28-myfirstpost.md). Add frontmatter with slug, title, description, authors, and tags. Authors are defined in blog/authors.yml, with name, title, url, and image_url for each author. To edit or delete a post, open the blog/ folder and edit or delete the Markdown file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Docusar include a CMS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not pre-configured like Nocturne. Docusar supports headless CMS through Decap CMS for cloud editing or Tina CMS for local development, and you can connect either to your repository. With a CMS connected, you update website and blog content quickly without touching code, with credential security for the backend admin. For teams that want a CMS out of the box, Nocturne is the better fit; for teams that prefer JSON and Markdown editing with optional CMS, Docusar is the lighter option."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SEO handled automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each page defines its SEO fields in JSON. For the home page, set title, description, url, and image in data/Home.json. Do the same in data/About.json, data/Product.json, and data/Contact.json. Documentation and blog pages use frontmatter for title, description, and image. Docusaurus renders meta tags from these fields, and the themeConfig.image value supplies the Twitter Card and Open Graph image."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I deploy Docusar, and what is the license?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Push the project to GitHub first, then register on Cloudflare Pages, Netlify, or Vercel with your GitHub account, create a new project, connect your repository, select Docusaurus as the framework, and click deploy. The license is a one-time purchase for unlimited projects. You own 100% of the source. Live demo: docusardemo.pages.dev. Download: creativitaz.gumroad.com/l/docusa. Custom work is available through the Fiverr link in the article."
+      }
+    }
+  ]
+}
+</script>

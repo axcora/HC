@@ -803,3 +803,148 @@ https://creativitaz.gumroad.com/l/forgedocs-cms
 
 **Live Demo:** https://forgedocs.pages.dev
 **Documentation:** https://forgedocs.pages.dev/welcome
+
+---
+
+## Frequently Asked Questions
+
+### What is ForgeDocs, and what problem does it solve?
+
+ForgeDocs is a premium Astro 7 + Starlight theme that combines a landing page, documentation, and blog in one Astro project. It ships with a JSON-driven landing page (hero, showcase, features, pricing, CTA), a Starlight documentation system with sidebar, sticky table of contents, and Pagefind search, a blog with pagination, tags, related posts, and RSS, and a static pages system for about, FAQ, terms, privacy, and contact. Instead of stitching together three separate sites with three design systems and three deployment pipelines, you run one project, edit JSON and Markdown, and deploy once.
+
+### What is the difference between the Code Only and Code + Decap CMS editions?
+
+Both editions share the same Astro codebase, landing page, documentation, blog, and static pages, and both include lifetime updates and unlimited projects. Code Only is $79 and is for developers who edit content directly in Markdown and JSON. Code + Decap CMS is $129 and adds a pre-configured Decap CMS admin panel, so editors can update the landing page, docs, blog, static pages, SEO, navigation, and footer from a browser without touching code. The only difference is how you edit content.
+
+### Do I need to know Astro or Starlight to use ForgeDocs?
+
+You need Node.js 18 or newer and a terminal to install and run the project, but daily content editing happens through Markdown and JSON. The landing page and site-wide settings live in `src/data/*.json`, documentation in `src/content/docs/`, blog posts in `src/content/blog/`, and static pages in `src/content/pages/`. If you can edit Markdown and JSON, you can customize most of it. Astro and Starlight knowledge helps for layout changes.
+
+### How do I install and run ForgeDocs locally?
+
+Install Node.js 18 or newer and verify with `node --version`. Download the ZIP from Gumroad and extract it to a folder without spaces in the path. Open a terminal in that folder, run `npm install` (about 30–60 seconds the first time), then `npm run dev` and open `http://localhost:4321`. To verify the installation, run `npm run build`. To preview the production build, run `npm run preview`.
+
+### How do I configure the site and sidebar?
+
+Open `astro.config.mjs` and set `site` to your domain, then update the Starlight `title` and `description`. The `sidebar` array holds your docs navigation, with `label` and `items` for each group, and each item can use `slug` or `link`. Save and restart the dev server. Site-wide SEO metadata lives in `src/data/seo.json`, site identity and price in `src/data/site.json`, navbar in `src/data/navbar.json`, and footer in `src/data/footer.json`.
+
+### How do I add a doc page, a blog post, or a static page?
+
+For a doc page, create a `.md` file in `src/content/docs/` with frontmatter `title` and `description`, then add it to the `sidebar` array in `astro.config.mjs`. For a blog post, create a `.md` file in `src/content/blog/` with frontmatter `title`, `description`, `date`, `tags`, `image`, and `imageAlt`. For a static page, create a `.md` file in `src/content/pages/` with frontmatter `title`, `description`, `image`, `imageAlt`, `layoutType`, and `updated`. The filename becomes the URL, so `about.md` becomes `/about/`. The `layoutType` field accepts `default`, `faq`, `legal`, or `contact`, which is how the same content collection produces four different page layouts.
+
+### How do I run Decap CMS locally?
+
+Decap CMS needs the production build, because the dev server does not include the assets it needs. Open two terminals in the project folder. In the first, run `npm run build` and then `npm run preview`. In the second, run `npm run cms`, which starts the Decap proxy on port 8081. Then open `http://localhost:4321/admin/`; the local proxy handles authentication, so no login is required. Keep `local_backend: true` in `public/admin/config.yml` while testing locally.
+
+### How do I deploy ForgeDocs, and does the CMS work on every host?
+
+Set the `site` URL in `astro.config.mjs`, push to GitHub, then deploy to Netlify, Cloudflare Pages, Vercel, Firebase Hosting, cPanel, or AWS S3 + CloudFront. Netlify is the recommended path for the CMS edition because it includes Netlify Identity and Git Gateway, so you can enable Identity with Invite-only registration, enable Git Gateway, invite yourself, and access `/admin/` with your credentials. Cloudflare Pages and Vercel do not include Identity or Git Gateway, so Decap CMS on those hosts requires a GitHub OAuth setup. For static-only deployments, any host works with build command `npm run build` and output directory `dist`.
+
+### Is SEO handled automatically?
+
+Yes. ForgeDocs handles meta tags, Open Graph, Twitter cards, canonical URLs, and sitemap generation automatically. Set the `site` URL in `astro.config.mjs`, and canonical URLs and sitemap entries follow. Site-wide SEO lives in `src/data/seo.json`, and per-page SEO comes from frontmatter for docs, blog posts, and static pages. The landing page content is JSON-driven, so changing copy does not mean touching components.
+
+### How is ForgeDocs different from Docuna, Docus, PaperHouse, and Finance App?
+
+All are Astro themes from the same lab, but they target different needs. ForgeDocs is the all-in-one theme: landing page, documentation, and blog in one project, for SaaS founders and product teams. Docuna and Docus are documentation-focused themes. PaperHouse is a bento portfolio theme. Finance App is a startup and finance landing theme. If you need all three surfaces in one codebase with one design system, ForgeDocs is the right choice. If you need only one, the specialized themes are lighter and cheaper.
+
+### What is the license, and where can I see the demo and get support?
+
+The license is a one-time purchase for unlimited personal and commercial projects, with lifetime updates. It does not permit reselling or redistributing the theme as a template. Code Only is $79 and Code + Decap CMS is $129. Live demo: `forgedocs.pages.dev`. Documentation: `forgedocs.pages.dev/welcome`. Download: `creativitaz.gumroad.com/l/forgedocs` (Code Only) or `creativitaz.gumroad.com/l/forgedocs-cms` (Code + CMS). For support, email creativebydre@gmail.com. Custom work is available through the Fiverr link in the article.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is ForgeDocs, and what problem does it solve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ForgeDocs is a premium Astro 7 + Starlight theme that combines a landing page, documentation, and blog in one Astro project. It ships with a JSON-driven landing page (hero, showcase, features, pricing, CTA), a Starlight documentation system with sidebar, sticky table of contents, and Pagefind search, a blog with pagination, tags, related posts, and RSS, and a static pages system for about, FAQ, terms, privacy, and contact. Instead of stitching together three separate sites with three design systems and three deployment pipelines, you run one project, edit JSON and Markdown, and deploy once."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between the Code Only and Code + Decap CMS editions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both editions share the same Astro codebase, landing page, documentation, blog, and static pages, and both include lifetime updates and unlimited projects. Code Only is $79 and is for developers who edit content directly in Markdown and JSON. Code + Decap CMS is $129 and adds a pre-configured Decap CMS admin panel, so editors can update the landing page, docs, blog, static pages, SEO, navigation, and footer from a browser without touching code. The only difference is how you edit content."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to know Astro or Starlight to use ForgeDocs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You need Node.js 18 or newer and a terminal to install and run the project, but daily content editing happens through Markdown and JSON. The landing page and site-wide settings live in src/data/*.json, documentation in src/content/docs/, blog posts in src/content/blog/, and static pages in src/content/pages/. If you can edit Markdown and JSON, you can customize most of it. Astro and Starlight knowledge helps for layout changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I install and run ForgeDocs locally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Install Node.js 18 or newer and verify with node --version. Download the ZIP from Gumroad and extract it to a folder without spaces in the path. Open a terminal in that folder, run npm install (about 30–60 seconds the first time), then npm run dev and open http://localhost:4321. To verify the installation, run npm run build. To preview the production build, run npm run preview."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I configure the site and sidebar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open astro.config.mjs and set site to your domain, then update the Starlight title and description. The sidebar array holds your docs navigation, with label and items for each group, and each item can use slug or link. Save and restart the dev server. Site-wide SEO metadata lives in src/data/seo.json, site identity and price in src/data/site.json, navbar in src/data/navbar.json, and footer in src/data/footer.json."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I add a doc page, a blog post, or a static page?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a doc page, create a .md file in src/content/docs/ with frontmatter title and description, then add it to the sidebar array in astro.config.mjs. For a blog post, create a .md file in src/content/blog/ with frontmatter title, description, date, tags, image, and imageAlt. For a static page, create a .md file in src/content/pages/ with frontmatter title, description, image, imageAlt, layoutType, and updated. The filename becomes the URL, so about.md becomes /about/. The layoutType field accepts default, faq, legal, or contact, which is how the same content collection produces four different page layouts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I run Decap CMS locally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Decap CMS needs the production build, because the dev server does not include the assets it needs. Open two terminals in the project folder. In the first, run npm run build and then npm run preview. In the second, run npm run cms, which starts the Decap proxy on port 8081. Then open http://localhost:4321/admin/; the local proxy handles authentication, so no login is required. Keep local_backend: true in public/admin/config.yml while testing locally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I deploy ForgeDocs, and does the CMS work on every host?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Set the site URL in astro.config.mjs, push to GitHub, then deploy to Netlify, Cloudflare Pages, Vercel, Firebase Hosting, cPanel, or AWS S3 + CloudFront. Netlify is the recommended path for the CMS edition because it includes Netlify Identity and Git Gateway, so you can enable Identity with Invite-only registration, enable Git Gateway, invite yourself, and access /admin/ with your credentials. Cloudflare Pages and Vercel do not include Identity or Git Gateway, so Decap CMS on those hosts requires a GitHub OAuth setup. For static-only deployments, any host works with build command npm run build and output directory dist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SEO handled automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. ForgeDocs handles meta tags, Open Graph, Twitter cards, canonical URLs, and sitemap generation automatically. Set the site URL in astro.config.mjs, and canonical URLs and sitemap entries follow. Site-wide SEO lives in src/data/seo.json, and per-page SEO comes from frontmatter for docs, blog posts, and static pages. The landing page content is JSON-driven, so changing copy does not mean touching components."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is ForgeDocs different from Docuna, Docus, PaperHouse, and Finance App?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All are Astro themes from the same lab, but they target different needs. ForgeDocs is the all-in-one theme: landing page, documentation, and blog in one project, for SaaS founders and product teams. Docuna and Docus are documentation-focused themes. PaperHouse is a bento portfolio theme. Finance App is a startup and finance landing theme. If you need all three surfaces in one codebase with one design system, ForgeDocs is the right choice. If you need only one, the specialized themes are lighter and cheaper."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the license, and where can I see the demo and get support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The license is a one-time purchase for unlimited personal and commercial projects, with lifetime updates. It does not permit reselling or redistributing the theme as a template. Code Only is $79 and Code + Decap CMS is $129. Live demo: forgedocs.pages.dev. Documentation: forgedocs.pages.dev/welcome. Download: creativitaz.gumroad.com/l/forgedocs (Code Only) or creativitaz.gumroad.com/l/forgedocs-cms (Code + CMS). For support, email creativebydre@gmail.com. Custom work is available through the Fiverr link in the article."
+      }
+    }
+  ]
+}
+</script>

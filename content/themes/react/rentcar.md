@@ -184,6 +184,136 @@ Or you can insert `npm run build` in to build command.
 
 If you want run in to PHP hosting / Firebase / Surge , you can upload your build production. open terminal and run `npm run build` , next test your build prodcution with run `npm run preview` and open `localhost:4173`, if everything is ok, you can upload your build production site `dist` in to your hosting.
 
+## Frequently Asked Questions
+
+### What is React Car, and what problem does it solve?
+
+React Car is a production-ready car rental website template built with React + Vite. It ships with home, about, booking, contact, car list, and car detail pages, an online booking form, Decap CMS integration for browser-based content editing, and automatic SEO through Helmet. Instead of building page structure, a booking form, and a CMS panel from scratch, you fill in your fleet and start selling.
+
+### Do I need to know React to use this template?
+
+Basic React and Vite knowledge is enough. Content and fleet units are managed through Decap CMS at `/admin`, so changing copy, adding cars, or updating payment methods does not mean editing components. If you are comfortable with a terminal and YAML, setup is quick.
+
+### How is this different from a free car rental template?
+
+Free templates are usually static pages with no CMS and no booking flow. React Car ships with an email-connected booking form, fleet list and car detail pages, a payment page, Decap CMS integration, and automatic SEO (meta tags, Open Graph, Twitter Card). You own 100% of the source code with a one-time purchase.
+
+### How does the booking form work?
+
+The booking form sends data to the email you set in the CMS configuration menu. After your site is live, submit one test booking, check your inbox, and click the activation link in the first email. Once activated, every booking lands in your inbox. No extra backend, no database.
+
+### Can Decap CMS run on regular hosting?
+
+Yes, with a caveat. Decap CMS needs a Git backend, so for browser-based editing in production you need Netlify Identity and Git Gateway. If you deploy to Vercel, Cloudflare, PHP hosting, Firebase, or Surge, the site still runs as a static build, but the CMS admin panel is not active. To manage content without the CMS, edit the Markdown and YAML files in the repository directly.
+
+### Which hosting providers are supported?
+
+Netlify (with the CMS active), Vercel, Cloudflare Pages, Firebase, Surge, and regular PHP hosting by uploading the `dist` build folder. The simplest path for an active CMS is Netlify.
+
+### How do I update the car fleet?
+
+Open the Decap CMS dashboard, go to Car Unit, then add a new unit or edit an existing one. Fill in the car information, upload photos through the Media menu, and click Publish. Changes appear immediately on the car list and detail pages.
+
+### Is SEO automatic?
+
+Yes. The template uses Helmet to inject per-page meta tags, including Open Graph and Twitter Card. You fill in the title and description for each page through the CMS, and the SEO tags follow.
+
+### What do I get after purchase?
+
+Full React + Vite source code, Decap CMS integration, setup and deployment documentation, and a site configuration guide (favicon, company ID, payment methods, navbar, footer, and media). One-time purchase license, usable in unlimited personal and client projects.
+
+### Where can I see the demo and get support?
+
+The live demo is at `reactcar.pages.dev`. For support, email creativebydre@gmail.com. Custom work is available through the Fiverr link in the theme listing.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is React Car, and what problem does it solve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "React Car is a production-ready car rental website template built with React + Vite. It ships with home, about, booking, contact, car list, and car detail pages, an online booking form, Decap CMS integration for browser-based content editing, and automatic SEO through Helmet. Instead of building page structure, a booking form, and a CMS panel from scratch, you fill in your fleet and start selling."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to know React to use this template?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Basic React and Vite knowledge is enough. Content and fleet units are managed through Decap CMS at /admin, so changing copy, adding cars, or updating payment methods does not mean editing components. If you are comfortable with a terminal and YAML, setup is quick."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from a free car rental template?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Free templates are usually static pages with no CMS and no booking flow. React Car ships with an email-connected booking form, fleet list and car detail pages, a payment page, Decap CMS integration, and automatic SEO (meta tags, Open Graph, Twitter Card). You own 100% of the source code with a one-time purchase."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the booking form work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The booking form sends data to the email you set in the CMS configuration menu. After your site is live, submit one test booking, check your inbox, and click the activation link in the first email. Once activated, every booking lands in your inbox. No extra backend, no database."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Decap CMS run on regular hosting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, with a caveat. Decap CMS needs a Git backend, so for browser-based editing in production you need Netlify Identity and Git Gateway. If you deploy to Vercel, Cloudflare, PHP hosting, Firebase, or Surge, the site still runs as a static build, but the CMS admin panel is not active. To manage content without the CMS, edit the Markdown and YAML files in the repository directly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which hosting providers are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Netlify (with the CMS active), Vercel, Cloudflare Pages, Firebase, Surge, and regular PHP hosting by uploading the dist build folder. The simplest path for an active CMS is Netlify."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I update the car fleet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open the Decap CMS dashboard, go to Car Unit, then add a new unit or edit an existing one. Fill in the car information, upload photos through the Media menu, and click Publish. Changes appear immediately on the car list and detail pages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SEO automatic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The template uses Helmet to inject per-page meta tags, including Open Graph and Twitter Card. You fill in the title and description for each page through the CMS, and the SEO tags follow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I get after purchase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Full React + Vite source code, Decap CMS integration, setup and deployment documentation, and a site configuration guide (favicon, company ID, payment methods, navbar, footer, and media). One-time purchase license, usable in unlimited personal and client projects."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I see the demo and get support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The live demo is at reactcar.pages.dev. For support, email creativebydre@gmail.com. Custom work is available through the Fiverr link in the theme listing."
+      }
+    }
+  ]
+}
+</script>
 
 ### Thank You by using [React Car CMS themes template]({{page.url}}) project
 

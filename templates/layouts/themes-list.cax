@@ -3,8 +3,24 @@ layout: base.cax
 ---
 <div class="overlay" id="overlay"></div>
 <header class="header"><a href="/" class="logo"><span class="logo-mark">{{ hc.navbar.logo }}</span><span>{{ hc.navbar.title }}</span></a><nav class="nav">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }}</a>{% endfor %}</nav><a href="{{ hc.navbar.button.url }}" class="btn btn-accent" target="_blank">{{ hc.navbar.button.text }}</a><button class="hamburger" id="hamburger" aria-label="Open menu"><span></span></button></header>
-<nav class="mobile-nav" id="mobileNav"><div class="mobile-nav-links">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }} <em> {{item.no}} </em></a>{% endfor %}<a href="{{ hc.navbar.button.url }}" target="_blank">{{ hc.navbar.button.text }} <em>{{ hc.navbar.list | length + 1 }}</em></a></div><div class="mobile-foot"><span>© 2026 {{ hc.navbar.title }}</span><span>Premium Themes That Convert</span></div></nav>
-<section class="section"><div class="head"><h1 class="huge display">ALL THEMES<br><em>{{ pagination.total_items }} Free and Premium Drops</em></h1><input id="q" class="input" placeholder="FILTER: ASTRO, COMMERCE..." aria-label="Filter"></div>
+<nav class="mobile-nav" id="mobileNav"><div class="mobile-nav-links">{% for item in hc.navbar.list %}<a href="{{ item.url }}">{{ item.name }} <em> {{item.no}} </em></a>{% endfor %}<a href="{{ hc.navbar.button.url }}" target="_blank">{{ hc.navbar.button.text }} <em>{{ hc.navbar.list | length + 1 }}</em></a></div><div class="mobile-foot"><span>© 2026 {{ hc.navbar.title }}</span><span>{{ hero.title }}</span></div></nav>
+<section class="section">
+  <div class="head">
+    <h1 class="huge display">
+      {{ hero.title }}<br>
+      <em>{{ pagination.total_items }} {{ hero.desc }}</em>
+    </h1>
+    <p class="lead">
+      {{ intro.desc }}
+    </p>
+    <input id="q" class="input" placeholder="FILTER: ASTRO, SVELTEKIT, BLUDIT..." aria-label="Filter themes by stack or name">
+  </div>
+    <div class="stack-buttons" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;margin-bottom:15px;">
+  {% for s in hc.stacks %}
+    <a href="{{ s.url }}" class="tag">{{ s.name }}</a>
+  {% endfor %}
+</div>
+
 <div class="grid-themes" id="grid">
 <a href="{{ hc.widget.url }}" class="card black" target="_blank" rel="noopener">
   <h2 class="name display">{{ hc.widget.title }}<br><span>{{ hc.widget.text }}</span></h2>
@@ -24,6 +40,9 @@ layout: base.cax
 <div class="thumb">
 <img src="https://res.cloudinary.com/hockeycorp/image/upload/w_334/q_auto:low/f_avif/v1699871939/website%20design/{{ post.image or hc.cover }}" alt="{{ post.title }}" class="coveris" width="334" height="251" decoding="async" loading="lazy">
 </div>
+{% if post.price %}
+<div class="meta-tags"><span class="tag">{{ post.price }}</span></div>
+{% endif %}
 <div class="meta-tags">{% for tag in post.tags | limit(3) %}<span class="tag">{{ tag }}</span>{% endfor %}</div>
 </a>
 {% endfor %}
@@ -33,6 +52,52 @@ layout: base.cax
 {% if pagination.next_url %}<a href="{{ pagination.next_url }}">NEXT →</a>{% endif %}
 </div>
 </section>
+
+<section class="section">
+  <div class="head">
+    <h2 class="huge display">{{ engines.title }}<br><em>{{ engines.title_em }}</em></h2>
+  </div>
+  <div class="sell">
+    <div>
+      <p class="lead">{{ engines.lead }}</p>
+      <p class="hint">{{ engines.hint }}</p>
+    </div>
+    <div>
+      {% for e in engines.list %}
+      <div class="check">
+        <i>✓</i>
+        <div><a href="{{ e.url }}"><b>{{ e.name }}</b></a> — {{ e.desc }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="head">
+    <h2 class="huge display">{{ faq.title }}<br><em>{{ faq.title_em }}</em></h2>
+  </div>
+  <div class="kv-list">
+    {% for item in faq.list %}
+    <div class="kv">
+      <dt>{{ item.q }}</dt>
+      <dd>{{ item.a }}</dd>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in faq.list %}
+    {"@type":"Question","name":"{{ item.q }}","acceptedAnswer":{"@type":"Answer","text":"{{ item.a }}"}}{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
 <script>
 document.getElementById('q').addEventListener('input', function(e){
  var q = e.target.value.toLowerCase();
