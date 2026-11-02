@@ -3,6 +3,8 @@ layout: themes-detil.cax
 title: Velat — Premium Next.js 16 Theme for AI Startups | $49
 description: Buy the Velat Next.js 16 theme for AI startups and SaaS products. 28 pre-rendered pages, TypeScript, Tailwind CSS, Markdown, dark mode, SEO-ready. $49 one-time, unlimited client projects.
 image: next/nextjs-themes-velat2_cusbmp.jpg
+is_premium: true
+price: $49
 features:
  - React Framework
  - Js Lang

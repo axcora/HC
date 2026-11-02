@@ -2,6 +2,8 @@
 layout: themes-detil.cax
 title: React Car Rental Template - Booking, Fleet, Limousine Website
 description: React car rental template with booking form, fleet list, detail, limousine, Decap CMS, SEO auto. Fast, responsive, own 100% source, one-time.
+is_premium: true
+price: $65
 image: react/reactcar_nxidee.webp
 features:
   - React + Vite

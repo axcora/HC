@@ -3,6 +3,8 @@ layout: themes-detil.cax
 title: PaperHouse - Astro Bento Portfolio Template - Works, Blog, Docs, Order
 description: PaperHouse is a premium Astro 7 + Tailwind 4 bento portfolio template with works, blog, docs, and order page. Markdown-driven, SEO-ready, one-time $45.
 image: astro/astro-themes-paperhouse1_bdapzv.jpg
+is_premium: true
+price: $45
 features:
   - Astro 7 + Tailwind 4
   - Bento Grid Portfolio

@@ -2,6 +2,8 @@
 layout: themes-detil.cax
 title: Docuna - Astro Starlight Docs Template - Documentation, Landing, Blog
 description: Astro Starlight documentation template with landing page, blog, search, sidebar nav, dark mode. Fast, SEO ready, MDX, own 100% source, one-time.
+is_premium: true
+price: $35
 image: astro/starlighttemplate_uyq8cf.jpg
 features:
   - Astro + Starlight

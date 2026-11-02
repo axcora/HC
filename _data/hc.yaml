@@ -1,5 +1,5 @@
 title: "HockeyComputindo"
-description: "Premium themes for docs, SaaS and blogs. Astro, Starlight, Docusaurus, Hugo, Jekyll - built for 90+ Lighthouse and search."
+description: "Premium themes for docs, SaaS and blogs. Astro, Starlight, Docusaurus, Eleventy, Blazor, Jekyll - built for 90+ Lighthouse and search."
 image: "/favicon.webp"
 logo: "/favicon.webp"
 thumb: "https://www.hockeycomputindo.com/favicon.webp"
@@ -45,7 +45,7 @@ navbar:
 hero: 
   title: "Premium"
   title2: "Themes"
-  description: "Documentation, SaaS and blog themes - Astro, Starlight, Docusaurus, Hugo, Jekyll."
+  description: "Documentation, SaaS and blog themes - Astro, Starlight, Docusaurus, Blazor, Jekyll."
   text: "Curated collection for docs, SaaS and blogs. Each theme built for 90+ Lighthouse, native SEO, pure HTML/CSS/JS, no subscription. One purchase, lifetime ownership."
   list: 
     - title: "Curated"

@@ -2,6 +2,8 @@
 layout: themes-detil.cax
 title: BlazorForge — Production-Ready Blazor Web Themes for .NET Developers
 description: BlazorForge is a premium Blazor WebAssembly theme built for .NET developers who need enterprise-grade UI, Microsoft Fluent 2 design system, Decap CMS, and full C# source code in one lifetime license.
+is_premium: true
+price: $149
 image: blazor/blazor-themes_fgzaj3.jpg
 features:
  - Blazor WebAssembly

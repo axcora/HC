@@ -3,6 +3,8 @@ layout: themes-detil.cax
 title: RentCar - Gatsby JS Car Rental Theme with Headless Decap CMS
 description: Premium Gatsby JS theme for car rental, limousine, and party bus websites. Direct email booking, Decap CMS, SEO optimized. One-time $79, unlimited projects.
 image: gatsby/gatsby-js-themes-car1_uxmpfg.jpg
+is_premium: true
+price: $79
 features:
  - Gatsby + React
  - Headless Decap CMS

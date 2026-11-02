@@ -25,6 +25,9 @@ layout: base.cax
 <a href="{{ post.url }}" class="card">
 <h3 class="name display">{{ post.title }}<br><span>{{ post.description }}</span></h3>
 <div class="thumb"><img src="https://res.cloudinary.com/hockeycorp/image/upload/w_500/q_auto:low/f_avif/v1699871939/website%20design/{{post.image or hc.cover}}" alt="{{ post.title }}" loading="lazy" class="coveris"></div>
+{% if post.price %}
+<div class="meta-tags"><span class="tag">{{ post.price }}</span></div>
+{% endif %}
 </a>
 {% endfor %}
 </div>

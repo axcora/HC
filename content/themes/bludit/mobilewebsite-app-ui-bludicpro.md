@@ -2,6 +2,8 @@
 layout: themes-detil.cax
 title: Bludic Pro - Bludit Ionic Mobile Template - PWA, App UI
 description: Bludit Ionic mobile template with PWA, app UI, mobile website, SEO auto. Flat-file CMS, fast, responsive, own 100% source, one-time.
+is_premium: true
+price: $65
 image: bludit/Bludicpro_pm1l4q.webp
 features:
   - Bludit + Ionic Framework

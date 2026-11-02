@@ -3,6 +3,8 @@ layout: themes-detil.cax
 title: Docus - Astro Starlight Docs Template - Documentation, Blog, Landing
 description: Astro Starlight docs template with documentation, blog, landing page, search, sidebar, dark mode. MDX ready, SEO auto, fast, own 100% source, one-time.
 image: astro/astrodocumentationwebsite_ltdbcx.jpg
+is_premium: true
+price: $65
 features:
   - Astro + Starlight
   - Documentation + Blog + Landing

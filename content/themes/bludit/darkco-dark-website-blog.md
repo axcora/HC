@@ -2,6 +2,8 @@
 layout: themes-detil.cax
 title: Darkco - Bludit Dark Mode Blog Template - Dark Modern
 description: Bludit dark mode blog template with dark modern design, clean, SEO auto. Flat-file no database, fast, responsive, own 100% source, one-time.
+is_premium: true
+price: $55
 image: bludit/newmodernwebsitedarkmode_n9zhnt.webp
 features:
   - Bludit Flat-File CMS

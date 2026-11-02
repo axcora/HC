@@ -3,6 +3,8 @@ layout: themes-detil.cax
 title: Finance App - Astro Startup Template - SaaS, Finance, App Landing
 description: Astro startup finance template with SaaS landing, finance app, pricing, blog, contact. SEO auto, fast, responsive, own 100% source, one-time.
 image: astro/astronewthemes_1_vhc1na.jpg
+is_premium: true
+price: $55
 features:
   - Astro + Preact
   - Startup + SaaS Landing

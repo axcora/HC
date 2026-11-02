@@ -2,6 +2,8 @@
 layout: themes-detil.cax
 title: Pycora Pro - Python Static Site Template - Bento Grid, Decap CMS, Portfolio
 description: Premium Python static site template with bento grid, Decap CMS, portfolio filter, pricing, FAQ, blog. Zero Node, SEO auto, fast, own 100% source, one-time.
+is_premium: true
+price: $145
 image: python/python-ssg-pro-themes-jamstack-1_dl0ra6.webp
 features:
   - Premium Python SSG

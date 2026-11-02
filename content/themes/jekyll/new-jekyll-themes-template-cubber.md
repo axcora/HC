@@ -2,6 +2,8 @@
 layout: themes-detil.cax
 title: Cubber - Jekyll Cyber Template - Futuristic, Multipurpose, Portfolio
 description: Jekyll cyber futuristic template with portfolio, blog, gallery, services, author, SEO auto. Markdown, YAML, responsive, own 100% source, one-time.
+is_premium: true
+price: $65
 image: jekyll/cubber/cubber-cyber-website-themes-template_4_epwkre.jpg
 features:
   - Jekyll + Ruby + JAMSTACK

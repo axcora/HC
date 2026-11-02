@@ -2,6 +2,8 @@
 layout: themes-detil.cax
 title: Tailwind Blog - Bludit Tailwind CSS Template - Minimalist Blog
 description: Bludit Tailwind CSS blog template with minimalist design, fast, SEO auto. Flat-file, utility-first, responsive, own 100% source, one-time.
+is_premium: true
+price: $65
 image: bludit/tailwindpro_x72wti.webp
 features:
   - Bludit + Tailwind CSS

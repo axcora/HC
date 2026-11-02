@@ -2,6 +2,8 @@
 layout: themes-detil.cax
 title: Creative Agency - Bludit Agency Template - Startup, Portfolio, Landing
 description: Bludit creative agency template with startup landing, portfolio, minimalist, SEO auto. Flat-file, no database, fast, own 100% source, one-time.
+is_premium: true
+price: $55
 image: bludit/creativedigitalagencywebsitethemes_ft217k.webp
 features:
   - Bludit Flat-File CMS

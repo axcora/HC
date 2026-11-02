@@ -3,6 +3,8 @@ layout: themes-detil.cax
 title: Elegan and modern markdown website themes template
 description: Build and develope your project with modern and elegant website blog mardown concept by using picobook pro.
 image: pico/picobookpro_lwz8uk.webp
+is_premium: true
+price: $39
 features:
  - Flatifle CMS
  - PHP Lang

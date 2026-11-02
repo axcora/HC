@@ -3,6 +3,8 @@ layout: themes-detil.cax
 title: Astro Car Rental Template - Car Booking, Fleet, Reservation Website
 description: Astro car rental website template with booking form, fleet gallery, detail, reservation system, SEO auto. Fast, responsive, own 100% source, one-time.
 image: astro/astro-rentcar_a3bpoq.jpg
+is_premium: true
+price: $45
 features:
   - Astro + Preact
   - Car Rental + Booking System

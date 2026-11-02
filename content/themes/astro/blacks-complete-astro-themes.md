@@ -2,6 +2,8 @@
 layout: themes-detil.cax
 title: Blacks - Astro Multipurpose Template - Portfolio, Gallery, Blog, Landing
 description: Astro multipurpose dark template with portfolio, image gallery, video gallery, blog, landing, SEO auto. Modern, fast, responsive, own 100% source, one-time.
+is_premium: true
+price: $65
 image: astro/astro-complete-template-themes_yoyqsn.jpg
 features:
   - Astro + Preact

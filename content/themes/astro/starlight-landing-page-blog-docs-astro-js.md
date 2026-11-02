@@ -3,6 +3,8 @@ layout: themes-detil.cax
 title: ForgeDocs — All-in-One Astro Starlight Theme for Landing Page, Documentation, and Blog
 description: ForgeDocs is a premium Astro Starlight theme that combines a landing page, documentation, and blog in one project. JSON-driven, SEO-ready, one-time purchase. Includes full documentation, deployment guides, and optional Decap CMS package.
 image: astro/astrohs-themes-starlgiht-themes-forgedocs3_e3xnng.jpg
+is_premium: true
+price: $79
 features:
   - Astro 7
   - Starlight Documentation

@@ -1,5 +1,5 @@
 ---
-layout: base.cax
+layout: default.cax
 ---
 <style>
 .detail-wrap{display:flex;flex-direction:column;gap:24px}.detail-left{width:100%;min-width:0}.detail-right{width:100%}
@@ -63,7 +63,7 @@ code{background:#000;color:#fff;padding:2px 6px;border-radius:4px}
 </div>
 <div class="panel" data-panel="l"><p><strong>{{ title }}</strong></p><p style="word-break:break-all">{{hc.url}}{{url}}</p><a href="{{ download }}" class="btn btn-accent w-full mt-12" target="_blank" style="display:block;text-align:center;padding:14px;border-radius:8px">DOWNLOAD →</a></div>
 </div>
-<div class="detail-right"><div class="card" style="width:100%;box-sizing:border-box"><p class="mono">Own 100%</p><b class="display" style="font-size:20px;word-break:break-word">{{ title }}</b><p class="hint" style="word-break:break-word">{{ description }}</p><a href="{{ download }}" class="btn btn-accent w-full mt-12" target="_blank" style="display:block;text-align:center;padding:14px;border-radius:8px">DOWNLOAD →</a><a href="{{ demo }}" class="btn btn-paper w-full mt-12" target="_blank" style="display:block;text-align:center;padding:14px;border-radius:8px;border:1px solid #000;margin-top:12px">DEMO →</a>
+<div class="detail-right"><div class="card" style="width:100%;box-sizing:border-box"><p class="mono">{% if price %}{{price}} - {% endif %}Own 100%</p><b class="display" style="font-size:20px;word-break:break-word">{{ title }}</b><p class="hint" style="word-break:break-word">{{ description }}</p><a href="{{ download }}" class="btn btn-accent w-full mt-12" target="_blank" style="display:block;text-align:center;padding:14px;border-radius:8px">DOWNLOAD →</a><a href="{{ demo }}" class="btn btn-paper w-full mt-12" target="_blank" style="display:block;text-align:center;padding:14px;border-radius:8px;border:1px solid #000;margin-top:12px">DEMO →</a>
 <div class="kv-list mt-16"><div class="kv"><p>Features</p><p class="mono">{% for feature in features %}{{ feature }}<br/>{% endfor %}</p></div><p class="mono"><a href="{{ demo }}" target="_blank" class="link-inline">{{ demo }}</a></p></div><hr/><p class="mono">{% if prev_link %}<span class="btn btn-paper w-full mt-12">{{ prev_link }}</span>{% endif %}{% if next_link %}<span class="btn btn-paper w-full mt-12">{{ next_link }}</span>{% endif %}</p><p class="mono">Need Custom?</p><h2 class="display">Hire via Fiverr Escrow</h2><p class="hint">72+ verified reviews, escrow protected.</p><a href="https://www.fiverr.com/creativitas/create-your-custom-website-and-app" target="_blank" class="btn w-full mt-12">ORDER CUSTOM →</a><div class="meta-tags mt-12">{% for t in tags %}<a href="/tags/{{t}}" class="tag">{{t}}</a>{% endfor %}</div>
 </div></section>
 <div id="toast" style="position:fixed;bottom:20px;left:10px;right:10px;background:#000;color:#fff;padding:14px;border-radius:10px;display:none;z-index:9999;border:1px solid #fff;text-align:center"></div>

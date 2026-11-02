@@ -3,6 +3,8 @@ layout: themes-detil.cax
 title: Piconic Mobile Webiste App UI Design
 description: Develope all in one modern website and mobile app ui design or android app with piconic PHP markdown
 image: pico/pico-mobile-website_mq3qie.png
+is_premium: true
+price: $59
 features:
  - Flatifle CMS
  - PHP Lang

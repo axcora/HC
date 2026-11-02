@@ -2,6 +2,8 @@
 layout: themes-detil.cax
 title: Angular Car Rental Template - Car Booking, Fleet, Reservation Website
 description: Angular car rental website template with booking form, fleet management, Decap CMS, SEO ready. Reservation system, contact, own 100% source, one-time.
+is_premium: true
+price: $65
 image: angular/angularcarweb_ga7cvg.jpg
 features:
  - Angular + TypeScript

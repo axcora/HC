@@ -3,6 +3,8 @@ layout: themes-detil.cax
 title: Captaline - Eleventy Company Profile Template - Business, Startup, Landing
 description: Eleventy company profile template with business landing, portfolio, startup, SEO auto, Tina CMS. Fast, responsive, 14+ sections, own 100% source, one-time.
 image: eleventy/jamstackthemes_ehxgrv.jpg
+is_premium: true
+price: $65
 features:
   - Eleventy + JAMSTACK
   - Company Profile + Business

@@ -3,6 +3,8 @@ layout: themes-detil.cax
 title: Litov - Eleventy Minimalist Template - Clean Blog, Landing, Portfolio
 description: Eleventy minimalist template with clean blog, landing, portfolio, Tina CMS. Lightweight, SEO auto, fast, responsive, own 100% source, one-time.
 image: eleventy/jamstack-cms-11ty-themes-new_uh5zjr.jpg
+is_premium: true
+price: $99
 features:
   - Eleventy + JAMSTACK
   - Minimalist + Clean Design

@@ -2,6 +2,8 @@
 layout: themes-detil.cax
 title: Nocturne - Premium Docusaurus Template - Docs, Blog, Decap CMS, Search
 description: Premium Docusaurus documentation template with docs, blog, landing, Decap CMS, Pagefind search, dark mode. Fast, SEO ready, MDX, own 100% source, one-time.
+is_premium: true
+price: $145
 image: react/docusaurus-premium1_pbinv1.jpg
 features:
   - React + Docusaurus + TypeScript

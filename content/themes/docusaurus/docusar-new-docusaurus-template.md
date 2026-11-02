@@ -2,6 +2,8 @@
 layout: themes-detil.cax
 title: Docusar - Docusaurus Docs Template - Documentation, Blog, Landing
 description: Docusaurus documentation template with docs, blog, landing page, dark mode, search. MDX ready, SEO auto, fast, own 100% source, one-time.
+is_premium: true
+price: $75
 image: react/docusar_snkzrk.jpg
 features:
   - React + Docusaurus

@@ -3,13 +3,15 @@ layout: themes-detil.cax
 title: Nuxas - Nuxt 4 Frontend Theme for SaaS & Startup Websites
 description: Download Nuxas, a production-ready Nuxt 4 frontend theme with strict TypeScript, SEO pipeline, dark mode, and content collections. Built for SaaS, startup, and product sites.
 image: nuxt/nuxt_js_themes_-_nuxas_1_scd6dw.jpg
+is_premium: true
+price: $59
 features:
  - Nuxt 4
  - Vue 3.5
  - TypeScript Strict
  - Nuxt Content 3
- - @nuxtjs/seo
- - @nuxt/image
+ - nuxtjs/seo
+ - nuxt/image
  - Vite Build Tool
  - Markdown & YAML Content
  - SEO Pipeline Ready

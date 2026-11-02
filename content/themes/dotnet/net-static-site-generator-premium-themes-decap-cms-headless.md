@@ -3,6 +3,8 @@ layout: themes-detil.cax
 title: Dax Pro Premium .NET Static Site Generator Theme Decap CMS
 description: Premium .NET static site generator theme with Decap CMS built in. Blazor WASM alternative for content sites. Zero JavaScript runtime, Lighthouse 100, production-ready.
 image: dotnet/dotnet-static-site-razor-blazor-alternative-themes_zyllfn.jpg
+is_premium: true
+price: $199
 features:
  - Dotnet
  - Microsoft Tech

@@ -2,6 +2,8 @@
 layout: themes-detil.cax
 title: Text-X Pro - Bludit Minimalist Blog Template - Clean, Minimal
 description: Bludit minimalist blog template with clean design, fast, SEO auto, flat-file no database. Easy install, responsive, own 100% source, one-time.
+is_premium: true
+price: $55
 image: bludit/text-x-pro_ligkpw.webp
 features:
   - Bludit Flat-File CMS
