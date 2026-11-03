@@ -35,7 +35,7 @@ typedef struct {
 
 static const char *STACKS[STACKS_COUNT] = {
     "astro", "next", "nuxt", "docusaurus", "starlight",
-    "go", "jekyll", "sveltekit", "eleventy",
+    "golang", "jekyll", "sveltekit", "eleventy",
     "bludit", "blazor", "react", "angular",
     "gatsby", "pico", "python", "laravel"
 };
