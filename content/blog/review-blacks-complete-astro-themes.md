@@ -1,7 +1,7 @@
 ---
 layout: blog-detil.cax
-title: Blacks - Astro Multipurpose Template - Portfolio, Gallery, Blog, Landing
-description: Astro multipurpose dark template with portfolio, image gallery, video gallery, blog, landing, SEO auto. Modern, fast, responsive, own 100% source, one-time.
+title: Review Blacks Complete Astro Themes
+description: The Astro Js template for creative professionals, agencies, photographers, and independent developers.
 image: astro/astro-complete-template-themes_yoyqsn.jpg
 date: 2026-10-31
 tags:
