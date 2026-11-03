@@ -17,7 +17,7 @@
 #define STATE_FILE "autoblog/state.json"
 #define POSTS_DIR "content/blog"
 #define FALLBACK_IMAGE "web-themes-web-template_r9lqqx.jpg"
-#define STACKS_COUNT 17
+#define STACKS_COUNT 10
 #define HN_URL "https://hn.algolia.com/api/v1/search?tags=front_page&hitsPerPage=30"
 
 typedef struct {
@@ -35,9 +35,7 @@ typedef struct {
 
 static const char *STACKS[STACKS_COUNT] = {
     "astro", "next", "nuxt", "docusaurus", "starlight",
-    "golang", "jekyll", "sveltekit", "eleventy",
-    "bludit", "blazor", "react", "angular",
-    "gatsby", "pico", "python", "laravel"
+    "hugo", "jekyll", "svelte", "remix", "solid"
 };
 
 static const char *FORBIDDEN[] = {
@@ -196,9 +194,6 @@ static int parse_themes(const char *json, Theme *themes, int max) {
         json_get_string(obj, "price", t->price, sizeof(t->price));
         json_get_string(obj, "demo", t->demo, sizeof(t->demo));
         t->is_premium = json_get_bool(obj, "is_premium");
-
-        // PREMIUM ONLY filter - skip free
-        if (!t->is_premium) { free(obj); p = scan; continue; }
 
         const char *tags_p = strstr(obj, "\"tags\":[");
         if (tags_p) {
@@ -400,6 +395,7 @@ static char *call_gemini(const char *prompt) {
     return out;
 }
 
+
 static int validate_article(const char *md, const char **required_urls, int url_count) {
     if (!md) return 0;
     if (strncmp(md, "---", 3) != 0) { printf("  [FAIL] missing frontmatter\n"); return 0; }
@@ -431,21 +427,15 @@ static int validate_article(const char *md, const char **required_urls, int url_
             return 0;
         }
     }
-    // CTA validation - must have Get Premium
-    if (!strstr(body, "## Get Premium")) {
-        printf("  [FAIL] missing CTA Get Premium\n");
-        return 0;
-    }
     return 1;
 }
 
-// FIXED - PRECISE CTA - PREMIUM ONLY - CLEAN NON SPAM
 static char *build_prompt_comparison(Theme *a, Theme *b, const char *aText, const char *aDemo, const char *bText, const char *bDemo) {
     size_t cap = 65536;
     char *p = malloc(cap);
     if (!p) return NULL;
     int n = snprintf(p, cap,
-        "You are a senior technical writer. Write a long-form comparison article in English, 2000-2500 words. PREMIUM ONLY.\n\n"
+        "You are a senior technical writer. Write a long-form comparison article in English, 2000-2500 words.\n\n"
         "THEME A:\ntitle: %s\ndescription: %s\nimage: %s\nprice: %s\nurl: %s\ndemo: %s\nraw tags: ",
         a->title, a->description, a->image, a->price, a->url, a->demo);
     for (int i = 0; i < a->tag_count && (size_t)n < cap - 128; i++) {
@@ -485,12 +475,7 @@ static char *build_prompt_comparison(Theme *a, Theme *b, const char *aText, cons
         "## Features Comparison\n"
         "<5-7 H3 subsections comparing features. 400-500 words.>\n\n"
         "## Pricing\n"
-        "<1-2 paragraphs. One-time purchase, own 100%% source, lifetime updates. Compare %s ($%s) vs %s ($%s).>\n\n"
-        "## Get Premium\n"
-        "Both are premium themes from hockeycomputindo.com (21 stacks, 10 engines). One-time purchase, own 100%%%% source, lifetime updates.\n\n"
-        "- **[%s - $%s](%s)** - %s\n"
-        "- **[%s - $%s](%s)** - %s\n\n"
-        "Browse more at [All Themes](/themes/) and [Premium](/premium/).\n\n"
+        "<1-2 paragraphs. 100-150 words.>\n\n"
         "## Who Should Choose %s\n"
         "<3-4 specific user profiles. 200-300 words.>\n\n"
         "## Who Should Choose %s\n"
@@ -513,9 +498,6 @@ static char *build_prompt_comparison(Theme *a, Theme *b, const char *aText, cons
         aText, aDemo, bText, bDemo,
         a->title, b->title, a->image,
         a->title, b->title,
-        a->title, a->price, b->title, b->price,
-        a->title, a->price, a->url, a->description,
-        b->title, b->price, b->url, b->description,
         a->title, b->title,
         a->title, a->demo, b->title, b->demo,
         a->url, b->url);
@@ -527,7 +509,7 @@ static char *build_prompt_review(Theme *t, const char *text, const char *demo) {
     char *p = malloc(cap);
     if (!p) return NULL;
     int n = snprintf(p, cap,
-        "You are a senior technical writer. Write a long-form review article in English, 2000-2500 words. PREMIUM ONLY.\n\n"
+        "You are a senior technical writer. Write a long-form review article in English, 2000-2500 words.\n\n"
         "THEME DATA:\n"
         "title: %s\n"
         "description: %s\n"
@@ -545,7 +527,7 @@ static char *build_prompt_review(Theme *t, const char *text, const char *demo) {
         "OUTPUT FORMAT:\n"
         "---\n"
         "layout: blog-detil.cax\n"
-        "title: %s - Premium Review\n"
+        "title: %s\n"
         "description: %s\n"
         "image: %s\n"
         "date: 2026-10-31\n"
@@ -568,11 +550,7 @@ static char *build_prompt_review(Theme *t, const char *text, const char *demo) {
         "## Performance and SEO\n"
         "<2-3 paragraphs based on data only. 200-300 words.>\n\n"
         "## Pricing\n"
-        "<1-2 paragraphs. One-time $%s, own 100%%%% source, lifetime updates, unlimited projects.>\n\n"
-        "## Get Premium\n"
-        "**[%s - $%s](%s)**\n\n"
-        "%s\n\n"
-        "One-time purchase. Full source, lifetime updates, unlimited client projects. Part of 21 stacks, 10 SSG engines at hockeycomputindo.com. Explore [All Themes](/themes/) and [Premium](/premium/).\n\n"
+        "<1-2 paragraphs about the price. 100-150 words.>\n\n"
         "## Who Is This For?\n"
         "<3-4 specific user profiles. 200-300 words.>\n\n"
         "## Who Should Skip This?\n"
@@ -595,9 +573,6 @@ static char *build_prompt_review(Theme *t, const char *text, const char *demo) {
         text, demo,
         t->title, t->description, t->image,
         t->title,
-        t->price,
-        t->title, t->price, t->url,
-        t->description,
         t->title, t->url, t->demo,
         t->title, t->url);
     return p;
@@ -608,13 +583,13 @@ static char *build_prompt_trend(const char *topic, Theme **themes, int count, co
     char *p = malloc(cap);
     if (!p) return NULL;
     int n = snprintf(p, cap,
-        "You are a senior technical writer. Write a long-form trend article in English, 2000-2500 words. PREMIUM ONLY.\n\n"
+        "You are a senior technical writer. Write a long-form trend article in English, 2000-2500 words.\n\n"
         "TRENDING TOPIC: %s\n\n"
         "OUR PREMIUM THEMES:\n", topic);
     for (int i = 0; i < count && (size_t)n < cap - 512; i++) {
         n += snprintf(p + n, cap - n,
-            "- %s | $%s | url: %s | demo: %s | desc: %s\n",
-            themes[i]->title, themes[i]->price, themes[i]->url, themes[i]->demo, themes[i]->description);
+            "- %s | url: %s | demo: %s | desc: %s\n",
+            themes[i]->title, themes[i]->url, themes[i]->demo, themes[i]->description);
     }
     snprintf(p + n, cap - n,
         "\nOUTPUT FORMAT:\n"
@@ -640,15 +615,6 @@ static char *build_prompt_trend(const char *topic, Theme **themes, int count, co
         "<2-3 paragraphs. 200-300 words.>\n\n"
         "## Our Premium Themes That Fit\n"
         "<5-7 H3 subsections, one per theme, each 100-150 words.>\n\n"
-        "## Get Premium\n"
-        "Premium themes from hockeycomputindo.com - 21 stacks, 10 engines, one-time purchase.\n\n");
-    for (int i = 0; i < count && (size_t)n < cap - 256; i++) {
-        n += snprintf(p + n, cap - n,
-            "- **[%s - $%s](%s)** - %s\n",
-            themes[i]->title, themes[i]->price, themes[i]->url, themes[i]->description);
-    }
-    snprintf(p + n, cap - n,
-        "\nBrowse [Premium](/premium/) and [All Themes](/themes/).\n\n"
         "## Feature Deep-Dive\n"
         "<2-3 paragraphs. 200-300 words.>\n\n"
         "## Who Should Upgrade\n"
@@ -660,7 +626,7 @@ static char *build_prompt_trend(const char *topic, Theme **themes, int count, co
         "RULES:\n"
         "- Total body MUST be 2000-2500 words.\n"
         "- FOCUS ON OUR PREMIUM THEMES, not the trend itself.\n"
-        "- MUST include IN THE BODY a markdown link to EACH theme using exactly the url shown above. Do NOT modify the URL. Do NOT add domain. Use as-is.\n"
+        "- MUST include IN THE BODY a markdown link to EACH theme using exactly the url shown above (e.g. [Theme Name](/themes/astro/slug/)). Do NOT modify the URL. Do NOT add domain. Use as-is. The links MUST appear inside paragraphs, not only in frontmatter.\n"
         "- MUST link to /premium/ at the end.\n"
         "- ONLY use features from data. Never invent features.\n"
         "- DO NOT use: revolutionary, game-changing, seamless, cutting-edge.\n"
@@ -1042,7 +1008,7 @@ int cax_autoblog_run(void) {
         return 1;
     }
 
-    printf("[autoblog] %d PREMIUM themes loaded (%d stacks)\n", count, STACKS_COUNT);
+    printf("[autoblog] %d themes loaded\n", count);
 
     int task = get_task_for_today();
     int ok = 0;
