@@ -15,6 +15,8 @@
         '.hc-btn{position:fixed;bottom:20px;right:20px;width:58px;height:58px;border-radius:50%;background:#D90000;color:#fff;border:2px solid #111;cursor:pointer;z-index:2147483000;box-shadow:4px 4px 0 #111;display:flex;align-items:center;justify-content:center;transition:transform .15s,box-shadow .15s}',
         '.hc-btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #111}',
         '.hc-btn svg{width:26px;height:26px;fill:#fff;display:block}',
+        '.hc-btn.hc-pulse{animation:hc-pulse 2s infinite}',
+        '@keyframes hc-pulse{0%{box-shadow:0 0 0 0 rgba(217,0,0,.7),4px 4px 0 #111}70%{box-shadow:0 0 0 12px rgba(217,0,0,0),4px 4px 0 #111}100%{box-shadow:0 0 0 0 rgba(217,0,0,0),4px 4px 0 #111}}',
         '.hc-panel{position:fixed;bottom:90px;right:20px;width:370px;height:560px;background:#fff;border-radius:0;box-shadow:6px 6px 0 #111;display:none;flex-direction:column;z-index:2147483000;font-family:ui-monospace,monospace;overflow:hidden;border:2px solid #111;contain:content}',
         '.hc-panel.open{display:flex}',
         '.hc-head{background:#D90000;color:#fff;padding:14px 16px;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #111;gap:8px}',
@@ -75,12 +77,25 @@
     var SERVICES_URL = '/services/';
     var CLOUDINARY_BASE = 'https://res.cloudinary.com/hockeycorp/image/upload/w_334/q_auto:low/f_avif/v1699871939/website%20design/';
 
+    var STORAGE_KEY_LAST_THEME = 'hc_last_viewed_theme';
+    var STORAGE_KEY_LAST_VISIT = 'hc_last_visit_ts';
+    var STORAGE_KEY_PAGE_ENTRY = 'hc_page_entry';
+    var STORAGE_KEY_THEME_VIEWS = 'hc_theme_views';
+    var STORAGE_KEY_INTENT = 'hc_intent_score';
+    var STORAGE_KEY_PANEL_OPEN = 'hc_panel_open';
+    var SESSION_KEY_AUTO_CLOSE = 'hc_auto_close_count';
+    var SESSION_KEY_AUTO_OPENED = 'hc_auto_opened';
+
     var themes = [];
     var loaded = false;
     var loadPromise = null;
     var initialized = false;
     var aiLimitUntil = 0;
     var queryCount = 0;
+    var lastUserMessageTs = 0;
+    var autoCloseTimer = null;
+    var proactiveTimer = null;
+    var greetingShown = false;
 
     var STOPWORDS = {
         'themes': 1, 'theme': 1, 'template': 1, 'templates': 1,
@@ -105,7 +120,8 @@
         'than': 1, 'then': 1, 'what': 1, 'which': 1, 'who': 1,
         'when': 1, 'where': 1, 'how': 1, 'why': 1,
         'this': 1, 'that': 1, 'these': 1, 'those': 1,
-        'here': 1, 'there': 1
+        'here': 1, 'there': 1,
+        'full': 1, 'custom': 1, 'complete': 1, 'all': 1, 'one': 1
     };
 
     var GENERIC_TAGS = {
@@ -132,6 +148,40 @@
         'next': 'nextjs', 'next.js': 'nextjs',
         'nuxtjs': 'nuxt', 'reactjs': 'react', 'vuejs': 'vue', 'astrojs': 'astro',
         'net': 'dotnet'
+    };
+
+    var STACK_KEYWORDS = {
+        'docusaurus': 'docusaurus',
+        'astro': 'astro', 'starlight': 'starlight',
+        'next': 'nextjs', 'next.js': 'nextjs', 'nextjs': 'nextjs',
+        'nuxt': 'nuxt', 'nuxtjs': 'nuxt',
+        'svelte': 'svelte', 'sveltekit': 'svelte',
+        'react': 'react', 'reactjs': 'react',
+        'vue': 'vue', 'vuejs': 'vue',
+        'angular': 'angular',
+        'blazor': 'blazor',
+        'jekyll': 'jekyll',
+        'eleventy': 'eleventy', '11ty': 'eleventy',
+        'gatsby': 'gatsby',
+        'symfony': 'symfony',
+        'laravel': 'laravel',
+        'django': 'django',
+        'flask': 'flask',
+        'bludit': 'bludit',
+        'pico': 'pico',
+        'python': 'python',
+        'golang': 'golang', 'go': 'golang',
+        'dotnet': 'dotnet', '.net': 'dotnet',
+        'php': 'php',
+        'wordpress': 'wordpress',
+        'ruby': 'ruby',
+        'remix': 'remix',
+        'solid': 'solid',
+        'alpine': 'alpine', 'alpinejs': 'alpine',
+        'ionic': 'ionic',
+        'flutter': 'flutter',
+        'android': 'android',
+        'vite': 'vite'
     };
 
     function esc(s) {
@@ -221,12 +271,32 @@
         return s;
     }
 
-    function rankThemes(words, wantPremium, wantFree) {
+    function detectStack(q) {
+        var lower = q.toLowerCase();
+        var words = lower.split(/\s+/);
+        for (var i = 0; i < words.length; i++) {
+            var w = words[i].replace(/[^a-z0-9\.\-]/g, '');
+            if (STACK_KEYWORDS[w]) return STACK_KEYWORDS[w];
+        }
+        return null;
+    }
+
+    function rankThemes(words, wantPremium, wantFree, stack) {
         var MIN_SCORE = 5;
 
         var ranked = themes
             .map(function (t) { return { t: t, s: score(t, words) }; })
             .filter(function (x) { return x.s >= MIN_SCORE; });
+
+        if (stack) {
+            ranked = ranked.filter(function (x) {
+                var t = x.t;
+                var hay = (t.title || '').toLowerCase() + ' ' +
+                          (t.description || '').toLowerCase() + ' ' +
+                          (t.tags || []).join(' ').toLowerCase();
+                return hay.indexOf(stack) !== -1;
+            });
+        }
 
         if (wantFree && !wantPremium) {
             ranked = ranked.filter(function (x) { return x.t.is_free === true; });
@@ -351,18 +421,19 @@
 
     function renderResults(query) {
         var p = parseQuery(query);
+        var stack = detectStack(query);
 
         if (p.intent === 'custom' && !p.keywords.length) {
             addMsg('Got it — you\'re looking for a custom build. 🚀<br><br>Our team handles headless commerce, booking systems, SSG, and AI automation — escrow protected on Fiverr, with full source ownership and no lock-in.' + renderUpsell('custom'), false);
             return [];
         }
 
-        if (!p.keywords.length) {
+        if (!p.keywords.length && !stack) {
             addMsg('Tell me a bit more — which tech or category are you after? For example: <b>astro</b>, <b>next</b>, <b>docusaurus</b>, <b>docs</b>, or <b>commerce</b>.', false);
             return null;
         }
 
-        var ranked = rankThemes(p.keywords, p.wantPremium, p.wantFree);
+        var ranked = rankThemes(p.keywords, p.wantPremium, p.wantFree, stack);
 
         if (!ranked.length) {
             addMsg('No exact match — but here\'s what I can do for you:' + renderUpsell(p.intent === 'custom' ? 'custom' : 'browse'), false);
@@ -475,23 +546,289 @@
     function send() {
         var q = input.value.trim();
         if (!q) return;
+        lastUserMessageTs = Date.now();
         addMsg(esc(q), true);
         input.value = '';
         setTimeout(function () { answer(q); }, 0);
     }
 
-    body.addEventListener('click', function (e) {
-        var btn = e.target.closest('button[data-hc-quick]');
-        if (!btn) return;
-        input.value = btn.getAttribute('data-hc-quick');
-        send();
-    });
+    function detectCurrentTheme() {
+        var path = window.location.pathname;
+        if (path.indexOf('/themes/') !== 0) return null;
+        var parts = path.split('/').filter(Boolean);
+        if (parts.length < 3) return null;
+        return { slug: parts[parts.length - 1], path: path };
+    }
+
+    function saveLastTheme(theme) {
+        if (!theme) return;
+        try {
+            localStorage.setItem(STORAGE_KEY_LAST_THEME, JSON.stringify({
+                slug: theme.slug,
+                path: theme.path,
+                ts: Date.now()
+            }));
+        } catch (e) {}
+    }
+
+    function getLastTheme() {
+        try {
+            var raw = localStorage.getItem(STORAGE_KEY_LAST_THEME);
+            if (!raw) return null;
+            return JSON.parse(raw);
+        } catch (e) { return null; }
+    }
+
+    function findThemeBySlug(slug) {
+        if (!slug || !themes.length) return null;
+        var s = String(slug).toLowerCase();
+        for (var i = 0; i < themes.length; i++) {
+            if (String(themes[i].slug).toLowerCase() === s) return themes[i];
+        }
+        return null;
+    }
+
+    function formatThemeName(slug) {
+        if (!slug) return '';
+        return slug.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+    }
+
+    function trackPageEntry() {
+        try {
+            var path = window.location.pathname;
+            var now = Date.now();
+            var prev = localStorage.getItem(STORAGE_KEY_PAGE_ENTRY);
+
+            if (prev) {
+                var p = JSON.parse(prev);
+                var duration = Math.floor((now - p.ts) / 1000);
+                if (duration > 0 && duration < 1800) {
+                    addDurationScore(duration);
+                }
+            }
+
+            localStorage.setItem(STORAGE_KEY_PAGE_ENTRY, JSON.stringify({
+                path: path,
+                ts: now
+            }));
+
+            if (path.indexOf('/themes/') === 0) {
+                var parts = path.split('/').filter(Boolean);
+                if (parts.length >= 3) {
+                    var slug = parts[parts.length - 1];
+                    var views = {};
+                    try { views = JSON.parse(localStorage.getItem(STORAGE_KEY_THEME_VIEWS) || '{}'); } catch (e) {}
+                    views[slug] = (views[slug] || 0) + 1;
+                    localStorage.setItem(STORAGE_KEY_THEME_VIEWS, JSON.stringify(views));
+                }
+            }
+        } catch (e) {}
+    }
+
+    function addDurationScore(seconds) {
+        var bonus = 0;
+        if (seconds >= 90) bonus = 30;
+        else if (seconds >= 45) bonus = 20;
+        else if (seconds >= 20) bonus = 10;
+        else return;
+
+        var score = 0;
+        try { score = parseInt(localStorage.getItem(STORAGE_KEY_INTENT) || '0', 10); } catch (e) {}
+        score += bonus;
+        if (score > 100) score = 100;
+        try { localStorage.setItem(STORAGE_KEY_INTENT, String(score)); } catch (e) {}
+    }
+
+    function calculateIntentScore() {
+        var score = 0;
+
+        try {
+            var lastVisit = parseInt(localStorage.getItem(STORAGE_KEY_LAST_VISIT) || '0', 10);
+            if (lastVisit && (Date.now() - lastVisit) > 7 * 24 * 60 * 60 * 1000) {
+                localStorage.setItem(STORAGE_KEY_INTENT, '0');
+            }
+        } catch (e) {}
+
+        try { score += parseInt(localStorage.getItem(STORAGE_KEY_INTENT) || '0', 10); } catch (e) {}
+
+        try {
+            var last = JSON.parse(localStorage.getItem(STORAGE_KEY_LAST_THEME) || 'null');
+            if (last && (Date.now() - last.ts) < 7 * 24 * 60 * 60 * 1000) score += 15;
+        } catch (e) {}
+
+        try {
+            var views = JSON.parse(localStorage.getItem(STORAGE_KEY_THEME_VIEWS) || '{}');
+            var current = detectCurrentTheme();
+            if (current && views[current.slug] > 1) score += 20;
+        } catch (e) {}
+
+        if (window.location.pathname.indexOf('/premium/') === 0) score += 10;
+
+        if (score > 100) score = 100;
+        return score;
+    }
+
+    function scheduleAutoClose(ms) {
+        if (autoCloseTimer) clearTimeout(autoCloseTimer);
+        autoCloseTimer = setTimeout(function () {
+            if (!panel.classList.contains('open')) return;
+            if (input.value.trim().length > 0) return;
+            if (Date.now() - lastUserMessageTs < 5000) return;
+            panel.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            try {
+                var c = parseInt(sessionStorage.getItem(SESSION_KEY_AUTO_CLOSE) || '0', 10);
+                sessionStorage.setItem(SESSION_KEY_AUTO_CLOSE, String(c + 1));
+            } catch (e) {}
+        }, ms);
+    }
+
+    function proactiveGreeting(force) {
+        if (greetingShown) return 12000;
+        if (!themes.length) return 12000;
+
+        try {
+            var closed = parseInt(sessionStorage.getItem(SESSION_KEY_AUTO_CLOSE) || '0', 10);
+            if (!force && closed >= 2) return 12000;
+        } catch (e) {}
+
+        greetingShown = true;
+
+        var current = detectCurrentTheme();
+        if (current) saveLastTheme(current);
+
+        var score = calculateIntentScore();
+        var msg = '';
+        var autoCloseMs = 12000;
+
+        if (current && themes.length) {
+            var t = findThemeBySlug(current.slug);
+            if (t) {
+                var title = t.title || formatThemeName(current.slug);
+                var isFree = t.is_free === true;
+                var isPremium = t.is_premium === true;
+
+                if (isFree) {
+                    msg = 'Hey 👋 I see you\'re checking out <b>' + esc(title) + '</b>, a free theme.' +
+                          '<br><br>Want to see what the premium version adds — lifetime updates, priority support, and production-ready features?' +
+                          '<div class="hc-quick">' +
+                          '<button type="button" data-hc-quick="Show me the premium version of ' + esc(title) + '">See premium version</button>' +
+                          '<button type="button" data-hc-quick="Tell me more about ' + esc(title) + '">Tell me more</button>' +
+                          '<button type="button" data-hc-quick="What are alternatives to ' + esc(title) + '?">See alternatives</button>' +
+                          '</div>';
+                } else if (isPremium && score >= 50) {
+                    msg = 'Hey 👋 <b>' + esc(title) + '</b> is a solid pick.' +
+                          '<br><br>Want a quick comparison with similar themes, or help deciding if it fits your stack?' +
+                          '<div class="hc-quick">' +
+                          '<button type="button" data-hc-quick="Tell me more about ' + esc(title) + '">Tell me more</button>' +
+                          '<button type="button" data-hc-quick="What are alternatives to ' + esc(title) + '?">See alternatives</button>' +
+                          '<button type="button" data-hc-quick="Is ' + esc(title) + ' good for my project?">Good for my project?</button>' +
+                          '</div>';
+                } else {
+                    msg = 'Hey 👋 I see you\'re checking out <b>' + esc(title) + '</b>.' +
+                          '<br><br>Want a quick comparison with similar themes, or help deciding if it fits your stack?' +
+                          '<div class="hc-quick">' +
+                          '<button type="button" data-hc-quick="Tell me more about ' + esc(title) + '">Tell me more</button>' +
+                          '<button type="button" data-hc-quick="What are alternatives to ' + esc(title) + '?">See alternatives</button>' +
+                          '</div>';
+                }
+            }
+        }
+
+        if (!msg && score >= 40) {
+            try {
+                var last = getLastTheme();
+                if (last && (Date.now() - last.ts) < 7 * 24 * 60 * 60 * 1000) {
+                    var name = formatThemeName(last.slug);
+                    msg = 'Welcome back 👋 Last time you were looking at <b>' + esc(name) + '</b>.' +
+                          '<br><br>Still considering it, or want to see something else?' +
+                          '<div class="hc-quick">' +
+                          '<button type="button" data-hc-quick="Yes, still interested in ' + esc(name) + '">Still interested</button>' +
+                          '<button type="button" data-hc-quick="Show me alternatives to ' + esc(name) + '">Show alternatives</button>' +
+                          '<button type="button" data-hc-quick="Not now">Not now</button>' +
+                          '</div>';
+                    autoCloseMs = 15000;
+                }
+            } catch (e) {}
+        }
+
+        if (!msg) {
+            msg = 'Hey 👋 Looking for a theme? Tell me your stack (Astro, Next.js, SvelteKit, Blazor…) and project type (docs, SaaS, blog, commerce) — I\'ll match the right one.' +
+                  '<div class="hc-quick">' +
+                  '<button type="button" data-hc-quick="free astro blog theme">Free Astro blog</button>' +
+                  '<button type="button" data-hc-quick="premium next.js saas theme">Premium Next.js SaaS</button>' +
+                  '<button type="button" data-hc-quick="I need a custom build">Custom build</button>' +
+                  '</div>';
+            autoCloseMs = 15000;
+        }
+
+        addMsg(msg, false);
+
+        try {
+            localStorage.setItem(STORAGE_KEY_LAST_VISIT, String(Date.now()));
+        } catch (e) {}
+
+        return autoCloseMs;
+    }
+
+    function openPanel() {
+        if (panel.classList.contains('open')) return;
+
+        try {
+            var closed = parseInt(sessionStorage.getItem(SESSION_KEY_AUTO_CLOSE) || '0', 10);
+            if (closed >= 2) return;
+        } catch (e) {}
+
+        if (!initialized) initChat();
+
+        loadThemes().then(function () {
+            var autoCloseMs = 12000;
+
+            if (!body.children.length) {
+                autoCloseMs = proactiveGreeting(false);
+            }
+
+            panel.classList.add('open');
+            toggle.setAttribute('aria-expanded', 'true');
+            try { localStorage.setItem(STORAGE_KEY_PANEL_OPEN, '1'); } catch (e) {}
+
+            scheduleAutoClose(autoCloseMs);
+        });
+    }
+
+    function closePanel() {
+        panel.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.classList.remove('hc-pulse');
+        try { localStorage.setItem(STORAGE_KEY_PANEL_OPEN, '0'); } catch (e) {}
+        try { sessionStorage.setItem(SESSION_KEY_AUTO_OPENED, '1'); } catch (e) {}
+    }
+
+    function startProactiveTimer() {
+        if (proactiveTimer) clearTimeout(proactiveTimer);
+
+        try {
+            if (sessionStorage.getItem(SESSION_KEY_AUTO_OPENED) === '1') return;
+        } catch (e) {}
+
+        var path = window.location.pathname;
+        var isThemeDetail = /^\/themes\/[^\/]+\/[^\/]+\/?$/.test(path);
+        var delay = isThemeDetail ? 12000 : 15000;
+
+        proactiveTimer = setTimeout(function () {
+            if (panel.classList.contains('open')) return;
+            try { sessionStorage.setItem(SESSION_KEY_AUTO_OPENED, '1'); } catch (e) {}
+            openPanel();
+        }, delay);
+    }
 
     function initChat() {
         if (initialized) return;
         initialized = true;
 
-        addMsg('Hey 👋 I\'m your theme assistant. Tell me what you\'re building — I\'ll match the right theme, or connect you with our custom build team if you need something tailored.<br><br>Try: <b>"free astro blog"</b> · <b>"premium next commerce"</b> · <b>"I need a custom booking site"</b>.', false);
+        trackPageEntry();
+        var current = detectCurrentTheme();
+        if (current) saveLastTheme(current);
 
         loadThemes();
 
@@ -500,21 +837,51 @@
             if (e.key === 'Enter') send();
         });
         btnClose.addEventListener('click', function () {
-            panel.classList.remove('open');
-            toggle.setAttribute('aria-expanded', 'false');
+            closePanel();
         });
     }
+
+    body.addEventListener('click', function (e) {
+        var btn = e.target.closest('button[data-hc-quick]');
+        if (btn) {
+            input.value = btn.getAttribute('data-hc-quick');
+            send();
+            return;
+        }
+        var a = e.target.closest('a');
+        if (a && a.href && (a.href.indexOf('/premium/') !== -1 || a.href.indexOf('gumroad.com') !== -1)) {
+            try { localStorage.setItem(STORAGE_KEY_INTENT, '0'); } catch (err) {}
+        }
+    });
 
     toggle.addEventListener('click', function () {
         var isOpen = panel.classList.toggle('open');
         toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        if (isOpen && !initialized) {
-            if ('requestIdleCallback' in window) {
-                requestIdleCallback(initChat, { timeout: 2000 });
-            } else {
-                setTimeout(initChat, 0);
-            }
+        toggle.classList.remove('hc-pulse');
+
+        if (isOpen) {
+            try { localStorage.setItem(STORAGE_KEY_PANEL_OPEN, '1'); } catch (e) {}
+            if (!initialized) initChat();
+            loadThemes().then(function () {
+                if (!body.children.length) proactiveGreeting(true);
+                scheduleAutoClose(15000);
+            });
+        } else {
+            try { localStorage.setItem(STORAGE_KEY_PANEL_OPEN, '0'); } catch (e) {}
+            try { sessionStorage.setItem(SESSION_KEY_AUTO_OPENED, '1'); } catch (e) {}
         }
     });
+
+    (function () {
+        try {
+            if (localStorage.getItem(STORAGE_KEY_PANEL_OPEN) === '1') {
+                openPanel();
+            } else {
+                startProactiveTimer();
+            }
+        } catch (e) {
+            startProactiveTimer();
+        }
+    })();
 })();
 </script>
