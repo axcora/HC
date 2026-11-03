@@ -28,6 +28,27 @@ tags:
     - docusaurusthemes
     - premiumthemes
     - featured
+faq:
+  - q: "What is Nocturne, and what problem does it solve?"
+    a: "Nocturne is a premium Docusaurus documentation system built with React and TypeScript. It ships with documentation, blog, landing page, static pages (about, pricing, services), Decap CMS pre-configured, Pagefind search, dark and light mode, and MDX + Markdown + JSON content. Instead of assembling a docs site, a blog, a marketing landing, and a CMS from scratch, you extract the project, run npm install, and start editing content. It is built for teams who ship documentation, not demos."
+  - q: "Do I need to know React or Docusaurus to use Nocturne?"
+    a: "You need Node.js and a terminal to install and run the project, but daily content editing happens through Markdown, JSON, and the Decap CMS admin. Open docusaurus.config.ts for site setup, src/data/home.json for the home page, src/pages/*.md for static pages, docs/ for documentation, and blog/ for posts. If you can edit Markdown and JSON, you can customize most of it. Basic Docusaurus knowledge helps for advanced layout changes."
+  - q: "What is included in the package?"
+    a: "Documentation, blog, and landing sections; Decap CMS pre-configured with collections for site settings, static pages, documentation, docs categories, and blog posts; Pagefind search across all docs; dark and light mode; MDX + Markdown + JSON content; static pages for about, pricing, and services; full source code; and white-label with resale allowed for client projects."
+  - q: "How does Decap CMS work in Nocturne, and what are its limits?"
+    a: "Decap CMS is pre-configured. Run npx decap-server in one terminal and npm start in another, then open http localhost 3000 admin and click Login. From the admin you can edit site settings, static pages in src/pages/*.md, documentation in docs/*, docs categories in _category_.json, and blog posts in blog/*. Decap CMS cannot create new folders inside docs/, cannot create new _category_.json files, and cannot edit docusaurus.config.ts or sidebars.ts. Those changes must be done manually in code."
+  - q: "How do I add a new documentation group or article?"
+    a: "For a new group, create a new folder inside docs/ (for example tutorials), then add a _category_.json file with label, position, collapsed, and a link block with type generated-index, title, and description. For a new article, create a Markdown file inside the group folder and add frontmatter with title, description, image, sidebar_position, and sidebar_label. The sidebar reflects both automatically."
+  - q: "How do I add a new blog post?"
+    a: "Create a Markdown file in blog/ named with the format year-month-date-your-url-link (for example 2026-10-25-myfirstpost.md). Add frontmatter with slug, title, description, authors, tags, image, and date. Authors are defined in blog/authors.yml, tags in blog/tags.yml. Use the truncate comment to mark the excerpt cut, not the HTML comment, because MDX does not support HTML comments."
+  - q: "How does search work?"
+    a: "Nocturne uses Pagefind search, which indexes all documentation at build time. The search is instant and runs client-side, with no external service, no API key, and no per-query cost. Combined with the dark and light mode and the docs sidebar navigation, it gives readers a fast way to find content across the whole documentation set."
+  - q: "Where can I deploy Nocturne?"
+    a: "Cloudflare Pages, Netlify, and Vercel all work. Register with your GitHub account, create a new project or Pages project, connect your repository, select Docusaurus as the framework, and click deploy. Custom domains are configured per platform, and HTTPS is provisioned automatically. The project also builds locally with npm start for preview and npm run build for production output."
+  - q: "What is the license, and can I use it for client projects?"
+    a: "The license is a one-time purchase for unlimited projects, with white-label and resale allowed as part of client work. There is no subscription, no license key, and no renewal. Free updates are included forever. If you need a fully custom build, custom work is available through the Fiverr link in the article."
+  - q: "Where can I see the demo and get support?"
+    a: "The live demo is at nocturne.axcora.com, and the full documentation is at the same domain. For custom builds, use the Fiverr link in the article. To buy, use the Gumroad link at creativitaz.gumroad.com/l/nocturne. The theme ships with complete documentation chapters covering installation, site setup, static pages, documentation groups, blog, GitHub push, deployment, and CMS setup."
 ---
 
 ## Start with Nocturne
@@ -1002,133 +1023,3 @@ These must be done manually in code.
 - Custom build: https://www.fiverr.com/creativitas/create-your-custom-website-and-app
 - Get Nocturne: https://creativitaz.gumroad.com/l/nocturne
 
-## Frequently Asked Questions
-
-### What is Nocturne, and what problem does it solve?
-
-Nocturne is a premium Docusaurus documentation system built with React and TypeScript. It ships with documentation, blog, landing page, static pages (about, pricing, services), Decap CMS pre-configured, Pagefind search, dark and light mode, and MDX + Markdown + JSON content. Instead of assembling a docs site, a blog, a marketing landing, and a CMS from scratch, you extract the project, run `npm install`, and start editing content. It is built for teams who ship documentation, not demos.
-
-### Do I need to know React or Docusaurus to use Nocturne?
-
-You need Node.js and a terminal to install and run the project, but daily content editing happens through Markdown, JSON, and the Decap CMS admin. Open `docusaurus.config.ts` for site setup, `src/data/home.json` for the home page, `src/pages/*.md` for static pages, `docs/` for documentation, and `blog/` for posts. If you can edit Markdown and JSON, you can customize most of it. Basic Docusaurus knowledge helps for advanced layout changes.
-
-### What is included in the package?
-
-Documentation, blog, and landing sections; Decap CMS pre-configured with collections for site settings, static pages, documentation, docs categories, and blog posts; Pagefind search across all docs; dark and light mode; MDX + Markdown + JSON content; static pages for about, pricing, and services; full source code; and white-label with resale allowed for client projects.
-
-### How does Decap CMS work in Nocturne, and what are its limits?
-
-Decap CMS is pre-configured. Run `npx decap-server` in one terminal and `npm start` in another, then open `http://localhost:3000/admin/` and click Login. From the admin you can edit site settings, static pages in `src/pages/*.md`, documentation in `docs/*`, docs categories in `_category_.json`, and blog posts in `blog/*`. Decap CMS cannot create new folders inside `docs/`, cannot create new `_category_.json` files, and cannot edit `docusaurus.config.ts` or `sidebars.ts`. Those changes must be done manually in code.
-
-### How do I add a new documentation group or article?
-
-For a new group, create a new folder inside `docs/` (for example `tutorials`), then add a `_category_.json` file with `label`, `position`, `collapsed`, and a `link` block with `type: generated-index`, `title`, and `description`. For a new article, create a Markdown file inside the group folder and add frontmatter with `title`, `description`, `image`, `sidebar_position`, and `sidebar_label`. The sidebar reflects both automatically.
-
-### How do I add a new blog post?
-
-Create a Markdown file in `blog/` named with the format `year-month-date-your-url-link` (for example `2026-10-25-myfirstpost.md`). Add frontmatter with `slug`, `title`, `description`, `authors`, `tags`, `image`, and `date`. Authors are defined in `blog/authors.yml`, tags in `blog/tags.yml`. Use `{/* truncate */}` to mark the excerpt cut, not `<!-- truncate -->`, because MDX does not support HTML comments.
-
-### How does search work?
-
-Nocturne uses Pagefind search, which indexes all documentation at build time. The search is instant and runs client-side, with no external service, no API key, and no per-query cost. Combined with the dark and light mode and the docs sidebar navigation, it gives readers a fast way to find content across the whole documentation set.
-
-### Where can I deploy Nocturne?
-
-Cloudflare Pages, Netlify, and Vercel all work. Register with your GitHub account, create a new project or Pages project, connect your repository, select Docusaurus as the framework, and click deploy. Custom domains are configured per platform, and HTTPS is provisioned automatically. The project also builds locally with `npm start` for preview and `npm run build` for production output.
-
-### What is the license, and can I use it for client projects?
-
-The license is a one-time purchase for unlimited projects, with white-label and resale allowed as part of client work. There is no subscription, no license key, and no renewal. Free updates are included forever. If you need a fully custom build, custom work is available through the Fiverr link in the article.
-
-### Where can I see the demo and get support?
-
-The live demo is at `nocturne.axcora.com`, and the full documentation is at the same domain. For custom builds, use the Fiverr link in the article. To buy, use the Gumroad link at `creativitaz.gumroad.com/l/nocturne`. The theme ships with complete documentation chapters covering installation, site setup, static pages, documentation groups, blog, GitHub push, deployment, and CMS setup.
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is Nocturne, and what problem does it solve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nocturne is a premium Docusaurus documentation system built with React and TypeScript. It ships with documentation, blog, landing page, static pages (about, pricing, services), Decap CMS pre-configured, Pagefind search, dark and light mode, and MDX + Markdown + JSON content. Instead of assembling a docs site, a blog, a marketing landing, and a CMS from scratch, you extract the project, run npm install, and start editing content. It is built for teams who ship documentation, not demos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to know React or Docusaurus to use Nocturne?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You need Node.js and a terminal to install and run the project, but daily content editing happens through Markdown, JSON, and the Decap CMS admin. Open docusaurus.config.ts for site setup, src/data/home.json for the home page, src/pages/*.md for static pages, docs/ for documentation, and blog/ for posts. If you can edit Markdown and JSON, you can customize most of it. Basic Docusaurus knowledge helps for advanced layout changes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is included in the package?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Documentation, blog, and landing sections; Decap CMS pre-configured with collections for site settings, static pages, documentation, docs categories, and blog posts; Pagefind search across all docs; dark and light mode; MDX + Markdown + JSON content; static pages for about, pricing, and services; full source code; and white-label with resale allowed for client projects."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does Decap CMS work in Nocturne, and what are its limits?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Decap CMS is pre-configured. Run npx decap-server in one terminal and npm start in another, then open http://localhost:3000/admin/ and click Login. From the admin you can edit site settings, static pages in src/pages/*.md, documentation in docs/*, docs categories in _category_.json, and blog posts in blog/*. Decap CMS cannot create new folders inside docs/, cannot create new _category_.json files, and cannot edit docusaurus.config.ts or sidebars.ts. Those changes must be done manually in code."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I add a new documentation group or article?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For a new group, create a new folder inside docs/ (for example tutorials), then add a _category_.json file with label, position, collapsed, and a link block with type: generated-index, title, and description. For a new article, create a Markdown file inside the group folder and add frontmatter with title, description, image, sidebar_position, and sidebar_label. The sidebar reflects both automatically."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I add a new blog post?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Create a Markdown file in blog/ named with the format year-month-date-your-url-link (for example 2026-10-25-myfirstpost.md). Add frontmatter with slug, title, description, authors, tags, image, and date. Authors are defined in blog/authors.yml, tags in blog/tags.yml. Use {/* truncate */} to mark the excerpt cut, not <!-- truncate -->, because MDX does not support HTML comments."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does search work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nocturne uses Pagefind search, which indexes all documentation at build time. The search is instant and runs client-side, with no external service, no API key, and no per-query cost. Combined with the dark and light mode and the docs sidebar navigation, it gives readers a fast way to find content across the whole documentation set."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where can I deploy Nocturne?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cloudflare Pages, Netlify, and Vercel all work. Register with your GitHub account, create a new project or Pages project, connect your repository, select Docusaurus as the framework, and click deploy. Custom domains are configured per platform, and HTTPS is provisioned automatically. The project also builds locally with npm start for preview and npm run build for production output."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the license, and can I use it for client projects?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The license is a one-time purchase for unlimited projects, with white-label and resale allowed as part of client work. There is no subscription, no license key, and no renewal. Free updates are included forever. If you need a fully custom build, custom work is available through the Fiverr link in the article."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where can I see the demo and get support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The live demo is at nocturne.axcora.com, and the full documentation is at the same domain. For custom builds, use the Fiverr link in the article. To buy, use the Gumroad link at creativitaz.gumroad.com/l/nocturne. The theme ships with complete documentation chapters covering installation, site setup, static pages, documentation groups, blog, GitHub push, deployment, and CMS setup."
-      }
-    }
-  ]
-}
-</script>

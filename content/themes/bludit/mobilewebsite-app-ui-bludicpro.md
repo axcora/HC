@@ -26,6 +26,27 @@ tags:
     - ionicthemes
     - bluditthemes
     - premiumthemes
+faq:
+  - q: "What is Bludic Pro, and what problem does it solve?"
+    a: "Bludic Pro is a premium Bludit template built on the Ionic Framework for mobile web app UI. Bludit is a flat-file CMS no database, fast, and easy to deploy. Ionic gives the frontend a native app feel with responsive, luxury, and elegant design. The template ships with PWA support, blog and mobile pages, automatic SEO, and responsive output, and it can be wrapped as an Android app later. Instead of assembling a CMS, a mobile UI, and SEO wiring from scratch, you install it locally or on hosting, configure through the admin panel, and the site is live."
+  - q: "Do I need a database or coding skills to use Bludic Pro?"
+    a: "No. Bludit is a flat-file CMS, so there is no database and no SQL. Installation is upload and run, either on a local web server such as XAMPP or LAMPP, or on any hosting panel. Daily work happens in the Bludit admin panel at admin settings, users, plugins, categories, content, and the Bludic design UI. You do not need to code to run the site."
+  - q: "How do I install Bludic Pro locally?"
+    a: "Download XAMPP, LAMPP, or another web server, and install it. Create a folder for the project, for example C:/xampp/htdocs/bludic, and extract all Bludic Pro files into it. Open http localhost bludic, select the installer language, enter a username and password, and run the installer. The site is live. To log in to the backend, open localhost bludic admin and enter your username and password."
+  - q: "How do I install Bludic Pro on hosting?"
+    a: "Make sure you have hosting and a domain, then log in to your hosting panel and upload the source code files into your project folder main domain, subdomain, or subdirectory. Visit your website project to run the installation, select the language, enter a password, and run the installer. The site is live. Log in to the backend at yourweb admin with your password."
+  - q: "How do I configure the site title, homepage, and logo?"
+    a: "Open Settings and General. Change the title, description, slogan, and other site fields. Open the Advanced tab to set how many posts display on the homepage, for example six. Click the Logo tab and upload your logo, then save to apply the configuration. These settings control the site identity and the homepage layout."
+  - q: "How do I secure the admin account and activate plugins?"
+    a: "Open Users and create a new user insert a username and password, select the Administrator role, and save. Then delete the default admin user. You can also create new users for your team with the User role. Open Plugins and activate the Bludic plugins first, then Sitemap, RSS, Open Graph, and Twitter Card. With these active, the site generates a sitemap and an RSS feed automatically and outputs social sharing tags. Configure the Bludic design UI later, after you create static pages and blog posts."
+  - q: "What are the secret hidden plugins, and how do I activate them?"
+    a: "Bludic Pro ships with hidden plugins for Categories, Blogs, Tags, and Gallery. Each is activated by creating a new content item with a specific template value. Categories create new content titled Categories with URL categories, select Type Static, open Options and Advanced, and set the template to categories. Blogs create a new static page titled Blog with URL blog, open Advanced, and set the template to blog. Tags create new content titled Tags, open Options and Advanced, and set the template to tags. Gallery create a new static page titled Galleries, open Options and Advanced, and set the template to galleries, then upload your images to the images folder via FTP or hosting, and the page fetches them automatically."
+  - q: "How do I create a blog post or a static page?"
+    a: "Open Content. The Pages tab shows all blog posts, the Static tab shows all static pages, and the Sticky tab shows sticky posts. Click New content, insert the title, and write the article. Open Options and General to insert the description and upload a cover image. Open Advanced to add tags. In the Type section, choose Default for a blog post or Static for a static page such as about, contact, or FAQ. Click Save."
+  - q: "How do I customize the mobile design UI and bottom navigation?"
+    a: "Open the Bludic bottom nav plugin settings to edit the bottom navigation menu. Then open the Bludic design settings to change the slider navbar and the design display insert title, text information, and image URL, and link each item to a blog post or static page URL. Save to apply. For a native app, wrap the site in a webview using Android Studio, Flutter, or React Native, build the APK, and share it."
+  - q: "Where can I see the demo and get support?"
+    a: "Demo videos are available at the YouTube links in the article. Download is at creativitaz.gumroad.com/l/bludicpro. For support, email creativebydre@gmail.com. Custom development is available through the Fiverr link in the theme listing."
 ---
 ### About Bludic
 
@@ -149,139 +170,3 @@ If you need to built android application, so you can convert your website in to 
 #### Thank You by using Bludic PRO [Ionic mobile website cms]({{page.url}}) project
 
 We hope with this project can help you for develope and built all in one website and mobile app UI.
-
-## Frequently Asked Questions
-
-### What is Bludic Pro, and what problem does it solve?
-
-Bludic Pro is a premium Bludit template built on the Ionic Framework for mobile web app UI. Bludit is a flat-file CMS: no database, fast, and easy to deploy. Ionic gives the frontend a native app feel with responsive, luxury, and elegant design. The template ships with PWA support, blog and mobile pages, automatic SEO, and responsive output, and it can be wrapped as an Android app later. Instead of assembling a CMS, a mobile UI, and SEO wiring from scratch, you install it locally or on hosting, configure through the admin panel, and the site is live.
-
-### Do I need a database or coding skills to use Bludic Pro?
-
-No. Bludit is a flat-file CMS, so there is no database and no SQL. Installation is upload and run, either on a local web server such as XAMPP or LAMPP, or on any hosting panel. Daily work happens in the Bludit admin panel at `/admin`: settings, users, plugins, categories, content, and the Bludic design UI. You do not need to code to run the site.
-
-### How do I install Bludic Pro locally?
-
-Download XAMPP, LAMPP, or another web server, and install it. Create a folder for the project, for example `C:/xampp/htdocs/bludic`, and extract all Bludic Pro files into it. Open `http://localhost/bludic`, select the installer language, enter a username and password, and run the installer. The site is live. To log in to the backend, open `localhost/bludic/admin` and enter your username and password.
-
-### How do I install Bludic Pro on hosting?
-
-Make sure you have hosting and a domain, then log in to your hosting panel and upload the source code files into your project folder: main domain, subdomain, or subdirectory. Visit your website project to run the installation, select the language, enter a password, and run the installer. The site is live. Log in to the backend at `yourweb/admin` with your password.
-
-### How do I configure the site title, homepage, and logo?
-
-Open Settings → General. Change the title, description, slogan, and other site fields. Open the Advanced tab to set how many posts display on the homepage, for example six. Click the Logo tab and upload your logo, then save to apply the configuration. These settings control the site identity and the homepage layout.
-
-### How do I secure the admin account and activate plugins?
-
-Open Users and create a new user: insert a username and password, select the Administrator role, and save. Then delete the default admin user. You can also create new users for your team with the User role. Open Plugins and activate the Bludic plugins first, then Sitemap, RSS, Open Graph, and Twitter Card. With these active, the site generates a sitemap and an RSS feed automatically and outputs social sharing tags. Configure the Bludic design UI later, after you create static pages and blog posts.
-
-### What are the secret hidden plugins, and how do I activate them?
-
-Bludic Pro ships with hidden plugins for Categories, Blogs, Tags, and Gallery. Each is activated by creating a new content item with a specific template value:
-
-- Categories: create new content titled Categories with URL `categories`, select Type Static, open Options → Advanced, and set the template to `categories`.
-- Blogs: create a new static page titled Blog with URL `blog`, open Advanced, and set the template to `blog`.
-- Tags: create new content titled Tags, open Options → Advanced, and set the template to `tags`.
-- Gallery: create a new static page titled Galleries, open Options → Advanced, and set the template to `galleries`. Then upload your images to the `images` folder via FTP or hosting, and the page fetches them automatically.
-
-### How do I create a blog post or a static page?
-
-Open Content. The Pages tab shows all blog posts, the Static tab shows all static pages, and the Sticky tab shows sticky posts. Click New content, insert the title, and write the article. Open Options → General to insert the description and upload a cover image. Open Advanced to add tags. In the Type section, choose Default for a blog post or Static for a static page such as about, contact, or FAQ. Click Save.
-
-### How do I customize the mobile design UI and bottom navigation?
-
-Open the Bludic bottom nav plugin settings to edit the bottom navigation menu. Then open the Bludic design settings to change the slider navbar and the design display: insert title, text information, and image URL, and link each item to a blog post or static page URL. Save to apply. For a native app, wrap the site in a webview using Android Studio, Flutter, or React Native, build the APK, and share it.
-
-### Where can I see the demo and get support?
-
-Demo videos are available at the YouTube links in the article. Download is at `creativitaz.gumroad.com/l/bludicpro`. For support, email creativebydre@gmail.com. Custom development is available through the Fiverr link in the theme listing.
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is Bludic Pro, and what problem does it solve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bludic Pro is a premium Bludit template built on the Ionic Framework for mobile web app UI. Bludit is a flat-file CMS: no database, fast, and easy to deploy. Ionic gives the frontend a native app feel with responsive, luxury, and elegant design. The template ships with PWA support, blog and mobile pages, automatic SEO, and responsive output, and it can be wrapped as an Android app later. Instead of assembling a CMS, a mobile UI, and SEO wiring from scratch, you install it locally or on hosting, configure through the admin panel, and the site is live."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need a database or coding skills to use Bludic Pro?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Bludit is a flat-file CMS, so there is no database and no SQL. Installation is upload and run, either on a local web server such as XAMPP or LAMPP, or on any hosting panel. Daily work happens in the Bludit admin panel at /admin: settings, users, plugins, categories, content, and the Bludic design UI. You do not need to code to run the site."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I install Bludic Pro locally?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Download XAMPP, LAMPP, or another web server, and install it. Create a folder for the project, for example C:/xampp/htdocs/bludic, and extract all Bludic Pro files into it. Open http://localhost/bludic, select the installer language, enter a username and password, and run the installer. The site is live. To log in to the backend, open localhost/bludic/admin and enter your username and password."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I install Bludic Pro on hosting?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Make sure you have hosting and a domain, then log in to your hosting panel and upload the source code files into your project folder: main domain, subdomain, or subdirectory. Visit your website project to run the installation, select the language, enter a password, and run the installer. The site is live. Log in to the backend at yourweb/admin with your password."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I configure the site title, homepage, and logo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open Settings → General. Change the title, description, slogan, and other site fields. Open the Advanced tab to set how many posts display on the homepage, for example six. Click the Logo tab and upload your logo, then save to apply the configuration. These settings control the site identity and the homepage layout."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I secure the admin account and activate plugins?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open Users and create a new user: insert a username and password, select the Administrator role, and save. Then delete the default admin user. You can also create new users for your team with the User role. Open Plugins and activate the Bludic plugins first, then Sitemap, RSS, Open Graph, and Twitter Card. With these active, the site generates a sitemap and an RSS feed automatically and outputs social sharing tags. Configure the Bludic design UI later, after you create static pages and blog posts."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the secret hidden plugins, and how do I activate them?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bludic Pro ships with hidden plugins for Categories, Blogs, Tags, and Gallery. Each is activated by creating a new content item with a specific template value. Categories: create new content titled Categories with URL categories, select Type Static, open Options → Advanced, and set the template to categories. Blogs: create a new static page titled Blog with URL blog, open Advanced, and set the template to blog. Tags: create new content titled Tags, open Options → Advanced, and set the template to tags. Gallery: create a new static page titled Galleries, open Options → Advanced, and set the template to galleries, then upload your images to the images folder via FTP or hosting, and the page fetches them automatically."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I create a blog post or a static page?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open Content. The Pages tab shows all blog posts, the Static tab shows all static pages, and the Sticky tab shows sticky posts. Click New content, insert the title, and write the article. Open Options → General to insert the description and upload a cover image. Open Advanced to add tags. In the Type section, choose Default for a blog post or Static for a static page such as about, contact, or FAQ. Click Save."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I customize the mobile design UI and bottom navigation?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open the Bludic bottom nav plugin settings to edit the bottom navigation menu. Then open the Bludic design settings to change the slider navbar and the design display: insert title, text information, and image URL, and link each item to a blog post or static page URL. Save to apply. For a native app, wrap the site in a webview using Android Studio, Flutter, or React Native, build the APK, and share it."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where can I see the demo and get support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Demo videos are available at the YouTube links in the article. Download is at creativitaz.gumroad.com/l/bludicpro. For support, email creativebydre@gmail.com. Custom development is available through the Fiverr link in the theme listing."
-      }
-    }
-  ]
-}
-</script>

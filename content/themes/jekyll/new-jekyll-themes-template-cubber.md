@@ -28,6 +28,27 @@ tags:
     - premiumthemes
     - featuredpremium
     - featured
+faq:
+  - q: "What is Cubber, and what problem does it solve?"
+    a: "Cubber is a premium Jekyll theme built on Ruby and the JAMSTACK stack, designed with a cyber futuristic concept for multipurpose websites. It ships with portfolio, gallery, blog, services, author, category, and tag collections, all managed through Markdown and YAML files. SEO is injected automatically meta tags, Open Graph, and Google LD JSON. Instead of assembling collections, layouts, widgets, and SEO wiring from scratch, you edit _config.yml and a handful of Markdown files, and the site is ready."
+  - q: "Do I need to know Ruby or Jekyll to use Cubber?"
+    a: "Basic Jekyll knowledge helps, but the theme is structured clearly and documented. Content lives in Markdown files with YAML frontmatter, and site settings live in _config.yml. If you can edit YAML and Markdown, you can customize most of it. For a deeper walkthrough, the official Jekyll installation docs cover Windows, macOS, Ubuntu, FreeBSD, and other Linux distributions."
+  - q: "How do I install Cubber locally?"
+    a: "Install Jekyll on your device first. Download the source code, create a project folder, and extract the source into it. Open a terminal in that folder, run bundle install, then bundle exec jekyll serve (or jekyll serve). Open localhost 4000 in your browser. From there, edit _config.yml and the content files to match your site."
+  - q: "Which folders hold what content?"
+    a: "Collections use underscore folders _authors for author profiles, _galleries for gallery projects, _posts for blog articles, and _services for service pages. Design and layout live in _includes and _layouts, page templates live in authors/, blog/, gallery/, and services/, static assets live in assets/, and site-wide settings live in _config.yml. Home content is in index.md, about in about.md, and the contact page in contact.md."
+  - q: "How do I configure the site title, navigation, and widgets?"
+    a: "Open _config.yml in a code editor. Change title, slogan, description, favicon, locale, lang, and url. Navigation is defined under nav, with title, icon, and link for each item. Widgets for services, blog, and gallery are configured under services_widget, blog, and gallery, each with its own title, number of items to show, button text, and link. Footer is configured under footer_nav and footer_nav_list. Pagination uses paginate and paginate_path."
+  - q: "How does the contact form work?"
+    a: "Cubber uses Formspree. Register at formspree.io, create a new form, and copy the endpoint. Open contact.md, and put the endpoint in the formspree_id frontmatter field. The contact block holds your address, map link, phone, and email. Once set, submissions from the contact form are sent to your Formspree account and forwarded to your email."
+  - q: "Is SEO handled automatically?"
+    a: "Yes. Cubber includes an automatic SEO injection script that outputs meta tags, Open Graph tags, and Google LD JSON. Combined with clean Markdown content and the sitemap and feed files, the theme is built for search-ready sites without manual meta wiring on every page. The article also includes bonus SEO tips register with Google Search Console, upload the Google HTML verification file and meta tag, add the DNS record, then submit sitemap.xml and feed.xml for faster indexing."
+  - q: "Where can I deploy Cubber?"
+    a: "GitHub Pages is supported natively push the repo, open Settings, go to Build and deployment, select the branch (main or master), and save. For a custom domain on GitHub Pages, add the domain in Settings and create a CNAME file at the repo root, then point an A record at your domain panel. Cloudflare Pages, Netlify, and Vercel also work register with your GitHub account, create a new project or pages, select your repo, choose Jekyll as the framework, and deploy. Custom domains are configured per platform."
+  - q: "Can I edit content without a code editor?"
+    a: "Yes, through a headless Git CMS. Prose.io is the quickest option open prose.io, connect it to your GitHub repo, and edit content from the browser. For a full admin dashboard with Google or GitHub login, use Decap CMS on Netlify. For local development, Tina CMS works in local mode. If you need a custom CMS backend built for your project, custom work is available through the Fiverr link in the article."
+  - q: "What do I get with the purchase, and what is the license?"
+    a: "You get the full source code of the Cubber Jekyll theme, all collections and layouts, the SEO injection script, and the documentation in this article. The license is a one-time purchase for unlimited personal and client projects, and you own 100 percent of the source. Demo cubber.pages.dev. Download creativitaz.gumroad.com/l/cubber-jekyll."
 ---
 ## New jekyll JAMSTACK themes template  - Cubber futuristic concept
 
@@ -907,138 +928,6 @@ If you want your site powerfull in SEO, we need to register with Google Search C
 After that, we can access the site map, and enter sitemap.xml and feed.xml so that your articles can be indexed quickly by Google.
 
 -----
-
-## Frequently Asked Questions
-
-### What is Cubber, and what problem does it solve?
-
-Cubber is a premium Jekyll theme built on Ruby and the JAMSTACK stack, designed with a cyber futuristic concept for multipurpose websites. It ships with portfolio, gallery, blog, services, author, category, and tag collections, all managed through Markdown and YAML files. SEO is injected automatically: meta tags, Open Graph, and Google LD JSON. Instead of assembling collections, layouts, widgets, and SEO wiring from scratch, you edit `_config.yml` and a handful of Markdown files, and the site is ready.
-
-### Do I need to know Ruby or Jekyll to use Cubber?
-
-Basic Jekyll knowledge helps, but the theme is structured clearly and documented. Content lives in Markdown files with YAML frontmatter, and site settings live in `_config.yml`. If you can edit YAML and Markdown, you can customize most of it. For a deeper walkthrough, the official Jekyll installation docs cover Windows, macOS, Ubuntu, FreeBSD, and other Linux distributions.
-
-### How do I install Cubber locally?
-
-Install Jekyll on your device first. Download the source code, create a project folder, and extract the source into it. Open a terminal in that folder, run `bundle install`, then `bundle exec jekyll serve` (or `jekyll serve`). Open `localhost:4000` in your browser. From there, edit `_config.yml` and the content files to match your site.
-
-### Which folders hold what content?
-
-Collections use underscore folders: `_authors` for author profiles, `_galleries` for gallery projects, `_posts` for blog articles, and `_services` for service pages. Design and layout live in `_includes` and `_layouts`, page templates live in `authors/`, `blog/`, `gallery/`, and `services/`, static assets live in `assets/`, and site-wide settings live in `_config.yml`. Home content is in `index.md`, about in `about.md`, and the contact page in `contact.md`.
-
-### How do I configure the site title, navigation, and widgets?
-
-Open `_config.yml` in a code editor. Change `title`, `slogan`, `description`, `favicon`, `locale`, `lang`, and `url`. Navigation is defined under `nav`, with `title`, `icon`, and `link` for each item. Widgets for services, blog, and gallery are configured under `services_widget`, `blog`, and `gallery`, each with its own title, number of items to show, button text, and link. Footer is configured under `footer_nav` and `footer_nav_list`. Pagination uses `paginate` and `paginate_path`.
-
-### How does the contact form work?
-
-Cubber uses Formspree. Register at formspree.io, create a new form, and copy the endpoint. Open `contact.md`, and put the endpoint in the `formspree_id` frontmatter field. The `contact` block holds your address, map link, phone, and email. Once set, submissions from the contact form are sent to your Formspree account and forwarded to your email.
-
-### Is SEO handled automatically?
-
-Yes. Cubber includes an automatic SEO injection script that outputs meta tags, Open Graph tags, and Google LD JSON. Combined with clean Markdown content and the sitemap and feed files, the theme is built for search-ready sites without manual meta wiring on every page. The article also includes bonus SEO tips: register with Google Search Console, upload the Google HTML verification file and meta tag, add the DNS record, then submit `sitemap.xml` and `feed.xml` for faster indexing.
-
-### Where can I deploy Cubber?
-
-GitHub Pages is supported natively: push the repo, open Settings, go to Build and deployment, select the branch (main or master), and save. For a custom domain on GitHub Pages, add the domain in Settings and create a CNAME file at the repo root, then point an A record at your domain panel. Cloudflare Pages, Netlify, and Vercel also work: register with your GitHub account, create a new project or pages, select your repo, choose Jekyll as the framework, and deploy. Custom domains are configured per platform.
-
-### Can I edit content without a code editor?
-
-Yes, through a headless Git CMS. Prose.io is the quickest option: open prose.io, connect it to your GitHub repo, and edit content from the browser. For a full admin dashboard with Google or GitHub login, use Decap CMS on Netlify. For local development, Tina CMS works in local mode. If you need a custom CMS backend built for your project, custom work is available through the Fiverr link in the article.
-
-### What do I get with the purchase, and what is the license?
-
-You get the full source code of the Cubber Jekyll theme, all collections and layouts, the SEO injection script, and the documentation in this article. The license is a one-time purchase for unlimited personal and client projects, and you own 100% of the source. Demo: `cubber.pages.dev`. Download: `creativitaz.gumroad.com/l/cubber-jekyll`.
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is Cubber, and what problem does it solve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cubber is a premium Jekyll theme built on Ruby and the JAMSTACK stack, designed with a cyber futuristic concept for multipurpose websites. It ships with portfolio, gallery, blog, services, author, category, and tag collections, all managed through Markdown and YAML files. SEO is injected automatically: meta tags, Open Graph, and Google LD JSON. Instead of assembling collections, layouts, widgets, and SEO wiring from scratch, you edit _config.yml and a handful of Markdown files, and the site is ready."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to know Ruby or Jekyll to use Cubber?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Basic Jekyll knowledge helps, but the theme is structured clearly and documented. Content lives in Markdown files with YAML frontmatter, and site settings live in _config.yml. If you can edit YAML and Markdown, you can customize most of it. For a deeper walkthrough, the official Jekyll installation docs cover Windows, macOS, Ubuntu, FreeBSD, and other Linux distributions."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I install Cubber locally?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Install Jekyll on your device first. Download the source code, create a project folder, and extract the source into it. Open a terminal in that folder, run bundle install, then bundle exec jekyll serve (or jekyll serve). Open localhost:4000 in your browser. From there, edit _config.yml and the content files to match your site."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which folders hold what content?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Collections use underscore folders: _authors for author profiles, _galleries for gallery projects, _posts for blog articles, and _services for service pages. Design and layout live in _includes and _layouts, page templates live in authors/, blog/, gallery/, and services/, static assets live in assets/, and site-wide settings live in _config.yml. Home content is in index.md, about in about.md, and the contact page in contact.md."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I configure the site title, navigation, and widgets?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open _config.yml in a code editor. Change title, slogan, description, favicon, locale, lang, and url. Navigation is defined under nav, with title, icon, and link for each item. Widgets for services, blog, and gallery are configured under services_widget, blog, and gallery, each with its own title, number of items to show, button text, and link. Footer is configured under footer_nav and footer_nav_list. Pagination uses paginate and paginate_path."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does the contact form work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cubber uses Formspree. Register at formspree.io, create a new form, and copy the endpoint. Open contact.md, and put the endpoint in the formspree_id frontmatter field. The contact block holds your address, map link, phone, and email. Once set, submissions from the contact form are sent to your Formspree account and forwarded to your email."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is SEO handled automatically?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Cubber includes an automatic SEO injection script that outputs meta tags, Open Graph tags, and Google LD JSON. Combined with clean Markdown content and the sitemap and feed files, the theme is built for search-ready sites without manual meta wiring on every page. The article also includes bonus SEO tips: register with Google Search Console, upload the Google HTML verification file and meta tag, add the DNS record, then submit sitemap.xml and feed.xml for faster indexing."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where can I deploy Cubber?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "GitHub Pages is supported natively: push the repo, open Settings, go to Build and deployment, select the branch (main or master), and save. For a custom domain on GitHub Pages, add the domain in Settings and create a CNAME file at the repo root, then point an A record at your domain panel. Cloudflare Pages, Netlify, and Vercel also work: register with your GitHub account, create a new project or pages, select your repo, choose Jekyll as the framework, and deploy. Custom domains are configured per platform."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I edit content without a code editor?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, through a headless Git CMS. Prose.io is the quickest option: open prose.io, connect it to your GitHub repo, and edit content from the browser. For a full admin dashboard with Google or GitHub login, use Decap CMS on Netlify. For local development, Tina CMS works in local mode. If you need a custom CMS backend built for your project, custom work is available through the Fiverr link in the article."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What do I get with the purchase, and what is the license?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You get the full source code of the Cubber Jekyll theme, all collections and layouts, the SEO injection script, and the documentation in this article. The license is a one-time purchase for unlimited personal and client projects, and you own 100% of the source. Demo: cubber.pages.dev. Download: creativitaz.gumroad.com/l/cubber-jekyll."
-      }
-    }
-  ]
-}
-</script>
-
 
 ## THANK YOU
 

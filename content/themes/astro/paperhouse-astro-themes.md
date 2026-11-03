@@ -29,6 +29,27 @@ tags:
     - paperhouse template
     - tailwind template
     - premiumthemes
+faq:
+  - q: "What is PaperHouse, and what problem does it solve?"
+    a: "PaperHouse is a premium Astro 7 + Tailwind CSS 4 bento portfolio template built for designers, freelancers, studios, and developers. It ships with a complete content system home with bento works grid, works with case studies and galleries, journal with categories and tags, a full documentation site, a contact page with a form and meta grid, and an order page built to close the sale. Every piece of content is editable from Markdown and JSON, with no database, no admin panel, and no monthly fees. Instead of building a portfolio, a blog, a docs site, and a conversion path from scratch, you install the project, edit Markdown and JSON, and the site is live."
+  - q: "Do I need to know Astro or Tailwind to use PaperHouse?"
+    a: "You need Node.js and a terminal to install and run the project, but daily content editing happens through Markdown and JSON. Works live in src/content/works/, blog posts in src/content/blog/, static pages in src/content/pages/, docs in src/content/docs/, and contact data in src/content/contact/. Site configuration lives in src/data/*.json. If you can edit a Markdown file, you can run the site. Astro and Tailwind knowledge helps for layout changes."
+  - q: "How do I install and run PaperHouse locally?"
+    a: "Install Node.js 18 or newer and verify with node --version. Unzip the download, open a terminal in the folder, and run npm install (about 30 seconds the first time). Then run npm run dev and open http localhost 4321. Any file change reloads automatically. To build for production, run npm run build, which creates a dist/ folder. To preview the production build, run npm run preview."
+  - q: "How do I rebrand the site — colors, fonts, radius?"
+    a: "Open src/styles/globals.css and edit the @theme block. Every design token lives there --color-paper, --color-ink, --color-stone, --color-lime, --font-serif, --font-sans, --font-hand, and --radius-bento. Tailwind picks these up automatically, so changing a token updates the entire site without a separate config file."
+  - q: "How does the home page hero and marquee work?"
+    a: "The home page is built from src/data/home.json. The hero headline uses a fragment system each part of the headline can have a style. Available styles are italic opacity-60, hl (stabilo highlight), and hl-skew (tilted stabilo highlight), which is how you get italic words and highlighted words without writing HTML. The marquee section uses two styles serif for italic serif text and label for small uppercase sans. The journal section pulls the three latest posts automatically from src/content/blog/, so only the labels are controlled from home.json."
+  - q: "How do I add a work or a blog post?"
+    a: "For a work, create a Markdown file in src/content/works/. The filename becomes the URL slug. Required fields are title, description, category, year, client, and cover. Optional fields are gallery (array of image URLs), featured (true or false), and size (normal, wide, or large). Size controls how the card renders on the works grid normal is one column, wide is two columns, and large is two columns with a taller aspect ratio. The gallery renders automatically one image fills full width, two images sit side by side, and three or more alternate between full width and half width. For a blog post, create a Markdown file in src/content/blog/. Required fields are title, description, date (YYYY-MM-DD), category, cover, excerpt, and tags. Posts sort by date descending, which affects the blog listing, the home journal preview, and prev/next navigation. Reading time is calculated automatically at 220 words per minute. Tags are shared across posts, so two posts with the same tag appear on the same tag page."
+  - q: "How do I add a static page or a doc page?"
+    a: "For a static page, create a Markdown file in src/content/pages/. The filename becomes the URL, so about.md becomes /about. Basic frontmatter is title, subtitle, and optional kicker. Optional fields include sidebar (line1 and line2), columns (array of title and items), ctas (array of href, label, primary), and meta (array of label and value). Every static page also needs an entry in src/data/site.json under pages, with title, description, image, and type. For a doc page, create a Markdown file in src/content/docs/ with title, description, section, and order in the frontmatter, then add it to a section in src/data/docs.json. The sidebar and prev/next navigation update automatically."
+  - q: "How do I set up the contact form?"
+    a: "The contact page lives in src/content/contact/contact.md. Key fields are formAction (a Formspree or compatible endpoint), email, submitLabel, fields (array of name, placeholder, type, required), and meta (array of label and value for the grid on the right). To set up Formspree sign up at formspree.io, create a new form, copy the endpoint URL, and replace formAction in the frontmatter. The form supports text, email, tel, and textarea inputs."
+  - q: "Is SEO handled automatically, and how do I deploy?"
+    a: "Every page has its own title, description, and social share image, defined in src/data/site.json for static pages and pulled from frontmatter for dynamic pages like works and blog posts. The layout handles Open Graph tags, Twitter Cards, canonical URLs, and semantic HTML. URLs are clean, with no query strings or file extensions. Set your production domain in astro.config.mjs so canonical URLs and sitemap entries are correct. Run npx astro add sitemap to enable sitemap generation. To deploy, push to GitHub, then connect to Cloudflare Pages, Netlify, or Vercel with build command npm run build and output directory dist. GitHub Pages requires setting base in astro.config.mjs and adding a GitHub Actions workflow. Every push to the main branch rebuilds and redeploys automatically."
+  - q: "Does PaperHouse support a headless CMS, and what is the license?"
+    a: "Yes. PaperHouse works with any Git-based headless CMS, adding a browser dashboard on top of the Markdown files without a database or server. Options include Sveltia CMS (modern, lightweight, free), Decap CMS (industry standard, free), Tina Cloud (visual editing with live preview), and a custom Git dashboard built around your business logic. All connect to your GitHub repo, and publishing commits the change, triggering a rebuild. The license is a one-time purchase at 45 dollars for unlimited personal and client projects. It does not permit reselling or redistributing the template, theme, or starter kit. Lifetime updates and email support are included, with a response within 24 hours, usually much faster. Live demo paperhouse-astro.pages.dev. Download creativitaz.gumroad.com/l/paperhouse-astro-bento. For support, email axcora@gmail.com. Custom work, including headless CMS integration and bespoke Astro sites, is available through the Fiverr link on the product page."
 ---
 
 ## PaperHouse — Astro Bento Portfolio Template
@@ -468,140 +489,3 @@ Full license terms are included in the download.
 Get PaperHouse — $45 on Gumroad: [https://creativitaz.gumroad.com/l/paperhouse-astro-bento](https://creativitaz.gumroad.com/l/paperhouse-astro-bento)
 
 Live demo: [https://paperhouse-astro.pages.dev/](https://paperhouse-astro.pages.dev/)
-
-## Frequently Asked Questions
-
-### What is PaperHouse, and what problem does it solve?
-
-PaperHouse is a premium Astro 7 + Tailwind CSS 4 bento portfolio template built for designers, freelancers, studios, and developers. It ships with a complete content system: home with bento works grid, works with case studies and galleries, journal with categories and tags, a full documentation site, a contact page with a form and meta grid, and an order page built to close the sale. Every piece of content is editable from Markdown and JSON, with no database, no admin panel, and no monthly fees. Instead of building a portfolio, a blog, a docs site, and a conversion path from scratch, you install the project, edit Markdown and JSON, and the site is live.
-
-### Do I need to know Astro or Tailwind to use PaperHouse?
-
-You need Node.js and a terminal to install and run the project, but daily content editing happens through Markdown and JSON. Works live in `src/content/works/`, blog posts in `src/content/blog/`, static pages in `src/content/pages/`, docs in `src/content/docs/`, and contact data in `src/content/contact/`. Site configuration lives in `src/data/*.json`. If you can edit a Markdown file, you can run the site. Astro and Tailwind knowledge helps for layout changes.
-
-### How do I install and run PaperHouse locally?
-
-Install Node.js 18 or newer and verify with `node --version`. Unzip the download, open a terminal in the folder, and run `npm install` (about 30 seconds the first time). Then run `npm run dev` and open `http://localhost:4321`. Any file change reloads automatically. To build for production, run `npm run build`, which creates a `dist/` folder. To preview the production build, run `npm run preview`.
-
-### How do I rebrand the site — colors, fonts, radius?
-
-Open `src/styles/globals.css` and edit the `@theme` block. Every design token lives there: `--color-paper`, `--color-ink`, `--color-stone`, `--color-lime`, `--font-serif`, `--font-sans`, `--font-hand`, and `--radius-bento`. Tailwind picks these up automatically, so changing a token updates the entire site without a separate config file.
-
-### How does the home page hero and marquee work?
-
-The home page is built from `src/data/home.json`. The hero headline uses a fragment system: each part of the headline can have a style. Available styles are `italic opacity-60`, `hl` (stabilo highlight), and `hl-skew` (tilted stabilo highlight), which is how you get italic words and highlighted words without writing HTML. The marquee section uses two styles: `serif` for italic serif text and `label` for small uppercase sans. The journal section pulls the three latest posts automatically from `src/content/blog/`, so only the labels are controlled from `home.json`.
-
-### How do I add a work or a blog post?
-
-For a work, create a Markdown file in `src/content/works/`. The filename becomes the URL slug. Required fields are `title`, `description`, `category`, `year`, `client`, and `cover`. Optional fields are `gallery` (array of image URLs), `featured` (true or false), and `size` (`normal`, `wide`, or `large`). Size controls how the card renders on the works grid: normal is one column, wide is two columns, and large is two columns with a taller aspect ratio. The gallery renders automatically: one image fills full width, two images sit side by side, and three or more alternate between full width and half width.
-
-For a blog post, create a Markdown file in `src/content/blog/`. Required fields are `title`, `description`, `date` (YYYY-MM-DD), `category`, `cover`, `excerpt`, and `tags`. Posts sort by date descending, which affects the blog listing, the home journal preview, and prev/next navigation. Reading time is calculated automatically at 220 words per minute. Tags are shared across posts, so two posts with the same tag appear on the same tag page.
-
-### How do I add a static page or a doc page?
-
-For a static page, create a Markdown file in `src/content/pages/`. The filename becomes the URL, so `about.md` becomes `/about`. Basic frontmatter is `title`, `subtitle`, and optional `kicker`. Optional fields include `sidebar` (line1 and line2), `columns` (array of title and items), `ctas` (array of href, label, primary), and `meta` (array of label and value). Every static page also needs an entry in `src/data/site.json` under `pages`, with title, description, image, and type.
-
-For a doc page, create a Markdown file in `src/content/docs/` with `title`, `description`, `section`, and `order` in the frontmatter, then add it to a section in `src/data/docs.json`. The sidebar and prev/next navigation update automatically.
-
-### How do I set up the contact form?
-
-The contact page lives in `src/content/contact/contact.md`. Key fields are `formAction` (a Formspree or compatible endpoint), `email`, `submitLabel`, `fields` (array of name, placeholder, type, required), and `meta` (array of label and value for the grid on the right). To set up Formspree: sign up at formspree.io, create a new form, copy the endpoint URL, and replace `formAction` in the frontmatter. The form supports text, email, tel, and textarea inputs.
-
-### Is SEO handled automatically, and how do I deploy?
-
-Every page has its own title, description, and social share image, defined in `src/data/site.json` for static pages and pulled from frontmatter for dynamic pages like works and blog posts. The layout handles Open Graph tags, Twitter Cards, canonical URLs, and semantic HTML. URLs are clean, with no query strings or file extensions. Set your production domain in `astro.config.mjs` so canonical URLs and sitemap entries are correct. Run `npx astro add sitemap` to enable sitemap generation. To deploy, push to GitHub, then connect to Cloudflare Pages, Netlify, or Vercel with build command `npm run build` and output directory `dist`. GitHub Pages requires setting `base` in `astro.config.mjs` and adding a GitHub Actions workflow. Every push to the main branch rebuilds and redeploys automatically.
-
-### Does PaperHouse support a headless CMS, and what is the license?
-
-Yes. PaperHouse works with any Git-based headless CMS, adding a browser dashboard on top of the Markdown files without a database or server. Options include Sveltia CMS (modern, lightweight, free), Decap CMS (industry standard, free), Tina Cloud (visual editing with live preview), and a custom Git dashboard built around your business logic. All connect to your GitHub repo, and publishing commits the change, triggering a rebuild.
-
-The license is a one-time purchase at $45 for unlimited personal and client projects. It does not permit reselling or redistributing the template, theme, or starter kit. Lifetime updates and email support are included, with a response within 24 hours, usually much faster. Live demo: `paperhouse-astro.pages.dev`. Download: `creativitaz.gumroad.com/l/paperhouse-astro-bento`. For support, email axcora@gmail.com. Custom work, including headless CMS integration and bespoke Astro sites, is available through the Fiverr link on the product page.
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is PaperHouse, and what problem does it solve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "PaperHouse is a premium Astro 7 + Tailwind CSS 4 bento portfolio template built for designers, freelancers, studios, and developers. It ships with a complete content system: home with bento works grid, works with case studies and galleries, journal with categories and tags, a full documentation site, a contact page with a form and meta grid, and an order page built to close the sale. Every piece of content is editable from Markdown and JSON, with no database, no admin panel, and no monthly fees. Instead of building a portfolio, a blog, a docs site, and a conversion path from scratch, you install the project, edit Markdown and JSON, and the site is live."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to know Astro or Tailwind to use PaperHouse?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You need Node.js and a terminal to install and run the project, but daily content editing happens through Markdown and JSON. Works live in src/content/works/, blog posts in src/content/blog/, static pages in src/content/pages/, docs in src/content/docs/, and contact data in src/content/contact/. Site configuration lives in src/data/*.json. If you can edit a Markdown file, you can run the site. Astro and Tailwind knowledge helps for layout changes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I install and run PaperHouse locally?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Install Node.js 18 or newer and verify with node --version. Unzip the download, open a terminal in the folder, and run npm install (about 30 seconds the first time). Then run npm run dev and open http://localhost:4321. Any file change reloads automatically. To build for production, run npm run build, which creates a dist/ folder. To preview the production build, run npm run preview."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I rebrand the site — colors, fonts, radius?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open src/styles/globals.css and edit the @theme block. Every design token lives there: --color-paper, --color-ink, --color-stone, --color-lime, --font-serif, --font-sans, --font-hand, and --radius-bento. Tailwind picks these up automatically, so changing a token updates the entire site without a separate config file."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does the home page hero and marquee work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The home page is built from src/data/home.json. The hero headline uses a fragment system: each part of the headline can have a style. Available styles are italic opacity-60, hl (stabilo highlight), and hl-skew (tilted stabilo highlight), which is how you get italic words and highlighted words without writing HTML. The marquee section uses two styles: serif for italic serif text and label for small uppercase sans. The journal section pulls the three latest posts automatically from src/content/blog/, so only the labels are controlled from home.json."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I add a work or a blog post?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For a work, create a Markdown file in src/content/works/. The filename becomes the URL slug. Required fields are title, description, category, year, client, and cover. Optional fields are gallery (array of image URLs), featured (true or false), and size (normal, wide, or large). Size controls how the card renders on the works grid: normal is one column, wide is two columns, and large is two columns with a taller aspect ratio. The gallery renders automatically: one image fills full width, two images sit side by side, and three or more alternate between full width and half width. For a blog post, create a Markdown file in src/content/blog/. Required fields are title, description, date (YYYY-MM-DD), category, cover, excerpt, and tags. Posts sort by date descending, which affects the blog listing, the home journal preview, and prev/next navigation. Reading time is calculated automatically at 220 words per minute. Tags are shared across posts, so two posts with the same tag appear on the same tag page."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I add a static page or a doc page?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For a static page, create a Markdown file in src/content/pages/. The filename becomes the URL, so about.md becomes /about. Basic frontmatter is title, subtitle, and optional kicker. Optional fields include sidebar (line1 and line2), columns (array of title and items), ctas (array of href, label, primary), and meta (array of label and value). Every static page also needs an entry in src/data/site.json under pages, with title, description, image, and type. For a doc page, create a Markdown file in src/content/docs/ with title, description, section, and order in the frontmatter, then add it to a section in src/data/docs.json. The sidebar and prev/next navigation update automatically."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I set up the contact form?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The contact page lives in src/content/contact/contact.md. Key fields are formAction (a Formspree or compatible endpoint), email, submitLabel, fields (array of name, placeholder, type, required), and meta (array of label and value for the grid on the right). To set up Formspree: sign up at formspree.io, create a new form, copy the endpoint URL, and replace formAction in the frontmatter. The form supports text, email, tel, and textarea inputs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is SEO handled automatically, and how do I deploy?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Every page has its own title, description, and social share image, defined in src/data/site.json for static pages and pulled from frontmatter for dynamic pages like works and blog posts. The layout handles Open Graph tags, Twitter Cards, canonical URLs, and semantic HTML. URLs are clean, with no query strings or file extensions. Set your production domain in astro.config.mjs so canonical URLs and sitemap entries are correct. Run npx astro add sitemap to enable sitemap generation. To deploy, push to GitHub, then connect to Cloudflare Pages, Netlify, or Vercel with build command npm run build and output directory dist. GitHub Pages requires setting base in astro.config.mjs and adding a GitHub Actions workflow. Every push to the main branch rebuilds and redeploys automatically."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does PaperHouse support a headless CMS, and what is the license?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. PaperHouse works with any Git-based headless CMS, adding a browser dashboard on top of the Markdown files without a database or server. Options include Sveltia CMS (modern, lightweight, free), Decap CMS (industry standard, free), Tina Cloud (visual editing with live preview), and a custom Git dashboard built around your business logic. All connect to your GitHub repo, and publishing commits the change, triggering a rebuild. The license is a one-time purchase at $45 for unlimited personal and client projects. It does not permit reselling or redistributing the template, theme, or starter kit. Lifetime updates and email support are included, with a response within 24 hours, usually much faster. Live demo: paperhouse-astro.pages.dev. Download: creativitaz.gumroad.com/l/paperhouse-astro-bento. For support, email axcora@gmail.com. Custom work, including headless CMS integration and bespoke Astro sites, is available through the Fiverr link on the product page."
-      }
-    }
-  ]
-}
-</script>

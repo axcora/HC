@@ -25,6 +25,27 @@ tags:
     - minimalist blog
     - bluditthemes
     - premiumthemes
+faq:
+  - q: "What is Text-X Pro, and what problem does it solve?"
+    a: "Text-X Pro is a premium Bludit template built for minimalist, clean blogs and multipurpose content sites. Bludit is a flat-file CMS posts and pages are stored as text files, so there is no database to install or configure. The template ships with a clean minimalist design, blog and static page support, automatic SEO through plugins, and responsive output. Instead of setting up a CMS, a database, a theme, and SEO plugins from scratch, you upload the source, run the installer, and the site is live."
+  - q: "Do I need a database or coding skills to use Text-X Pro?"
+    a: "No. Bludit is a flat-file CMS, so there is no database and no SQL to manage. Installation is upload and run, either on a local web server such as XAMPP or LAMPP, or on any hosting panel. Daily work happens in the Bludit admin panel at admin settings, users, plugins, categories, and content. You do not need to code to run the site."
+  - q: "How do I install Text-X Pro locally?"
+    a: "Download XAMPP, LAMPP, or another web server and install it. Create a folder for the project, for example C:/xampp/htdocs/project, and extract all source files into it. Open http localhost project, select the installer language, enter a username and password, and run the installer. The site is live. To log in to the backend, open localhost project admin and enter your username and password."
+  - q: "How do I install Text-X Pro on hosting?"
+    a: "Make sure you have hosting and a domain, then log in to your hosting panel and upload the source files into your project folder main domain, subdomain, or subdirectory. Visit your website project to run the installation, select the language, enter a password, and run the installer. The site is live. Log in to the backend at yourweb admin with your password."
+  - q: "How do I configure the site title, homepage, and logo?"
+    a: "Open Settings and General. Change the title, description, slogan, and other site fields. Open the Advanced tab to set how many posts display on the homepage, for example six. Click the Logo tab and upload your logo, then save to apply the configuration. These settings control the site identity and the homepage layout."
+  - q: "How do I secure the admin account and activate plugins?"
+    a: "Open Users and create a new user insert a username and password, select the Administrator role, and save. Then delete the default admin user. You can also create new users for your team with the User role. Open Plugins and activate All Text-X Pro Plugins first, then Sitemap, RSS, Open Graph, and Twitter Card. With these active, the site generates a sitemap and an RSS feed automatically and outputs social sharing tags. Combined with the template SEO auto setup, the site is ready for search engines."
+  - q: "How do I create a blog post or a static page?"
+    a: "Open Categories and create the categories that group your articles, then save. Open Content the Pages tab shows all blog posts, the Static tab shows all static pages, and the Sticky tab shows sticky posts. Click New content, insert the title, and write the article. Open Options and General to insert the description and upload a cover image. Open Advanced to add tags. In the Type section, choose Default for a blog post or Static for a static page such as about, contact, or FAQ. Save to apply."
+  - q: "How is Text-X Pro different from Darkco, Creative Agency, Tailwind Blog, and Bludic Pro?"
+    a: "All five are Bludit flat-file CMS templates from the same lab, but they target different needs. Text-X Pro is the minimalist clean blog with a straightforward blog and pages structure at 55 dollars. Darkco is the dark modern blog at 55 dollars. Tailwind Blog is the minimalist Tailwind CSS blog with a Sticky post landing page builder at 65 dollars. Creative Agency is the creative agency and startup template with portfolio and landing sections at 55 dollars. Bludic Pro is the Ionic mobile web app UI with PWA support and hidden plugins at 65 dollars. Choose based on the design direction and the features you need."
+  - q: "Can I use Text-X Pro for client projects, and what is the license?"
+    a: "Yes. The license is a one-time purchase and you own 100 percent of the source, so you can use it on personal and client projects without recurring fees. The license does not permit reselling or redistributing the theme itself as a competing product. If you need a fully custom build, custom work is available through the Fiverr link in the theme listing."
+  - q: "Where can I see the demo and get support?"
+    a: "Demo videos are available at the YouTube links in the article. Download is at creativitaz.gumroad.com/l/text-x-pro. Detailed documentation is included in the source code files and the download area. For support, email creativebydre@gmail.com. Custom development is available through the Fiverr link in the theme listing."
 ---
 ### About Text-X Pro
 
@@ -112,134 +133,3 @@ For create static page , you can select your content type is static .
 For detail information about documentation , you can open the documentation files on download area.
 
 #### Thank You by using Text-X PRO [Clean Minimalist blog website cms]({{page.url}}) project
-
-## Frequently Asked Questions
-
-### What is Text-X Pro, and what problem does it solve?
-
-Text-X Pro is a premium Bludit template built for minimalist, clean blogs and multipurpose content sites. Bludit is a flat-file CMS: posts and pages are stored as text files, so there is no database to install or configure. The template ships with a clean minimalist design, blog and static page support, automatic SEO through plugins, and responsive output. Instead of setting up a CMS, a database, a theme, and SEO plugins from scratch, you upload the source, run the installer, and the site is live.
-
-### Do I need a database or coding skills to use Text-X Pro?
-
-No. Bludit is a flat-file CMS, so there is no database and no SQL to manage. Installation is upload and run, either on a local web server such as XAMPP or LAMPP, or on any hosting panel. Daily work happens in the Bludit admin panel at `/admin`: settings, users, plugins, categories, and content. You do not need to code to run the site.
-
-### How do I install Text-X Pro locally?
-
-Download XAMPP, LAMPP, or another web server and install it. Create a folder for the project, for example `C:/xampp/htdocs/project`, and extract all source files into it. Open `http://localhost/project`, select the installer language, enter a username and password, and run the installer. The site is live. To log in to the backend, open `localhost/project/admin` and enter your username and password.
-
-### How do I install Text-X Pro on hosting?
-
-Make sure you have hosting and a domain, then log in to your hosting panel and upload the source files into your project folder: main domain, subdomain, or subdirectory. Visit your website project to run the installation, select the language, enter a password, and run the installer. The site is live. Log in to the backend at `yourweb/admin` with your password.
-
-### How do I configure the site title, homepage, and logo?
-
-Open Settings → General. Change the title, description, slogan, and other site fields. Open the Advanced tab to set how many posts display on the homepage, for example six. Click the Logo tab and upload your logo, then save to apply the configuration. These settings control the site identity and the homepage layout.
-
-### How do I secure the admin account and activate plugins?
-
-Open Users and create a new user: insert a username and password, select the Administrator role, and save. Then delete the default admin user. You can also create new users for your team with the User role. Open Plugins and activate All Text-X Pro Plugins first, then Sitemap, RSS, Open Graph, and Twitter Card. With these active, the site generates a sitemap and an RSS feed automatically and outputs social sharing tags. Combined with the template's SEO auto setup, the site is ready for search engines.
-
-### How do I create a blog post or a static page?
-
-Open Categories and create the categories that group your articles, then save. Open Content: the Pages tab shows all blog posts, the Static tab shows all static pages, and the Sticky tab shows sticky posts. Click New content, insert the title, and write the article. Open Options → General to insert the description and upload a cover image. Open Advanced to add tags. In the Type section, choose Default for a blog post or Static for a static page such as about, contact, or FAQ. Save to apply.
-
-### How is Text-X Pro different from Darkco, Creative Agency, Tailwind Blog, and Bludic Pro?
-
-All five are Bludit flat-file CMS templates from the same lab, but they target different needs. Text-X Pro is the minimalist clean blog with a straightforward blog and pages structure at $55. Darkco is the dark modern blog at $55. Tailwind Blog is the minimalist Tailwind CSS blog with a Sticky post landing page builder at $65. Creative Agency is the creative agency and startup template with portfolio and landing sections at $55. Bludic Pro is the Ionic mobile web app UI with PWA support and hidden plugins at $65. Choose based on the design direction and the features you need.
-
-### Can I use Text-X Pro for client projects, and what is the license?
-
-Yes. The license is a one-time purchase and you own 100% of the source, so you can use it on personal and client projects without recurring fees. The license does not permit reselling or redistributing the theme itself as a competing product. If you need a fully custom build, custom work is available through the Fiverr link in the theme listing.
-
-### Where can I see the demo and get support?
-
-Demo videos are available at the YouTube links in the article. Download is at `creativitaz.gumroad.com/l/text-x-pro`. Detailed documentation is included in the source code files and the download area. For support, email creativebydre@gmail.com. Custom development is available through the Fiverr link in the theme listing.
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is Text-X Pro, and what problem does it solve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Text-X Pro is a premium Bludit template built for minimalist, clean blogs and multipurpose content sites. Bludit is a flat-file CMS: posts and pages are stored as text files, so there is no database to install or configure. The template ships with a clean minimalist design, blog and static page support, automatic SEO through plugins, and responsive output. Instead of setting up a CMS, a database, a theme, and SEO plugins from scratch, you upload the source, run the installer, and the site is live."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need a database or coding skills to use Text-X Pro?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Bludit is a flat-file CMS, so there is no database and no SQL to manage. Installation is upload and run, either on a local web server such as XAMPP or LAMPP, or on any hosting panel. Daily work happens in the Bludit admin panel at /admin: settings, users, plugins, categories, and content. You do not need to code to run the site."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I install Text-X Pro locally?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Download XAMPP, LAMPP, or another web server and install it. Create a folder for the project, for example C:/xampp/htdocs/project, and extract all source files into it. Open http://localhost/project, select the installer language, enter a username and password, and run the installer. The site is live. To log in to the backend, open localhost/project/admin and enter your username and password."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I install Text-X Pro on hosting?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Make sure you have hosting and a domain, then log in to your hosting panel and upload the source files into your project folder: main domain, subdomain, or subdirectory. Visit your website project to run the installation, select the language, enter a password, and run the installer. The site is live. Log in to the backend at yourweb/admin with your password."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I configure the site title, homepage, and logo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open Settings → General. Change the title, description, slogan, and other site fields. Open the Advanced tab to set how many posts display on the homepage, for example six. Click the Logo tab and upload your logo, then save to apply the configuration. These settings control the site identity and the homepage layout."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I secure the admin account and activate plugins?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open Users and create a new user: insert a username and password, select the Administrator role, and save. Then delete the default admin user. You can also create new users for your team with the User role. Open Plugins and activate All Text-X Pro Plugins first, then Sitemap, RSS, Open Graph, and Twitter Card. With these active, the site generates a sitemap and an RSS feed automatically and outputs social sharing tags. Combined with the template's SEO auto setup, the site is ready for search engines."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I create a blog post or a static page?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open Categories and create the categories that group your articles, then save. Open Content: the Pages tab shows all blog posts, the Static tab shows all static pages, and the Sticky tab shows sticky posts. Click New content, insert the title, and write the article. Open Options → General to insert the description and upload a cover image. Open Advanced to add tags. In the Type section, choose Default for a blog post or Static for a static page such as about, contact, or FAQ. Save to apply."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is Text-X Pro different from Darkco, Creative Agency, Tailwind Blog, and Bludic Pro?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "All five are Bludit flat-file CMS templates from the same lab, but they target different needs. Text-X Pro is the minimalist clean blog with a straightforward blog and pages structure at $55. Darkco is the dark modern blog at $55. Tailwind Blog is the minimalist Tailwind CSS blog with a Sticky post landing page builder at $65. Creative Agency is the creative agency and startup template with portfolio and landing sections at $55. Bludic Pro is the Ionic mobile web app UI with PWA support and hidden plugins at $65. Choose based on the design direction and the features you need."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I use Text-X Pro for client projects, and what is the license?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. The license is a one-time purchase and you own 100% of the source, so you can use it on personal and client projects without recurring fees. The license does not permit reselling or redistributing the theme itself as a competing product. If you need a fully custom build, custom work is available through the Fiverr link in the theme listing."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where can I see the demo and get support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Demo videos are available at the YouTube links in the article. Download is at creativitaz.gumroad.com/l/text-x-pro. Detailed documentation is included in the source code files and the download area. For support, email creativebydre@gmail.com. Custom development is available through the Fiverr link in the theme listing."
-      }
-    }
-  ]
-}
-</script>

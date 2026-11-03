@@ -28,6 +28,27 @@ tags:
     - premiumthemes
     - featured
     - featuredpremium
+faq:
+  - q: "What is Blacks, and what problem does it solve?"
+    a: "Blacks is a premium Astro multipurpose dark template built with Astro and Preact. It ships with a portfolio, image gallery, video gallery, blog with categories and tags, pagination, services, promotion widgets, a contact form, SEO auto, Picture optimization, and page transitions. Site configuration lives in src/data/config.json, homepage content in src/data/home.json, and each page type lives as Markdown files in src/pages/. Instead of assembling a multipurpose dark site from scratch, you install the project, edit JSON and Markdown, and the site is live."
+  - q: "Do I need to know Astro or Preact to use Blacks?"
+    a: "You need Node.js and a terminal to install and run the project, but daily content editing happens through JSON and Markdown. Site-wide settings live in src/data/config.json, the homepage in src/data/home.json, and each page in src/pages/ (about, blog, contact, gallery, services, content). If you can edit JSON and Markdown, you can customize most of it. Astro and Preact knowledge helps for layout changes."
+  - q: "How do I install and run Blacks locally?"
+    a: "Install Node.js from nodejs.org. Download the source code and extract it into your project folder. Open a terminal, run cd C:\Users\pcname\desktop\project (replace pcname and project with your own), then npm install and npm run dev. Open localhost:4321 in your browser."
+  - q: "How do I configure the site title, navigation, social, and contact?"
+    a: "Open src/data/config.json. Change url, title, description, favicon, and image. The navbar field is the navbar title, and the nav_list array holds each menu with nav and link. The social array holds each social entry with title and link. The contact block holds address, city, country, phone, and email. Save the file and the site updates. For the homepage, open src/data/home.json and edit with the same approach."
+  - q: "How do I add a blog post or a gallery item?"
+    a: "For a blog post, create a .md file in src/pages/blog/ (for example hello-world.md) with frontmatter: layout ../../design/blog/blogpost.astro, title, description, image, pubDate, tags, and categories. For an image gallery item, create a .md file in src/pages/gallery/image/ with layout ../../../design/gallery/imagepost.astro and the same frontmatter fields. For a video gallery item, create a .md file in src/pages/gallery/video/ with layout ../../../design/gallery/videopost.astro and add a video field containing only the YouTube video ID (for example B6RpLTSCz5o, not the full URL)."
+  - q: "What files should I never delete or rename?"
+    a: "Do not delete or rename the [...page].astro files. They power pagination and dynamic routing for the blog, image gallery, video gallery, and services sections. If you delete them, the listing pages break. You also need to keep the four promotion widgets in src/pages/content/ — the theme expects four, and missing entries leave empty slots on article pages."
+  - q: "How do I update about, contact, services, and gallery index pages?"
+    a: "For about, edit src/pages/about/index.md with layout ../../design/about.astro and the frontmatter title, description, image, and intro. For contact, edit src/pages/contact/index.md with layout ../../design/contact.astro. For the gallery index, edit src/pages/gallery/index.md with layout ../../design/gallery/start.astro and the fields image_icon, image_text, video_icon, and video_text. For services, create or edit .md files in src/pages/services/ with layout ../../design/services/servicespost.astro."
+  - q: "What are the promotion widgets, and how do I use them?"
+    a: "The promotion widgets display services or blog promotions inside article pages. Create four .md files in src/pages/content/, each with layout ../../design/servicespost.astro and the frontmatter title, link, description, image, and pubDate. The theme expects four, so create all four even if you leave some content minimal. Edit them when you want to promote a new service, blog post, or offer."
+  - q: "Is SEO handled automatically?"
+    a: "Yes. Blacks ships with auto SEO injection and Astro Picture optimization, with meta title, description, and image pulled from src/data/config.json and per-page frontmatter. The blog supports categories, tags, and pagination, which gives search engines clean indexable listing pages. The Astro static output plus page transitions keeps the site fast and search-ready."
+  - q: "How do I deploy Blacks, and what is the license?"
+    a: "Open astro.config.mjs and set site to your domain, keeping the preact() integration. Push the project to GitHub or GitLab, then register on Netlify, Vercel, or Cloudflare with your Git account, create a new project, connect your repository, select Astro as the framework, and click deploy. The license is a one-time purchase at 65 dollars, and you own 100 percent of the source. You can use it on personal and client projects. The license does not permit reselling or redistributing the template itself. Live demo astro-blacks-themes.pages.dev. Download creativitaz.gumroad.com/l/astrojs-blacks. For support, email creativebydre@gmail.com, and custom headless CMS integration is available through the Fiverr link in the article."
 ---
 
 ### Blacks Astro JS Photography ART Themes
@@ -390,134 +411,3 @@ change `yourdomain.com` with your domain name.
 + Finish !! your website is live !!
 
 If you want , you can use our services for work with headless cms and setup your website project,until your website is live !!
-
-## Frequently Asked Questions
-
-### What is Blacks, and what problem does it solve?
-
-Blacks is a premium Astro multipurpose dark template built with Astro and Preact. It ships with a portfolio, image gallery, video gallery, blog with categories and tags, pagination, services, promotion widgets, a contact form, SEO auto, Picture optimization, and page transitions. Site configuration lives in `src/data/config.json`, homepage content in `src/data/home.json`, and each page type lives as Markdown files in `src/pages/`. Instead of assembling a multipurpose dark site from scratch, you install the project, edit JSON and Markdown, and the site is live.
-
-### Do I need to know Astro or Preact to use Blacks?
-
-You need Node.js and a terminal to install and run the project, but daily content editing happens through JSON and Markdown. Site-wide settings live in `src/data/config.json`, the homepage in `src/data/home.json`, and each page in `src/pages/` (about, blog, contact, gallery, services, content). If you can edit JSON and Markdown, you can customize most of it. Astro and Preact knowledge helps for layout changes.
-
-### How do I install and run Blacks locally?
-
-Install Node.js from nodejs.org. Download the source code and extract it into your project folder. Open a terminal, run `cd C:\Users\pcname\desktop\project` (replace `pcname` and `project` with your own), then `npm install` and `npm run dev`. Open `localhost:4321` in your browser.
-
-### How do I configure the site title, navigation, social, and contact?
-
-Open `src/data/config.json`. Change `url`, `title`, `description`, `favicon`, and `image`. The `navbar` field is the navbar title, and the `nav_list` array holds each menu with `nav` and `link`. The `social` array holds each social entry with `title` and `link`. The `contact` block holds `address`, `city`, `country`, `phone`, and `email`. Save the file and the site updates. For the homepage, open `src/data/home.json` and edit with the same approach.
-
-### How do I add a blog post or a gallery item?
-
-For a blog post, create a `.md` file in `src/pages/blog/` (for example `hello-world.md`) with frontmatter: `layout: ../../design/blog/blogpost.astro`, `title`, `description`, `image`, `pubDate`, `tags`, and `categories`. For an image gallery item, create a `.md` file in `src/pages/gallery/image/` with `layout: ../../../design/gallery/imagepost.astro` and the same frontmatter fields. For a video gallery item, create a `.md` file in `src/pages/gallery/video/` with `layout: ../../../design/gallery/videopost.astro` and add a `video` field containing only the YouTube video ID (for example `B6RpLTSCz5o`, not the full URL).
-
-### What files should I never delete or rename?
-
-Do not delete or rename the `[...page].astro` files. They power pagination and dynamic routing for the blog, image gallery, video gallery, and services sections. If you delete them, the listing pages break. You also need to keep the four promotion widgets in `src/pages/content/` — the theme expects four, and missing entries leave empty slots on article pages.
-
-### How do I update about, contact, services, and gallery index pages?
-
-For about, edit `src/pages/about/index.md` with `layout: ../../design/about.astro` and the frontmatter `title`, `description`, `image`, and `intro`. For contact, edit `src/pages/contact/index.md` with `layout: ../../design/contact.astro`. For the gallery index, edit `src/pages/gallery/index.md` with `layout: ../../design/gallery/start.astro` and the fields `image_icon`, `image_text`, `video_icon`, and `video_text`. For services, create or edit `.md` files in `src/pages/services/` with `layout: ../../design/services/servicespost.astro`.
-
-### What are the promotion widgets, and how do I use them?
-
-The promotion widgets display services or blog promotions inside article pages. Create four `.md` files in `src/pages/content/`, each with `layout: ../../design/servicespost.astro` and the frontmatter `title`, `link`, `description`, `image`, and `pubDate`. The theme expects four, so create all four even if you leave some content minimal. Edit them when you want to promote a new service, blog post, or offer.
-
-### Is SEO handled automatically?
-
-Yes. Blacks ships with auto SEO injection and Astro Picture optimization, with meta title, description, and image pulled from `src/data/config.json` and per-page frontmatter. The blog supports categories, tags, and pagination, which gives search engines clean indexable listing pages. The Astro static output plus page transitions keeps the site fast and search-ready.
-
-### How do I deploy Blacks, and what is the license?
-
-Open `astro.config.mjs` and set `site` to your domain, keeping the `preact()` integration. Push the project to GitHub or GitLab, then register on Netlify, Vercel, or Cloudflare with your Git account, create a new project, connect your repository, select Astro as the framework, and click deploy. The license is a one-time purchase at $65, and you own 100% of the source. You can use it on personal and client projects. The license does not permit reselling or redistributing the template itself. Live demo: `astro-blacks-themes.pages.dev`. Download: `creativitaz.gumroad.com/l/astrojs-blacks`. For support, email creativebydre@gmail.com, and custom headless CMS integration is available through the Fiverr link in the article.
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is Blacks, and what problem does it solve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Blacks is a premium Astro multipurpose dark template built with Astro and Preact. It ships with a portfolio, image gallery, video gallery, blog with categories and tags, pagination, services, promotion widgets, a contact form, SEO auto, Picture optimization, and page transitions. Site configuration lives in src/data/config.json, homepage content in src/data/home.json, and each page type lives as Markdown files in src/pages/. Instead of assembling a multipurpose dark site from scratch, you install the project, edit JSON and Markdown, and the site is live."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to know Astro or Preact to use Blacks?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You need Node.js and a terminal to install and run the project, but daily content editing happens through JSON and Markdown. Site-wide settings live in src/data/config.json, the homepage in src/data/home.json, and each page in src/pages/ (about, blog, contact, gallery, services, content). If you can edit JSON and Markdown, you can customize most of it. Astro and Preact knowledge helps for layout changes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I install and run Blacks locally?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Install Node.js from nodejs.org. Download the source code and extract it into your project folder. Open a terminal, run cd C:\\Users\\pcname\\desktop\\project (replace pcname and project with your own), then npm install and npm run dev. Open localhost:4321 in your browser."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I configure the site title, navigation, social, and contact?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open src/data/config.json. Change url, title, description, favicon, and image. The navbar field is the navbar title, and the nav_list array holds each menu with nav and link. The social array holds each social entry with title and link. The contact block holds address, city, country, phone, and email. Save the file and the site updates. For the homepage, open src/data/home.json and edit with the same approach."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I add a blog post or a gallery item?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For a blog post, create a .md file in src/pages/blog/ (for example hello-world.md) with frontmatter: layout: ../../design/blog/blogpost.astro, title, description, image, pubDate, tags, and categories. For an image gallery item, create a .md file in src/pages/gallery/image/ with layout: ../../../design/gallery/imagepost.astro and the same frontmatter fields. For a video gallery item, create a .md file in src/pages/gallery/video/ with layout: ../../../design/gallery/videopost.astro and add a video field containing only the YouTube video ID (for example B6RpLTSCz5o, not the full URL)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What files should I never delete or rename?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Do not delete or rename the [...page].astro files. They power pagination and dynamic routing for the blog, image gallery, video gallery, and services sections. If you delete them, the listing pages break. You also need to keep the four promotion widgets in src/pages/content/ — the theme expects four, and missing entries leave empty slots on article pages."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I update about, contact, services, and gallery index pages?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For about, edit src/pages/about/index.md with layout: ../../design/about.astro and the frontmatter title, description, image, and intro. For contact, edit src/pages/contact/index.md with layout: ../../design/contact.astro. For the gallery index, edit src/pages/gallery/index.md with layout: ../../design/gallery/start.astro and the fields image_icon, image_text, video_icon, and video_text. For services, create or edit .md files in src/pages/services/ with layout: ../../design/services/servicespost.astro."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the promotion widgets, and how do I use them?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The promotion widgets display services or blog promotions inside article pages. Create four .md files in src/pages/content/, each with layout: ../../design/servicespost.astro and the frontmatter title, link, description, image, and pubDate. The theme expects four, so create all four even if you leave some content minimal. Edit them when you want to promote a new service, blog post, or offer."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is SEO handled automatically?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Blacks ships with auto SEO injection and Astro Picture optimization, with meta title, description, and image pulled from src/data/config.json and per-page frontmatter. The blog supports categories, tags, and pagination, which gives search engines clean indexable listing pages. The Astro static output plus page transitions keeps the site fast and search-ready."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I deploy Blacks, and what is the license?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open astro.config.mjs and set site to your domain, keeping the preact() integration. Push the project to GitHub or GitLab, then register on Netlify, Vercel, or Cloudflare with your Git account, create a new project, connect your repository, select Astro as the framework, and click deploy. The license is a one-time purchase at $65, and you own 100% of the source. You can use it on personal and client projects. The license does not permit reselling or redistributing the template itself. Live demo: astro-blacks-themes.pages.dev. Download: creativitaz.gumroad.com/l/astrojs-blacks. For support, email creativebydre@gmail.com, and custom headless CMS integration is available through the Fiverr link in the article."
-      }
-    }
-  ]
-}
-</script>

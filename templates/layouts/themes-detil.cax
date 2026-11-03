@@ -54,7 +54,25 @@ code{background:#000;color:#fff;padding:2px 6px;border-radius:4px}
 
 <div class="tabs mt-20" id="tabs"><button class="active" data-tab="f">Features</button><button data-tab="s">Share</button><button data-tab="l">License</button></div>
 
-<div class="panel active" data-panel="f">{% if toc %}<div class="p-3"><div class="card p-3"><h2>Table Of Content</h2>{{toc}}</div></div>{% endif %}<h3>{{ title }}</h3><div class="mt-16" style="word-break:break-word">{{ content }}</div></div>
+<div class="panel active" data-panel="f">{% if toc %}<div class="p-3"><div class="card p-3"><h2>Table Of Content</h2>{{toc}}</div></div>{% endif %}<h3>{{ title }}</h3><div class="mt-16" style="word-break:break-word">{{ content }}</div>
+{% if is_premium %}
+<div itemscope itemtype="https://schema.org/FAQPage">
+  <hr/>
+  <h3>Frequently Asked Questions<br><em>What buyers ask about {{ title }}</em></h3>
+  
+  {% for faqs in faq %}
+  <hr/>
+  <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h4 itemprop="name">{{ faqs.q }}</h4>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">{{ faqs.a }}</p>
+    </div>
+  </div>
+  {% endfor %}
+
+</div>
+{% endif %}
+</div>
 
 <div class="panel" data-panel="s">
 <p>URL: {{hc.url}}{{url}}</p><input type="text" id="copyUrl" value="{{hc.url}}{{url}}" readonly class="form-control" style="padding:12px;background:#111;color:#fff;border:1px solid #555;border-radius:8px"><button onclick="copyUrl()" class="btn btn-accent w-full mt-12" style="color:#fff;width:100%;padding:12px;border-radius:8px">Copy URL</button>

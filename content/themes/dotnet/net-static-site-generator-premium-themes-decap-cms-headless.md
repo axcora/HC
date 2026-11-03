@@ -31,6 +31,27 @@ tags:
   - premium themes
   - premiumthemes
 date: 2026-10-21
+faq:
+  - q: "What is Dax Pro, and how is it different from Blazor WASM?"
+    a: "Dax Pro is a premium .NET static site generator theme built on the open-source DAX engine. It produces pure HTML at build time no WASM runtime, no hydration, no client-side .NET. Blazor WASM is excellent for interactive applications, but for content sites its 512KB runtime, 2+ second boot time, and hydration cost push Lighthouse scores into the 70 to 85 range. Dax Pro ships Lighthouse 100 out of the box, builds 49 pages in 0.04 seconds, and reaches first paint in 50 milliseconds. Use Dax Pro for content sites; use Blazor for dashboards."
+  - q: "Do I need to know C# or .NET to use Dax Pro?"
+    a: "You need the .NET 9 SDK installed to build the site, but day-to-day content editing happens through Decap CMS in the browser. After purchase, download the ZIP, extract it to a folder without spaces in the path, then run dotnet run -- build and dotnet run -- start. The site runs at http localhost 8080. Content is Markdown and YAML, so editing copy, blog posts, services, and pages does not require touching the C# engine."
+  - q: "What is included in the package?"
+    a: "Eight production-ready layouts (Home, About, Services, Service Detail, Blog, Blog Detail, Contact, Docs), 30+ pre-built partials (hero, trust, solutions, performance, showcase, pricing, insights, contact form, navigation, footer, SEO), Decap CMS pre-configured with 8 collections (Settings, Navbar, Footer, Homepage, Posts, Services, Pages, Contact), deployment configs for Netlify, Vercel, and Cloudflare, automatic SEO generation, WCAG 2.1 AA accessibility, Lighthouse 100, lifetime updates, and a commercial license for unlimited projects and clients."
+  - q: "How does Decap CMS work in Dax Pro?"
+    a: "Decap CMS is pre-configured at admin. Editors log in with Netlify Identity credentials, no GitHub account required. Every content change commits to Git, triggers a rebuild, and deploys to the edge. To enable it turn on Netlify Identity with Invite-only registration, enable Git Gateway with a GitHub personal access token (repo and workflow scopes), invite yourself and set a password, then remove local_backend true from public/admin/config.yml, commit, push, and log in at admin. The sidebar shows the 8 collections ready to edit."
+  - q: "Is SEO handled automatically?"
+    a: "Yes. Every build generates sitemap.xml, robots.txt, an RSS feed, Open Graph meta, Twitter Cards, and JSON-LD structured data. Combined with pure semantic HTML5, a single style.css, and Lighthouse 100 in Performance, Accessibility, Best Practices, and SEO, the theme is built for search-ready content sites without manual meta wiring per page."
+  - q: "How do I deploy Dax Pro?"
+    a: "Netlify is recommended. Push the project to GitHub, connect the repository to Netlify, and Netlify builds automatically on every push. The first deploy goes live in under five minutes. Vercel builds from GitHub using the included vercel.json. Cloudflare Pages requires a build.sh script that installs .NET 9 and runs the build. Vercel and Cloudflare do not support Decap CMS natively, so for production CMS editing, use the Netlify admin subdomain strategy. Custom domains connect in the host dashboard, with automatic HTTPS via Let's Encrypt."
+  - q: "How do I update Dax Pro when a new version is released?"
+    a: "Lifetime updates are included. Back up the project first with cp -r dax-pro dax-pro-backup-date or a Git tag. Download the new ZIP from your Gumroad library, extract it to a separate folder without overwriting your project, and compare with diff -rq dax-pro dax-pro-backup. Copy changes one at a time, test locally with dotnet run -- build and dotnet run -- start, then push to GitHub. If tests fail, roll back from your backup or Git tag."
+  - q: "How does the content structure work?"
+    a: "Site-wide configuration lives in _data/ across three files metadata.yaml for site identity and SEO defaults, nav.yaml for brand wordmark and navigation, and footer.yaml for footer columns, compatibility badges, and legal links. Every page, post, service, and tag page is a Markdown file in content/ with YAML frontmatter at the top and a Markdown body below. Static assets go in public/ and are copied verbatim to site/ on every build. Decap CMS uploads go to public/images/ automatically."
+  - q: "What is the license, and can I use it for client projects?"
+    a: "Commercial license unlimited projects, unlimited clients. You can build as many sites as you want for yourself and your clients. The license does not permit reselling or redistributing the theme itself. For custom .NET architecture, migration from WordPress or another CMS, or AI integration, hire the Dax Pro team through the Fiverr link in the article."
+  - q: "Where can I see the demo and get support?"
+    a: "The live demo is at daxpro.axcora.com. The open-source DAX engine is available at dax.axcora.com and on GitHub if you want to try the engine before buying. Support covers installation, build issues, Decap CMS configuration, and deployment questions, with a four-hour response target by email. Custom .NET work is available through the Fiverr link in the article."
 ---
 
 ### Introduction
@@ -300,134 +321,3 @@ Free DAX engine: https://dax.axcora.com
 Try before you buy: the open-source DAX engine is available at https://github.com/mesinkasir/dax
 
 The free engine includes the C# build system, template engine, collection system, and automatic SEO generation. Dax Pro adds the premium theme layer, Decap CMS, deployment configs, and full documentation.
-
-## Frequently Asked Questions
-
-### What is Dax Pro, and how is it different from Blazor WASM?
-
-Dax Pro is a premium .NET static site generator theme built on the open-source DAX engine. It produces pure HTML at build time: no WASM runtime, no hydration, no client-side .NET. Blazor WASM is excellent for interactive applications, but for content sites its 512KB runtime, 2+ second boot time, and hydration cost push Lighthouse scores into the 70–85 range. Dax Pro ships Lighthouse 100 out of the box, builds 49 pages in 0.04 seconds, and reaches first paint in 50 milliseconds. Use Dax Pro for content sites; use Blazor for dashboards.
-
-### Do I need to know C# or .NET to use Dax Pro?
-
-You need the .NET 9 SDK installed to build the site, but day-to-day content editing happens through Decap CMS in the browser. After purchase, download the ZIP, extract it to a folder without spaces in the path, then run `dotnet run -- build` and `dotnet run -- start`. The site runs at `http://localhost:8080/`. Content is Markdown and YAML, so editing copy, blog posts, services, and pages does not require touching the C# engine.
-
-### What is included in the package?
-
-Eight production-ready layouts (Home, About, Services, Service Detail, Blog, Blog Detail, Contact, Docs), 30+ pre-built partials (hero, trust, solutions, performance, showcase, pricing, insights, contact form, navigation, footer, SEO), Decap CMS pre-configured with 8 collections (Settings, Navbar, Footer, Homepage, Posts, Services, Pages, Contact), deployment configs for Netlify, Vercel, and Cloudflare, automatic SEO generation, WCAG 2.1 AA accessibility, Lighthouse 100, lifetime updates, and a commercial license for unlimited projects and clients.
-
-### How does Decap CMS work in Dax Pro?
-
-Decap CMS is pre-configured at `/admin/`. Editors log in with Netlify Identity credentials, no GitHub account required. Every content change commits to Git, triggers a rebuild, and deploys to the edge. To enable it: turn on Netlify Identity with Invite-only registration, enable Git Gateway with a GitHub personal access token (repo and workflow scopes), invite yourself and set a password, then remove `local_backend: true` from `public/admin/config.yml`, commit, push, and log in at `/admin/`. The sidebar shows the 8 collections ready to edit.
-
-### Is SEO handled automatically?
-
-Yes. Every build generates `sitemap.xml`, `robots.txt`, an RSS feed, Open Graph meta, Twitter Cards, and JSON-LD structured data. Combined with pure semantic HTML5, a single `style.css`, and Lighthouse 100 in Performance, Accessibility, Best Practices, and SEO, the theme is built for search-ready content sites without manual meta wiring per page.
-
-### How do I deploy Dax Pro?
-
-Netlify is recommended. Push the project to GitHub, connect the repository to Netlify, and Netlify builds automatically on every push. The first deploy goes live in under five minutes. Vercel builds from GitHub using the included `vercel.json`. Cloudflare Pages requires a `build.sh` script that installs .NET 9 and runs the build. Vercel and Cloudflare do not support Decap CMS natively, so for production CMS editing, use the Netlify admin subdomain strategy. Custom domains connect in the host dashboard, with automatic HTTPS via Let's Encrypt.
-
-### How do I update Dax Pro when a new version is released?
-
-Lifetime updates are included. Back up the project first with `cp -r dax-pro dax-pro-backup-$(date +%Y%m%d)` or a Git tag. Download the new ZIP from your Gumroad library, extract it to a separate folder without overwriting your project, and compare with `diff -rq dax-pro dax-pro-backup-*`. Copy changes one at a time, test locally with `dotnet run -- build` and `dotnet run -- start`, then push to GitHub. If tests fail, roll back from your backup or Git tag.
-
-### How does the content structure work?
-
-Site-wide configuration lives in `_data/` across three files: `metadata.yaml` for site identity and SEO defaults, `nav.yaml` for brand wordmark and navigation, and `footer.yaml` for footer columns, compatibility badges, and legal links. Every page, post, service, and tag page is a Markdown file in `content/` with YAML frontmatter at the top and a Markdown body below. Static assets go in `public/` and are copied verbatim to `site/` on every build. Decap CMS uploads go to `public/images/` automatically.
-
-### What is the license, and can I use it for client projects?
-
-Commercial license: unlimited projects, unlimited clients. You can build as many sites as you want for yourself and your clients. The license does not permit reselling or redistributing the theme itself. For custom .NET architecture, migration from WordPress or another CMS, or AI integration, hire the Dax Pro team through the Fiverr link in the article.
-
-### Where can I see the demo and get support?
-
-The live demo is at `daxpro.axcora.com`. The open-source DAX engine is available at `dax.axcora.com` and on GitHub at `github.com/mesinsakir/dax` if you want to try the engine before buying. Support covers installation, build issues, Decap CMS configuration, and deployment questions, with a four-hour response target by email. Custom .NET work is available through the Fiverr link in the article.
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is Dax Pro, and how is it different from Blazor WASM?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dax Pro is a premium .NET static site generator theme built on the open-source DAX engine. It produces pure HTML at build time: no WASM runtime, no hydration, no client-side .NET. Blazor WASM is excellent for interactive applications, but for content sites its 512KB runtime, 2+ second boot time, and hydration cost push Lighthouse scores into the 70–85 range. Dax Pro ships Lighthouse 100 out of the box, builds 49 pages in 0.04 seconds, and reaches first paint in 50 milliseconds. Use Dax Pro for content sites; use Blazor for dashboards."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to know C# or .NET to use Dax Pro?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You need the .NET 9 SDK installed to build the site, but day-to-day content editing happens through Decap CMS in the browser. After purchase, download the ZIP, extract it to a folder without spaces in the path, then run dotnet run -- build and dotnet run -- start. The site runs at http://localhost:8080/. Content is Markdown and YAML, so editing copy, blog posts, services, and pages does not require touching the C# engine."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is included in the package?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Eight production-ready layouts (Home, About, Services, Service Detail, Blog, Blog Detail, Contact, Docs), 30+ pre-built partials (hero, trust, solutions, performance, showcase, pricing, insights, contact form, navigation, footer, SEO), Decap CMS pre-configured with 8 collections (Settings, Navbar, Footer, Homepage, Posts, Services, Pages, Contact), deployment configs for Netlify, Vercel, and Cloudflare, automatic SEO generation, WCAG 2.1 AA accessibility, Lighthouse 100, lifetime updates, and a commercial license for unlimited projects and clients."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does Decap CMS work in Dax Pro?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Decap CMS is pre-configured at /admin/. Editors log in with Netlify Identity credentials, no GitHub account required. Every content change commits to Git, triggers a rebuild, and deploys to the edge. To enable it: turn on Netlify Identity with Invite-only registration, enable Git Gateway with a GitHub personal access token (repo and workflow scopes), invite yourself and set a password, then remove local_backend: true from public/admin/config.yml, commit, push, and log in at /admin/. The sidebar shows the 8 collections ready to edit."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is SEO handled automatically?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Every build generates sitemap.xml, robots.txt, an RSS feed, Open Graph meta, Twitter Cards, and JSON-LD structured data. Combined with pure semantic HTML5, a single style.css, and Lighthouse 100 in Performance, Accessibility, Best Practices, and SEO, the theme is built for search-ready content sites without manual meta wiring per page."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I deploy Dax Pro?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Netlify is recommended. Push the project to GitHub, connect the repository to Netlify, and Netlify builds automatically on every push. The first deploy goes live in under five minutes. Vercel builds from GitHub using the included vercel.json. Cloudflare Pages requires a build.sh script that installs .NET 9 and runs the build. Vercel and Cloudflare do not support Decap CMS natively, so for production CMS editing, use the Netlify admin subdomain strategy. Custom domains connect in the host dashboard, with automatic HTTPS via Let's Encrypt."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I update Dax Pro when a new version is released?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Lifetime updates are included. Back up the project first with cp -r dax-pro dax-pro-backup-$(date +%Y%m%d) or a Git tag. Download the new ZIP from your Gumroad library, extract it to a separate folder without overwriting your project, and compare with diff -rq dax-pro dax-pro-backup-*. Copy changes one at a time, test locally with dotnet run -- build and dotnet run -- start, then push to GitHub. If tests fail, roll back from your backup or Git tag."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does the content structure work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Site-wide configuration lives in _data/ across three files: metadata.yaml for site identity and SEO defaults, nav.yaml for brand wordmark and navigation, and footer.yaml for footer columns, compatibility badges, and legal links. Every page, post, service, and tag page is a Markdown file in content/ with YAML frontmatter at the top and a Markdown body below. Static assets go in public/ and are copied verbatim to site/ on every build. Decap CMS uploads go to public/images/ automatically."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the license, and can I use it for client projects?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Commercial license: unlimited projects, unlimited clients. You can build as many sites as you want for yourself and your clients. The license does not permit reselling or redistributing the theme itself. For custom .NET architecture, migration from WordPress or another CMS, or AI integration, hire the Dax Pro team through the Fiverr link in the article."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where can I see the demo and get support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The live demo is at daxpro.axcora.com. The open-source DAX engine is available at dax.axcora.com and on GitHub if you want to try the engine before buying. Support covers installation, build issues, Decap CMS configuration, and deployment questions, with a four-hour response target by email. Custom .NET work is available through the Fiverr link in the article."
-      }
-    }
-  ]
-}
-</script>

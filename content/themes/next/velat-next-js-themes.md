@@ -52,6 +52,27 @@ tags:
   - paidthemes
   - featured
   - featuredthemes
+faq:
+  - q: "What is Velat, and how is it different from a free Next.js template?"
+    a: "Velat is a premium Next.js 16 theme built for AI startups, SaaS products, and developer tool companies. Free templates use generic layouts, default Tailwind colors, and placeholder content, and they break when you customize them. Velat ships with editorial typography, a restrained color palette, deliberate spacing, and a design-token system change colors, fonts, and spacing in one place and everything updates. The codebase is full TypeScript with no any and no @ts-ignore, Server Components by default, and complete documentation."
+  - q: "Do I need to know Next.js to use Velat?"
+    a: "Basic React knowledge helps, but the theme is documented and structured clearly. If you can edit JSON and Markdown, you can customize most of it. Content lives in data/configuration.json, data/about.json, data/blog/, and data/products/, so changing copy, blog posts, or products does not mean editing components. Full documentation is available at velat-nextjs-themes.vercel.app/docs."
+  - q: "What is included in the package?"
+    a: "You receive the full source code (ZIP), a README with setup instructions, a data/ folder with dummy content for blog, products, and configuration, a public/images/ folder with placeholder images, lifetime access to updates, and email support. The theme ships 28 pre-rendered static pages across home, about, products, product detail, blog, blog post, contact, and multi-page docs."
+  - q: "Can I use Velat for client projects?"
+    a: "Yes. A single purchase covers unlimited personal projects and unlimited client projects. Agencies and freelancers are welcome to build and sell websites using Velat as a foundation. The only restriction is reselling, redistributing, or sublicensing the theme itself, or republishing it as a theme, template, or starter kit."
+  - q: "Is there a database or backend?"
+    a: "No. Velat is a landing page theme no database, no backend, no authentication. Content is Markdown and JSON, forms use Formspree via react-hook-form and zod, and the theme deploys as a static site. If you need server logic later, the clean typed codebase can be extended."
+  - q: "Can I add authentication or payments?"
+    a: "Yes. The codebase is clean and typed, so you can extend it with NextAuth, Stripe, or any other service. Velat does not ship with auth or payments out of the box; it gives you a production-ready foundation to add them."
+  - q: "How does SEO work in Velat?"
+    a: "Metadata and Open Graph tags are set on every page, robots.txt and sitemap.xml are generated automatically, and Google Search Console verification is built in. The theme scores 90+ on Lighthouse performance. You fill in page data in the JSON and Markdown files, and the SEO output follows."
+  - q: "Where can I deploy Velat?"
+    a: "Zero-configuration deployment to Vercel is the recommended path. The documentation also covers Netlify, Cloudflare, Firebase, AWS, cPanel, and VPS. The build output is static, so any static host works."
+  - q: "Do you offer refunds?"
+    a: "Due to the nature of digital products, all sales are final. Test the live demo at velat-nextjs-themes.vercel.app before purchasing. Every page is available to inspect, including dark mode and the docs."
+  - q: "How do I get updates and support?"
+    a: "Updates are pushed to the same Gumroad product, and you receive a notification when a new version is available. For support, check the troubleshooting docs page first, read the full error message (Next.js errors point to the exact file and line), search the error text, and check the official Next.js docs. If you still need help, email creativebydre@gmail.com. Response time is under 24 hours on business days."
 ---
 
 ## Velat — Premium Next.js 16 Theme for AI Startups and SaaS Products
@@ -251,134 +272,3 @@ Response time: under 24 hours on business days.
 Built with Next.js 16, Tailwind CSS, and Turbopack.
 
 **Buy once. Use forever.**
-
-## Frequently Asked Questions
-
-### What is Velat, and how is it different from a free Next.js template?
-
-Velat is a premium Next.js 16 theme built for AI startups, SaaS products, and developer tool companies. Free templates use generic layouts, default Tailwind colors, and placeholder content, and they break when you customize them. Velat ships with editorial typography, a restrained color palette, deliberate spacing, and a design-token system: change colors, fonts, and spacing in one place and everything updates. The codebase is full TypeScript with no `any` and no `@ts-ignore`, Server Components by default, and complete documentation.
-
-### Do I need to know Next.js to use Velat?
-
-Basic React knowledge helps, but the theme is documented and structured clearly. If you can edit JSON and Markdown, you can customize most of it. Content lives in `data/configuration.json`, `data/about.json`, `data/blog/`, and `data/products/`, so changing copy, blog posts, or products does not mean editing components. Full documentation is available at `velat-nextjs-themes.vercel.app/docs`.
-
-### What is included in the package?
-
-You receive the full source code (ZIP), a README with setup instructions, a `data/` folder with dummy content for blog, products, and configuration, a `public/images/` folder with placeholder images, lifetime access to updates, and email support. The theme ships 28 pre-rendered static pages across home, about, products, product detail, blog, blog post, contact, and multi-page docs.
-
-### Can I use Velat for client projects?
-
-Yes. A single purchase covers unlimited personal projects and unlimited client projects. Agencies and freelancers are welcome to build and sell websites using Velat as a foundation. The only restriction is reselling, redistributing, or sublicensing the theme itself, or republishing it as a theme, template, or starter kit.
-
-### Is there a database or backend?
-
-No. Velat is a landing page theme: no database, no backend, no authentication. Content is Markdown and JSON, forms use Formspree via react-hook-form and zod, and the theme deploys as a static site. If you need server logic later, the clean typed codebase can be extended.
-
-### Can I add authentication or payments?
-
-Yes. The codebase is clean and typed, so you can extend it with NextAuth, Stripe, or any other service. Velat does not ship with auth or payments out of the box; it gives you a production-ready foundation to add them.
-
-### How does SEO work in Velat?
-
-Metadata and Open Graph tags are set on every page, `robots.txt` and `sitemap.xml` are generated automatically, and Google Search Console verification is built in. The theme scores 90+ on Lighthouse performance. You fill in page data in the JSON and Markdown files, and the SEO output follows.
-
-### Where can I deploy Velat?
-
-Zero-configuration deployment to Vercel is the recommended path. The documentation also covers Netlify, Cloudflare, Firebase, AWS, cPanel, and VPS. The build output is static, so any static host works.
-
-### Do you offer refunds?
-
-Due to the nature of digital products, all sales are final. Test the live demo at `velat-nextjs-themes.vercel.app` before purchasing. Every page is available to inspect, including dark mode and the docs.
-
-### How do I get updates and support?
-
-Updates are pushed to the same Gumroad product, and you receive a notification when a new version is available. For support, check the troubleshooting docs page first, read the full error message (Next.js errors point to the exact file and line), search the error text, and check the official Next.js docs. If you still need help, email creativebydre@gmail.com. Response time is under 24 hours on business days.
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is Velat, and how is it different from a free Next.js template?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Velat is a premium Next.js 16 theme built for AI startups, SaaS products, and developer tool companies. Free templates use generic layouts, default Tailwind colors, and placeholder content, and they break when you customize them. Velat ships with editorial typography, a restrained color palette, deliberate spacing, and a design-token system: change colors, fonts, and spacing in one place and everything updates. The codebase is full TypeScript with no any and no @ts-ignore, Server Components by default, and complete documentation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to know Next.js to use Velat?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Basic React knowledge helps, but the theme is documented and structured clearly. If you can edit JSON and Markdown, you can customize most of it. Content lives in data/configuration.json, data/about.json, data/blog/, and data/products/, so changing copy, blog posts, or products does not mean editing components. Full documentation is available at velat-nextjs-themes.vercel.app/docs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is included in the package?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You receive the full source code (ZIP), a README with setup instructions, a data/ folder with dummy content for blog, products, and configuration, a public/images/ folder with placeholder images, lifetime access to updates, and email support. The theme ships 28 pre-rendered static pages across home, about, products, product detail, blog, blog post, contact, and multi-page docs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I use Velat for client projects?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. A single purchase covers unlimited personal projects and unlimited client projects. Agencies and freelancers are welcome to build and sell websites using Velat as a foundation. The only restriction is reselling, redistributing, or sublicensing the theme itself, or republishing it as a theme, template, or starter kit."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is there a database or backend?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Velat is a landing page theme: no database, no backend, no authentication. Content is Markdown and JSON, forms use Formspree via react-hook-form and zod, and the theme deploys as a static site. If you need server logic later, the clean typed codebase can be extended."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I add authentication or payments?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. The codebase is clean and typed, so you can extend it with NextAuth, Stripe, or any other service. Velat does not ship with auth or payments out of the box; it gives you a production-ready foundation to add them."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does SEO work in Velat?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Metadata and Open Graph tags are set on every page, robots.txt and sitemap.xml are generated automatically, and Google Search Console verification is built in. The theme scores 90+ on Lighthouse performance. You fill in page data in the JSON and Markdown files, and the SEO output follows."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where can I deploy Velat?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Zero-configuration deployment to Vercel is the recommended path. The documentation also covers Netlify, Cloudflare, Firebase, AWS, cPanel, and VPS. The build output is static, so any static host works."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you offer refunds?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Due to the nature of digital products, all sales are final. Test the live demo at velat-nextjs-themes.vercel.app before purchasing. Every page is available to inspect, including dark mode and the docs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I get updates and support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Updates are pushed to the same Gumroad product, and you receive a notification when a new version is available. For support, check the troubleshooting docs page first, read the full error message (Next.js errors point to the exact file and line), search the error text, and check the official Next.js docs. If you still need help, email creativebydre@gmail.com. Response time is under 24 hours on business days."
-      }
-    }
-  ]
-}
-</script>

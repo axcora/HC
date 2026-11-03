@@ -1,0 +1,55 @@
+
+============================================================
+BROKEN INTERNAL LINKS
+============================================================
+BROKEN: /about
+    in: C:\Users\Creativitas\project\project_ku\CAX\HC\site\themes\astro\astro-documentation-starlight-docuna\index.html
+
+============================================================
+BROKEN IMAGES
+============================================================
+BROKEN IMG: /img/mockup/pycora-pro-bento.webp
+    in: C:\Users\Creativitas\project\project_ku\CAX\HC\site\themes\python\pycora-pro-new-python-ssg-seo-fast-jamstack\index.html
+BROKEN IMG: /img/mockup/pycora-pro-hero.webp
+    in: C:\Users\Creativitas\project\project_ku\CAX\HC\site\themes\python\pycora-pro-new-python-ssg-seo-fast-jamstack\index.html
+BROKEN IMG: /img/mockup/pycora-pro-cms.webp
+    in: C:\Users\Creativitas\project\project_ku\CAX\HC\site\themes\python\pycora-pro-new-python-ssg-seo-fast-jamstack\index.html
+BROKEN IMG: /img/mockup/pycora-pro-lighthouse.webp
+    in: C:\Users\Creativitas\project\project_ku\CAX\HC\site\themes\python\pycora-pro-new-python-ssg-seo-fast-jamstack\index.html
+
+============================================================
+CANONICAL / OG:URL MISMATCH
+============================================================
+OK: 0 canonical mismatches
+
+============================================================
+SITEMAP CHECK
+============================================================
+SITEMAP MISSING: https://www.hockeycomputindo.com/blog/page/2/
+SITEMAP MISSING: https://www.hockeycomputindo.com/blog/page/3/
+SITEMAP MISSING: https://www.hockeycomputindo.com/blog/page/4/
+SITEMAP MISSING: https://www.hockeycomputindo.com/blog/page/5/
+SITEMAP MISSING: https://www.hockeycomputindo.com/blog/page/6/
+SITEMAP MISSING: https://www.hockeycomputindo.com/blog/page/7/
+SITEMAP MISSING: https://www.hockeycomputindo.com/blog/page/8/
+SITEMAP MISSING: https://www.hockeycomputindo.com/blog/page/9/
+SITEMAP MISSING: https://www.hockeycomputindo.com/blog/page/10/
+SITEMAP MISSING: https://www.hockeycomputindo.com/blog/page/11/
+SITEMAP MISSING: https://www.hockeycomputindo.com/template/page/19/
+SITEMAP MISSING: https://www.hockeycomputindo.com/template/page/20/
+SITEMAP MISSING: https://www.hockeycomputindo.com/template/page/21/
+SITEMAP MISSING: https://www.hockeycomputindo.com/template/page/22/
+
+============================================================
+BROKEN EXTERNAL LINKS
+============================================================
+OK: 0 broken external links
+
+============================================================
+SUMMARY
+============================================================
+Broken internal: 1
+Broken images:   4
+Canonical mism:  0
+Sitemap missing: 14
+Broken external: 0

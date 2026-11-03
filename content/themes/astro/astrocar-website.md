@@ -26,6 +26,27 @@ tags:
     - astro template
     - car rental website
     - premiumthemes
+faq:
+  - q: "What is Astro Car Rental Template, and what problem does it solve?"
+    a: "Astro Car Rental Template is a premium car rental website template built with Astro and Preact. It ships with a booking system, fleet list, gallery, car detail pages, reservation form, contact form, SEO auto, Picture optimization, and page transitions. Site configuration lives in settup.json, page data in src/data/*.json, and fleet entries in src/content/car/*.mdx. Instead of building a rental site, a booking flow, and SEO wiring from scratch, you install the project, edit JSON and MDX, and the site is live."
+  - q: "Do I need to know Astro or Preact to use this template?"
+    a: "You need Node.js and a terminal to install and run the project, but daily content editing happens through JSON and MDX files. Site settings live in settup.json, page content in src/data/home.json, src/data/about.json, src/data/booking.json, and src/data/mobil.json, and each car in src/content/car/*.mdx. If you can edit JSON and Markdown, you can customize most of it. Astro and Preact knowledge helps if you want to extend the booking logic."
+  - q: "How do I install and run the template locally?"
+    a: "Download and install Node.js from nodejs.org. Download the source code and extract it into your project folder. Open a terminal, run cd C:\Users\pcname\desktop\project (replace pcname with your PC name and project with your folder), then npm install and npm run dev. Open localhost in your browser. The latest version runs on Astro latest, Vite integration, RSS XML, Sitemap XML, and Astro Picture optimization."
+  - q: "How do I configure the site title, navigation, and contact?"
+    a: "Open settup.json and change url, title, description, slogan, logo, email, list, listtext, listest, listlink, listbtn, cover, and the payment fields (payment, bank, an, norek). Navigation lives in the navbar array, with nav and link for each item. Contact links live in the contact array, with entries like Call Us, WhatsApp, Email, and Office Map. For meta title and description, open src/consts.ts and update SITE_TITLE and SITE_DESCRIPTION. For the meta image, open src/components/BaseHead.astro and update the image default."
+  - q: "How do I add or update a car in the fleet?"
+    a: "Open src/content/car/ and copy an example .mdx file, rename it with your car URL slug, and open it with a code editor. Update the frontmatter fields title, description, pubDate, cover, brand, car, price, durasi, capacity, transmisi, color, and nopol. Write the body in Markdown. The car appears in the fleet list and on its detail page automatically. The fleet list page content (title, description, cover) lives in src/data/mobil.json."
+  - q: "How does the booking form work?"
+    a: "The booking form sends submissions to the email you set in settup.json under email. After your site is live, fill in a test booking and submit it. Open your inbox and click the confirmation button in the email to connect your email with the order form. After that, every booking lands in your inbox. The booking page content (title, description, cover, ordering steps, and payment methods) lives in src/data/booking.json, so you can describe the order flow and list local bank, PayPal, digital payment, or cash options."
+  - q: "Is SEO handled automatically?"
+    a: "Yes. The template ships with auto SEO injection, RSS XML, and Sitemap XML. Meta title and description come from src/consts.ts, the meta image comes from src/components/BaseHead.astro, and the cover image in settup.json feeds the Open Graph and Twitter Card tags. Astro Picture optimization handles the images, and the Astro static output plus page transitions keep the site fast and search-ready."
+  - q: "How do I deploy the template?"
+    a: "Open astro.config.mjs and change site to your domain. Push the project to a GitHub or GitLab repository, then register on Netlify, Vercel, or Cloudflare with your Git account, create a new project, connect your repository, select Astro as the framework, and click deploy. The site is live. For a custom domain, configure it in the host dashboard and point your domain nameservers or DNS records to the host."
+  - q: "How do I update from an older version?"
+    a: "Back up your old project first. Create a new project folder, download the updated source code, and extract it there. From your old project, copy settup.json, the public folder, src/content, and src/data into the new project folder. Then configure astro.config.mjs with your domain, update src/consts.ts with your title and description, run npm run dev locally to test at localhost, and run npm run build to generate the production output in the dist folder."
+  - q: "What is the license, and where can I see the demo and get support?"
+    a: "The template is a one-time purchase at 45 dollars, and you own 100 percent of the source. You can use it on personal and client projects. The license does not permit reselling or redistributing the template itself as a competing product. Live demo astrocar.pages.dev. Download creativitaz.gumroad.com/l/astro-js-car. For support, email creativebydre@gmail.com. Custom work, including headless CMS integration, is available through the Fiverr link in the article."
 ---
 
 ### Astro JS Rent Car Themes
@@ -562,135 +583,3 @@ How to update from old version ??
 ---------------------------
 
 Premium Astro Template - Develope by [creativitas](https://www.fiverr.com/creativitas/)
-
-
-## Frequently Asked Questions
-
-### What is Astro Car Rental Template, and what problem does it solve?
-
-Astro Car Rental Template is a premium car rental website template built with Astro and Preact. It ships with a booking system, fleet list, gallery, car detail pages, reservation form, contact form, SEO auto, Picture optimization, and page transitions. Site configuration lives in `settup.json`, page data in `src/data/*.json`, and fleet entries in `src/content/car/*.mdx`. Instead of building a rental site, a booking flow, and SEO wiring from scratch, you install the project, edit JSON and MDX, and the site is live.
-
-### Do I need to know Astro or Preact to use this template?
-
-You need Node.js and a terminal to install and run the project, but daily content editing happens through JSON and MDX files. Site settings live in `settup.json`, page content in `src/data/home.json`, `src/data/about.json`, `src/data/booking.json`, and `src/data/mobil.json`, and each car in `src/content/car/*.mdx`. If you can edit JSON and Markdown, you can customize most of it. Astro and Preact knowledge helps if you want to extend the booking logic.
-
-### How do I install and run the template locally?
-
-Download and install Node.js from nodejs.org. Download the source code and extract it into your project folder. Open a terminal, run `cd C:\Users\pcname\desktop\project` (replace `pcname` with your PC name and `project` with your folder), then `npm install` and `npm run dev`. Open `localhost:4321` in your browser. The latest version runs on Astro latest, Vite integration, RSS XML, Sitemap XML, and Astro Picture optimization.
-
-### How do I configure the site title, navigation, and contact?
-
-Open `settup.json` and change `url`, `title`, `description`, `slogan`, `logo`, `email`, `list`, `listtext`, `listest`, `listlink`, `listbtn`, `cover`, and the `payment` fields (`payment`, `bank`, `an`, `norek`). Navigation lives in the `navbar` array, with `nav` and `link` for each item. Contact links live in the `contact` array, with entries like Call Us, WhatsApp, Email, and Office Map. For meta title and description, open `src/consts.ts` and update `SITE_TITLE` and `SITE_DESCRIPTION`. For the meta image, open `src/components/BaseHead.astro` and update the `image` default.
-
-### How do I add or update a car in the fleet?
-
-Open `src/content/car/` and copy an example `.mdx` file, rename it with your car's URL slug, and open it with a code editor. Update the frontmatter fields: `title`, `description`, `pubDate`, `cover`, `brand`, `car`, `price`, `durasi`, `capacity`, `transmisi`, `color`, and `nopol`. Write the body in Markdown. The car appears in the fleet list and on its detail page automatically. The fleet list page content (title, description, cover) lives in `src/data/mobil.json`.
-
-### How does the booking form work?
-
-The booking form sends submissions to the email you set in `settup.json` under `email`. After your site is live, fill in a test booking and submit it. Open your inbox and click the confirmation button in the email to connect your email with the order form. After that, every booking lands in your inbox. The booking page content (title, description, cover, ordering steps, and payment methods) lives in `src/data/booking.json`, so you can describe the order flow and list local bank, PayPal, digital payment, or cash options.
-
-### Is SEO handled automatically?
-
-Yes. The template ships with auto SEO injection, RSS XML, and Sitemap XML. Meta title and description come from `src/consts.ts`, the meta image comes from `src/components/BaseHead.astro`, and the cover image in `settup.json` feeds the Open Graph and Twitter Card tags. Astro Picture optimization handles the images, and the Astro static output plus page transitions keep the site fast and search-ready.
-
-### How do I deploy the template?
-
-Open `astro.config.mjs` and change `site` to your domain. Push the project to a GitHub or GitLab repository, then register on Netlify, Vercel, or Cloudflare with your Git account, create a new project, connect your repository, select Astro as the framework, and click deploy. The site is live. For a custom domain, configure it in the host dashboard and point your domain's nameservers or DNS records to the host.
-
-### How do I update from an older version?
-
-Back up your old project first. Create a new project folder, download the updated source code, and extract it there. From your old project, copy `settup.json`, the `public` folder, `src/content`, and `src/data` into the new project folder. Then configure `astro.config.mjs` with your domain, update `src/consts.ts` with your title and description, run `npm run dev` locally to test at `localhost:4321`, and run `npm run build` to generate the production output in the `dist` folder.
-
-### What is the license, and where can I see the demo and get support?
-
-The template is a one-time purchase at $45, and you own 100% of the source. You can use it on personal and client projects. The license does not permit reselling or redistributing the template itself as a competing product. Live demo: `astrocar.pages.dev`. Download: `creativitaz.gumroad.com/l/astro-js-car`. For support, email creativebydre@gmail.com. Custom work, including headless CMS integration, is available through the Fiverr link in the article.
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is Astro Car Rental Template, and what problem does it solve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Astro Car Rental Template is a premium car rental website template built with Astro and Preact. It ships with a booking system, fleet list, gallery, car detail pages, reservation form, contact form, SEO auto, Picture optimization, and page transitions. Site configuration lives in settup.json, page data in src/data/*.json, and fleet entries in src/content/car/*.mdx. Instead of building a rental site, a booking flow, and SEO wiring from scratch, you install the project, edit JSON and MDX, and the site is live."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to know Astro or Preact to use this template?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You need Node.js and a terminal to install and run the project, but daily content editing happens through JSON and MDX files. Site settings live in settup.json, page content in src/data/home.json, src/data/about.json, src/data/booking.json, and src/data/mobil.json, and each car in src/content/car/*.mdx. If you can edit JSON and Markdown, you can customize most of it. Astro and Preact knowledge helps if you want to extend the booking logic."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I install and run the template locally?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Download and install Node.js from nodejs.org. Download the source code and extract it into your project folder. Open a terminal, run cd C:\\Users\\pcname\\desktop\\project (replace pcname with your PC name and project with your folder), then npm install and npm run dev. Open localhost:4321 in your browser. The latest version runs on Astro latest, Vite integration, RSS XML, Sitemap XML, and Astro Picture optimization."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I configure the site title, navigation, and contact?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open settup.json and change url, title, description, slogan, logo, email, list, listtext, listest, listlink, listbtn, cover, and the payment fields (payment, bank, an, norek). Navigation lives in the navbar array, with nav and link for each item. Contact links live in the contact array, with entries like Call Us, WhatsApp, Email, and Office Map. For meta title and description, open src/consts.ts and update SITE_TITLE and SITE_DESCRIPTION. For the meta image, open src/components/BaseHead.astro and update the image default."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I add or update a car in the fleet?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open src/content/car/ and copy an example .mdx file, rename it with your car's URL slug, and open it with a code editor. Update the frontmatter fields: title, description, pubDate, cover, brand, car, price, durasi, capacity, transmisi, color, and nopol. Write the body in Markdown. The car appears in the fleet list and on its detail page automatically. The fleet list page content (title, description, cover) lives in src/data/mobil.json."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does the booking form work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The booking form sends submissions to the email you set in settup.json under email. After your site is live, fill in a test booking and submit it. Open your inbox and click the confirmation button in the email to connect your email with the order form. After that, every booking lands in your inbox. The booking page content (title, description, cover, ordering steps, and payment methods) lives in src/data/booking.json, so you can describe the order flow and list local bank, PayPal, digital payment, or cash options."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is SEO handled automatically?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. The template ships with auto SEO injection, RSS XML, and Sitemap XML. Meta title and description come from src/consts.ts, the meta image comes from src/components/BaseHead.astro, and the cover image in settup.json feeds the Open Graph and Twitter Card tags. Astro Picture optimization handles the images, and the Astro static output plus page transitions keep the site fast and search-ready."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I deploy the template?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open astro.config.mjs and change site to your domain. Push the project to a GitHub or GitLab repository, then register on Netlify, Vercel, or Cloudflare with your Git account, create a new project, connect your repository, select Astro as the framework, and click deploy. The site is live. For a custom domain, configure it in the host dashboard and point your domain's nameservers or DNS records to the host."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I update from an older version?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Back up your old project first. Create a new project folder, download the updated source code, and extract it there. From your old project, copy settup.json, the public folder, src/content, and src/data into the new project folder. Then configure astro.config.mjs with your domain, update src/consts.ts with your title and description, run npm run dev locally to test at localhost:4321, and run npm run build to generate the production output in the dist folder."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the license, and where can I see the demo and get support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The template is a one-time purchase at $45, and you own 100% of the source. You can use it on personal and client projects. The license does not permit reselling or redistributing the template itself as a competing product. Live demo: astrocar.pages.dev. Download: creativitaz.gumroad.com/l/astro-js-car. For support, email creativebydre@gmail.com. Custom work, including headless CMS integration, is available through the Fiverr link in the article."
-      }
-    }
-  ]
-}
-</script>

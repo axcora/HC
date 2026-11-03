@@ -28,6 +28,29 @@ tags:
     - astro docs
     - premiumthemes
     - jamstackthemes
+faq:
+  - q: "What is Docus, and what problem does it solve?"
+    a: "Docus is a premium Astro + Starlight documentation template that combines documentation, blog, and landing page in one Astro project. It ships with a documentation system with auto-generated sidebar, full-text search, syntax highlighting, and multi-level navigation; a blog with pagination, post detail, tags, categories, and RSS feed; a JSON-driven landing page with hero, feature cards, services, tech stack, and CTA; a pricing page with JSON-driven tiers; a contact form without a backend server; and SEO with meta tags, Open Graph, sitemap, and canonical URLs. Instead of maintaining two or three separate sites, you run one project, edit Markdown and JSON, and deploy once."
+  - q: "Do I need to know Astro or Starlight to use Docus?"
+    a: "You need Node.js and a terminal to install and run the project, but daily content editing happens through Markdown, MDX, and JSON. Documentation lives in src/content/docs/, blog posts in src/content/pages/blog/, landing and navbar config in src/data/configuration/, and pricing in src/data/pricing/pricing.json. If you can edit Markdown and JSON, you can customize most of it. Astro and Starlight knowledge helps for layout changes."
+  - q: "How do I install and run Docus locally?"
+    a: "Install Node.js from nodejs.org. Download the source code, create a project folder named astrodocu on your desktop, and extract the source into it. Open a terminal, run cd C:\Users\pcname\Desktop\astrodocu (replace pcname with your PC name), then npm install and npm run dev. Open localhost in your browser."
+  - q: "How do I configure the sidebar and documentation groups?"
+    a: "Open astro.config.mjs and set site to your domain and title to your doc title. In the sidebar array, each entry has a label and either items or a nested items for subgroups. Each item has a label and link. To create a new documentation group, create a folder inside src/content/docs/ (for example getstart), add .md or .mdx articles to it, then add the group and its items to the sidebar array in astro.config.mjs. For best results, finish all your doc articles first, then wire the sidebar to match."
+  - q: "How do I build a group index page with cards?"
+    a: "A group index page is an index.mdx inside the group folder. It imports a JSON file from src/data/index_page/ (for example getstart.json) and uses the Starlight Card and CardGrid components to render a card for each entry. Each JSON entry has title, text, and link. The index.mdx frontmatter sets title, description, tableOfContents false, and next false. The pattern is create the JSON, import it in index.mdx, then map resources to Card inside CardGrid. Repeat this for every group, including cms, hosting, and others."
+  - q: "How do I create a static page like About or Order?"
+    a: "Create an .mdx file in src/content/docs/ and set the frontmatter to title, description, template splash, tableOfContents false, prev false, and next false. Then import the widgets you need (Nav, Header, Footer, Help), the doc styles, and write the body. The template splash gives you a full-width page instead of a standard docs page, which is what you want for about, order, contact, and similar static pages."
+  - q: "How do I add a blog post and change pagination?"
+    a: "Create a .md file in src/content/pages/blog/ with frontmatter layout ../../design/blog/blogpost.astro, title, description, image, pubDate, tags, and categories. Write the body in Markdown. Posts appear on the blog listing automatically. To change how many posts display per page, open [..page].astro in the blog folder and change pageSize 12 to your number. Categories and tags each have their own page, and the titles and descriptions for those pages live in src/data/configuration/blog/blogpage.json under categories_page_title, categories_page_description, tags_page_title, and tags_page_description."
+  - q: "How does the contact form work?"
+    a: "The contact page lives at src/content/docs/contact.mdx with frontmatter title, description, phone, email, address, template splash, tableOfContents false, prev false, and next false. The form uses the airform server, so the first time you submit a message you will receive a confirmation email; click the confirmation link to activate the form. After activation, every message goes to your inbox without any backend server or database."
+  - q: "Is SEO handled automatically?"
+    a: "Yes. Docus handles meta tags, Open Graph, sitemap, and canonical URLs automatically. Set your site URL in astro.config.mjs, and the canonical URLs and sitemap entries follow. The landing page and navbar config also carry title, description, and image for social sharing, and every blog post carries its own title, description, and image in frontmatter. Combined with the static Astro output, the site is search-ready without manual meta wiring per page."
+  - q: "How do I deploy Docus, and does it support a CMS?"
+    a: "Set the site URL in astro.config.mjs, push the project to GitHub, then register on Cloudflare Pages, Netlify, or Vercel with your GitHub account, create a new project, connect your repository, select Astro as the framework, and click deploy. The site is live. A headless CMS is optional Decap CMS works through Netlify, and Tina CMS works in local development mode. If you want a CMS built for your project, custom CMS integration is available through the Fiverr link in the article."
+  - q: "What is the license, and where can I see the demo and get support?"
+    a: "Docus is a one-time purchase at 65 dollars, and you own 100 percent of the source. You can use it on personal and client projects. The license does not permit reselling or redistributing the template itself. Live demo astrodoc.pages.dev. Download creativitaz.gumroad.com/l/starlightastrodocus. For support, email axcora@gmail.com. Custom work, including headless CMS integration and bespoke Astro sites, is available through the Fiverr link in the article."
 ---
 ## Docus Astro Starlight project.
 
@@ -1203,146 +1226,3 @@ You can build your backend headless cms with decap cms.
 Or you can use headless cms for your dev local mode with Tina CMS
 
 If you interest work with headless cms, so you can use our services for develope your backend headless cms admin for your project.
-
-## Frequently Asked Questions
-
-### What is Docus, and what problem does it solve?
-
-Docus is a premium Astro + Starlight documentation template that combines documentation, blog, and landing page in one Astro project. It ships with a documentation system with auto-generated sidebar, full-text search, syntax highlighting, and multi-level navigation; a blog with pagination, post detail, tags, categories, and RSS feed; a JSON-driven landing page with hero, feature cards, services, tech stack, and CTA; a pricing page with JSON-driven tiers; a contact form without a backend server; and SEO with meta tags, Open Graph, sitemap, and canonical URLs. Instead of maintaining two or three separate sites, you run one project, edit Markdown and JSON, and deploy once.
-
-### Do I need to know Astro or Starlight to use Docus?
-
-You need Node.js and a terminal to install and run the project, but daily content editing happens through Markdown, MDX, and JSON. Documentation lives in `src/content/docs/`, blog posts in `src/content/pages/blog/`, landing and navbar config in `src/data/configuration/`, and pricing in `src/data/pricing/pricing.json`. If you can edit Markdown and JSON, you can customize most of it. Astro and Starlight knowledge helps for layout changes.
-
-### How do I install and run Docus locally?
-
-Install Node.js from nodejs.org. Download the source code, create a project folder named `astrodocu` on your desktop, and extract the source into it. Open a terminal, run `cd C:\Users\pcname\Desktop\astrodocu` (replace `pcname` with your PC name), then `npm install` and `npm run dev`. Open `localhost:4321` in your browser.
-
-### How do I configure the sidebar and documentation groups?
-
-Open `astro.config.mjs` and set `site` to your domain and `title` to your doc title. In the `sidebar` array, each entry has a `label` and either `items` or a nested `items` for subgroups. Each item has a `label` and `link`. To create a new documentation group, create a folder inside `src/content/docs/` (for example `getstart`), add `.md` or `.mdx` articles to it, then add the group and its items to the `sidebar` array in `astro.config.mjs`. For best results, finish all your doc articles first, then wire the sidebar to match.
-
-### How do I build a group index page with cards?
-
-A group index page is an `index.mdx` inside the group folder. It imports a JSON file from `src/data/index_page/` (for example `getstart.json`) and uses the Starlight `Card` and `CardGrid` components to render a card for each entry. Each JSON entry has `title`, `text`, and `link`. The `index.mdx` frontmatter sets `title`, `description`, `tableOfContents: false`, and `next: false`. The pattern is: create the JSON, import it in `index.mdx`, then map `resources` to `<Card>` inside `<CardGrid>`. Repeat this for every group, including `cms`, `hosting`, and others.
-
-### How do I create a static page like About or Order?
-
-Create an `.mdx` file in `src/content/docs/` and set the frontmatter to `title`, `description`, `template: splash`, `tableOfContents: false`, `prev: false`, and `next: false`. Then import the widgets you need (`Nav`, `Header`, `Footer`, `Help`), the doc styles, and write the body. The `template: splash` gives you a full-width page instead of a standard docs page, which is what you want for about, order, contact, and similar static pages.
-
-### How do I add a blog post and change pagination?
-
-Create a `.md` file in `src/content/pages/blog/` with frontmatter `layout: ../../design/blog/blogpost.astro`, `title`, `description`, `image`, `pubDate`, `tags`, and `categories`. Write the body in Markdown. Posts appear on the blog listing automatically. To change how many posts display per page, open `[..page].astro` in the blog folder and change `pageSize: 12` to your number. Categories and tags each have their own page, and the titles and descriptions for those pages live in `src/data/configuration/blog/blogpage.json` under `categories_page_title`, `categories_page_description`, `tags_page_title`, and `tags_page_description`.
-
-### How does the contact form work?
-
-The contact page lives at `src/content/docs/contact.mdx` with frontmatter `title`, `description`, `phone`, `email`, `address`, `template: splash`, `tableOfContents: false`, `prev: false`, and `next: false`. The form uses the airform server, so the first time you submit a message you will receive a confirmation email; click the confirmation link to activate the form. After activation, every message goes to your inbox without any backend server or database.
-
-### Is SEO handled automatically?
-
-Yes. Docus handles meta tags, Open Graph, sitemap, and canonical URLs automatically. Set your site URL in `astro.config.mjs`, and the canonical URLs and sitemap entries follow. The landing page and navbar config also carry `title`, `description`, and `image` for social sharing, and every blog post carries its own `title`, `description`, and `image` in frontmatter. Combined with the static Astro output, the site is search-ready without manual meta wiring per page.
-
-### How do I deploy Docus, and does it support a CMS?
-
-Set the `site` URL in `astro.config.mjs`, push the project to GitHub, then register on Cloudflare Pages, Netlify, or Vercel with your GitHub account, create a new project, connect your repository, select Astro as the framework, and click deploy. The site is live. A headless CMS is optional: Decap CMS works through Netlify, and Tina CMS works in local development mode. If you want a CMS built for your project, custom CMS integration is available through the Fiverr link in the article.
-
-### What is the license, and where can I see the demo and get support?
-
-Docus is a one-time purchase at $65, and you own 100% of the source. You can use it on personal and client projects. The license does not permit reselling or redistributing the template itself. Live demo: `astrodoc.pages.dev`. Download: `creativitaz.gumroad.com/l/starlightastrodocus`. For support, email axcora@gmail.com. Custom work, including headless CMS integration and bespoke Astro sites, is available through the Fiverr link in the article.
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is Docus, and what problem does it solve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Docus is a premium Astro + Starlight documentation template that combines documentation, blog, and landing page in one Astro project. It ships with a documentation system with auto-generated sidebar, full-text search, syntax highlighting, and multi-level navigation; a blog with pagination, post detail, tags, categories, and RSS feed; a JSON-driven landing page with hero, feature cards, services, tech stack, and CTA; a pricing page with JSON-driven tiers; a contact form without a backend server; and SEO with meta tags, Open Graph, sitemap, and canonical URLs. Instead of maintaining two or three separate sites, you run one project, edit Markdown and JSON, and deploy once."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to know Astro or Starlight to use Docus?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You need Node.js and a terminal to install and run the project, but daily content editing happens through Markdown, MDX, and JSON. Documentation lives in src/content/docs/, blog posts in src/content/pages/blog/, landing and navbar config in src/data/configuration/, and pricing in src/data/pricing/pricing.json. If you can edit Markdown and JSON, you can customize most of it. Astro and Starlight knowledge helps for layout changes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I install and run Docus locally?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Install Node.js from nodejs.org. Download the source code, create a project folder named astrodocu on your desktop, and extract the source into it. Open a terminal, run cd C:\\Users\\pcname\\Desktop\\astrodocu (replace pcname with your PC name), then npm install and npm run dev. Open localhost:4321 in your browser."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I configure the sidebar and documentation groups?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open astro.config.mjs and set site to your domain and title to your doc title. In the sidebar array, each entry has a label and either items or a nested items for subgroups. Each item has a label and link. To create a new documentation group, create a folder inside src/content/docs/ (for example getstart), add .md or .mdx articles to it, then add the group and its items to the sidebar array in astro.config.mjs. For best results, finish all your doc articles first, then wire the sidebar to match."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I build a group index page with cards?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A group index page is an index.mdx inside the group folder. It imports a JSON file from src/data/index_page/ (for example getstart.json) and uses the Starlight Card and CardGrid components to render a card for each entry. Each JSON entry has title, text, and link. The index.mdx frontmatter sets title, description, tableOfContents: false, and next: false. The pattern is: create the JSON, import it in index.mdx, then map resources to Card inside CardGrid. Repeat this for every group, including cms, hosting, and others."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I create a static page like About or Order?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Create an .mdx file in src/content/docs/ and set the frontmatter to title, description, template: splash, tableOfContents: false, prev: false, and next: false. Then import the widgets you need (Nav, Header, Footer, Help), the doc styles, and write the body. The template: splash gives you a full-width page instead of a standard docs page, which is what you want for about, order, contact, and similar static pages."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I add a blog post and change pagination?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Create a .md file in src/content/pages/blog/ with frontmatter layout: ../../design/blog/blogpost.astro, title, description, image, pubDate, tags, and categories. Write the body in Markdown. Posts appear on the blog listing automatically. To change how many posts display per page, open [..page].astro in the blog folder and change pageSize: 12 to your number. Categories and tags each have their own page, and the titles and descriptions for those pages live in src/data/configuration/blog/blogpage.json under categories_page_title, categories_page_description, tags_page_title, and tags_page_description."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does the contact form work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The contact page lives at src/content/docs/contact.mdx with frontmatter title, description, phone, email, address, template: splash, tableOfContents: false, prev: false, and next: false. The form uses the airform server, so the first time you submit a message you will receive a confirmation email; click the confirmation link to activate the form. After activation, every message goes to your inbox without any backend server or database."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is SEO handled automatically?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Docus handles meta tags, Open Graph, sitemap, and canonical URLs automatically. Set your site URL in astro.config.mjs, and the canonical URLs and sitemap entries follow. The landing page and navbar config also carry title, description, and image for social sharing, and every blog post carries its own title, description, and image in frontmatter. Combined with the static Astro output, the site is search-ready without manual meta wiring per page."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I deploy Docus, and does it support a CMS?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Set the site URL in astro.config.mjs, push the project to GitHub, then register on Cloudflare Pages, Netlify, or Vercel with your GitHub account, create a new project, connect your repository, select Astro as the framework, and click deploy. The site is live. A headless CMS is optional: Decap CMS works through Netlify, and Tina CMS works in local development mode. If you want a CMS built for your project, custom CMS integration is available through the Fiverr link in the article."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the license, and where can I see the demo and get support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Docus is a one-time purchase at $65, and you own 100% of the source. You can use it on personal and client projects. The license does not permit reselling or redistributing the template itself. Live demo: astrodoc.pages.dev. Download: creativitaz.gumroad.com/l/starlightastrodocus. For support, email axcora@gmail.com. Custom work, including headless CMS integration and bespoke Astro sites, is available through the Fiverr link in the article."
-      }
-    }
-  ]
-}
-</script>

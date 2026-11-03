@@ -21,7 +21,7 @@
 <link rel="alternate" type="application/feed+json" title="{{ hc.title }}" href="{{ hc.url }}/feed.json">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ hc.url }}/sitemap.xml">
 <link rel="describedby" type="text/plain" title="LLMs.txt" href="{{ hc.url }}/llms.txt">
-<link rel="preconnect" href="https://res.cloudinary.com">
+<link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
 {% if pagination.prev_url %}<link rel="prev" href="{{ hc.url }}{{ pagination.prev_url }}">{% endif %}
 {% if pagination.next_url %}<link rel="next" href="{{ hc.url }}{{ pagination.next_url }}">{% endif %}
 <meta name="generator" content="CAX SSG - Static Site Generator in C">

@@ -25,6 +25,25 @@ tags:
     - flat-file cms
     - bluditthemes
     - premiumthemes
+faq:
+  - q: "What is Creative Agency, and what problem does it solve?"
+    a: "Creative Agency is a premium Bludit template built for creative agencies, startups, and portfolio sites. Bludit is a flat-file CMS no database, fast, and easy to deploy on any hosting. The template ships with a creative agency landing, portfolio, startup sections, minimalist design, automatic SEO, and responsive layout. Instead of setting up a CMS, a database, a theme, and SEO plugins from scratch, you upload the source, activate the included plugins, and the site is live."
+  - q: "Do I need a database or coding skills to use Creative Agency?"
+    a: "No. Bludit is a flat-file CMS, so there is no database to set up and no SQL to manage. Installation is upload, run, and the site is live. Daily work happens in the Bludit admin panel at admin settings, plugins, users, categories, content, static pages, blog posts, and custom fields. You do not need to code to run the site."
+  - q: "How do I install Creative Agency?"
+    a: "Download the source code, upload it to your hosting, run the installation, and the site is live. After installation, log in to the admin area at admin. From there, open Settings and General to set your title, description, and other site configuration. Then activate the plugins, create categories, and start adding content. Full documentation is available on the order page."
+  - q: "How do I activate the SEO plugins?"
+    a: "Open the Plugins menu in the admin area. Activate all Creative Agency plugins first, then activate the SEO plugins sitemap, RSS, Twitter Card, and Open Graph. With these active, the site generates a sitemap, an RSS feed, and social sharing tags automatically. Combined with the template SEO auto setup and clean markup, the site is ready for search engines without manual meta wiring."
+  - q: "How do I create content and static pages?"
+    a: "Open the Content area to create a new post or page. To edit or delete an existing article, open the content area and click the article. Use the Advanced tab at the top of the article textarea to add tags, description, and cover image. For static pages such as about and contact, use the Static section. For blog posts, use Default. For sticky blog posts, use Sticky."
+  - q: "What are custom fields, and how do I use them?"
+    a: "Custom fields are Bludit way of extending content and design without touching code. The template ships with custom fields that drive the creative agency design and the plugin setup. Copy the provided custom fields, fill them in per article or page, and the design follows. You can then keep designing your website with custom fields and the Creative Agency plugins."
+  - q: "How do I manage users and security?"
+    a: "Open the Users area in the admin panel. Add a new admin user for yourself with a strong password, then delete the default admin user if you want. This is a standard security step after installation. Bludit flat-file approach also means there is no database to expose, which reduces the attack surface compared with database-driven CMS platforms."
+  - q: "Can I use Creative Agency for client projects, and what is the license?"
+    a: "Yes. The license is a one-time purchase and you own 100 percent of the source, so you can use it on personal and client projects without recurring fees. The license does not permit reselling or redistributing the theme itself as a competing product. If you need a fully custom build, custom work is available through the Fiverr link in the theme listing."
+  - q: "Where can I see the demo and get support?"
+    a: "The live demo is at bludit.axcora.com/agency. Download is at creativitaz.gumroad.com/l/creativeagency-bl. For support, email creativebydre@gmail.com. Custom development is available through the Fiverr link in the theme listing."
 ---
 
 ### Installation
@@ -54,122 +73,3 @@ Add your title , description and others on this area, you can click tab menu for
 
 
 For information detail you can open documentation on order page.
-
-## Frequently Asked Questions
-
-### What is Creative Agency, and what problem does it solve?
-
-Creative Agency is a premium Bludit template built for creative agencies, startups, and portfolio sites. Bludit is a flat-file CMS: no database, fast, and easy to deploy on any hosting. The template ships with a creative agency landing, portfolio, startup sections, minimalist design, automatic SEO, and responsive layout. Instead of setting up a CMS, a database, a theme, and SEO plugins from scratch, you upload the source, activate the included plugins, and the site is live.
-
-### Do I need a database or coding skills to use Creative Agency?
-
-No. Bludit is a flat-file CMS, so there is no database to set up and no SQL to manage. Installation is upload, run, and the site is live. Daily work happens in the Bludit admin panel at `/admin`: settings, plugins, users, categories, content, static pages, blog posts, and custom fields. You do not need to code to run the site.
-
-### How do I install Creative Agency?
-
-Download the source code, upload it to your hosting, run the installation, and the site is live. After installation, log in to the admin area at `/admin`. From there, open Settings → General to set your title, description, and other site configuration. Then activate the plugins, create categories, and start adding content. Full documentation is available on the order page.
-
-### How do I activate the SEO plugins?
-
-Open the Plugins menu in the admin area. Activate all Creative Agency plugins first, then activate the SEO plugins: sitemap, RSS, Twitter Card, and Open Graph. With these active, the site generates a sitemap, an RSS feed, and social sharing tags automatically. Combined with the template's SEO auto setup and clean markup, the site is ready for search engines without manual meta wiring.
-
-### How do I create content and static pages?
-
-Open the Content area to create a new post or page. To edit or delete an existing article, open the content area and click the article. Use the Advanced tab at the top of the article textarea to add tags, description, and cover image. For static pages such as about and contact, use the Static section. For blog posts, use Default. For sticky blog posts, use Sticky.
-
-### What are custom fields, and how do I use them?
-
-Custom fields are Bludit's way of extending content and design without touching code. The template ships with custom fields that drive the creative agency design and the plugin setup. Copy the provided custom fields, fill them in per article or page, and the design follows. You can then keep designing your website with custom fields and the Creative Agency plugins.
-
-### How do I manage users and security?
-
-Open the Users area in the admin panel. Add a new admin user for yourself with a strong password, then delete the default admin user if you want. This is a standard security step after installation. Bludit's flat-file approach also means there is no database to expose, which reduces the attack surface compared with database-driven CMS platforms.
-
-### Can I use Creative Agency for client projects, and what is the license?
-
-Yes. The license is a one-time purchase and you own 100% of the source, so you can use it on personal and client projects without recurring fees. The license does not permit reselling or redistributing the theme itself as a competing product. If you need a fully custom build, custom work is available through the Fiverr link in the theme listing.
-
-### Where can I see the demo and get support?
-
-The live demo is at `bludit.axcora.com/agency`. Download is at `creativitaz.gumroad.com/l/creativeagency-bl`. For support, email creativebydre@gmail.com. Custom development is available through the Fiverr link in the theme listing.
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is Creative Agency, and what problem does it solve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Creative Agency is a premium Bludit template built for creative agencies, startups, and portfolio sites. Bludit is a flat-file CMS: no database, fast, and easy to deploy on any hosting. The template ships with a creative agency landing, portfolio, startup sections, minimalist design, automatic SEO, and responsive layout. Instead of setting up a CMS, a database, a theme, and SEO plugins from scratch, you upload the source, activate the included plugins, and the site is live."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need a database or coding skills to use Creative Agency?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Bludit is a flat-file CMS, so there is no database to set up and no SQL to manage. Installation is upload, run, and the site is live. Daily work happens in the Bludit admin panel at /admin: settings, plugins, users, categories, content, static pages, blog posts, and custom fields. You do not need to code to run the site."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I install Creative Agency?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Download the source code, upload it to your hosting, run the installation, and the site is live. After installation, log in to the admin area at /admin. From there, open Settings → General to set your title, description, and other site configuration. Then activate the plugins, create categories, and start adding content. Full documentation is available on the order page."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I activate the SEO plugins?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open the Plugins menu in the admin area. Activate all Creative Agency plugins first, then activate the SEO plugins: sitemap, RSS, Twitter Card, and Open Graph. With these active, the site generates a sitemap, an RSS feed, and social sharing tags automatically. Combined with the template's SEO auto setup and clean markup, the site is ready for search engines without manual meta wiring."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I create content and static pages?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open the Content area to create a new post or page. To edit or delete an existing article, open the content area and click the article. Use the Advanced tab at the top of the article textarea to add tags, description, and cover image. For static pages such as about and contact, use the Static section. For blog posts, use Default. For sticky blog posts, use Sticky."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are custom fields, and how do I use them?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Custom fields are Bludit's way of extending content and design without touching code. The template ships with custom fields that drive the creative agency design and the plugin setup. Copy the provided custom fields, fill them in per article or page, and the design follows. You can then keep designing your website with custom fields and the Creative Agency plugins."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I manage users and security?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open the Users area in the admin panel. Add a new admin user for yourself with a strong password, then delete the default admin user if you want. This is a standard security step after installation. Bludit's flat-file approach also means there is no database to expose, which reduces the attack surface compared with database-driven CMS platforms."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I use Creative Agency for client projects, and what is the license?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. The license is a one-time purchase and you own 100% of the source, so you can use it on personal and client projects without recurring fees. The license does not permit reselling or redistributing the theme itself as a competing product. If you need a fully custom build, custom work is available through the Fiverr link in the theme listing."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where can I see the demo and get support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The live demo is at bludit.axcora.com/agency. Download is at creativitaz.gumroad.com/l/creativeagency-bl. For support, email creativebydre@gmail.com. Custom development is available through the Fiverr link in the theme listing."
-      }
-    }
-  ]
-}
-</script>

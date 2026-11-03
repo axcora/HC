@@ -37,6 +37,29 @@ tags:
   - blazorthemes
   - premium blazor themes
   - premiumthemes
+faq:
+  - q: "What is BlazorForge, and what problem does it solve?"
+    a: "BlazorForge is a production-ready Blazor WebAssembly theme built for .NET developers who need a complete, accessible, Microsoft-aligned UI foundation. It ships with seven production-ready pages, sixty-five pre-built Razor components, the Microsoft Fluent 2 design system, Decap CMS, Markdown-based content, and built-in SEO with structured data. Instead of spending a quarter building a navigation menu, card layout, validated form, data grid, and forty other components, you write the business logic and let BlazorForge handle the interface."
+  - q: "How is BlazorForge different from Dax Pro, which is also a .NET theme?"
+    a: "Both are .NET themes from the same lab, but they serve opposite purposes. Dax Pro is a .NET static site generator that produces pure HTML at build time for content sites marketing pages, blogs, documentation, service catalogs. BlazorForge is a Blazor WebAssembly theme for interactive applications internal tools, admin dashboards, SaaS apps, enterprise portals. If your project is content-only with no interactivity, Dax Pro or a tool like Astro will serve you better. If you need a rich interactive frontend in C#, BlazorForge is the right choice."
+  - q: "Do I need to know Blazor or .NET to use BlazorForge?"
+    a: "You need .NET development experience, because every component is a C# Razor component and every customization happens in C#. The documentation is written for developers who have never used Blazor before, covering installation, running the development server, editing content, and deploying to production. If you already know .NET, the learning curve is short. If you are new to .NET entirely, this theme is not the right starting point."
+  - q: "Do I need Node.js or npm to run BlazorForge?"
+    a: "No, the theme itself has zero NPM dependencies and no JavaScript bridge, no React wrapper, and no TypeScript compilation step. The build command is dotnet publish and nothing else. Node.js is only required if you want to run Decap CMS in local mode, because the Decap server is installed via npm. The site itself runs without Node.js."
+  - q: "How does the SEO pipeline work?"
+    a: "BlazorForge ships with an SEO service that handles the entire meta tag pipeline automatically. Page titles follow a template, descriptions fall back to site defaults, canonical URLs are generated from the current route, and Open Graph, Twitter Card, and JSON-LD structured data for Organization, Article, FAQ, and Breadcrumb are all generated without configuration. Site-wide defaults live in wwwroot/data/seo.json, and you can override any value per page through YAML frontmatter."
+  - q: "How do I configure the site, navigation, and design?"
+    a: "Site-wide settings live in wwwroot/data/site.json site name, tagline, description, canonical URL, language, locale, logo text, contact information, and social links. Navigation is configured in wwwroot/data/navbar.json, with three sections for the header call-to-action button, desktop menu, and mobile menu. Each menu item has a label, an href, and a match mode exact for the home page and prefix for other pages. Footer is configured in wwwroot/data/footer.json. Design tokens are CSS variables at the top of wwwroot/css/style.css in the :root section, so changing --color-primary updates every button, link, and highlight across the site."
+  - q: "How do I edit content or add a new journal article?"
+    a: "Content lives as Markdown files with YAML frontmatter in wwwroot/content/. Home, about, contact, journal index, and services index are single files. Journal articles are one file per article in wwwroot/content/journal/, and service pages are one file per page in wwwroot/content/services/. To create a new journal article, add a .md file in wwwroot/content/journal/; the filename becomes the slug automatically. Add frontmatter with title, author, date, category, tags, excerpt, and cover image, then write the body in Markdown. After any content change, run cd Tools && dotnet run && cd .. to recompile the metadata, then reload the browser. This recompile step is required and easy to forget."
+  - q: "How does Decap CMS work in local and online mode?"
+    a: "In local mode, Decap CMS runs on your development machine and saves changes directly to your working directory. Install it with npm install -g decap-server, add local_backend true to wwwroot/admin/config.yml, set the backend to git-gateway, then run npx decap-server in one terminal and dotnet run in another. Open http localhost 5052 admin; no login is required. In online mode, Decap CMS connects to GitHub through Netlify Identity and Git Gateway, so your team can edit content from anywhere. To switch, remove the local_backend true line from config.yml and push."
+  - q: "How do I deploy BlazorForge?"
+    a: "Netlify is the recommended path, especially for the online CMS. Push to GitHub, create a Netlify account with GitHub, import the repository, set the build command to dotnet publish -c Release -o publish and the publish directory to publish/wwwroot, then deploy. Enable Netlify Identity with Invite-only registration and Git Gateway, and invite yourself. The live CMS is at admin. Cloudflare Pages also works with a build.sh that downloads the .NET SDK and runs the publish command."
+  - q: "What is the license, and what is included in the package?"
+    a: "BlazorForge costs 149 dollars as a one-time payment. The package includes the complete Blazor WebAssembly project, seven production-ready pages, sixty-five pre-built components, Decap CMS admin panel with configuration, the Markdown content structure, Microsoft Fluent 2 design tokens, sample content with five journal articles and four service pages, full documentation, and lifetime updates. The license allows unlimited personal and commercial projects, including client work, SaaS products, and internal enterprise applications. The only restriction is reselling the theme itself as a competing template product."
+  - q: "Where can I see the demo and get support?"
+    a: "The live demo is at blazorforge.pages.dev. Download is at creativitaz.gumroad.com/l/blazorforge. The documentation covers installation, initial configuration, content editing with Markdown, Decap CMS in local mode, and deployment to Netlify and Cloudflare Pages. For support, email creativebydre@gmail.com. Custom development is available through the Fiverr link in the theme listing."
 ---
 
 ### Why BlazorForge Exists
@@ -148,146 +171,3 @@ Your live CMS is now available at `https://your-site-name.netlify.app/admin/`. L
 #### Deployment to Cloudflare Pages
 
 Cloudflare Pages can also host BlazorForge. Create a `build.sh` file in your project root with the following contents. The script downloads the .NET SDK, adds it to the PATH, and runs the publish command.
-
-## Frequently Asked Questions
-
-### What is BlazorForge, and what problem does it solve?
-
-BlazorForge is a production-ready Blazor WebAssembly theme built for .NET developers who need a complete, accessible, Microsoft-aligned UI foundation. It ships with seven production-ready pages, sixty-five pre-built Razor components, the Microsoft Fluent 2 design system, Decap CMS, Markdown-based content, and built-in SEO with structured data. Instead of spending a quarter building a navigation menu, card layout, validated form, data grid, and forty other components, you write the business logic and let BlazorForge handle the interface.
-
-### How is BlazorForge different from Dax Pro, which is also a .NET theme?
-
-Both are .NET themes from the same lab, but they serve opposite purposes. Dax Pro is a .NET static site generator that produces pure HTML at build time for content sites: marketing pages, blogs, documentation, service catalogs. BlazorForge is a Blazor WebAssembly theme for interactive applications: internal tools, admin dashboards, SaaS apps, enterprise portals. If your project is content-only with no interactivity, Dax Pro or a tool like Astro will serve you better. If you need a rich interactive frontend in C#, BlazorForge is the right choice.
-
-### Do I need to know Blazor or .NET to use BlazorForge?
-
-You need .NET development experience, because every component is a C# Razor component and every customization happens in C#. The documentation is written for developers who have never used Blazor before, covering installation, running the development server, editing content, and deploying to production. If you already know .NET, the learning curve is short. If you are new to .NET entirely, this theme is not the right starting point.
-
-### Do I need Node.js or npm to run BlazorForge?
-
-No, the theme itself has zero NPM dependencies and no JavaScript bridge, no React wrapper, and no TypeScript compilation step. The build command is `dotnet publish` and nothing else. Node.js is only required if you want to run Decap CMS in local mode, because the Decap server is installed via npm. The site itself runs without Node.js.
-
-### How does the SEO pipeline work?
-
-BlazorForge ships with an SEO service that handles the entire meta tag pipeline automatically. Page titles follow a template, descriptions fall back to site defaults, canonical URLs are generated from the current route, and Open Graph, Twitter Card, and JSON-LD structured data for Organization, Article, FAQ, and Breadcrumb are all generated without configuration. Site-wide defaults live in `wwwroot/data/seo.json`, and you can override any value per page through YAML frontmatter.
-
-### How do I configure the site, navigation, and design?
-
-Site-wide settings live in `wwwroot/data/site.json`: site name, tagline, description, canonical URL, language, locale, logo text, contact information, and social links. Navigation is configured in `wwwroot/data/navbar.json`, with three sections for the header call-to-action button, desktop menu, and mobile menu. Each menu item has a label, an href, and a match mode: `exact` for the home page and `prefix` for other pages. Footer is configured in `wwwroot/data/footer.json`. Design tokens are CSS variables at the top of `wwwroot/css/style.css` in the `:root` section, so changing `--color-primary` updates every button, link, and highlight across the site.
-
-### How do I edit content or add a new journal article?
-
-Content lives as Markdown files with YAML frontmatter in `wwwroot/content/`. Home, about, contact, journal index, and services index are single files. Journal articles are one file per article in `wwwroot/content/journal/`, and service pages are one file per page in `wwwroot/content/services/`. To create a new journal article, add a `.md` file in `wwwroot/content/journal/`; the filename becomes the slug automatically. Add frontmatter with title, author, date, category, tags, excerpt, and cover image, then write the body in Markdown. After any content change, run `cd Tools && dotnet run && cd ..` to recompile the metadata, then reload the browser. This recompile step is required and easy to forget.
-
-### How does Decap CMS work in local and online mode?
-
-In local mode, Decap CMS runs on your development machine and saves changes directly to your working directory. Install it with `npm install -g decap-server`, add `local_backend: true` to `wwwroot/admin/config.yml`, set the backend to `git-gateway`, then run `npx decap-server` in one terminal and `dotnet run` in another. Open `http://localhost:5052/admin/`; no login is required. In online mode, Decap CMS connects to GitHub through Netlify Identity and Git Gateway, so your team can edit content from anywhere. To switch, remove the `local_backend: true` line from `config.yml` and push.
-
-### How do I deploy BlazorForge?
-
-Netlify is the recommended path, especially for the online CMS. Push to GitHub, create a Netlify account with GitHub, import the repository, set the build command to `dotnet publish -c Release -o publish` and the publish directory to `publish/wwwroot`, then deploy. Enable Netlify Identity with Invite-only registration and Git Gateway, and invite yourself. The live CMS is at `/admin/`. Cloudflare Pages also works with a `build.sh` that downloads the .NET SDK and runs the publish command.
-
-### What is the license, and what is included in the package?
-
-BlazorForge costs $149 as a one-time payment. The package includes the complete Blazor WebAssembly project, seven production-ready pages, sixty-five pre-built components, Decap CMS admin panel with configuration, the Markdown content structure, Microsoft Fluent 2 design tokens, sample content with five journal articles and four service pages, full documentation, and lifetime updates. The license allows unlimited personal and commercial projects, including client work, SaaS products, and internal enterprise applications. The only restriction is reselling the theme itself as a competing template product.
-
-### Where can I see the demo and get support?
-
-The live demo is at `blazorforge.pages.dev`. Download is at `creativitaz.gumroad.com/l/blazorforge`. The documentation covers installation, initial configuration, content editing with Markdown, Decap CMS in local mode, and deployment to Netlify and Cloudflare Pages. For support, email creativebydre@gmail.com. Custom development is available through the Fiverr link in the theme listing.
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is BlazorForge, and what problem does it solve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "BlazorForge is a production-ready Blazor WebAssembly theme built for .NET developers who need a complete, accessible, Microsoft-aligned UI foundation. It ships with seven production-ready pages, sixty-five pre-built Razor components, the Microsoft Fluent 2 design system, Decap CMS, Markdown-based content, and built-in SEO with structured data. Instead of spending a quarter building a navigation menu, card layout, validated form, data grid, and forty other components, you write the business logic and let BlazorForge handle the interface."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is BlazorForge different from Dax Pro, which is also a .NET theme?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Both are .NET themes from the same lab, but they serve opposite purposes. Dax Pro is a .NET static site generator that produces pure HTML at build time for content sites: marketing pages, blogs, documentation, service catalogs. BlazorForge is a Blazor WebAssembly theme for interactive applications: internal tools, admin dashboards, SaaS apps, enterprise portals. If your project is content-only with no interactivity, Dax Pro or a tool like Astro will serve you better. If you need a rich interactive frontend in C#, BlazorForge is the right choice."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to know Blazor or .NET to use BlazorForge?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You need .NET development experience, because every component is a C# Razor component and every customization happens in C#. The documentation is written for developers who have never used Blazor before, covering installation, running the development server, editing content, and deploying to production. If you already know .NET, the learning curve is short. If you are new to .NET entirely, this theme is not the right starting point."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need Node.js or npm to run BlazorForge?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No, the theme itself has zero NPM dependencies and no JavaScript bridge, no React wrapper, and no TypeScript compilation step. The build command is dotnet publish and nothing else. Node.js is only required if you want to run Decap CMS in local mode, because the Decap server is installed via npm. The site itself runs without Node.js."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does the SEO pipeline work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "BlazorForge ships with an SEO service that handles the entire meta tag pipeline automatically. Page titles follow a template, descriptions fall back to site defaults, canonical URLs are generated from the current route, and Open Graph, Twitter Card, and JSON-LD structured data for Organization, Article, FAQ, and Breadcrumb are all generated without configuration. Site-wide defaults live in wwwroot/data/seo.json, and you can override any value per page through YAML frontmatter."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I configure the site, navigation, and design?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Site-wide settings live in wwwroot/data/site.json: site name, tagline, description, canonical URL, language, locale, logo text, contact information, and social links. Navigation is configured in wwwroot/data/navbar.json, with three sections for the header call-to-action button, desktop menu, and mobile menu. Each menu item has a label, an href, and a match mode: exact for the home page and prefix for other pages. Footer is configured in wwwroot/data/footer.json. Design tokens are CSS variables at the top of wwwroot/css/style.css in the :root section, so changing --color-primary updates every button, link, and highlight across the site."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I edit content or add a new journal article?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Content lives as Markdown files with YAML frontmatter in wwwroot/content/. Home, about, contact, journal index, and services index are single files. Journal articles are one file per article in wwwroot/content/journal/, and service pages are one file per page in wwwroot/content/services/. To create a new journal article, add a .md file in wwwroot/content/journal/; the filename becomes the slug automatically. Add frontmatter with title, author, date, category, tags, excerpt, and cover image, then write the body in Markdown. After any content change, run cd Tools && dotnet run && cd .. to recompile the metadata, then reload the browser. This recompile step is required and easy to forget."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does Decap CMS work in local and online mode?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In local mode, Decap CMS runs on your development machine and saves changes directly to your working directory. Install it with npm install -g decap-server, add local_backend: true to wwwroot/admin/config.yml, set the backend to git-gateway, then run npx decap-server in one terminal and dotnet run in another. Open http://localhost:5052/admin/; no login is required. In online mode, Decap CMS connects to GitHub through Netlify Identity and Git Gateway, so your team can edit content from anywhere. To switch, remove the local_backend: true line from config.yml and push."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I deploy BlazorForge?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Netlify is the recommended path, especially for the online CMS. Push to GitHub, create a Netlify account with GitHub, import the repository, set the build command to dotnet publish -c Release -o publish and the publish directory to publish/wwwroot, then deploy. Enable Netlify Identity with Invite-only registration and Git Gateway, and invite yourself. The live CMS is at /admin/. Cloudflare Pages also works with a build.sh that downloads the .NET SDK and runs the publish command."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the license, and what is included in the package?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "BlazorForge costs $149 as a one-time payment. The package includes the complete Blazor WebAssembly project, seven production-ready pages, sixty-five pre-built components, Decap CMS admin panel with configuration, the Markdown content structure, Microsoft Fluent 2 design tokens, sample content with five journal articles and four service pages, full documentation, and lifetime updates. The license allows unlimited personal and commercial projects, including client work, SaaS products, and internal enterprise applications. The only restriction is reselling the theme itself as a competing template product."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where can I see the demo and get support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The live demo is at blazorforge.pages.dev. Download is at creativitaz.gumroad.com/l/blazorforge. The documentation covers installation, initial configuration, content editing with Markdown, Decap CMS in local mode, and deployment to Netlify and Cloudflare Pages. For support, email creativebydre@gmail.com. Custom development is available through the Fiverr link in the theme listing."
-      }
-    }
-  ]
-}
-</script>

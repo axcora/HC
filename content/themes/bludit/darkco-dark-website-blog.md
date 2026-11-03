@@ -25,6 +25,27 @@ tags:
     - dark modern
     - bluditthemes
     - premiumthemes
+faq:
+  - q: "What is Darkco, and what problem does it solve?"
+    a: "Darkco is a premium Bludit template built for dark-mode blogs and modern content sites. Bludit is a flat-file CMS no database, fast, and easy to deploy on any hosting. The template ships with a dark modern design, a clean minimalist layout, blog and static page support, automatic SEO, and responsive output. Instead of setting up a CMS, a database, a theme, and SEO plugins from scratch, you upload the source, activate the included plugins, and the site is live."
+  - q: "Do I need a database or coding skills to use Darkco?"
+    a: "No. Bludit is a flat-file CMS, so there is no database to set up and no SQL to manage. Installation is upload, extract, run, and the site is live. Daily work happens in the Bludit admin panel at admin settings, plugins, users, categories, content, and static pages. You do not need to code to run the site."
+  - q: "How do I install and log in to Darkco?"
+    a: "Upload the source code to your hosting, extract all files into your project, visit your website to run the installation, then open yourweb admin to log in. The default username is admin; you can change it later in the Users menu. Enter your password, and you land on the dashboard. The first step after login is configuring the site."
+  - q: "How do I configure the site title, homepage, and logo?"
+    a: "Open Settings and General. Change the title, description, and other site fields. Open the Advanced tab to set how many posts display on the homepage. Click the logo field to upload your logo, then save to apply the changes. These settings control the site identity and the homepage layout."
+  - q: "Which plugins do I need to activate?"
+    a: "Open Settings and Plugins and activate the Darkco plugins first Darkco UI and Darkco Footer. Then activate RSS Feed, Search, Sitemap, Twitter Card, Open Graph, and Users. With these active, the site generates a sitemap and an RSS feed automatically, includes search, and outputs Twitter Card and Open Graph tags for social sharing. Combined with the template SEO auto setup, the site is ready for search engines."
+  - q: "How do I manage users and categories?"
+    a: "Users are managed under Manage and Users. You can register, delete, and update users. To edit a user, click the username, then update or delete. To create a new user, click the Add new user menu. Categories are managed under Manage and Categories, where example categories are already provided. To update or delete a category, click it and select the action. Categories group blog posts and static pages."
+  - q: "How do I create a blog post or a static page?"
+    a: "Open the Content area. The Pages tab shows all blog posts, and the Static tab shows static pages. You can also check the Sticky, Scheduled, and Draft tabs. Delete the example articles first, then click New content. Insert your title and write the article. Open the Options tab to select the category, insert the description, and upload a cover image under Options and General. Open the Advanced tab to add tags. In the Type section, choose Default for a blog post or Static for a static page such as about or contact. Click Save."
+  - q: "Can I use Darkco for client projects, and what is the license?"
+    a: "Yes. The license is a one-time purchase and you own 100 percent of the source, so you can use it on personal and client projects without recurring fees. The license does not permit reselling or redistributing the theme itself as a competing product. If you need a fully custom build, custom work is available through the Fiverr link in the theme listing."
+  - q: "Is the dark mode the only design, or can I switch themes?"
+    a: "Darkco ships as a dark modern design with a clean minimalist layout. The dark mode is the template design direction, not a toggle on top of a light theme. If you need a light theme from the same lab, Creative Agency is the Bludit template with a creative agency light design. Both are flat-file Bludit themes at 55 dollars."
+  - q: "Where can I see the demo and get support?"
+    a: "Demo videos are available at the YouTube links in the article. Download is at creativitaz.gumroad.com/l/darkco. For support, email creativebydre@gmail.com. Custom development is available through the Fiverr link in the theme listing."
 ---
 
 ### DARKCO Dark Modern Website
@@ -89,134 +110,3 @@ For insert tags, you can click on Advance tab, and on TAGS area you can insert y
 If you need write for static page, example about page, contact page and others, so you can select type Static on TYPE section.
 
 After that, you can click save button , for update your content article.
-
-## Frequently Asked Questions
-
-### What is Darkco, and what problem does it solve?
-
-Darkco is a premium Bludit template built for dark-mode blogs and modern content sites. Bludit is a flat-file CMS: no database, fast, and easy to deploy on any hosting. The template ships with a dark modern design, a clean minimalist layout, blog and static page support, automatic SEO, and responsive output. Instead of setting up a CMS, a database, a theme, and SEO plugins from scratch, you upload the source, activate the included plugins, and the site is live.
-
-### Do I need a database or coding skills to use Darkco?
-
-No. Bludit is a flat-file CMS, so there is no database to set up and no SQL to manage. Installation is upload, extract, run, and the site is live. Daily work happens in the Bludit admin panel at `/admin`: settings, plugins, users, categories, content, and static pages. You do not need to code to run the site.
-
-### How do I install and log in to Darkco?
-
-Upload the source code to your hosting, extract all files into your project, visit your website to run the installation, then open `yourweb/admin` to log in. The default username is `admin`; you can change it later in the Users menu. Enter your password, and you land on the dashboard. The first step after login is configuring the site.
-
-### How do I configure the site title, homepage, and logo?
-
-Open Settings → General. Change the title, description, and other site fields. Open the Advanced tab to set how many posts display on the homepage. Click the logo field to upload your logo, then save to apply the changes. These settings control the site identity and the homepage layout.
-
-### Which plugins do I need to activate?
-
-Open Settings → Plugins and activate the Darkco plugins first: Darkco UI and Darkco Footer. Then activate RSS Feed, Search, Sitemap, Twitter Card, Open Graph, and Users. With these active, the site generates a sitemap and an RSS feed automatically, includes search, and outputs Twitter Card and Open Graph tags for social sharing. Combined with the template's SEO auto setup, the site is ready for search engines.
-
-### How do I manage users and categories?
-
-Users are managed under Manage → Users. You can register, delete, and update users. To edit a user, click the username, then update or delete. To create a new user, click the Add new user menu. Categories are managed under Manage → Categories, where example categories are already provided. To update or delete a category, click it and select the action. Categories group blog posts and static pages.
-
-### How do I create a blog post or a static page?
-
-Open the Content area. The Pages tab shows all blog posts, and the Static tab shows static pages. You can also check the Sticky, Scheduled, and Draft tabs. Delete the example articles first, then click New content. Insert your title and write the article. Open the Options tab to select the category, insert the description, and upload a cover image under Options → General. Open the Advanced tab to add tags. In the Type section, choose Default for a blog post or Static for a static page such as about or contact. Click Save.
-
-### Can I use Darkco for client projects, and what is the license?
-
-Yes. The license is a one-time purchase and you own 100% of the source, so you can use it on personal and client projects without recurring fees. The license does not permit reselling or redistributing the theme itself as a competing product. If you need a fully custom build, custom work is available through the Fiverr link in the theme listing.
-
-### Is the dark mode the only design, or can I switch themes?
-
-Darkco ships as a dark modern design with a clean minimalist layout. The dark mode is the template's design direction, not a toggle on top of a light theme. If you need a light theme from the same lab, Creative Agency is the Bludit template with a creative agency light design. Both are flat-file Bludit themes at $55.
-
-### Where can I see the demo and get support?
-
-Demo videos are available at the YouTube links in the article. Download is at `creativitaz.gumroad.com/l/darkco`. For support, email creativebydre@gmail.com. Custom development is available through the Fiverr link in the theme listing.
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is Darkco, and what problem does it solve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Darkco is a premium Bludit template built for dark-mode blogs and modern content sites. Bludit is a flat-file CMS: no database, fast, and easy to deploy on any hosting. The template ships with a dark modern design, a clean minimalist layout, blog and static page support, automatic SEO, and responsive output. Instead of setting up a CMS, a database, a theme, and SEO plugins from scratch, you upload the source, activate the included plugins, and the site is live."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need a database or coding skills to use Darkco?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Bludit is a flat-file CMS, so there is no database to set up and no SQL to manage. Installation is upload, extract, run, and the site is live. Daily work happens in the Bludit admin panel at /admin: settings, plugins, users, categories, content, and static pages. You do not need to code to run the site."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I install and log in to Darkco?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Upload the source code to your hosting, extract all files into your project, visit your website to run the installation, then open yourweb/admin to log in. The default username is admin; you can change it later in the Users menu. Enter your password, and you land on the dashboard. The first step after login is configuring the site."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I configure the site title, homepage, and logo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open Settings → General. Change the title, description, and other site fields. Open the Advanced tab to set how many posts display on the homepage. Click the logo field to upload your logo, then save to apply the changes. These settings control the site identity and the homepage layout."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which plugins do I need to activate?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open Settings → Plugins and activate the Darkco plugins first: Darkco UI and Darkco Footer. Then activate RSS Feed, Search, Sitemap, Twitter Card, Open Graph, and Users. With these active, the site generates a sitemap and an RSS feed automatically, includes search, and outputs Twitter Card and Open Graph tags for social sharing. Combined with the template's SEO auto setup, the site is ready for search engines."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I manage users and categories?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Users are managed under Manage → Users. You can register, delete, and update users. To edit a user, click the username, then update or delete. To create a new user, click the Add new user menu. Categories are managed under Manage → Categories, where example categories are already provided. To update or delete a category, click it and select the action. Categories group blog posts and static pages."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I create a blog post or a static page?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open the Content area. The Pages tab shows all blog posts, and the Static tab shows static pages. You can also check the Sticky, Scheduled, and Draft tabs. Delete the example articles first, then click New content. Insert your title and write the article. Open the Options tab to select the category, insert the description, and upload a cover image under Options → General. Open the Advanced tab to add tags. In the Type section, choose Default for a blog post or Static for a static page such as about or contact. Click Save."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I use Darkco for client projects, and what is the license?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. The license is a one-time purchase and you own 100% of the source, so you can use it on personal and client projects without recurring fees. The license does not permit reselling or redistributing the theme itself as a competing product. If you need a fully custom build, custom work is available through the Fiverr link in the theme listing."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is the dark mode the only design, or can I switch themes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Darkco ships as a dark modern design with a clean minimalist layout. The dark mode is the template's design direction, not a toggle on top of a light theme. If you need a light theme from the same lab, Creative Agency is the Bludit template with a creative agency light design. Both are flat-file Bludit themes at $55."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where can I see the demo and get support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Demo videos are available at the YouTube links in the article. Download is at creativitaz.gumroad.com/l/darkco. For support, email creativebydre@gmail.com. Custom development is available through the Fiverr link in the theme listing."
-      }
-    }
-  ]
-}
-</script>

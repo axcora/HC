@@ -41,6 +41,27 @@ tags:
   - seo theme
   - featured
   - featuredpremium
+faq:
+  - q: "What exactly is VOID, and what problem does it solve?"
+    a: "VOID is a production-ready SvelteKit theme for AI and SaaS marketing sites. It ships with file-based routing, nested layouts, JSON and Markdown content collections, SEO meta generated from frontmatter, and built-in RSS and sitemap endpoints. Instead of spending your first week wiring meta tags and a content loader, you spend it on your product and your copy."
+  - q: "How is VOID different from a free SvelteKit starter?"
+    a: "Free starters give you routing and a blank page. VOID gives you the full plumbing a content-driven marketing site needs structured content collections, per-page SEO meta, Open Graph and Twitter card output, RSS and sitemap endpoints, accessible base components, and an optional Decap CMS layer."
+  - q: "Do I need to know SvelteKit to use VOID?"
+    a: "Basic comfort with SvelteKit, JSON, and Markdown is enough. Content lives in src/content (Markdown) and src/lib/data (JSON), so editing copy does not mean editing components. If you prefer browser-based editing, the Code + Decap CMS edition lets non-developers update content without touching the repository."
+  - q: "What is the difference between the Code Only and Code + Decap CMS editions?"
+    a: "Both editions share the same core SvelteKit codebase, JSON and Markdown content collections, SEO meta, RSS, and sitemap. The Code + Decap CMS edition adds a Decap CMS config, Netlify Identity for editor login, Git Gateway for commits without GitHub accounts, and browser-based media management. Choose Code Only if you or your developer manage content in code; choose the CMS edition if editors need a browser interface."
+  - q: "Can I use VOID for client projects?"
+    a: "Yes. VOID is licensed under a single-purchase, unlimited-project license. You can use it in unlimited personal and client projects. The only restriction is resale or redistribution of the theme itself as a competing product."
+  - q: "Which hosting providers does VOID support?"
+    a: "VOID includes adapter configuration for Cloudflare Pages, Netlify, Vercel, and static hosts. For PHP hosting such as cPanel, Plesk, DirectAdmin, or a VPS, you can build in static mode with @sveltejs/adapter-static and upload the build folder to your public directory. Modern static hosting is the simpler path for most projects."
+  - q: "Does the Decap CMS admin panel work on plain PHP hosting?"
+    a: "No. The Decap CMS admin panel needs a Git backend, so it does not run on plain PHP hosting without an OAuth proxy. The marketing pages, blog, and docs work fine as a static build. For browser-based editing, deploy to Netlify with Identity and Git Gateway enabled."
+  - q: "How does SEO meta work in VOID?"
+    a: "Each page defines its SEO fields in Markdown frontmatter title, description, canonical, Open Graph type, and image. A shared SEO component reads those fields and renders the tags. Canonical URLs and the RSS and sitemap endpoints all read the url field from src/lib/data/site.json, so you change the base URL once and every output follows."
+  - q: "What are the requirements to run VOID locally?"
+    a: "Node.js 22.17 or newer, npm 10 or newer, and basic comfort with SvelteKit, JSON, and Markdown. For the CMS edition you also need a GitHub account and a Netlify account the free tier works."
+  - q: "Where can I find documentation and support?"
+    a: "Full documentation is available at sveltekit-void.pages.dev/docs/welcome. For support, email creativebydre@gmail.com. Custom work is available through the Fiverr link in the theme listing."
 ---
 
 ## What VOID Is
@@ -300,137 +321,6 @@ The base URL for both comes from `src/lib/data/site.json` → `url`. Change it o
 Each page defines its SEO fields in the frontmatter: title, description, canonical, Open Graph type, and image. A shared SEO component reads those fields and renders the tags.
 
 This means you edit meta in one place per page, not in a separate head component. The output is consistent across pages, and the canonical URL follows the `url` in `site.json`.
-
-## Frequently Asked Questions
-
-### What exactly is VOID, and what problem does it solve?
-
-VOID is a production-ready SvelteKit theme for AI and SaaS marketing sites. It ships with file-based routing, nested layouts, JSON and Markdown content collections, SEO meta generated from frontmatter, and built-in RSS and sitemap endpoints. Instead of spending your first week wiring meta tags and a content loader, you spend it on your product and your copy.
-
-### How is VOID different from a free SvelteKit starter?
-
-Free starters give you routing and a blank page. VOID gives you the full plumbing a content-driven marketing site needs: structured content collections, per-page SEO meta, Open Graph and Twitter card output, RSS and sitemap endpoints, accessible base components, and an optional Decap CMS layer.
-
-### Do I need to know SvelteKit to use VOID?
-
-Basic comfort with SvelteKit, JSON, and Markdown is enough. Content lives in `src/content` (Markdown) and `src/lib/data` (JSON), so editing copy does not mean editing components. If you prefer browser-based editing, the Code + Decap CMS edition lets non-developers update content without touching the repository.
-
-### What is the difference between the Code Only and Code + Decap CMS editions?
-
-Both editions share the same core SvelteKit codebase, JSON and Markdown content collections, SEO meta, RSS, and sitemap. The Code + Decap CMS edition adds a Decap CMS config, Netlify Identity for editor login, Git Gateway for commits without GitHub accounts, and browser-based media management. Choose Code Only if you or your developer manage content in code; choose the CMS edition if editors need a browser interface.
-
-### Can I use VOID for client projects?
-
-Yes. VOID is licensed under a single-purchase, unlimited-project license. You can use it in unlimited personal and client projects. The only restriction is resale or redistribution of the theme itself as a competing product.
-
-### Which hosting providers does VOID support?
-
-VOID includes adapter configuration for Cloudflare Pages, Netlify, Vercel, and static hosts. For PHP hosting such as cPanel, Plesk, DirectAdmin, or a VPS, you can build in static mode with `@sveltejs/adapter-static` and upload the `build/` folder to your public directory. Modern static hosting is the simpler path for most projects.
-
-### Does the Decap CMS admin panel work on plain PHP hosting?
-
-No. The Decap CMS admin panel needs a Git backend, so it does not run on plain PHP hosting without an OAuth proxy. The marketing pages, blog, and docs work fine as a static build. For browser-based editing, deploy to Netlify with Identity and Git Gateway enabled.
-
-### How does SEO meta work in VOID?
-
-Each page defines its SEO fields in Markdown frontmatter: title, description, canonical, Open Graph type, and image. A shared SEO component reads those fields and renders the tags. Canonical URLs and the RSS and sitemap endpoints all read the `url` field from `src/lib/data/site.json`, so you change the base URL once and every output follows.
-
-### What are the requirements to run VOID locally?
-
-Node.js 22.17 or newer, npm 10 or newer, and basic comfort with SvelteKit, JSON, and Markdown. For the CMS edition you also need a GitHub account and a Netlify account — the free tier works.
-
-### Where can I find documentation and support?
-
-Full documentation is available at `sveltekit-void.pages.dev/docs/welcome`. For support, email creativebydre@gmail.com. Custom work is available through the Fiverr link in the theme listing.
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What exactly is VOID, and what problem does it solve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "VOID is a production-ready SvelteKit theme for AI and SaaS marketing sites. It ships with file-based routing, nested layouts, JSON and Markdown content collections, SEO meta generated from frontmatter, and built-in RSS and sitemap endpoints. Instead of spending your first week wiring meta tags and a content loader, you spend it on your product and your copy."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is VOID different from a free SvelteKit starter?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Free starters give you routing and a blank page. VOID gives you the full plumbing a content-driven marketing site needs: structured content collections, per-page SEO meta, Open Graph and Twitter card output, RSS and sitemap endpoints, accessible base components, and an optional Decap CMS layer."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to know SvelteKit to use VOID?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Basic comfort with SvelteKit, JSON, and Markdown is enough. Content lives in src/content (Markdown) and src/lib/data (JSON), so editing copy does not mean editing components. If you prefer browser-based editing, the Code + Decap CMS edition lets non-developers update content without touching the repository."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between the Code Only and Code + Decap CMS editions?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Both editions share the same core SvelteKit codebase, JSON and Markdown content collections, SEO meta, RSS, and sitemap. The Code + Decap CMS edition adds a Decap CMS config, Netlify Identity for editor login, Git Gateway for commits without GitHub accounts, and browser-based media management. Choose Code Only if you or your developer manage content in code; choose the CMS edition if editors need a browser interface."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I use VOID for client projects?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. VOID is licensed under a single-purchase, unlimited-project license. You can use it in unlimited personal and client projects. The only restriction is resale or redistribution of the theme itself as a competing product."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which hosting providers does VOID support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "VOID includes adapter configuration for Cloudflare Pages, Netlify, Vercel, and static hosts. For PHP hosting such as cPanel, Plesk, DirectAdmin, or a VPS, you can build in static mode with @sveltejs/adapter-static and upload the build folder to your public directory. Modern static hosting is the simpler path for most projects."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does the Decap CMS admin panel work on plain PHP hosting?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. The Decap CMS admin panel needs a Git backend, so it does not run on plain PHP hosting without an OAuth proxy. The marketing pages, blog, and docs work fine as a static build. For browser-based editing, deploy to Netlify with Identity and Git Gateway enabled."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does SEO meta work in VOID?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Each page defines its SEO fields in Markdown frontmatter: title, description, canonical, Open Graph type, and image. A shared SEO component reads those fields and renders the tags. Canonical URLs and the RSS and sitemap endpoints all read the url field from src/lib/data/site.json, so you change the base URL once and every output follows."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the requirements to run VOID locally?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Node.js 22.17 or newer, npm 10 or newer, and basic comfort with SvelteKit, JSON, and Markdown. For the CMS edition you also need a GitHub account and a Netlify account — the free tier works."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where can I find documentation and support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Full documentation is available at sveltekit-void.pages.dev/docs/welcome. For support, email creativebydre@gmail.com. Custom work is available through the Fiverr link in the theme listing."
-      }
-    }
-  ]
-}
-</script>
 
 ## Tech Stack
 
