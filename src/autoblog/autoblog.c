@@ -43,6 +43,69 @@ static const char *FORBIDDEN[] = {
 };
 static const int FORBIDDEN_COUNT = 4;
 
+static const char *REVIEW_TITLES[] = {
+    "%s Review: Is It Worth It in 2026?",
+    "In-Depth Look at %s - Features, Pricing & Verdict",
+    "Why %s Is Built for Serious Projects",
+    "%s: Complete Guide for Modern Web Projects",
+    "We Tested %s - Here's What You Need to Know",
+    "Inside %s: Performance, SEO and Real Use",
+    "%s Explained: Who Is It For and Who Should Skip It",
+    "Full Review of %s - From Setup to Production",
+    "%s Deep Dive: Pros, Cons and Best Use",
+    "Is %s the Best Template for Your Next Project?",
+    "%s in 2026: What Makes It Stand Out",
+    "Honest Review: %s for Startups and Agencies"
+};
+static const int REVIEW_TITLES_COUNT = 12;
+
+static const char *COMPARISON_TITLES[] = {
+    "%s vs %s: Which One Should You Choose in 2026?",
+    "%s vs %s - Honest Feature Comparison",
+    "Choosing Between %s and %s? Read This First",
+    "%s vs %s: Pricing, Performance & Verdict",
+    "Head-to-Head: %s vs %s for Modern Websites",
+    "%s or %s? We Compared Them So You Don't Have To"
+};
+static const int COMPARISON_TITLES_COUNT = 6;
+
+static const char *TREND_TITLES[] = {
+    "%s: Premium Themes That Actually Fit",
+    "Building for %s? These Premium Themes Are Ready",
+    "%s in 2026 - Premium Picks to Ship Faster",
+    "From Trend to Template: %s Edition",
+    "Why %s Matters and Which Premium Themes Nail It"
+};
+static const int TREND_TITLES_COUNT = 5;
+
+static unsigned int hash_str(const char *s) {
+    unsigned int h = 5381;
+    while (*s) { h = ((h << 5) + h) + (unsigned char)*s; s++; }
+    return h;
+}
+
+static void make_review_title(const char *theme_title, char *out, size_t out_size) {
+    unsigned int seed = hash_str(theme_title) + (unsigned int)time(NULL) + (unsigned int)(rand() % 1000);
+    int idx = seed % REVIEW_TITLES_COUNT;
+    snprintf(out, out_size, REVIEW_TITLES[idx], theme_title);
+}
+
+static void make_comparison_title(const char *a, const char *b, char *out, size_t out_size) {
+    unsigned int seed = hash_str(a) + hash_str(b) + (unsigned int)time(NULL) + (unsigned int)(rand() % 1000);
+    int idx = seed % COMPARISON_TITLES_COUNT;
+    snprintf(out, out_size, COMPARISON_TITLES[idx], a, b);
+}
+
+static void make_trend_title(const char *topic, char *out, size_t out_size) {
+    char topic_cap[512];
+    snprintf(topic_cap, sizeof(topic_cap), "%s", topic);
+    if (topic_cap[0]) topic_cap[0] = toupper((unsigned char)topic_cap[0]);
+    unsigned int seed = hash_str(topic) + (unsigned int)time(NULL) + (unsigned int)(rand() % 1000);
+    int idx = seed % TREND_TITLES_COUNT;
+    snprintf(out, out_size, TREND_TITLES[idx], topic_cap);
+}
+
+
 static int ci_equal(const char *a, const char *b) {
     while (*a && *b) {
         if (tolower((unsigned char)*a) != tolower((unsigned char)*b)) return 0;
@@ -434,6 +497,8 @@ static char *build_prompt_comparison(Theme *a, Theme *b, const char *aText, cons
     size_t cap = 65536;
     char *p = malloc(cap);
     if (!p) return NULL;
+    char dynamic_title[1024];
+    make_comparison_title(a->title, b->title, dynamic_title, sizeof(dynamic_title));
     int n = snprintf(p, cap,
         "You are a senior technical writer. Write a long-form comparison article in English, 2000-2500 words.\n\n"
         "THEME A:\ntitle: %s\ndescription: %s\nimage: %s\nprice: %s\nurl: %s\ndemo: %s\nraw tags: ",
@@ -452,7 +517,7 @@ static char *build_prompt_comparison(Theme *a, Theme *b, const char *aText, cons
         "OUTPUT FORMAT:\n"
         "---\n"
         "layout: blog-detil.cax\n"
-        "title: %s vs %s - Which Is Better?\n"
+        "title: %s\n"
         "description: <120-160 chars comparison summary>\n"
         "image: %s\n"
         "date: 2026-10-31\n"
@@ -494,20 +559,25 @@ static char *build_prompt_comparison(Theme *a, Theme *b, const char *aText, cons
         "- MUST link to /themes/ and /premium/ in 'Related Themes'.\n"
         "- ONLY use features from data. Never invent features.\n"
         "- DO NOT use: revolutionary, game-changing, seamless, cutting-edge.\n"
-        "- Output ONLY markdown. No code fences, no explanation.",
+        "- Output ONLY markdown. No code fences, no explanation.\n"
+        "- The blog title MUST be exactly: \"%s\"\n",
         aText, aDemo, bText, bDemo,
-        a->title, b->title, a->image,
+        dynamic_title, a->image,
         a->title, b->title,
         a->title, b->title,
         a->title, a->demo, b->title, b->demo,
-        a->url, b->url);
+        a->url, b->url,
+        dynamic_title);
     return p;
 }
+
 
 static char *build_prompt_review(Theme *t, const char *text, const char *demo) {
     size_t cap = 65536;
     char *p = malloc(cap);
     if (!p) return NULL;
+    char dynamic_title[1024];
+    make_review_title(t->title, dynamic_title, sizeof(dynamic_title));
     int n = snprintf(p, cap,
         "You are a senior technical writer. Write a long-form review article in English, 2000-2500 words.\n\n"
         "THEME DATA:\n"
@@ -569,19 +639,24 @@ static char *build_prompt_review(Theme *t, const char *text, const char *demo) {
         "- MUST include internal links to /themes/ and /premium/ in 'Related Themes'.\n"
         "- ONLY use features from data. Never invent features.\n"
         "- DO NOT use: revolutionary, game-changing, seamless, cutting-edge.\n"
-        "- Output ONLY markdown. No code fences, no explanation.",
+        "- Output ONLY markdown. No code fences, no explanation.\n"
+        "- The blog title MUST be exactly: \"%s\"\n",
         text, demo,
-        t->title, t->description, t->image,
+        dynamic_title, t->description, t->image,
         t->title,
         t->title, t->url, t->demo,
-        t->title, t->url);
+        t->title, t->url,
+        dynamic_title);
     return p;
 }
+
 
 static char *build_prompt_trend(const char *topic, Theme **themes, int count, const char *image) {
     size_t cap = 65536;
     char *p = malloc(cap);
     if (!p) return NULL;
+    char dynamic_title[1024];
+    make_trend_title(topic, dynamic_title, sizeof(dynamic_title));
     int n = snprintf(p, cap,
         "You are a senior technical writer. Write a long-form trend article in English, 2000-2500 words.\n\n"
         "TRENDING TOPIC: %s\n\n"
@@ -595,7 +670,7 @@ static char *build_prompt_trend(const char *topic, Theme **themes, int count, co
         "\nOUTPUT FORMAT:\n"
         "---\n"
         "layout: blog-detil.cax\n"
-        "title: <trend keyword> - Premium Themes That Fit\n"
+        "title: %s\n"
         "description: <120-160 chars>\n"
         "image: %s\n"
         "date: 2026-10-31\n"
@@ -630,10 +705,12 @@ static char *build_prompt_trend(const char *topic, Theme **themes, int count, co
         "- MUST link to /premium/ at the end.\n"
         "- ONLY use features from data. Never invent features.\n"
         "- DO NOT use: revolutionary, game-changing, seamless, cutting-edge.\n"
-        "- Output ONLY markdown. No code fences, no explanation.",
-        image);
+        "- Output ONLY markdown. No code fences, no explanation.\n"
+        "- The blog title MUST be exactly: \"%s\"\n",
+        dynamic_title, image, dynamic_title);
     return p;
 }
+
 
 static int save_state(const char *key, const char *value) {
     char *content = read_file(STATE_FILE);
@@ -984,6 +1061,7 @@ static int do_trend(Theme *themes, int count) {
 }
 
 int cax_autoblog_run(void) {
+    srand((unsigned int)time(NULL) ^ (unsigned int)getpid());
     const char *key = getenv("GEMINI_API_KEY");
     if (!key || !*key) {
         fprintf(stderr, "[autoblog] GEMINI_API_KEY missing\n");

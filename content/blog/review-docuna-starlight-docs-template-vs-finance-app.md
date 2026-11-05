@@ -20,19 +20,19 @@ Modern web development heavily relies on static site generators like Astro JS to
 
 Building these digital web properties from the ground up can consume valuable engineering cycles. Developers frequently need pre-configured starter templates that grant complete ownership of the underlying source code while delivering fast page loads out of the box. Starter templates built on the Astro JS framework solve this challenge by generating static HTML output, offering responsive component grids, and maintaining minimal client-side JavaScript footprints.
 
-This technical article provides an in-depth comparison between two distinct Astro-based solutions available in the ecosystem: the [Finance App - Astro Startup Template - SaaS, Finance, App Landing](/themes/astro/new-astro-js-multipurpose-themes-financeapp/) and [Docuna - Astro Starlight Docs Template - Documentation, Landing, Blog](/themes/astro/astro-documentation-starlight-docuna/). While both templates share Astro's core philosophy of fast performance, zero-dollar initial pricing, and static build outputs, their internal design patterns, visual elements, content pipelines, and intended user workflows differ significantly. This guide systematically evaluates their features, navigation models, deployment pathways, and structural strengths to assist you in making an informed selection for your project.
+This technical article provides an in-depth comparison between two distinct Astro-based solutions available in the ecosystem: the [Finance App - Astro Startup Template - SaaS, Finance, App Landing](/themes/astro/new-astro-js-multipurpose-themes-financeapp/) and [Docuna - Astro Starlight Docs Template - Documentation and Landing](/themes/astro/astro-documentation-starlight-docuna/). While both templates share Astro's core philosophy of fast performance and static build outputs, their internal design patterns, visual elements, content pipelines, and intended user workflows differ significantly. This guide systematically evaluates their features, navigation models, deployment pathways, and structural strengths to assist you in making an informed selection for your project.
 
 ## Overview of Finance App - Astro Startup Template - SaaS, Finance, App Landing
 The [Finance App - Astro Startup Template - SaaS, Finance, App Landing](/themes/astro/new-astro-js-multipurpose-themes-financeapp/) is a multipurpose web template engineered for commercial ventures, fintech startups, SaaS applications, and artificial intelligence product releases. Its design strategy emphasizes high-impact promotional sections intended to showcase application interfaces, outline subscription pricing tiers, present business updates, and convert visitors into active app users.
 
-Under the hood, the Finance App template combines Astro JS static rendering with a responsive Bootstrap grid framework. This architecture ensures clean HTML rendering, rapid initial load speeds, and full responsiveness across mobile viewports, tablets, and desktop displays. The layout structure comes equipped with comprehensive landing components, including a main header area, an introduction section, a dedicated product showcase section, feature list modules, an about page template, pricing tables, a blog subsystem with widgets, and a functional contact page setup.
+Under the hood, the Finance App template combines Astro JS static rendering with a responsive Bootstrap grid framework. This architecture ensures clean HTML rendering, rapid initial load speeds, and full responsiveness across mobile viewports, tablets, and desktop displays. The layout structure comes equipped with comprehensive landing components, including a main header area, an introduction section, a dedicated product showcase section, feature list modules, an about page template, pricing tables, and a functional contact page setup.
 
 Deployment flexibility is a core benefit of this template. Teams obtain 100% source code ownership through a single download under a one-time acquisition structure, completely removing third-party platform lock-in. The repository is configured for immediate integration with major static deployment services, including Netlify, Vercel, and Cloudflare Pages. Whether launching a mobile finance application, a web SaaS suite, or a software start-up, Finance App delivers the pre-built marketing components necessary to present commercial features directly to customers.
 
-## Overview of Docuna - Astro Starlight Docs Template - Documentation, Landing, Blog
-[Docuna - Astro Starlight Docs Template - Documentation, Landing, Blog](/themes/astro/astro-documentation-starlight-docuna/) is a documentation-first web template built for software engineering teams, API providers, open-source projects, and technical knowledge bases. Constructed on top of Astro and the official Starlight documentation framework, Docuna is designed to simplify technical publishing through structured content organization, automatic sidebar compilation, and full-text search capability.
+## Overview of Docuna - Astro Starlight Docs Template - Documentation and Landing
+[Docuna - Astro Starlight Docs Template - Documentation and Landing](/themes/astro/astro-documentation-starlight-docuna/) is a documentation-first web template built for software engineering teams, API providers, open-source projects, and technical knowledge bases. Constructed on top of Astro and the official Starlight documentation framework, Docuna is designed to simplify technical publishing through structured content organization, automatic sidebar compilation, and full-text search capability.
 
-Unlike conventional marketing templates, Docuna merges technical documentation architecture with essential public-facing web pages. It features a streamlined landing page layout, an integrated blog system, keyboard-accessible global search using `Ctrl+K`, hierarchical sidebar navigation, support for MDX formatting, and a customizable theme engine supporting Dark, Light, and Auto visual modes. By outputting pre-rendered static assets with minimal client-side JavaScript overhead, Docuna delivers fast execution while maintaining strict accessibility standards.
+Unlike conventional marketing templates, Docuna merges technical documentation architecture with a public-facing landing page. It features a streamlined landing page layout, keyboard-accessible global search using `Ctrl+K`, hierarchical sidebar navigation, support for MDX formatting, and a customizable theme engine supporting Dark, Light, and Auto visual modes. By outputting pre-rendered static assets with minimal client-side JavaScript overhead, Docuna delivers fast execution while maintaining strict accessibility standards.
 
 Docuna grants full source code ownership on a one-time download model, allowing development teams to host and extend the codebase freely. Its primary content workflow operates via standard Markdown and MDX files. Software developers and technical writers can generate complex documentation trees, auto-compile multi-level sidebars, and embed interactive UI widgets directly into document bodies without manual menu configuration. Docuna serves as a complete foundation for projects requiring clear software manuals and developer portals.
 
@@ -48,15 +48,15 @@ The landing page components in Finance App are tailored for conversion-focused m
 
 Docuna takes a minimalist approach to landing page architecture. Its included home page acts as a concise product overview, presenting core feature cards, rapid installation steps, and immediate entry points into the main documentation system. It avoids complex marketing blocks in favor of clean visual entryways that direct developers and technical users straight into the technical guides.
 
-### Content Systems: MDX Documentation vs Blog and Product Widgets
+### Content Systems: MDX Documentation vs Product Widgets
 Content management in Docuna centers around MDX and Markdown files processed through Starlight. Technical teams can author document files, insert standard markdown headers, and utilize automatic sidebar generation based on directory structures. This file-driven approach simplifies the creation of extensive technical references, API guides, and organized user manuals.
 
-Finance App handles content distribution through a structured blog widget and product page model. It provides dedicated blog index layouts, blog post templates, and reusable product widgets designed to feature application highlights or platform capabilities. Rather than managing deep documentation hierarchies, Finance App focuses on publication workflows like company announcements, product feature releases, and promotional articles.
+Finance App handles content distribution through a structured product page model. It provides reusable product widgets designed to feature application highlights or platform capabilities. Rather than managing deep documentation hierarchies, Finance App focuses on product showcase workflows like feature releases and promotional sections.
 
 ### Navigation, Search, and User Interface Controls
-Navigation in Finance App uses classic site structure patterns. It provides a persistent header navbar area alongside a multi-column footer section. These navigation elements offer direct paths to product features, about sections, pricing plans, blog updates, and contact forms, ensuring visitors can easily navigate commercial marketing pages.
+Navigation in Finance App uses classic site structure patterns. It provides a persistent header navbar area alongside a multi-column footer section. These navigation elements offer direct paths to product features, about sections, pricing plans, and contact forms, ensuring visitors can easily navigate commercial marketing pages.
 
-Docuna introduces advanced documentation navigation mechanisms. It features an integrated full-text search modal triggered via `Ctrl+K`, allowing users to query document contents instantly. The template also includes an automated multi-level sidebar navigation menu, inline page tables of content ("Skip to content"), and a visual theme selector allowing users to switch dynamically between Dark, Light, and Auto color modes.
+Docuna introduces advanced documentation navigation mechanisms. It features an integrated full-text search modal triggered via `Ctrl+K`, allowing users to query document contents instantly. The template also includes an automated multi-level sidebar navigation menu, inline page tables of content, and a visual theme selector allowing users to switch dynamically between Dark, Light, and Auto color modes.
 
 ### Responsiveness, Styling, and Dark Mode Integration
 Finance App delivers layout responsiveness through the Bootstrap responsive grid system. Its CSS components adapt smoothly across various display dimensions, ranging from compact mobile smartphones to desktop monitors. The visual theme is styled primarily for light commercial presentation, aligning with standard SaaS, fintech, and AI app landing page aesthetics.
@@ -71,9 +71,9 @@ Docuna shares this static compilation advantage. Because MDX files and Starlight
 ## Pricing
 
 ### Model and Licensing Terms
-Both Finance App and Docuna are available as zero-cost ($0) web templates. Each template provides 100% source code ownership upon initial download, allowing developers to retain the underlying files with no ongoing royalty fees, recurring software subscriptions, or hidden licensing charges.
+Both Finance App and Docuna provide 100% source code ownership upon download, allowing developers to retain the underlying files with no hidden licensing charges. Finance App is available as zero-cost, Docuna is a premium one-time purchase at $35.
 
-This standard one-time download model guarantees complete freedom for personal, commercial, and enterprise applications. Development teams can store project files within private Git repositories, modify component styles to match exact corporate identity guidelines, and deploy compiled static builds to any public cloud server or private server architecture without per-seat usage limitations.
+This one-time model guarantees complete freedom for personal, commercial, and enterprise applications. Development teams can store project files within private Git repositories, modify component styles to match exact corporate identity guidelines, and deploy compiled static builds to any public cloud server or private server architecture without per-seat usage limitations.
 
 ## Who Should Choose Finance App - Astro Startup Template - SaaS, Finance, App Landing
 
@@ -87,9 +87,9 @@ Founders and product teams building software-as-a-service platforms or artificia
 Web development agencies and freelance engineers building custom client websites for startups can utilize this template as a fast project foundation. Built on Astro JS and the familiar Bootstrap responsive grid framework, it provides an easily editable code structure for client landing page deployments.
 
 ### Marketing Teams Prioritizing Lead Generation
-Marketing professionals who require dedicated landing sections, active blog widgets for corporate announcements, and structured contact forms to capture user inquiries will find Finance App aligned with their marketing workflow requirements.
+Marketing professionals who require dedicated landing sections and structured contact forms to capture user inquiries will find Finance App aligned with their marketing workflow requirements.
 
-## Who Should Choose Docuna - Astro Starlight Docs Template - Documentation, Landing, Blog
+## Who Should Choose Docuna - Astro Starlight Docs Template - Documentation and Landing
 
 ### Open-Source Maintainers and Library Authors
 Software engineers launching open-source packages, developer libraries, or software development kits (SDKs) will find Docuna ideal. Built on Astro Starlight, it provides the structured layout, code formatting, and automated sidebar generation needed to maintain software reference material.
@@ -104,15 +104,15 @@ Content creators and technical documentation specialists who write strictly in M
 Development projects that require immediate access to user features like `Ctrl+K` global document search, automatic sidebar generation, and native Dark/Light/Auto visual theme switching out of the box will benefit from Docuna's pre-configured Starlight feature set.
 
 ## Verdict
-Selecting between the [Finance App - Astro Startup Template - SaaS, Finance, App Landing](/themes/astro/new-astro-js-multipurpose-themes-financeapp/) and [Docuna - Astro Starlight Docs Template - Documentation, Landing, Blog](/themes/astro/astro-documentation-starlight-docuna/) depends primarily on the core operational objective of your website. Both templates deliver fast page loads powered by Astro JS static compilation, zero upfront costs, and complete ownership of the underlying source code.
+Selecting between the [Finance App - Astro Startup Template - SaaS, Finance, App Landing](/themes/astro/new-astro-js-multipurpose-themes-financeapp/) and [Docuna - Astro Starlight Docs Template - Documentation and Landing](/themes/astro/astro-documentation-starlight-docuna/) depends primarily on the core operational objective of your website. Both templates deliver fast page loads powered by Astro JS static compilation and complete ownership of the underlying source code.
 
-If your project focus is commercial promotion, marketing conversion, customer acquisition, and selling a SaaS, fintech, or AI product, Finance App is the appropriate choice. Its Bootstrap grid foundation, visual app display blocks, clear pricing tables, blog widgets, and integrated contact form layout provide the components required to communicate product value to buyers.
+If your project focus is commercial promotion, marketing conversion, customer acquisition, and selling a SaaS, fintech, or AI product, Finance App is the appropriate choice. Its Bootstrap grid foundation, visual app display blocks, clear pricing tables, and integrated contact form layout provide the components required to communicate product value to buyers.
 
 Alternatively, if your project focus is developer documentation, technical writing, API reference publishing, and building searchable knowledge bases, Docuna is the superior template. Leveraging Astro Starlight, Docuna provides specialized documentation tools—including full-text `Ctrl+K` search, file-driven multi-level sidebar navigation, native dark mode support, and MDX compilation—that would require substantial effort to construct manually. Evaluate your primary audience: select Finance App to drive product conversions, or select Docuna to deliver technical documentation.
 
 ## See It Live
 Demo A: [Finance App - Astro Startup Template - SaaS, Finance, App Landing](https://financeapp.pages.dev/)
-Demo B: [Docuna - Astro Starlight Docs Template - Documentation, Landing, Blog](https://docuna.pages.dev/)
+Demo B: [Docuna - Astro Starlight Docs Template - Documentation and Landing](https://docuna.pages.dev/)
 
 ## Related Themes
 Explore more options at [All Themes](https://www.hockeycomputindo.com/themes/) and discover specialized solutions under [Premium Themes](https://www.hockeycomputindo.com/premium/).
