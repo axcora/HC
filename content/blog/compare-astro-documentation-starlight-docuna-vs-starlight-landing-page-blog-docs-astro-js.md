@@ -1,6 +1,6 @@
 ---
 layout: blog-detil.cax
-title: Docuna - Astro Starlight Docs Template - Documentation, Landing, Blog vs ForgeDocs — All-in-One Astro Starlight Theme for Landing Page, Documentation, and Blog - Which Is Better?
+title: Docuna - Astro Starlight Docs Template - Documentation and Landing vs ForgeDocs — All-in-One Astro Starlight Theme for Landing Page, Documentation, and Blog - Which Is Better?
 description: Detailed comparison of Docuna and ForgeDocs Astro Starlight themes. Evaluate features, design systems, JSON vs MDX workflows, pricing, and CMS options.
 image: astro/starlighttemplate_uyq8cf.jpg
 date: 2026-10-31
@@ -8,7 +8,6 @@ tags:
   - astro
   - starlight
   - documentation
-  - blog
   - landing page
   - developer tools
   - jamstack
@@ -17,19 +16,19 @@ tags:
 
 ## Introduction
 
-Building modern software documentation requires balancing developer experience, site speed, and conversion goals. In past web architecture models, teams often split their public web assets across multiple systems: a marketing website managed on one platform, a blog on a headless content framework, and technical documentation hosted on dedicated docs portals. This fragmented approach introduced design inconsistencies, duplicated deployment pipelines, and increased maintenance overhead.
+Building modern software documentation requires balancing developer experience, site speed, and conversion goals. In past web architecture models, teams often split their public web assets across multiple systems: a marketing website managed on one platform and technical documentation hosted on dedicated docs portals. This fragmented approach introduced design inconsistencies, duplicated deployment pipelines, and increased maintenance overhead.
 
-The emergence of static site generators built on modern JavaScript frameworks has fundamentally altered how technical documentation sites are constructed. Astro, paired with its official documentation toolkit Starlight, provides a foundation for content-focused websites. Starlight delivers static build outputs, lightweight assets, minimal client-side JavaScript, accessible typography, and keyboard-driven search out of the box. However, turning default Starlight installations into complete web properties that incorporate landing pages, blogs, and marketing sections requires pre-built themes tailored for these multi-purpose requirements.
+The emergence of static site generators built on modern JavaScript frameworks has fundamentally altered how technical documentation sites are constructed. Astro, paired with its official documentation toolkit Starlight, provides a foundation for content-focused websites. Starlight delivers static build outputs, lightweight assets, minimal client-side JavaScript, accessible typography, and keyboard-driven search out of the box. However, turning default Starlight installations into complete web properties that incorporate landing pages and marketing sections requires pre-built themes tailored for these requirements.
 
-In this technical comparison, we examine two premium themes designed for Astro Starlight: **Docuna - Astro Starlight Docs Template - Documentation, Landing, Blog** and **ForgeDocs — All-in-One Astro Starlight Theme for Landing Page, Documentation, and Blog**. Both themes aim to solve the challenge of running an all-in-one technical website, but they approach architecture, customization, data management, and user interface design from distinctly different angles. This analysis provides an objective side-by-side evaluation of their core features, implementation workflows, content structures, pricing models, and target use cases to help you select the optimal template for your project.
+In this technical comparison, we examine two premium themes designed for Astro Starlight: **Docuna - Astro Starlight Docs Template - Documentation and Landing** and **ForgeDocs — All-in-One Astro Starlight Theme for Landing Page, Documentation, and Blog**. Both themes aim to solve the challenge of running a technical website, but they approach architecture, customization, data management, and user interface design from distinctly different angles. This analysis provides an objective side-by-side evaluation of their core features, implementation workflows, content structures, pricing models, and target use cases to help you select the optimal template for your project.
 
-## Overview of Docuna - Astro Starlight Docs Template - Documentation, Landing, Blog
+## Overview of Docuna - Astro Starlight Docs Template - Documentation and Landing
 
-Docuna is a streamlined documentation template built specifically on top of Astro and Starlight. Priced at $35, it serves as a lightweight starter kit designed to help developers publish static documentation websites paired with essential marketing and blogging pages. The project prioritizes rapid setup, standard Markdown/MDX authoring workflows, and clean UI defaults without adding complex abstractions over the underlying Starlight architecture.
+Docuna is a streamlined documentation template built specifically on top of Astro and Starlight. Priced at $35, it serves as a lightweight starter kit designed to help developers publish static documentation websites paired with a landing page. The project prioritizes rapid setup, standard Markdown/MDX authoring workflows, and clean UI defaults without adding complex abstractions over the underlying Starlight architecture.
 
-The foundation of Docuna relies on Astro's static site output capabilities, ensuring minimal client-side JavaScript execution and fast page rendering speeds. It includes key out-of-the-box documentation features such as integrated keyboard search (`Ctrl+K`), responsive sidebar navigation with auto-generation support, custom dark and light mode theme toggles, and structured layout templates for home page landing sections and blog posts. Buyers receive 100% ownership of the raw source code via a one-time purchase, allowing full customizability across standard Astro layout files.
+The foundation of Docuna relies on Astro's static site output capabilities, ensuring minimal client-side JavaScript execution and fast page rendering speeds. It includes key out-of-the-box documentation features such as integrated keyboard search (`Ctrl+K`), responsive sidebar navigation with auto-generation support, custom dark and light mode theme toggles, and structured layout templates for home page landing sections. Buyers receive 100% ownership of the raw source code via a one-time purchase, allowing full customizability across standard Astro layout files.
 
-Getting started with Docuna follows traditional Node.js package setup protocols. Developers download and extract the project archive, run standard package manager installation commands, and edit local configuration files to set up site domains, global metadata, and nested documentation sidebars. Updating the hero layout, adding custom code examples, or extending content pages involves straightforward updates to local `.astro` component layouts and `.mdx` content directories. You can explore the implementation details directly on the official [Docuna - Astro Starlight Docs Template - Documentation, Landing, Blog](/themes/astro/astro-documentation-starlight-docuna/) details page.
+Getting started with Docuna follows traditional Node.js package setup protocols. Developers download and extract the project archive, run standard package manager installation commands, and edit local configuration files to set up site domains, global metadata, and nested documentation sidebars. Updating the hero layout, adding custom code examples, or extending content pages involves straightforward updates to local `.astro` component layouts and `.mdx` content directories. You can explore the implementation details directly on the official [Docuna - Astro Starlight Docs Template - Documentation and Landing](/themes/astro/astro-documentation-starlight-docuna/) details page.
 
 ## Overview of ForgeDocs — All-in-One Astro Starlight Theme for Landing Page, Documentation, and Blog
 
@@ -62,7 +61,7 @@ Content and template customization methodologies diverge significantly across bo
 
 ### Search and Navigation Functionality
 
-Search engine capabilities and navigation options are vital components of technical documentation systems. Docuna includes Starlight’s standard search modal (`Ctrl+K`) alongside responsive sidebar options. It supports automatic sidebar navigation generation based on directory folder structures, reducing the administrative burden of manually organizing multi-level technical guides.
+Search engine capabilities and navigation options are vital components of technical documentation systems. Docuna includes Starlight's standard search modal (`Ctrl+K`) alongside responsive sidebar options. It supports automatic sidebar navigation generation based on directory folder structures, reducing the administrative burden of manually organizing multi-level technical guides.
 
 ForgeDocs incorporates search indexing with support for expanded navigation elements across the documentation portal, blog section, and main landing pages. Its top navigation bar accommodates contextual action buttons (such as pricing links, version flags, and primary CTA buttons), while its sidebar supports complex nested navigation tiers tailored for large technical documentation projects.
 
@@ -95,12 +94,12 @@ When evaluating cost structures, both platforms offer single one-time payment mo
 
 Docuna offers an entry price point of $35, making it an affordable selection for individual creators, open-source maintainers, and indie developers working on lightweight budgets. ForgeDocs carries a price of $79, justified by its inclusion of an unlimited project license, lifetime updates, JSON data abstractions, advanced design system integration, and optional Decap CMS workflow packages.
 
-## Who Should Choose Docuna - Astro Starlight Docs Template - Documentation, Landing, Blog
+## Who Should Choose Docuna - Astro Starlight Docs Template - Documentation and Landing
 
 Docuna is specifically tailored for developers who prioritize simplicity, standard code structure, and rapid file-based setup. You should choose Docuna if your project matches the following user profiles:
 
 *   **Open-Source Software Maintainers:** Developers needing a clean, zero-fuss documentation portal paired with a simple landing page for an open-source library or CLI tool without complex setup requirements.
-*   **Budget-Conscious Developers:** Creators who want a high-performance documentation and blogging setup while keeping software infrastructure acquisition costs low ($35 one-time purchase).
+*   **Budget-Conscious Developers:** Creators who want a high-performance documentation setup while keeping software infrastructure acquisition costs low ($35 one-time purchase).
 *   **Pure MDX Workflow Enthusiasts:** Technical teams who prefer writing all content, configuration rules, and layout modifications directly in standard Astro and MDX files without learning abstract JSON configuration layers.
 *   **Minimalist Web Designers:** Authors who prefer a standard, distraction-free visual layout where content takes center stage over elaborate marketing graphics or heavy visual component libraries.
 
@@ -115,17 +114,17 @@ ForgeDocs is designed for teams building commercial products, SaaS applications,
 
 ## Verdict
 
-Both Docuna and ForgeDocs deliver strong static site foundations built on top of Astro and Starlight. By choosing either option, development teams bypass weeks of tedious boilerplate configuration, establishing fast, accessible, search-indexed documentation sites paired with integrated blogs and landing pages.
+Both Docuna and ForgeDocs deliver strong static site foundations built on top of Astro and Starlight. By choosing either option, development teams bypass weeks of tedious boilerplate configuration, establishing fast, accessible, search-indexed documentation sites.
 
 **Docuna** succeeds as a focused, high-value template for developers seeking a standard Starlight foundation. Its $35 price point, raw MDX authoring workflow, simple local installation protocol, and clean visual default setup make it an excellent fit for indie projects, developer utilities, and straightforward technical documentation sites.
 
 **ForgeDocs**, on the other hand, provides a broader suite of tools, advanced design components, and workflow abstractions. With its $79 price tag, it delivers an impressive package containing Fluent + shadcn styling, JSON-driven content configurations, complete green SEO optimization, lifetime updates for unlimited projects, and optional Decap CMS workflows. For commercial SaaS platforms, enterprise development tools, or teams requiring CMS access for non-technical writers, ForgeDocs justifies its higher investment.
 
-If your primary objective is a simple, budget-friendly MDX setup, choose **Docuna**. If your goal is a commercial product site with rich visual components, data-driven layouts, and optional CMS workflows across multiple projects, choose **ForgeDocs**.
+If your primary objective is a simple, budget-friendly MDX setup for docs + landing, choose **Docuna**. If your goal is a commercial product site with rich visual components, blog, data-driven layouts, and optional CMS workflows across multiple projects, choose **ForgeDocs**.
 
 ## See It Live
 
-Demo A: [Docuna - Astro Starlight Docs Template - Documentation, Landing, Blog](https://docuna.pages.dev/)
+Demo A: [Docuna - Astro Starlight Docs Template - Documentation and Landing](https://docuna.pages.dev/)
 
 Demo B: [ForgeDocs — All-in-One Astro Starlight Theme for Landing Page, Documentation, and Blog](https://forgedocs.pages.dev/)
 
