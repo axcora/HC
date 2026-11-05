@@ -572,6 +572,8 @@ static char *build_prompt_comparison(Theme *a, Theme *b, const char *aText, cons
 }
 
 
+
+
 static char *build_prompt_review(Theme *t, const char *text, const char *demo) {
     size_t cap = 65536;
     char *p = malloc(cap);
@@ -651,6 +653,8 @@ static char *build_prompt_review(Theme *t, const char *text, const char *demo) {
 }
 
 
+
+
 static char *build_prompt_trend(const char *topic, Theme **themes, int count, const char *image) {
     size_t cap = 65536;
     char *p = malloc(cap);
@@ -710,6 +714,8 @@ static char *build_prompt_trend(const char *topic, Theme **themes, int count, co
         dynamic_title, image, dynamic_title);
     return p;
 }
+
+
 
 
 static int save_state(const char *key, const char *value) {
