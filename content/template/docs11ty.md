@@ -16,7 +16,7 @@ tags:
  - eleventy
  - 11ty
 layout: template-detil.cax
-date: 2026-11-01
+date: 2026-11-11
 updated: 
 ---
 

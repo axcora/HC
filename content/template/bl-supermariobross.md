@@ -6,7 +6,7 @@ image_raw: https://public-files.gumroad.com/h7v95f2vcdyhxkckj8wb0bnzcrng
 download: https://creativitaz.gumroad.com/l/bl-supermariobross
 price: Free
 price_cents: 0
-sales: 49
+sales: 50
 tags:
  - themes
  - template
@@ -16,7 +16,7 @@ tags:
  - bludit
  - web design
 layout: template-detil.cax
-date: 2026-11-01
+date: 2026-11-11
 updated: 
 ---
 
