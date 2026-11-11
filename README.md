@@ -4,6 +4,16 @@ Premium and free themes for **Astro, Starlight, Docusaurus, Hugo, Jekyll, Eleven
 
 > By [Hockey Computindo](https://hockeycomputindo.com) - Web Architect & AI Solutions
 
+
+## 🛠️ Built With CAX SSG
+
+HC is built with **CAX SSG** — a static site generator written in pure C.
+
+- **Official Site**: [cax.axcora.com](https://cax.axcora.com)
+- **CAX Official Repo**: [github.com/axcora/cax](https://github.com/axcora/cax)
+- **CAX OS Starter**: [github.com/mesinkasir/cax](https://github.com/mesinkasir/cax)
+- **CAX Minimalis**: [github.com/mesinkasir/cax-minimalis](https://github.com/mesinkasir/cax-minimalis)
+
 ## 🚀 Live Demo
 
 [![HC Themes](https://hockeycomputindo.com/logo-512.webp)](https://hockeycomputindo.com/)
@@ -38,18 +48,6 @@ All themes: **90+ Lighthouse, SEO optimized, responsive, dark mode ready**
 - [Premium](https://hockeycomputindo.com/premium/)
 - [Free](https://hockeycomputindo.com/free/)
 
-## 🛠️ Built With CAX SSG
-
-HC is built with **CAX SSG** - a fast static site generator written in pure C.
-
-- Website: **[cax.axcora.com](https://cax.axcora.com)**
-- GitHub: **[github.com/mesinkasir/cax](https://github.com/mesinkasir/cax)**
-
-```bash
-make
-./cax build
-```
-
 ## 💼 Services - Web Architect & AI
 
 We don't just sell themes. We build.
@@ -71,3 +69,7 @@ We don't just sell themes. We build.
 ---
 
 © 2026 Hockey Computindo - Premium Themes That Convert
+
+---
+
+**Keywords**: Astro themes, Next.js themes, Nuxt themes, SvelteKit themes, Blazor themes, Docusaurus themes, Hugo themes, Jekyll themes, Eleventy themes, CAX SSG, static site generator C
