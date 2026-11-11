@@ -192,7 +192,7 @@ void cax_builder_init_project(void) {
     cax_create_directory("site");
     cax_write_file("_data/metadata.json", "{\n \"site\": {\n \"title\": \"CAX Enterprise SSG\",\n \"description\": \"High performance Static Site Generator in C - Horologe Atelier Brass Chronometer\",\n \"url\": \"http://localhost:8080\",\n \"author\": \"Axcora\",\n \"image\": \"/logo-512.webp\",\n \"favicon\": \"/favicon.ico\",\n \"icon\": \"/favicon.ico\",\n \"seo\": true\n }\n}\n");
     cax_write_file("_data/nav.json","{\n \"nav1_name\": \"Home\",\n \"nav1_url\": \"/\",\n \"nav2_name\": \"Posts\",\n \"nav2_url\": \"/posts/\",\n \"nav3_name\": \"About\",\n \"nav3_url\": \"/about/\"\n}\n");
-    cax_write_file("templates/partials/seo.cax","<!-- MANUAL SEO - BEBAS EDIT kalau seo:false -->\n<title>{{ title }}</title>\n<meta name=\"description\" content=\"{{ description }}\">\n<meta name=\"author\" content=\"{{ author }}\">\n<meta name=\"generator\" content=\"{{ generator }}\">\n<link rel=\"icon\" href=\"{{ favicon or icon }}\">\n<link rel=\"canonical\" href=\"{{ site_url }}{{ url }}\">\n<meta property=\"og:title\" content=\"{{ title }}\">\n<meta property=\"og:description\" content=\"{{ description }}\">\n<meta property=\"og:url\" content=\"{{ site_url }}{{ url }}\">\n<meta property=\"og:image\" content=\"{{ site_url }}{{ image }}\">\n");
+    cax_write_file("templates/partials/seo.cax","<!-- MANUAL SEO - for seo:false -->\n<title>{{ title }}</title>\n<meta name=\"description\" content=\"{{ description }}\">\n<meta name=\"author\" content=\"{{ author }}\">\n<meta name=\"generator\" content=\"{{ generator }}\">\n<link rel=\"icon\" href=\"{{ favicon or icon }}\">\n<link rel=\"canonical\" href=\"{{ site_url }}{{ url }}\">\n<meta property=\"og:title\" content=\"{{ title }}\">\n<meta property=\"og:description\" content=\"{{ description }}\">\n<meta property=\"og:url\" content=\"{{ site_url }}{{ url }}\">\n<meta property=\"og:image\" content=\"{{ site_url }}{{ image }}\">\n");
     cax_write_file("templates/partials/header.cax","<header class=\"py-4 border-bottom bg-white shadow-sm mb-4\">\n <div class=\"container d-flex justify-content-between align-items-center\">\n <a class=\"navbar-brand fw-bold text-dark text-decoration-none fs-4\" href=\"/\">{{ title }}</a>\n <nav class=\"nav\">\n <a class=\"nav-link text-secondary fw-medium px-3\" href=\"{{ nav1_url }}\">{{ nav1_name }}</a>\n <a class=\"nav-link text-secondary fw-medium px-3\" href=\"{{ nav2_url }}\">{{ nav2_name }}</a>\n <a class=\"nav-link text-secondary fw-medium px-3\" href=\"{{ nav3_url }}\">{{ nav3_name }}</a>\n </nav>\n </div>\n</header>\n");
     cax_write_file("templates/partials/footer.cax","<footer class=\"text-center py-4 text-muted\">\n <small>&copy; 2026 {{ author }}. Built with {{ generator }}</small>\n</footer>\n");
     cax_write_file("templates/layouts/default.cax","<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n <meta charset=\"UTF-8\">\n <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n <!-- BEBAS PILIH SEO - IF CONDITION -->\n {% if seo %}\n  <!-- seo:true = AUTO SEO KITA - generator CAX + version, canonical site.url, og:image favicon metadata -->\n  {{ seo_tags }}\n {% else %}\n  <!-- seo:false = MANUAL SEO LU - bebas bikin sendiri via seo.cax -->\n  {% include seo.cax %}\n {% endif %}\n <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/css/bootstrap.min.css\" rel=\"stylesheet\">\n <link href=\"/css/style.css\" rel=\"stylesheet\">\n <link rel=\"sitemap\" type=\"application/xml\" href=\"/sitemap.xml\">\n <link rel=\"alternate\" type=\"application/rss+xml\" href=\"/rss.xml\" title=\"{{ site_title }}\">\n</head>\n<body class=\"bg-light\">\n {% include header.cax %}\n <main class=\"container my-5\">\n <div class=\"card shadow-sm border-0 p-4\">\n <h1 class=\"mb-3 text-primary\">{{ title }}</h1>\n <p class=\"text-muted\">{{ description }}</p>\n <div class=\"mb-3\">{{ tags_html }}</div>\n <hr>\n <div class=\"content-body text-secondary lh-lg\">\n {{ content }}\n </div>\n <div class=\"mt-4 pt-3 border-top d-flex justify-content-between\">\n <div>{{ prev_link }}</div>\n <div>{{ next_link }}</div>\n </div>\n <small class=\"text-muted\">Forged with {{ generator }}</small>\n </main>\n {% include footer.cax %}\n</body>\n</html>\n");
@@ -275,9 +275,6 @@ static void process_collection_dir(const char *dir_path, const char *coll_name, 
     closedir(dir);
 }
 
-// ==============================
-// PHASE SEO FINAL - hierarchy + auto_seo:true/false + JSON-LD
-// ==============================
 static const char* seo_get_nonempty(CAXObject *obj, const char *key){
     if(!obj || !key) return NULL;
     const char *v = cax_object_get_string(obj, key);
@@ -287,18 +284,14 @@ static const char* seo_get_nonempty(CAXObject *obj, const char *key){
 
 static const char* seo_resolve_title(CAXObject *ctx, CAXObject *global){
     const char *v = NULL;
-    // 1. frontmatter title
     v = seo_get_nonempty(ctx, "title");
     if(v) return v;
-    // 2. metadata.title
     v = seo_get_nonempty(ctx, "metadata.title");
     if(v) return v;
-    // 3. global title (from _data yaml/json)
     v = seo_get_nonempty(global, "title");
     if(v) return v;
     v = seo_get_nonempty(global, "site_title");
     if(v) return v;
-    // 4. site.title from config
     CAXObject *site = NULL;
     if(global){
         site = cax_object_get_pointer(global, "site");
@@ -311,7 +304,6 @@ static const char* seo_resolve_title(CAXObject *ctx, CAXObject *global){
         v = seo_get_nonempty(site, "title");
         if(v) return v;
     }
-    // 5. fallback slug/url
     v = seo_get_nonempty(ctx, "slug");
     if(v) return v;
     return "CAX Atelier";
@@ -325,7 +317,6 @@ static const char* seo_resolve_desc(CAXObject *ctx, CAXObject *global){
     if(v) return v;
     v = seo_get_nonempty(ctx, "desc");
     if(v) return v;
-    // global yaml/json
     v = seo_get_nonempty(global, "description");
     if(v) return v;
     v = seo_get_nonempty(global, "site_description");
@@ -377,13 +368,11 @@ static const char* seo_resolve_image(CAXObject *ctx, CAXObject *global){
 }
 
 static const char* seo_resolve_favicon(CAXObject *ctx, CAXObject *global){
-    // favicon & icon ambil dari metadata saja - yaml/json _data
     const char *v = NULL;
     v = seo_get_nonempty(ctx, "favicon");
     if(v) return v;
     v = seo_get_nonempty(ctx, "icon");
     if(v) return v;
-    // dari metadata only
     CAXObject *site = NULL;
     if(global){
         site = cax_object_get_pointer(global, "site");
@@ -462,8 +451,7 @@ static int seo_is_enabled(CAXObject *ctx){
     if(!ctx) return 1;
     const char *s = cax_object_get_string(ctx, "seo");
     if(!s) s = cax_object_get_string(ctx, "auto_seo");
-    if(!s) return 1; // default true = auto SEO
-    // handle boolean false, 0, no, off case-insensitive
+    if(!s) return 1; 
     char low[64]; int i=0;
     for(; s[i] && i<63; i++) low[i]= (s[i]>='A' && s[i]<='Z') ? s[i]+32 : s[i];
     low[i]='\0';
@@ -483,18 +471,15 @@ static char* build_seo_tags(CAXObject *ctx, CAXObject *global){
     if(!site_title) site_title = seo_get_nonempty(global, "title");
     if(!site_title) site_title = "CAX Atelier";
     const char *author = seo_resolve_author(ctx, global);
-    // generator = CAX SSG - Static Site Generator in C + version.h
     static char gen_str[256];
     snprintf(gen_str, sizeof(gen_str), "CAX SSG v%s - Static Site Generator in C", CAX_VERSION);
     const char *generator = gen_str;
     
-    // canonical = site.url + page url, no double slash
     char site_url[1024]; snprintf(site_url, sizeof(site_url), "%s", site_url_raw);
     size_t sl = strlen(site_url);
     if(sl>0 && site_url[sl-1]=='/') site_url[sl-1]='\0';
     char canonical[2048]; snprintf(canonical, sizeof(canonical), "%s%s", site_url, page_url);
     
-    // image full url
     char img_full[2048];
     if(image[0]=='h' && strncmp(image,"http",4)==0) snprintf(img_full, sizeof(img_full), "%s", image);
     else if(image[0]=='/') snprintf(img_full, sizeof(img_full), "%s%s", site_url, image);
@@ -507,8 +492,6 @@ static char* build_seo_tags(CAXObject *ctx, CAXObject *global){
 
     char *buf = malloc(32768);
     if(!buf) return cax_strdup("");
-    // TITLE = title or metadata title or config title SAJA - jangan melebar | site_title
-    // site_title cuma fallback kalau title gak ada, bukan ditambahin
     snprintf(buf, 32768,
         "<title>%s</title>\n"
         "<meta name=\"description\" content=\"%s\">\n"
@@ -554,7 +537,6 @@ static char* build_seo_tags(CAXObject *ctx, CAXObject *global){
 
 static char* inject_seo_into_html(const char *html, const char *seo_tags){
     if(!html || !seo_tags) return cax_strdup(html ? html : "");
-    // case-insensitive search for </head>
     const char *head_end = NULL;
     const char *p = html;
     while(*p){
@@ -565,7 +547,6 @@ static char* inject_seo_into_html(const char *html, const char *seo_tags){
         p++;
     }
     if(!head_end){
-        // try <head> injection after <head>
         const char *head_start = strstr(html, "<head>");
         if(!head_start) head_start = strstr(html, "<HEAD>");
         if(head_start){
@@ -684,13 +665,10 @@ static void render_collection_items(const char *dir_path, const char *coll_name,
             snprintf(next_buf, sizeof(next_buf), "<a href=\"%s\">%s &rarr;</a>", n_url? n_url : "", n_title? n_title : "");
             cax_object_set_string(context, "next_link", next_buf);
         }
-        // BUILD SEO TAGS BEFORE RENDER so {{ seo_tags }} works for manual seo:false
         char *seo_tags_pre = build_seo_tags(context, global_data);
         cax_object_set_string(context, "seo_tags", seo_tags_pre);
         free(seo_tags_pre);
-        // Re-build for injection after to keep string alive
         char *seo_tags_str = build_seo_tags(context, global_data);
-        // ELEVENTY STYLE: templating in markdown - {{ url }}, {% for %}, etc
         char *templated_md = cax_template_render(doc->body, context);
         if(!templated_md) templated_md = cax_strdup(doc->body ? doc->body : "");
         char *html_body = cax_markdown_to_html(templated_md);
@@ -714,10 +692,8 @@ static void render_collection_items(const char *dir_path, const char *coll_name,
         char *final_html = cax_template_render_file(layout_path, context);
         if (!final_html) final_html = cax_template_render_file("templates/layouts/default.cax", context);
         if (!final_html) final_html = cax_strdup("<h1>{{ title }}</h1>{{ content }}");
-        // LOGIKA: seo:false = manual {{ seo_tags }} / {% include seo.cax %}, seo:true = auto inject
         char *seo_final = final_html;
         if(seo_is_enabled(context)){
-            // if template already has generator (manual include used), skip auto inject to avoid duplicate
             if(strstr(final_html, "name=\"generator\"")==NULL && strstr(final_html, "name='generator'")==NULL){
                 char *injected = inject_seo_into_html(final_html, seo_tags_str);
                 free(final_html);
@@ -748,7 +724,6 @@ void cax_builder_run(void) {
     minify_and_copy_assets();
     CAXObject *global_data = cax_object_new();
     cax_load_all_data("_data", global_data);
-    // PHASE SEO: inject generator meta + version - CAX SSG vX - Static Site Generator in C
     char gen_buf[512];
     snprintf(gen_buf, sizeof(gen_buf), "CAX SSG v%s - Static Site Generator in C", CAX_VERSION);
     cax_object_set_string(global_data, "generator", gen_buf);
@@ -756,7 +731,6 @@ void cax_builder_run(void) {
     cax_object_set_string(global_data, "cax_codename", CAX_CODENAME);
     cax_object_set_string(global_data, "cax_edition", CAX_EDITION);
     cax_object_set_string(global_data, "cax_url", CAX_URL);
-    // SEO defaults
     const char *site_url = cax_object_get_string(global_data, "url");
     if(!site_url){
         CAXObject *meta = cax_object_get_pointer(global_data, "metadata");
@@ -839,7 +813,6 @@ void cax_builder_run(void) {
                 }
             }
         }
-        // 11ty style: featured_themes biar template {% for theme in featured_themes %} tetep jalan
         CAXArray *themes_src = (CAXArray*)cax_object_get_pointer(collections_obj, "themes");
         if(!themes_src) themes_src = (CAXArray*)cax_object_get_pointer(global_data, "themes");
         if(themes_src){
@@ -847,7 +820,6 @@ void cax_builder_run(void) {
             for(int i=0;i<themes_src->count;i++){
                 CAXObject *post=(CAXObject*)themes_src->items[i];
                 if(!post) continue;
-                // cek tags array atau string
                 CAXArray *arr=(CAXArray*)cax_object_get_pointer(post,"tags");
                 int ok=0;
                 if(arr){
@@ -869,7 +841,6 @@ void cax_builder_run(void) {
             }
             cax_object_set_pointer(global_data,"featured_themes",featured_themes);
             cax_object_set_pointer(collections_obj,"featured_themes",featured_themes);
-            // juga expose sebagai global langsung biar {{ featured_themes }} kepanggil
             cax_object_set_pointer(global_data, "featured_themes", featured_themes);
         }
         rewinddir(content_dir);
@@ -974,12 +945,10 @@ void cax_builder_run(void) {
                             cax_object_set_string(ctx, "permalink", url_buf);
                             CAXObject *root_page_item = copy_metadata_object(ctx);
                             cax_array_add(all_collections_master, root_page_item);
-                            // BUILD SEO BEFORE RENDER so {{ seo_tags }} works
                             char *seo_pre2 = build_seo_tags(ctx, global_data);
                             cax_object_set_string(ctx, "seo_tags", seo_pre2);
                             free(seo_pre2);
                             char *seo_tags_str2 = build_seo_tags(ctx, global_data);
-                            // ELEVENTY STYLE: templating in markdown root pages
                             char *templated_md2 = cax_template_render(doc->body, ctx);
                             if(!templated_md2) templated_md2 = cax_strdup(doc->body ? doc->body : "");
                             char *html_body = cax_markdown_to_html(templated_md2);
@@ -1032,14 +1001,12 @@ void cax_builder_run(void) {
 	qsort(all_collections_master->items, all_collections_master->count, sizeof(CAXObject*), cmp_by_date_desc);
     cax_tags_generate(all_collections_master, "site", global_data);
     cax_sitemap_generate_full(all_collections_master, global_data, "site", pagination_controllers);
-    // PHASE SEO: robots.txt - sitemap dari metadata.url / config.url
     {
         const char *robots_site_url = seo_resolve_url(global_data);
         char robots_buf[1024];
         snprintf(robots_buf, sizeof(robots_buf), "User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n", robots_site_url);
         cax_write_file("site/robots.txt", robots_buf);
     }
-    // PHASE SEO: RSS + FEED.XML + JSON FEED - GOOGLE COMPLIANT FIX
     {
         const char *site_title = cax_object_get_string(global_data, "site_title");
         if(!site_title) site_title = cax_object_get_string(global_data, "title");
@@ -1096,7 +1063,6 @@ void cax_builder_run(void) {
                 if(u[0]=='h') snprintf(abs_url,sizeof(abs_url),"%s",u);
                 else snprintf(abs_url,sizeof(abs_url),"%s%s",site_url,u);
 
-                // simple safe
                 char *item_buf = malloc(4096);
                 if(!item_buf) continue;
                 snprintf(item_buf,4096,
@@ -1116,7 +1082,6 @@ void cax_builder_run(void) {
             free(rss);
         }
 
-        // JSON Feed 1.1 with date_published
         char *jfeed = malloc(262144);
         if(jfeed){
             int off=0;
