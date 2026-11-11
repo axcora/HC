@@ -28,6 +28,31 @@
 
 #include "version.h"
 
+static time_t parse_date_str(const char *s) {
+    if (!s || !*s) return 0;
+    int y=0,m=0,d=0;
+    if (sscanf(s, "%d-%d-%d", &y, &m, &d) == 3) {
+        struct tm tm = {0};
+        tm.tm_year = y - 1900;
+        tm.tm_mon  = m - 1;
+        tm.tm_mday = d;
+        return mktime(&tm);
+    }
+    return 0;
+}
+
+static int cmp_by_date_desc(const void *a, const void *b) {
+    CAXObject *oa = *(CAXObject**)a;
+    CAXObject *ob = *(CAXObject**)b;
+    const char *da = cax_object_get_string(oa, "date");
+    const char *db = cax_object_get_string(ob, "date");
+    time_t ta = parse_date_str(da);
+    time_t tb = parse_date_str(db);
+    if (ta == 0 && tb != 0) return 1;
+    if (tb == 0 && ta != 0) return -1;
+    return (tb > ta) - (tb < ta);
+}
+
 static void normalize_coll_name(const char *in, char *out, size_t out_size) {
     size_t j=0;
     for(size_t i=0; i<strlen(in) && j < out_size-1; i++) {
@@ -791,6 +816,7 @@ void cax_builder_run(void) {
             if (cax_is_directory(sub_path)) {
                 CAXArray *coll_array = cax_array_new();
                 process_collection_dir(sub_path, entry->d_name, coll_array);
+				qsort(coll_array->items, coll_array->count, sizeof(CAXObject*), cmp_by_date_desc);
                 cax_object_set_pointer(collections_obj, entry->d_name, coll_array);
                 cax_object_set_pointer(global_data, entry->d_name, coll_array);
                 DIR *sub = opendir(sub_path);
@@ -1003,6 +1029,7 @@ void cax_builder_run(void) {
         }
         closedir(content_dir);
     }
+	qsort(all_collections_master->items, all_collections_master->count, sizeof(CAXObject*), cmp_by_date_desc);
     cax_tags_generate(all_collections_master, "site", global_data);
     cax_sitemap_generate_full(all_collections_master, global_data, "site", pagination_controllers);
     // PHASE SEO: robots.txt - sitemap dari metadata.url / config.url
