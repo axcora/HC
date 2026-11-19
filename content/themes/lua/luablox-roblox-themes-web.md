@@ -3,6 +3,8 @@ layout: themes-detil.cax
 title: LUAX PRO - Lua Static Site Generator with Decap CMS for Roblox Dev and Multipurpose Website
 description: LUAX PRO is a premium Lua static site generator with Decap CMS, full docs system, and multipurpose theme. Includes a complete Roblox studio demo site as one example. One-time purchase $145, lifetime license.
 image: lua/lua_blox_roblox_lua_website_themes_2_trda6i.jpg
+is_premium: true
+price: $45
 features:
     - LUA
     - Lua SSG
@@ -41,6 +43,8 @@ tags:
     - agency template
     - jamstackthemes
     - premiumthemes
+    - featured
+    - featuredpremium
 faq:
     - q: "What is LUAX PRO, and what problem does it solve?"
       a: "LUAX PRO is a premium static site generator built in pure Lua. It solves a simple problem: you want a complete website - homepage, services, projects, blog, docs - without setting up a heavy backend, without configuring many plugins, and without teaching your clients to edit code. You write content in Markdown, LUAX PRO turns it into static HTML, and your clients edit everything from Decap CMS in their browser. The ZIP includes a multipurpose premium theme, a full docs system, Decap CMS, and a complete Roblox studio demo site as one example of what you can build."

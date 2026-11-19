@@ -26,8 +26,6 @@ tags:
     - astro template
     - blacks template
     - premiumthemes
-    - featured
-    - featuredpremium
 faq:
   - q: "What is Blacks, and what problem does it solve?"
     a: "Blacks is a premium Astro multipurpose dark template built with Astro and Preact. It ships with a portfolio, image gallery, video gallery, blog with categories and tags, pagination, services, promotion widgets, a contact form, SEO auto, Picture optimization, and page transitions. Site configuration lives in src/data/config.json, homepage content in src/data/home.json, and each page type lives as Markdown files in src/pages/. Instead of assembling a multipurpose dark site from scratch, you install the project, edit JSON and Markdown, and the site is live."
