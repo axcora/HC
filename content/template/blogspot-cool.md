@@ -16,7 +16,7 @@ tags:
  - blogspot
  - blogspot template
 layout: template-detil.cax
-date: 2026-11-11
+date: 2026-11-19
 updated: 
 ---
 
