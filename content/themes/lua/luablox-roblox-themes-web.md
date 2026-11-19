@@ -89,7 +89,7 @@ LUAX PRO [LUABLOX ROBLOX DEV THEMES](https://www.roblox.com/) solves all of that
 
 You get a multipurpose premium theme, a full docs system, Decap CMS admin panel, and a complete demo site. You write content in Markdown. LUAX PRO turns it into a complete, production-ready static website.
 
----
+
 
 ## PART 1 - SEO AND MARKETING - WHAT LUAX PRO IS AND WHY IT EXISTS
 
@@ -305,7 +305,7 @@ LUAX PRO is for you if:
 
 LUAX PRO is NOT for you if you need a dynamic web app with user login, database, and real-time features. For that, order a Custom Web App instead.
 
----
+
 
 ## PART 2 - EDUCATIONAL GUIDE FOR BEGINNERS - COMPLETE DOCUMENTATION
 
@@ -363,7 +363,7 @@ brew install lua
 If you do not have Homebrew, install it first:
 ```
  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
- ```
+```
 Then run brew install lua again.
 
 Verify:
