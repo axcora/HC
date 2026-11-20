@@ -23,6 +23,7 @@ tags:
   - website template
   - luatemplate
   - luassg
+  - lua
   - themes
   - blog template
   - template

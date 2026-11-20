@@ -31,6 +31,7 @@ tags:
     - lua themes
     - lua template
     - luassg
+	- lua
     - luax template
     - website themes
     - website template
