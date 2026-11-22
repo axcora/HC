@@ -16,7 +16,7 @@ tags:
  - nuxt4
  - nuxt themes
 layout: template-detil.cax
-date: 2026-11-19
+date: 2026-11-22
 updated: 
 ---
 

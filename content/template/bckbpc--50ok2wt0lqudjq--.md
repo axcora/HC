@@ -16,7 +16,7 @@ tags:
  - android studio
  - android app
 layout: template-detil.cax
-date: 2026-11-19
+date: 2026-11-22
 updated: 
 ---
 

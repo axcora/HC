@@ -3,7 +3,7 @@ layout: themes-detil.cax
 title: Docuna - Astro Starlight Docs Template - Documentation and Landing
 description: Astro Starlight documentation template with landing page, search, sidebar nav, dark mode. Fast, SEO ready, MDX, own 100% source, one-time.
 image: astro/starlighttemplate_uyq8cf.jpg
-date: 2026-10-31
+date: 2026-07-12
 tags:
   - astro
   - starlight
